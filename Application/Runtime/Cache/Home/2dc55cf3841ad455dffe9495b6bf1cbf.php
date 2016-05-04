@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>注册</title>
+	<title>The Project | Home Portfolio/Agency</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -66,92 +66,67 @@
 	<!-- ================ -->
 	<div class="page-wrapper">
 		
-		<!-- background image -->
-		<div class="fullscreen-bg"></div>
+			<!-- background image -->
+			<div class="fullscreen-bg"></div>
 
-		<!-- banner start -->
-		<!-- ================ -->
-		<div class="pv-40 dark-translucent-bg">
-			<div class="container">
-				<div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
-					<!-- logo -->
-					<div id="logo" class="logo">
-						<h3 class="margin-clear"><a href="index.html" class="logo-font link-light">The <span class="text-default">Project</span></a></h3>
-					</div>
-					<!-- name-and-slogan -->
-					<p class="small">Multipurpose HTML5 Template</p>
-					<div class="form-block center-block p-30 light-gray-bg border-clear text-left">
-
-						<h2 class="title">用户注册</h2>
-						<form method="post" class="form-horizontal" role="form" action="<?php echo U('Home/User/signUp');?>">
-							<div class="form-group has-feedback">
-								<label for="inputName" class="col-sm-3 control-label">用户名 <span class="text-danger small">*</span></label>
-								<div class="col-sm-8">
-									<input name="username" type="text" class="form-control" id="inputName" placeholder="<?php echo ($msg["user_name"]); ?>" required>
-									<i class="fa fa-pencil form-control-feedback"></i>
-								</div>
-							</div>
-							<div class="form-group has-feedback">
-								<label for="inputEmail" class="col-sm-3 control-label">邮箱 <span class="text-danger small">*</span></label>
-								<div class="col-sm-8">
-									<input name="email" type="email" class="form-control" id="inputEmail" placeholder="<?php echo ($msg["email"]); ?>" required>
-									<i class="fa fa-envelope form-control-feedback"></i>
-								</div>
-							</div>
-							<div class="form-group has-feedback">
-								<label for="inputPassword" class="col-sm-3 control-label">密码 <span class="text-danger small">*</span></label>
-								<div class="col-sm-8">
-									<input name="pwd" type="password" class="form-control" id="inputPassword" placeholder="<?php echo ($msg["user_pwd"]); ?>" required>
-									<i class="fa fa-lock form-control-feedback"></i>
-								</div>
-							</div>
-							<div class="form-group has-feedback">
-								<label for="inputPassword" class="col-sm-3 control-label">确认密码 <span class="text-danger small">*</span></label>
-								<div class="col-sm-8">
-									<input name="pwd2" type="password" class="form-control" id="inputPassword" placeholder="<?php echo ($msg["user_pwd2"]); ?>" required>
-									<i class="fa fa-lock form-control-feedback"></i>
-								</div>
-							</div>
-
-							<div class="form-group has-feedback">
-								<label for="inputPassword" class="col-sm-3 control-label">验证码 <span class="text-danger small">*</span></label>
-								<div class="col-sm-4">
-									<input name="check" type="text" class="form-control" id="check" placeholder="" required>
-									<i class="fa fa-cog form-control-feedback"></i>
-								</div>
-								<div class="col-sm-4"><img id="check_img" src="<?php echo U('Home/User/verify');?>"></div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-3 col-sm-8">
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" required> 同意我们的 <a href="#">政策</a> 和 <a href="#">协议</a>
-										</label>
+			<!-- banner start -->
+			<!-- ================ -->
+			<div class="pv-40 dark-translucent-bg">
+				<div class="container">
+					<div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
+						<!-- logo -->
+						<div id="logo" class="logo">
+							<h3 class="margin-clear"><a href="index.html" class="logo-font link-light">The <span class="text-default">Project</span></a></h3>
+						</div>
+						<!-- name-and-slogan -->
+						<p class="small">Multipurpose HTML5 Template</p>
+						<div class="form-block center-block p-30 light-gray-bg border-clear">
+							<h2 class="title text-left">登录</h2>
+							<form method="post" class="form-horizontal text-left" action="<?php echo U('Home/User/logIn');?>">
+								<div class="form-group has-feedback">
+									<label for="inputUserName" class="col-sm-3 control-label">用户名</label>
+									<div class="col-sm-8">
+										<input name="inputUserName" type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
+										<i class="fa fa-user form-control-feedback"></i>
 									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-3 col-sm-8">
-									<div class="row">
-										<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-											<button type="submit" class="btn btn-group btn-default btn-animated">注册 <i class="fa fa-check"></i></button>
-										</div>
-										<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-											<button stype="button" class="btn btn-group btn-default btn-animated" onclick="javascript:window.location.href='<?php echo U('Home/Index/index');?>';">返回 <i class="fa fa-reply-all"></i></button>
-										</div>
+								<div class="form-group has-feedback">
+									<label for="inputPassword" class="col-sm-3 control-label">密码</label>
+									<div class="col-sm-8">
+										<input name="inputPassword" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+										<i class="fa fa-lock form-control-feedback"></i>
 									</div>
 								</div>
-							</div>
-						</form>
+								<div class="form-group">
+									<div class="col-sm-offset-3 col-sm-8">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" required> 记住我
+											</label>
+										</div>
+										<button type="submit" class="btn btn-group btn-default btn-animated">登录 <i class="fa fa-user"></i></button>
+										<ul class="space-top">
+											<li><a href="#">忘记密码?</a></li>
+										</ul>
+										<span class="text-muted">Login with</span>
+										<ul class="social-links colored circle clearfix">
+											<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+											<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+							<p>还没有账号? 立马<a href="page-signup-2.html">注册</a></p>
+						</div>
+						<!-- .subfooter start -->
+						<!-- ================ -->
+						<p class="mt-20">Copyright © 2015 The Project by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
+						<!-- .subfooter end -->
 					</div>
-					<!-- .subfooter start -->
-					<!-- ================ -->
-					<p class="mt-20">Copyright © 2015 The Project by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
-					<!-- .subfooter end -->
 				</div>
 			</div>
-		</div>
-		<!-- banner end -->
+			<!-- banner end -->
 
 	</div>
 	<!-- page-wrapper end -->
@@ -191,12 +166,6 @@
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
 	<!-- 本页js -->
-	<script type="text/javascript">
-		$(function(){
-			$('#check_img').click(function(){
-				$("#check_img").attr("src","<?php echo U('Home/User/verify');?>");
-			})
-		})
-	</script>
+
 </body>
 </html>

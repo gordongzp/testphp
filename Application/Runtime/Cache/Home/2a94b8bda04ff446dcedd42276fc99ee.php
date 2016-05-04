@@ -114,9 +114,10 @@
 								<!-- header-top-second start -->
 								<!-- ================ -->
 								<div id="header-top-second"  class="clearfix text-right">
+
 									<!-- header top dropdowns start -->
 									<!-- ================ -->
-									<div class="header-top-dropdown text-right">
+									<div id="dm" class="header-top-dropdown text-right">
 										<div class="btn-group">
 											<a href="<?php echo U('Home/User/signUp');?>" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> 注册 </a>
 										</div>
@@ -126,20 +127,20 @@
 												<li>
 													<form class="login-form margin-clear">
 														<div class="form-group has-feedback">
-															<label class="control-label">Username</label>
+															<label class="control-label">用户名</label>
 															<input type="text" class="form-control" placeholder="">
 															<i class="fa fa-user form-control-feedback"></i>
 														</div>
 														<div class="form-group has-feedback">
-															<label class="control-label">Password</label>
+															<label class="control-label">密码</label>
 															<input type="password" class="form-control" placeholder="">
 															<i class="fa fa-lock form-control-feedback"></i>
 														</div>
-														<button type="submit" class="btn btn-gray btn-sm">Log In</button>
+														<button type="submit" class="btn btn-gray btn-sm">登录</button>
 														<span class="pl-5 pr-5">or</span>
-														<button type="submit" class="btn btn-default btn-sm">Sing Up</button>
+														<button onclick="javascript:window.location.href='<?php echo U('Home/User/signUp');?>';" type="button" class="btn btn-default btn-sm">注册</button>
 														<ul>
-															<li><a href="#">Forgot your password?</a></li>
+															<li><a href="#">忘记密码?</a></li>
 														</ul>
 														<span class="text-center">Login with</span>
 														<ul class="social-links circle small colored clearfix">
@@ -153,6 +154,17 @@
 										</div>
 									</div>
 									<!--  header top dropdowns end -->
+
+									<!-- unvisible start -->
+									<!-- ================ -->								
+									<ul id="uinfo" style="display: none;" class="list-inline hidden-sm hidden-xs">
+										<li>欢迎您</li>
+										<li><?php echo is_login()['user_name'];?></li>
+										<li><?php echo is_login()['email'];?></li>
+										<li><a href="<?php echo U('Home/User/logOut');?>">退出登录</a></li>
+									</ul>
+									<!--  header top dropdowns end -->
+
 								</div>
 								<!-- header-top-second end -->
 							</div>
@@ -828,6 +840,11 @@
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
 	<!-- 本页js -->
-
+	<script type="text/javascript">
+		if (<?php echo is_login();?>) {
+			$('#uinfo').css("display","");
+			$('#dm').css("display","none");
+		}
+	</script>
 </body>
 </html>

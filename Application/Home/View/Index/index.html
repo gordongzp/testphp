@@ -71,6 +71,11 @@
 	<!-- 模板底部配置 -->
 	<include file="Public/con_b" />
 	<!-- 本页js -->
-
+	<script type="text/javascript">
+		if ({:is_login()}) {
+			$('#uinfo').css("display","");
+			$('#dm').css("display","none");
+		}
+	</script>
 </body>
 </html>

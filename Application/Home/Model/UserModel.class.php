@@ -26,7 +26,6 @@ class UserModel extends Model {
 	public function getUserInfo(){
 		return $this->select();
 	}
-
 	public function register(){
 		if (!$this->create()) {
 			return $this->getError();
@@ -34,5 +33,11 @@ class UserModel extends Model {
 			$this->add();
 			return NULL;
 		}
+	}
+	public function getUserInfoByPwd($username,$pwd){ 
+		$condition = array('user_name' => $username,'user_pwd' => md10($pwd), );
+		$info=$this->where($condition)->find();
+		$info['user_pwd']='';
+		return $info;
 	}
 }
