@@ -127,16 +127,16 @@
 												<li>
 													<form class="login-form margin-clear">
 														<div class="form-group has-feedback">
-															<label class="control-label">用户名</label>
-															<input type="text" class="form-control" placeholder="">
+															<label  class="control-label">用户名 <span id="tip" style="color: red"></span></label>
+															<input id="username" type="text" class="form-control" placeholder="">
 															<i class="fa fa-user form-control-feedback"></i>
 														</div>
 														<div class="form-group has-feedback">
 															<label class="control-label">密码</label>
-															<input type="password" class="form-control" placeholder="">
+															<input id="pwd" type="password" class="form-control" placeholder="">
 															<i class="fa fa-lock form-control-feedback"></i>
 														</div>
-														<button type="submit" class="btn btn-gray btn-sm">登录</button>
+														<button id="btn" type="button" class="btn btn-gray btn-sm">登录</button>
 														<span class="pl-5 pr-5">or</span>
 														<button onclick="javascript:window.location.href='<?php echo U('Home/User/signUp');?>';" type="button" class="btn btn-default btn-sm">注册</button>
 														<ul>
@@ -159,8 +159,8 @@
 									<!-- ================ -->								
 									<ul id="uinfo" style="display: none;" class="list-inline hidden-sm hidden-xs">
 										<li>欢迎您</li>
-										<li><?php echo is_login()['user_name'];?></li>
-										<li><?php echo is_login()['email'];?></li>
+										<li id="li_name"><?php echo is_login()['user_name'];?></li>
+										<li id="li_email"><?php echo is_login()['email'];?></li>
 										<li><a href="<?php echo U('Home/User/logOut');?>">退出登录</a></li>
 									</ul>
 									<!--  header top dropdowns end -->
@@ -845,6 +845,25 @@
 			$('#uinfo').css("display","");
 			$('#dm').css("display","none");
 		}
+
+		$(function(){
+			$('#btn').click(function(){
+				var user=$('#username').val();
+				var pwd=$('#pwd').val();
+				var action='<?php echo U('Home/User/logInAj');?>';
+				$.post(action,{user:user,pwd:pwd},function(data){
+					if (data.stage) {
+						$('#uinfo').css("display","");
+						$('#dm').css("display","none");	
+						document.getElementById("li_name").innerHTML=data.msg.user_name;
+						document.getElementById("li_email").innerHTML=data.msg.email;
+					}else{
+						document.getElementById("tip").innerHTML=data.msg;
+					}
+
+				});
+			})
+		})
 	</script>
 </body>
 </html>

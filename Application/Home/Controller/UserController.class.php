@@ -38,6 +38,23 @@ class UserController extends Controller {
 		}
 	}
 
+	public function logInAj(){
+		if (IS_POST) {
+			$user_info=D('User')->getUserInfoByPwd(I('post.user'),I('post.pwd'));
+			$msg = array();
+			if ($user_info) {
+				session('user',$user_info);
+				$msg = array('stage' => 1,'msg' => $user_info );
+			}else{
+				$msg = array('stage' => 0,'msg' => '用户名或密码错误' );
+			}
+			$this->ajaxReturn($msg);
+		}else
+		{
+			
+		}
+	}
+
 	public function logOut(){
 		session('user',null);
 		$this->success('退出成功','/Home/Index/index',3);

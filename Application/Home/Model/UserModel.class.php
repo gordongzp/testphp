@@ -35,9 +35,11 @@ class UserModel extends Model {
 		}
 	}
 	public function getUserInfoByPwd($username,$pwd){ 
-		$condition = array('user_name' => $username,'user_pwd' => md10($pwd), );
+		$condition = array('user_name' => $username,'user_pwd' => md10($pwd));
 		$info=$this->where($condition)->find();
-		$info['user_pwd']='';
+		if ($info) {
+			$info['user_pwd']='';
+		}
 		return $info;
 	}
 }
