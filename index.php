@@ -20,6 +20,11 @@ define('APP_DEBUG',True);
 // 定义应用目录
 define('APP_PATH','./Application/');
 
+// 定义admin手机常量
+define('__UID__','gordongzp');
+define('__KEY__', '38fb00421205492103db');
+
+
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 

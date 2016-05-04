@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>主页</title>
+	<title>The Project | Home Portfolio/Agency</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -294,39 +294,40 @@
 				<!-- header end -->
 			</div>
 			<!-- header-container end -->
-		<!--内容区:  -->
-
-
-		<div class="container-fluid">
-			<div class="row">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>user_name</th>
-							<th>user_pwd</th>
-							<th>email</th>
-							<th>reg_time</th>
-							<th>last_log_time</th>
-							<th>update_time</th>
-							<th>reg_ip</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php if(is_array($info)): foreach($info as $key=>$vo): ?><tr>
-								<td><?php echo ($vo["id"]); ?></td>
-								<td><?php echo ($vo["user_name"]); ?></td>
-								<td><?php echo ($vo["user_pwd"]); ?></td>
-								<td><?php echo ($vo["email"]); ?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['reg_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['last_log_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['update_time']);?></td>
-								<td><?php echo ($vo["reg_ip"]); ?></td>
-							</tr><?php endforeach; endif; ?>	
-					</tbody>
-				</table>
+		
+		<!-- breadcrumb start -->
+		<!-- ================ -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a href="/Home/Index/index">主页</a></li>
+					<li class="active">成功页面</li>
+				</ol>
 			</div>
 		</div>
+		<!-- breadcrumb end -->
+
+		<!-- main-container start -->
+		<!-- ================ -->
+		<section class="main-container jumbotron light-gray-bg text-center margin-clear">
+
+			<div class="container">
+				<div class="row">
+
+					<!-- main start -->
+					<!-- ================ -->
+					<div class="main col-md-6 col-md-offset-3 pv-40">
+						<h1 class="page-title"><span id="wait" class="text-default"><?php echo($waitSecond); ?></span></h1>
+						<h2>成功：<?php echo($message); ?></h2>
+						<a id="href" href="<?php echo($jumpUrl); ?>" class="btn btn-default btn-animated btn-lg">跳转 <i class="fa fa-home"></i></a>
+					</div>
+					<!-- main end -->
+				</div>
+			</div>
+		</section>
+		<!-- main-container end -->
+
+
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -500,6 +501,18 @@
 	})
 </script>
 	<!-- 本页js -->
+	<script type="text/javascript">
+		(function(){
+			var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+			var interval = setInterval(function(){
+				var time = --wait.innerHTML;
+				if(time <= 0) {
+					location.href = href;
+					clearInterval(interval);
+				};
+			}, 1000);
+		})();
+	</script>
 
 </body>
 </html>

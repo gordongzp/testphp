@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>主页</title>
+	<title>个人中心</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -294,39 +294,11 @@
 				<!-- header end -->
 			</div>
 			<!-- header-container end -->
-		<!--内容区:  -->
+		
 
-
-		<div class="container-fluid">
-			<div class="row">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>user_name</th>
-							<th>user_pwd</th>
-							<th>email</th>
-							<th>reg_time</th>
-							<th>last_log_time</th>
-							<th>update_time</th>
-							<th>reg_ip</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php if(is_array($info)): foreach($info as $key=>$vo): ?><tr>
-								<td><?php echo ($vo["id"]); ?></td>
-								<td><?php echo ($vo["user_name"]); ?></td>
-								<td><?php echo ($vo["user_pwd"]); ?></td>
-								<td><?php echo ($vo["email"]); ?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['reg_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['last_log_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['update_time']);?></td>
-								<td><?php echo ($vo["reg_ip"]); ?></td>
-							</tr><?php endforeach; endif; ?>	
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<div class="container" style="background: red">
+			sss
+		</div> 
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">

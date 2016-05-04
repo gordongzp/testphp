@@ -190,6 +190,31 @@
 <script type="text/javascript" src="/Public/js/template.js"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
+<!-- Custom Scripts2带有模板函数。。。 -->
+<script type="text/javascript">
+	if (<?php echo is_login();?>) {
+		$('#uinfo').css("display","");
+		$('#dm').css("display","none");
+	}
+
+	$(function(){
+		$('#btn').click(function(){
+			var user=$('#username').val();
+			var pwd=$('#pwd').val();
+			var action='<?php echo U('Home/User/logInAj');?>';
+			$.post(action,{user:user,pwd:pwd},function(data){
+				if (data.stage) {
+					$('#uinfo').css("display","");
+					$('#dm').css("display","none");	
+					document.getElementById("li_name").innerHTML=data.msg.user_name;
+				}else{
+					document.getElementById("tip").innerHTML=data.msg;
+				}
+
+			});
+		})
+	})
+</script>
 	<!-- 本页js -->
 	<script type="text/javascript">
 		$(function(){
