@@ -18,10 +18,10 @@
 	<link rel="shortcut icon" href="/Public/images/favicon.ico">
 
 	<!-- Web Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'> -->
 
 	<!-- Bootstrap core CSS -->
 	<link href="/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -347,7 +347,6 @@
 		<!-- main-container start -->
 		<!-- ================ -->
 		<section class="main-container">
-
 			<div class="container">
 				<div class="row">
 
@@ -362,11 +361,66 @@
 						<!-- page-title end -->
 						<div class="row">
 							<div class="col-sm-9 col-lg-8">
+								<!-- tabs start -->
+								<!-- ================ -->
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs style-2" role="tablist">
+									<li><a href="#">基本资料</a></li>
+									<li><a href="#">个人头像</a></li>
+									<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
+									<li><a href="#">更换手机</a></li>
+									<li><a href="#">邮箱认证</a></li>
+									<li><a href="#">实名认证</a></li>
+								</ul>
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div class="tab-pane in active" id="h2tab1">
+										<div class="row">
+											<div class="col-sm-6">
 
+												<form action="" method="POST" role="form">											
+													<div class="form-group">
+														<label for="">用户名：</label>
+														<input type="text" class="form-control" placeholder="<?php echo session('user.user_name');?>" disabled="">
+													</div>
+													<div class="form-group">
+														<label for="">手机号码：</label>
+														<div class="row">
+															<div class="col-xs-9 ">
+																<input type="text" class="form-control" placeholder="<?php echo session('user.tel');?>" disabled="">
+															</div>
+															<div class="col-xs-3 ">
+																<a style="form-control" href="#">更换手机</a>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="">邮箱号码：</label>
+														<div class="row">
+															<div class="col-xs-9 ">
+																<input type="text" class="form-control" placeholder="<?php echo session('user.email');?>" disabled="">
+															</div>
+															<div class="col-xs-3 ">
+																<a style="form-control" href="#">绑定邮箱</a>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="">qq号码：</label>
+														<input type="text" class="form-control" placeholder="" >
+													</div>
 
-hello
-
-
+													<div class="form-group">
+														<label for="">微信号码：</label>
+														<input type="text" class="form-control" placeholder="" >
+													</div>
+													<button type="submit" class="btn btn-primary">确认提交</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- tabs end -->
 
 							</div>
 														<div class="col-sm-3 col-lg-offset-1">
@@ -564,6 +618,9 @@ hello
 	})
 </script>
 	<!-- 本页js -->
+	<script type="text/javascript">
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+	</script>
 
 </body>
 </html>

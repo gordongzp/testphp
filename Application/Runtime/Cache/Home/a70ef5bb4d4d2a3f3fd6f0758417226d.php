@@ -18,10 +18,10 @@
 	<link rel="shortcut icon" href="/Public/images/favicon.ico">
 
 	<!-- Web Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'> -->
 
 	<!-- Bootstrap core CSS -->
 	<link href="/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -106,7 +106,7 @@
 									<li>
 										<form class="login-form margin-clear">
 											<div class="form-group has-feedback">
-												<label  class="control-label">用户名 <span id="tip" style="color: red"></span></label>
+												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
 												<i class="fa fa-user form-control-feedback"></i>
 											</div>
@@ -256,18 +256,14 @@
 											<a href="mailto:theproject@info.com" class="btn btn-lg visible-xs btn-block btn-white">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
 										</div>
 										<!-- header buttons end-->
-
 									</div>
-
 								</div>
 							</nav>
 							<!-- navbar end -->
-
 						</div>
 						<!-- main-navigation end -->
 					</div>
 					<!-- header-right end -->
-					
 				</div>
 			</div>
 		</div>

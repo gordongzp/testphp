@@ -30,7 +30,7 @@ class UserController extends Controller {
 	//登录
 	public function logIn(){
 		if (IS_POST) {
-			$user_info=D('User')->getUserInfoByPwd(I('post.inputUserName'),I('post.inputPassword'));
+			$user_info=D('User')->logInWithTel(I('post.inputUserName'),I('post.inputPassword'));
 			if ($user_info) {
 				session('user',$user_info);
 				$this->success('操作完成','/Home/Index/index',2);		
@@ -46,7 +46,7 @@ class UserController extends Controller {
 	// 首页快速登录
 	public function logInAj(){
 		if (IS_POST) {
-			$user_info=D('User')->getUserInfoByPwd(I('post.user'),I('post.pwd'));
+			$user_info=D('User')->logInWithTel(I('post.user'),I('post.pwd'));
 			$msg = array();
 			if ($user_info) {
 				session('user',$user_info);

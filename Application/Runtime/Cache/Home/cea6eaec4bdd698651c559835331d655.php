@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>主页</title>
+	<title>个人中心</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -106,7 +106,7 @@
 									<li>
 										<form class="login-form margin-clear">
 											<div class="form-group has-feedback">
-												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
+												<label  class="control-label">用户名 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
 												<i class="fa fa-user form-control-feedback"></i>
 											</div>
@@ -256,14 +256,18 @@
 											<a href="mailto:theproject@info.com" class="btn btn-lg visible-xs btn-block btn-white">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
 										</div>
 										<!-- header buttons end-->
+
 									</div>
+
 								</div>
 							</nav>
 							<!-- navbar end -->
+
 						</div>
 						<!-- main-navigation end -->
 					</div>
 					<!-- header-right end -->
+					
 				</div>
 			</div>
 		</div>
@@ -272,40 +276,154 @@
 	<!-- header end -->
 </div>
 			<!-- header-container end -->
-		<!--内容区:  -->
+					<!-- Offcanvas side start -->
+			<div class="offcanvas-container">
+				<nav id="offcanvas" class="animated navmenu navmenu-default navmenu-fixed-left offcanvas offcanvas-left" role="navigation">
+					<!-- 头像 -->
+					<div class="logo">
+						<a href="index.html"><img id="logo" src="/Public/images/logo_light_blue.png" alt="The Project"></a>
+					</div>
 
-		<div class="container-fluid">
-			<div class="row">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>user_name</th>
-							<th>user_pwd</th>
-							<th>email</th>
-							<th>tel</th>
-							<th>reg_time</th>
-							<th>last_log_time</th>
-							<th>update_time</th>
-							<th>reg_ip</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php if(is_array($info)): foreach($info as $key=>$vo): ?><tr>
-								<td><?php echo ($vo["id"]); ?></td>
-								<td><?php echo ($vo["user_name"]); ?></td>
-								<td><?php echo ($vo["user_pwd"]); ?></td>
-								<td><?php echo ($vo["email"]); ?></td>
-								<th><?php echo ($vo["tel"]); ?></th>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['reg_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['last_log_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['update_time']);?></td>
-								<td><?php echo ($vo["reg_ip"]); ?></td>
-							</tr><?php endforeach; endif; ?>	
-					</tbody>
-				</table>
+					<!-- name-and-slogan -->
+					<div class="site-slogan">
+						gordongzp
+					</div>
+
+					<ul class="nav navbar-nav text-center">
+						<li class="active"><a href="<?php echo U('Home/UserCenter/index');?>">首页</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
+							<ul class="dropdown-menu">
+								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
+								<li><a href="#">设置用户头像</a></li>
+								<li><a href="#">邮箱认证</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Third Level Item 1</a></li>
+										<li><a href="#">Third Level Item 2</a></li>
+										<li><a href="#">Third Level Item 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="page-services.html">Services</a></li>
+						<li><a href="portfolio-grid-2-3-col.html">Portfolio</a></li>
+						<li><a href="shop-listing-3col.html">Shop</a></li>
+						<li><a href="page-contact.html">Contact</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Item With Submenu</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Second Level Item 1</a></li>
+								<li><a href="#">Second Level Item 2</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Third Level Item 1</a></li>
+										<li><a href="#">Third Level Item 2</a></li>
+										<li><a href="#">Third Level Item 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<button type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
+			</div>
+			<!-- offcanvas side end -->
+		<!-- breadcrumb start -->
+		<!-- ================ -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
+					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
+					<li class="active">基本资料</li>
+				</ol>
 			</div>
 		</div>
+		<!-- breadcrumb end -->
+
+		<!-- main-container start -->
+		<!-- ================ -->
+		<section class="main-container">
+
+			<div class="container">
+				<div class="row">
+
+					<!-- main start -->
+					<!-- ================ -->
+					<div class="main col-md-12">
+
+						<!-- page-title start -->
+						<!-- ================ -->
+						<h1 class="page-title">基本资料</h1>
+						<div class="separator-2"></div>
+						<!-- page-title end -->
+						<div class="row">
+							<div class="col-sm-9 col-lg-8">
+								<!-- tabs start -->
+								<!-- ================ -->
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs style-2" role="tablist">
+									<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
+									<li><a href="#">个人头像</a></li>
+									<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
+									<li><a href="#">更换手机</a></li>
+									<li><a href="#">邮箱认证</a></li>
+									<li><a href="#">实名认证</a></li>
+								</ul>
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div class="tab-pane in active" id="h2tab1">
+										<div class="row">
+											<div class="col-sm-5">
+												<form action="" method="POST" role="form">
+													<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
+													<div class="form-group">
+														<label for="">原密码</label>
+														<input name="old_pwd" type="password" class="form-control" id="" placeholder="">
+													</div>
+													<div class="form-group">
+														<label for="">新密码</label>
+														<input name="pwd" type="password" class="form-control" id="" placeholder="<?php echo ($msg["user_pwd"]); ?>">
+													</div>
+													<div class="form-group">
+														<label for="">确认密码</label>
+														<input name="pwd2" type="password" class="form-control" id="" placeholder="<?php echo ($msg["user_pwd2"]); ?>">
+													</div>
+													<button type="submit" class="btn btn-primary">保存</button>
+												</form>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- tabs end -->
+
+							</div>
+														<div class="col-sm-3 col-lg-offset-1">
+								<h3 class="title">Contact Me</h3>
+								<ul class="list-icons">
+									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
+									<li><i class="fa fa-mobile pr-10 text-default"></i> +00 1234567890</li>
+									<li><a href="mailto:info@janedoe.com"><i class="fa fa-envelope-o pr-10"></i>info@janedoe.com</a></li>
+								</ul>
+								<h3>Follow Me</h3>
+								<div class="separator-2"></div>
+								<a target="_blank" href="https://www.linkedin.com" class="btn btn-animated linkedin btn-sm">Linkedin<i class="pl-10 fa fa-linkedin"></i></a>
+								<a target="_blank" href="https://www.xing.com/" class="btn btn-animated xing btn-sm">Xing<i class="fa fa-xing"></i></a>
+								<h3>See My Portfolio</h3>
+								<a class="btn btn-gray collapsed btn-animated" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Click Me <i class="fa fa-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- main end -->
+				</div>
+			</div>
+		</section>
+		<!-- main-container end -->
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -415,10 +533,8 @@
 
 			</footer>
 			<!-- footer end -->
-
 	</div>
 	<!-- page-wrapper end -->
-
 	<!-- 模板底部配置 -->
 	<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->
@@ -482,6 +598,9 @@
 	})
 </script>
 	<!-- 本页js -->
+	<script type="text/javascript">
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(3)').attr("class", "active");
+	</script>
 
 </body>
 </html>

@@ -18,10 +18,10 @@
 	<link rel="shortcut icon" href="/Public/images/favicon.ico">
 
 	<!-- Web Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'> -->
 
 	<!-- Bootstrap core CSS -->
 	<link href="/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 <!-- "transparent-header": makes the header transparent and pulls the banner to top -->
 <!-- "gradient-background-header": applies gradient background to header -->
 <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
-<body class="no-trans front-page transparent-header  ">
+<body class="no-trans front-page transparent-header  "style="height: 100%">
 
 	<!-- scrollToTop -->
 	<!-- ================ -->
@@ -65,14 +65,14 @@
 
 	<!-- page wrapper start -->
 	<!-- ================ -->
-	<div class="page-wrapper">
+	<div class="page-wrapper" style="height: 100%">
 		
 		<!-- background image -->
 		<div class="fullscreen-bg"></div>
 
 		<!-- banner start -->
 		<!-- ================ -->
-		<div class="pv-40 dark-translucent-bg">
+		<div style="height: 100%" class="pv-40 dark-translucent-bg">
 			<div class="container">
 				<div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
 					<!-- logo -->
@@ -137,7 +137,7 @@
 											<button type="submit" class="btn btn-group btn-default btn-animated">注册 <i class="fa fa-check"></i></button>
 										</div>
 										<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-											<button stype="button" class="btn btn-group btn-default btn-animated" onclick="javascript:window.location.href='<?php echo U('Home/Index/index');?>';">返回 <i class="fa fa-reply-all"></i></button>
+											<button type="button" class="btn btn-group btn-default btn-animated" onclick="javascript:window.location.href='<?php echo U('Home/Index/index');?>';">返回 <i class="fa fa-reply-all"></i></button>
 										</div>
 									</div>
 								</div>
@@ -145,52 +145,7 @@
 						</form>
 					</div>
 
-
-
-					<!-- modal -->
-					<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">按钮名称</button>
-
-					<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-sm">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-									<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-								</div>
-								<div class="modal-body">
-									<p>请输入正确的手机号码</p>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<button style="display: none;" id="modal_btn2" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
-
-					<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-sm">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-									<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-								</div>
-								<div class="modal-body">
-									<p>请输入正确的验证码</p>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- modal end-->
-
-
-
-
-					<div id="block2" style="display: none;margin-bottom: 259.578px" class="form-block center-block p-30 light-gray-bg border-clear text-left">
+					<div id="block2" style="display: none;" class="form-block center-block p-30 light-gray-bg border-clear text-left">
 						<h2 class="title">请输入验证码</h2>
 						<form method="post" class="form-horizontal" role="form">
 
@@ -220,10 +175,52 @@
 					<!-- ================ -->
 					<p class="mt-20">Copyright © 2015 The Project by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
 					<!-- .subfooter end -->
+
+
 				</div>
 			</div>
 		</div>
 		<!-- banner end -->
+
+		<!-- modal -->
+		<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">按钮名称</button>
+
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
+					</div>
+					<div class="modal-body">
+						<p>请输入正确的手机号码</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button style="display: none;" id="modal_btn2" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
+
+		<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
+					</div>
+					<div class="modal-body">
+						<p>请输入正确的验证码</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal end-->
 
 	</div>
 	<!-- page-wrapper end -->

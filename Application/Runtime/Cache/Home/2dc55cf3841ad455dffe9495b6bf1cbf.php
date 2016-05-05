@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>The Project | Home Portfolio/Agency</title>
+	<title>登录</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -18,10 +18,10 @@
 	<link rel="shortcut icon" href="/Public/images/favicon.ico">
 
 	<!-- Web Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'> -->
 
 	<!-- Bootstrap core CSS -->
 	<link href="/Public/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -38,8 +38,9 @@
 	<link href="/Public/css/animations.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">		
-
+	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">	
+	<!-- The Project core CSS file后加 -->
+	<link href="/Public/plugins/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
 	<!-- The Project core CSS file -->
 	<link href="/Public/css/style.css" rel="stylesheet" >
 	<!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
@@ -65,69 +66,69 @@
 	<!-- page wrapper start -->
 	<!-- ================ -->
 	<div class="page-wrapper">
-		
-			<!-- background image -->
-			<div class="fullscreen-bg"></div>
+		<!-- background image -->
+		<div class="fullscreen-bg"></div>
 
-			<!-- banner start -->
-			<!-- ================ -->
-			<div class="pv-40 dark-translucent-bg">
-				<div class="container">
-					<div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
-						<!-- logo -->
-						<div id="logo" class="logo">
-							<h3 class="margin-clear"><a href="index.html" class="logo-font link-light">The <span class="text-default">Project</span></a></h3>
-						</div>
-						<!-- name-and-slogan -->
-						<p class="small">Multipurpose HTML5 Template</p>
-						<div class="form-block center-block p-30 light-gray-bg border-clear">
-							<h2 class="title text-left">登录</h2>
-							<form method="post" class="form-horizontal text-left" action="<?php echo U('Home/User/logIn');?>">
-								<div class="form-group has-feedback">
-									<label for="inputUserName" class="col-sm-3 control-label">用户名</label>
-									<div class="col-sm-8">
-										<input name="inputUserName" type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
-										<i class="fa fa-user form-control-feedback"></i>
-									</div>
-								</div>
-								<div class="form-group has-feedback">
-									<label for="inputPassword" class="col-sm-3 control-label">密码</label>
-									<div class="col-sm-8">
-										<input name="inputPassword" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
-										<i class="fa fa-lock form-control-feedback"></i>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-offset-3 col-sm-8">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" required> 记住我
-											</label>
-										</div>
-										<button type="submit" class="btn btn-group btn-default btn-animated">登录 <i class="fa fa-user"></i></button>
-										<ul class="space-top">
-											<li><a href="#">忘记密码?</a></li>
-										</ul>
-										<span class="text-muted">Login with</span>
-										<ul class="social-links colored circle clearfix">
-											<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-											<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-							<p>还没有账号? 立马<a href="page-signup-2.html">注册</a></p>
-						</div>
-						<!-- .subfooter start -->
-						<!-- ================ -->
-						<p class="mt-20">Copyright © 2015 The Project by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
-						<!-- .subfooter end -->
+		<!-- banner start -->
+		<!-- ================ -->
+		<div class="pv-40 dark-translucent-bg">
+			<div class="container">
+				<div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
+					<!-- logo -->
+					<div id="logo" class="logo">
+						<h3 class="margin-clear"><a href="index.html" class="logo-font link-light">The <span class="text-default">Project</span></a></h3>
 					</div>
+					<!-- name-and-slogan -->
+					<p class="small">Multipurpose HTML5 Template</p>
+					<div class="form-block center-block p-30 light-gray-bg border-clear">
+						<h2 class="title text-left">登录</h2>
+
+						<form method="post" class="form-horizontal text-left" action="<?php echo U('Home/User/logIn');?>">
+							<div class="form-group has-feedback">
+								<label for="inputUserName" class="col-sm-3 control-label">用户名</label>
+								<div class="col-sm-8">
+									<input name="inputUserName" type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
+									<i class="fa fa-user form-control-feedback"></i>
+								</div>
+							</div>
+							<div class="form-group has-feedback">
+								<label for="inputPassword" class="col-sm-3 control-label">密码</label>
+								<div class="col-sm-8">
+									<input name="inputPassword" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+									<i class="fa fa-lock form-control-feedback"></i>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-3 col-sm-8">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" required> 记住我
+										</label>
+									</div>
+									<button type="submit" class="btn btn-group btn-default btn-animated">登录 <i class="fa fa-user"></i></button>
+									<button style="margin-left: 50px" type="button" class="btn btn-group btn-default btn-animated" onclick="javascript:window.location.href='/Home/Index/index.html';">返回 <i class="fa fa-reply-all"></i></button>
+									<ul class="space-top">
+										<li><a href="#">忘记密码?</a></li>
+									</ul>
+									<span class="text-muted">Login with</span>
+									<ul class="social-links colored circle clearfix">
+										<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+										<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+										<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+						<p>还没有账号? 立马<a href="<?php echo U('Home/User/signUp');?>">注册</a></p>
+					</div>
+					<!-- .subfooter start -->
+					<!-- ================ -->
+					<p class="mt-20">Copyright © 2015 The Project by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
+					<!-- .subfooter end -->
 				</div>
 			</div>
-			<!-- banner end -->
-
+		</div>
+		<!-- banner end -->
 	</div>
 	<!-- page-wrapper end -->
 
@@ -142,6 +143,8 @@
 <!-- jQuery Revolution Slider  -->
 <script type="text/javascript" src="/Public/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
 <script type="text/javascript" src="/Public/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<!-- Jasny Bootstrap  -->
+<script type="text/javascript" src="/Public/plugins/jasny-bootstrap/js/jasny-bootstrap.js"></script>
 <!-- Isotope javascript -->
 <script type="text/javascript" src="/Public/plugins/isotope/isotope.pkgd.min.js"></script>
 <!-- Magnific Popup javascript -->
@@ -165,6 +168,32 @@
 <script type="text/javascript" src="/Public/js/template.js"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
+
+<!-- Custom Scripts2带有模板函数。。。 -->
+<script type="text/javascript">
+	if (<?php echo is_login();?>) {
+		$('#uinfo').css("display","");
+		$('#dm').css("display","none");
+	}
+
+	$(function(){
+		$('#btn').click(function(){
+			var user=$('#username').val();
+			var pwd=$('#pwd').val();
+			var action='<?php echo U('Home/User/logInAj');?>';
+			$.post(action,{user:user,pwd:pwd},function(data){
+				if (data.stage) {
+					$('#uinfo').css("display","");
+					$('#dm').css("display","none");	
+					document.getElementById("li_name").innerHTML=data.msg.user_name;
+				}else{
+					document.getElementById("tip").innerHTML=data.msg;
+				}
+
+			});
+		})
+	})
+</script>
 	<!-- 本页js -->
 
 </body>
