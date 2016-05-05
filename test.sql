@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016-05-05 12:20:44
+-- Generation Time: 2016-05-05 19:44:49
 -- 服务器版本： 5.6.21
 -- PHP Version: 5.6.3
 
@@ -36,14 +36,14 @@ CREATE TABLE IF NOT EXISTS `xy_user` (
   `update_time` int(11) NOT NULL COMMENT '修改时间',
   `reg_ip` varchar(15) NOT NULL COMMENT '注册ip地址',
   `last_log_time` int(11) NOT NULL COMMENT '最后登录日期'
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `xy_user`
 --
 
 INSERT INTO `xy_user` (`id`, `user_name`, `user_pwd`, `email`, `tel`, `reg_time`, `update_time`, `reg_ip`, `last_log_time`) VALUES
-(28, 'gordongzp', '11790dce4678bd6798226bbd753d18a5', '', '18112512811', 1462443125, 0, '0.0.0.0', 1462443125);
+(30, 'gordongzp', '11790dce4678bd6798226bbd753d18a5', '', '15251900524', 1462460072, 1462467257, '0.0.0.0', 1462467257);
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `xy_user`
 -- AUTO_INCREMENT for table `xy_user`
 --
 ALTER TABLE `xy_user`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=29;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=31;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
