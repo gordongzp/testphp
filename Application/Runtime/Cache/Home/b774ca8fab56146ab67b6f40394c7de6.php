@@ -100,9 +100,6 @@
 						<!-- header top dropdowns start -->
 						<!-- ================ -->
 						<div id="dm" class="header-top-dropdown text-right">
-							<div class="btn-group">
-								<a href="<?php echo U('Home/User/signUp');?>" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> 注册 </a>
-							</div>
 							<div class="btn-group dropdown">
 								<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> 登录 </button>
 								<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
@@ -134,6 +131,9 @@
 									</li>
 								</ul>
 							</div>
+							<div class="btn-group">
+								<a href="<?php echo U('Home/User/signUp');?>" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> 注册 </a>
+							</div>
 						</div>
 						<!--  header top dropdowns end -->
 
@@ -142,7 +142,7 @@
 						<ul id="uinfo" style="display: none;" class="list-inline hidden-sm hidden-xs">
 							<li>欢迎您：</li>
 							<li id="li_name"><?php echo is_login()['user_name'];?></li>
-							<li id="li_link"><a href="<?php echo U('Home/User/index');?>">进入个人中心</a></li>
+							<li id="li_link"><a href="<?php echo U('Home/UserCenter/index');?>">进入个人中心</a></li>
 							<li><a href="<?php echo U('Home/User/logOut');?>">退出登录</a></li>
 						</ul>
 						<!--  header top dropdowns end -->
@@ -222,7 +222,7 @@
 
 											<!-- mega-menu start -->
 											<li class=" active mega-menu">
-												<a href="./" class="dropdown-toggle" >首页</a>
+												<a href="<?php echo U('Home/Index/index');?>" class="dropdown-toggle" >首页</a>
 											</li>
 											<!-- mega-menu end -->
 											<!-- mega-menu start -->
@@ -290,11 +290,11 @@
 					</div>
 
 					<ul class="nav navbar-nav text-center">
-						<li class="active"><a href="<?php echo U('Home/User/index');?>">首页</a></li>
+						<li class="active"><a href="<?php echo U('Home/UserCenter/index');?>">首页</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
 							<ul class="dropdown-menu">
-								<li><a href="#">填写个人资料</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
 								<li><a href="#">设置用户头像</a></li>
 								<li><a href="#">邮箱认证</a></li>
 								<li class="dropdown">
@@ -344,6 +344,7 @@
 			</div>
 		</div>
 		<!-- breadcrumb end -->
+
 		<!-- main-container start -->
 		<!-- ================ -->
 		<section class="main-container">
@@ -403,7 +404,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-3 col-lg-offset-1">
+									<div class="col-sm-3 col-lg-offset-1">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>

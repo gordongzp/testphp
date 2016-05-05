@@ -8,7 +8,7 @@ function check_verify($code, $id = ''){
 	$verify = new \Think\Verify();
 	return $verify->check($code, $id);
 }
-
+// 检测是否处于登录状态，是返回用户信息，否返回0
 function is_login(){
 	if (session('user')) {
 		return session('user');
@@ -17,7 +17,7 @@ function is_login(){
 	}
 }
 
-
+// 短信公司api
 function tel_get($url){
 	if(function_exists('file_get_contents'))
 	{
@@ -36,10 +36,20 @@ function tel_get($url){
 	return $file_contents;
 }
 
-
-function send_sms($tel,$check){
-	$url='http://sms.webchinese.cn/web_api/?Uid='.__UID__.'&Key='.__KEY__.'&smsMob='.$tel.'&smsText='.$check;
+// 短信收发函数
+function send_sms($tel,$msg){
+	$url='http://utf8.sms.webchinese.cn/?Uid='.__UID__.'&Key='.__KEY__.'&smsMob='.$tel.'&smsText='.$msg;
 	return tel_get($url);
+}
+
+//验证手机验证码
+function verify_tel_check($check,$tel){
+	if (session('check_tel.check')==$check&&session('check_tel.tel')==$tel) {
+		session('check_tel',null);
+		return 1;
+	}else{
+		return 0;
+	}
 }
 
 ?>

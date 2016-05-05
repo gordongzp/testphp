@@ -7,8 +7,6 @@ class IndexController extends Controller {
 		$this->assign('info',$info);
 		$this->display();
 	}
-	public function test(){
-		dump(send_sms('13921088981','4132'));
-	}
 
+	
 }

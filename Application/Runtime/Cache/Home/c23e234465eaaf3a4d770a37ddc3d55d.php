@@ -100,9 +100,6 @@
 						<!-- header top dropdowns start -->
 						<!-- ================ -->
 						<div id="dm" class="header-top-dropdown text-right">
-							<div class="btn-group">
-								<a href="<?php echo U('Home/User/signUp');?>" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> 注册 </a>
-							</div>
 							<div class="btn-group dropdown">
 								<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> 登录 </button>
 								<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
@@ -134,6 +131,9 @@
 									</li>
 								</ul>
 							</div>
+							<div class="btn-group">
+								<a href="<?php echo U('Home/User/signUp');?>" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> 注册 </a>
+							</div>
 						</div>
 						<!--  header top dropdowns end -->
 
@@ -142,7 +142,7 @@
 						<ul id="uinfo" style="display: none;" class="list-inline hidden-sm hidden-xs">
 							<li>欢迎您：</li>
 							<li id="li_name"><?php echo is_login()['user_name'];?></li>
-							<li id="li_link"><a href="<?php echo U('Home/User/index');?>">进入个人中心</a></li>
+							<li id="li_link"><a href="<?php echo U('Home/UserCenter/index');?>">进入个人中心</a></li>
 							<li><a href="<?php echo U('Home/User/logOut');?>">退出登录</a></li>
 						</ul>
 						<!--  header top dropdowns end -->
@@ -222,7 +222,7 @@
 
 											<!-- mega-menu start -->
 											<li class=" active mega-menu">
-												<a href="./" class="dropdown-toggle" >首页</a>
+												<a href="<?php echo U('Home/Index/index');?>" class="dropdown-toggle" >首页</a>
 											</li>
 											<!-- mega-menu end -->
 											<!-- mega-menu start -->
@@ -290,11 +290,11 @@
 					</div>
 
 					<ul class="nav navbar-nav text-center">
-						<li class="active"><a href="<?php echo U('Home/User/index');?>">首页</a></li>
+						<li class="active"><a href="<?php echo U('Home/UserCenter/index');?>">首页</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
 							<ul class="dropdown-menu">
-								<li><a href="#">填写个人资料</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
 								<li><a href="#">设置用户头像</a></li>
 								<li><a href="#">邮箱认证</a></li>
 								<li class="dropdown">
@@ -331,19 +331,19 @@
 				<button type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
 			</div>
 			<!-- offcanvas side end -->
-
-
 		<!-- breadcrumb start -->
 		<!-- ================ -->
 		<div class="breadcrumb-container">
 			<div class="container">
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
-					<li class="active">个人中心</li>
+					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
+					<li class="active">基本资料</li>
 				</ol>
 			</div>
 		</div>
 		<!-- breadcrumb end -->
+
 		<!-- main-container start -->
 		<!-- ================ -->
 		<section class="main-container">
@@ -357,53 +357,19 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">Jane Doe</h1>
+						<h1 class="page-title">基本资料</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-4">
-								<div class="image-box team-member shadow mb-20">
-									<div class="overlay-container overlay-visible">
-										<img src="/Public/images/team-member-3.jpg" alt="">
-										<a href="/Public/images/team-member-3.jpg" class="popup-img overlay-link" title="Jane Doe - CEO"><i class="icon-plus-1"></i></a>
-										<div class="overlay-bottom">
-											<div class="text">
-												<h3 class="title margin-clear">Jane Doe</h3>
-												<p class="margin-clear">CTO</p>
-											</div>
-										</div>
-									</div>
-								</div>
+							<div class="col-sm-9 col-lg-8">
+
+
+hello
+
+
+
 							</div>
-							<div class="col-lg-4 col-sm-5">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus nam, vitae autem quis, deserunt pariatur! At, atque inventore.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam esse laudantium maiores aperiam illo fugit laboriosam velit repellendus quod cumque ea vero vitae quo enim fugiat itaque harum assumenda aut quis, dolore. Sit reiciendis eligendi, recusandae eaque est optio reprehenderit!</p>
-								<div class="progress style-2 dark">
-									<span class="text"></span>
-									<div class="progress-bar progress-bar-white" role="progressbar" data-animate-width="95%">
-										<span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">CSS</span>
-									</div>
-								</div>
-								<div class="progress style-2 dark">
-									<span class="text"></span>
-									<div class="progress-bar progress-bar-white" role="progressbar" data-animate-width="85%">
-										<span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">HTML5</span>
-									</div>
-								</div>
-								<div class="progress style-2 dark">
-									<span class="text"></span>
-									<div class="progress-bar progress-bar-white" role="progressbar" data-animate-width="95%">
-										<span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">Design</span>
-									</div>
-								</div>
-								<div class="progress style-2 dark">
-									<span class="text"></span>
-									<div class="progress-bar progress-bar-white" role="progressbar" data-animate-width="80%">
-										<span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">PHP</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-lg-offset-1">
+														<div class="col-sm-3 col-lg-offset-1">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
@@ -418,116 +384,12 @@
 								<a class="btn btn-gray collapsed btn-animated" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Click Me <i class="fa fa-plus"></i></a>
 							</div>
 						</div>
-
 					</div>
 					<!-- main end -->
-
 				</div>
 			</div>
 		</section>
 		<!-- main-container end -->
-
-		<!-- section start -->
-		<!-- ================ -->
-		<section id="collapseContent" class="collapse pv-20 light-gray-bg clearfix">
-			<div class="container">
-				<h3>Latest <strong>Projects</strong></h3>
-				<div class="separator-2 mb-20"></div>
-				<div class="image-box style-3-b">
-					<div class="row">
-						<div class="col-sm-6 col-md-3">
-							<div class="overlay-container">
-								<img src="/Public/images/portfolio-1.jpg" alt="">
-								<div class="overlay-to-top">
-									<p class="small margin-clear"><em>Some info <br> Lorem ipsum dolor sit</em></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-9">
-							<div class="body">
-								<h3 class="title">Project Title</h3>
-								<p class="small mb-10"><i class="icon-calendar"></i> Feb, 2015 <i class="pl-10 icon-tag-1"></i> Web Design</p>
-								<div class="separator-2"></div>
-								<p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque ipsam nihialal. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam laudantium, provident culpa saepe.</p>
-								<a href="#" class="btn btn-default btn-sm btn-hvr hvr-shutter-out-horizontal margin-clear">Read More<i class="fa fa-arrow-right pl-10"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="image-box style-3-b">
-					<div class="row">
-						<div class="col-sm-6 col-md-3">
-							<div class="overlay-container">
-								<img src="/Public/images/portfolio-2.jpg" alt="">
-								<div class="overlay-to-top">
-									<p class="small margin-clear"><em>Some info <br> Lorem ipsum dolor sit</em></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-9">
-							<div class="body">
-								<h3 class="title">Project Title</h3>
-								<p class="small mb-10"><i class="icon-calendar"></i> Feb, 2015 <i class="pl-10 icon-tag-1"></i> Web Design</p>
-								<div class="separator-2"></div>
-								<p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque ipsam nihialal. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam laudantium, provident culpa saepe.</p>
-								<a href="#" class="btn btn-default btn-sm btn-hvr hvr-shutter-out-horizontal margin-clear">Read More<i class="fa fa-arrow-right pl-10"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="image-box style-3-b">
-					<div class="row">
-						<div class="col-sm-6 col-md-3">
-							<div class="overlay-container">
-								<img src="/Public/images/portfolio-3.jpg" alt="">
-								<div class="overlay-to-top">
-									<p class="small margin-clear"><em>Some info <br> Lorem ipsum dolor sit</em></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-9">
-							<div class="body">
-								<h3 class="title">Project Title</h3>
-								<p class="small mb-10"><i class="icon-calendar"></i> Feb, 2015 <i class="pl-10 icon-tag-1"></i> Web Design</p>
-								<div class="separator-2"></div>
-								<p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque ipsam nihialal. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam laudantium, provident culpa saepe.</p>
-								<a href="#" class="btn btn-default btn-sm btn-hvr hvr-shutter-out-horizontal margin-clear">Read More<i class="fa fa-arrow-right pl-10"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<nav>
-					<ul class="pagination">
-						<li><a href="#" aria-label="Previous"><i class="fa fa-angle-left"></i></a></li>
-						<li class="active"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#" aria-label="Next"><i class="fa fa-angle-right"></i></a></li>
-					</ul>
-				</nav>
-
-			</div>
-		</section>
-		<!-- section end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -637,10 +499,8 @@
 
 			</footer>
 			<!-- footer end -->
-
 	</div>
 	<!-- page-wrapper end -->
-
 	<!-- 模板底部配置 -->
 	<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->

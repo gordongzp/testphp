@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>主页</title>
+	<title>个人中心</title>
 	<!-- 模板上部配置 -->
 	<include file="Public/con_t" />
 	<!-- 本页css -->
@@ -28,47 +28,55 @@
 	<div class="page-wrapper">
 		
 		<include file="Public/header" />
-		<!--内容区:  -->
-
-		<div class="container-fluid">
-			<div class="row">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>user_name</th>
-							<th>user_pwd</th>
-							<th>email</th>
-							<th>tel</th>
-							<th>reg_time</th>
-							<th>last_log_time</th>
-							<th>update_time</th>
-							<th>reg_ip</th>
-						</tr>
-					</thead>
-					<tbody>
-						<foreach name="info" item="vo" key="" >
-							<tr>
-								<td>{$vo.id}</td>
-								<td>{$vo.user_name}</td>
-								<td>{$vo.user_pwd}</td>
-								<td>{$vo.email}</td>
-								<th>{$vo.tel}</th>
-								<td>{:date("Y-m-d h:i:sa",$vo['reg_time'])}</td>
-								<td>{:date("Y-m-d h:i:sa",$vo['last_log_time'])}</td>
-								<td>{:date("Y-m-d h:i:sa",$vo['update_time'])}</td>
-								<td>{$vo.reg_ip}</td>
-							</tr>	
-						</foreach>	
-					</tbody>
-				</table>
+		<include file="Public/user_center_left" />
+		<!-- breadcrumb start -->
+		<!-- ================ -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="{:U('Home/Index/index')}">首页</a></li>
+					<li class="active">个人中心</li>
+				</ol>
 			</div>
 		</div>
-		<include file="Public/footer" />
+		<!-- breadcrumb end -->
 
+		<!-- main-container start -->
+		<!-- ================ -->
+		<section class="main-container">
+
+			<div class="container">
+				<div class="row">
+
+					<!-- main start -->
+					<!-- ================ -->
+					<div class="main col-md-12">
+
+						<!-- page-title start -->
+						<!-- ================ -->
+						<h1 class="page-title">Jane Doe</h1>
+						<div class="separator-2"></div>
+						<!-- page-title end -->
+						<div class="row">
+							<div class="col-sm-9 col-lg-8">
+
+
+
+
+
+
+							</div>
+							<include file="Public/user_center_right" />
+						</div>
+					</div>
+					<!-- main end -->
+				</div>
+			</div>
+		</section>
+		<!-- main-container end -->
+		<include file="Public/footer" />
 	</div>
 	<!-- page-wrapper end -->
-
 	<!-- 模板底部配置 -->
 	<include file="Public/con_b" />
 	<!-- 本页js -->

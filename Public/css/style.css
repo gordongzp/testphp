@@ -5058,15 +5058,15 @@ header .dropdown-menu > li.active > a i.fa-circle-o:before {
 /* Arrow for parent menu item 
 ------------------------------ */
 .dropdown > a:before {
-  /*	font-family: 'FontAwesome';
-	content: "\f107";
-	position: absolute;
-	left: auto;
-	top: 31px;
-	right: 6px;
-	line-height: 1;
-	color: #d1d1d1;
-	font-size: 14px;*/
+  font-family: 'FontAwesome';
+  content: "\f107";
+  position: absolute;
+  left: auto;
+  top: 31px;
+  right: 6px;
+  line-height: 1;
+  color: #d1d1d1;
+  font-size: 14px;
 }
 .header.centered .dropdown > a:before {
   top: 18px;
@@ -5328,6 +5328,7 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 .dark.header .navbar-default .navbar-nav > .active > a,
 .dark.header .navbar-default .navbar-nav > .active > a:hover,
 .dark.header .navbar-default .navbar-nav > .active > a:focus {
+  font-weight: 550;
   background-color: transparent;
   color: #ffffff;
   border-right: 1px solid transparent;
@@ -6382,10 +6383,10 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 /* Login/Register Forms
 ---------------------------------- */
 .form-block {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  width: 630px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 550px;
 }
 .form-block .social-links {
   display: inline-block;
