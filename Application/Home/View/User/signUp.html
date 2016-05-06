@@ -76,7 +76,7 @@
 							<div class="form-group has-feedback">
 								<label for="inputPassword" class="col-sm-3 control-label">手机验证码 <span class="text-danger small">*</span></label>
 								<div class="col-sm-4">
-									<input name="check_tel" type="text" class="form-control" id="check_tel" placeholder="" required>
+									<input name="check_tel" id="check_tel" type="text" class="form-control"  placeholder="" required>
 									<i class="fa fa-cog form-control-feedback"></i>
 								</div>
 								<div class="col-sm-4"><button id="send1" type="button" class="btn btn-animated btn-gray btn-sm"  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span></div>
@@ -203,26 +203,25 @@
 				$.post(action,{check:check},function(data){
 					if (data) {
 						var action2="{:U('Home/User/send_tel_check')}";
+						$('#block1').css("display","");
+						$('#block2').css("display","none");	
+						$('#send1').css("display","none");
+						$('#time').text(60);//将发送验证码改为等待时间
+						$('#time_tip').css("display","");	
+						(function(){
+							var wait = document.getElementById('time');
+							var interval = setInterval(function(){
+								var time = --wait.innerHTML;
+								if(time <= 0) {
+									$('#send1').css("display","");
+									$('#time').text('');
+									$('#time_tip').css("display","none");
+									clearInterval(interval);
+								};
+							}, 1000);
+						})();							
 						$.post(action2,{tel:tel},function(data2){
-							console.log(data2);
-							$('#block1').css("display","");
-							$('#block2').css("display","none");	
-							$('#send1').css("display","none");
-							$('#time').text(60);//将发送验证码改为等待时间
-							$('#time_tip').css("display","");
-							(function(){
-								var wait = document.getElementById('time');
-								var interval = setInterval(function(){
-									var time = --wait.innerHTML;
-									if(time <= 0) {
-										$('#send1').css("display","");
-										$('#time').text('');
-										$('#time_tip').css("display","none");
-										clearInterval(interval);
-									};
-								}, 1000);
-							})();
-
+							console.log(data2.stage);
 						});
 					}else{
 						$("#modal_btn2").trigger("click");

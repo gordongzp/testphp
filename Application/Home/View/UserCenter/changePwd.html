@@ -36,7 +36,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="{:U('Home/Index/index')}">首页</a></li>
 					<li><a class="link-dark" href="{:U('Home/UserCenter/index')}">个人中心</a></li>
-					<li class="active">基本资料</li>
+					<li class="active">修改密码</li>
 				</ol>
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">基本资料</h1>
+						<h1 class="page-title">修改密码</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -63,14 +63,7 @@
 								<!-- tabs start -->
 								<!-- ================ -->
 								<!-- Nav tabs -->
-								<ul class="nav nav-tabs style-2" role="tablist">
-									<li><a href="{:U('Home/UserCenter/basicInfo')}">基本资料</a></li>
-									<li><a href="#">个人头像</a></li>
-									<li><a href="{:U('Home/UserCenter/changePwd')}">修改密码</a></li>
-									<li><a href="#">更换手机</a></li>
-									<li><a href="#">邮箱认证</a></li>
-									<li><a href="#">实名认证</a></li>
-								</ul>
+								<include file="Public/user_center_tab" />
 
 								<!-- Tab panes -->
 								<div class="tab-content">

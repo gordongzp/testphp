@@ -41,16 +41,6 @@ class UserModel extends Model {
 		}
 	}
 
-//用户名+密码方式验证身份
-	public function getUserInfoByPwd($username,$pwd){ 
-		$condition = array('user_name' => $username,'user_pwd' => md10($pwd));
-		$info=$this->where($condition)->find();
-		if ($info) {
-			$info['user_pwd']='';
-		}
-		return $info;
-	}
-
 //用户名/手机+密码方式验证身份
 	public function logInWithTel($username_or_tel,$pwd){ 
 		$condition_tem=array('user_name' =>$username_or_tel,'tel' => $username_or_tel,'_logic'=>'or');
@@ -62,7 +52,7 @@ class UserModel extends Model {
 		return $info;
 	}
 
-//重置密码
+//created方法重置密码
 	public function setPwd(){ 
 		if (!$this->create()) {
 			return $this->getError();
@@ -71,4 +61,24 @@ class UserModel extends Model {
 			return NULL;
 		}
 	}
+
+
+//普通方法重置密码
+	public function setPwdByTel($tel,$pwd){ 
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			$condition = array('tel' => $tel, );
+			$data = array('user_pwd' => md10($pwd), );
+			if (!$this->where($condition)->select()) {
+				//失败
+				return array('tel' => '此号码没有注册', );
+			}else{
+				//成功
+				$this->where($condition)->save($data);
+				return null;
+			}
+		}
+	}
+
 }

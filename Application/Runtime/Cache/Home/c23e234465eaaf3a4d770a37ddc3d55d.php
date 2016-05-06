@@ -106,7 +106,7 @@
 									<li>
 										<form class="login-form margin-clear">
 											<div class="form-group has-feedback">
-												<label  class="control-label">用户名 <span id="tip" style="color: red"></span></label>
+												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
 												<i class="fa fa-user form-control-feedback"></i>
 											</div>
@@ -256,18 +256,14 @@
 											<a href="mailto:theproject@info.com" class="btn btn-lg visible-xs btn-block btn-white">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
 										</div>
 										<!-- header buttons end-->
-
 									</div>
-
 								</div>
 							</nav>
 							<!-- navbar end -->
-
 						</div>
 						<!-- main-navigation end -->
 					</div>
 					<!-- header-right end -->
-					
 				</div>
 			</div>
 		</div>
@@ -296,7 +292,10 @@
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
 								<li><a href="#">设置用户头像</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="#">邮箱认证</a></li>
+
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
 									<ul class="dropdown-menu">
@@ -364,14 +363,16 @@
 								<!-- tabs start -->
 								<!-- ================ -->
 								<!-- Nav tabs -->
-								<ul class="nav nav-tabs style-2" role="tablist">
-									<li><a href="#">基本资料</a></li>
-									<li><a href="#">个人头像</a></li>
-									<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
-									<li><a href="#">更换手机</a></li>
-									<li><a href="#">邮箱认证</a></li>
-									<li><a href="#">实名认证</a></li>
-								</ul>
+								<!-- Nav tabs -->
+<ul class="nav nav-tabs style-2" role="tablist">
+	<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
+	<li><a href="#">个人头像</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
+	<li><a href="#">更换手机</a></li>
+	<li><a href="#">邮箱认证</a></li>
+	<li><a href="#">实名认证</a></li>
+</ul>
 								<!-- Tab panes -->
 								<div class="tab-content">
 									<div class="tab-pane in active" id="h2tab1">

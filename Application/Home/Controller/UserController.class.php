@@ -13,7 +13,7 @@ class UserController extends Controller {
 			if (verify_tel_check(I('post.check_tel'),I('post.tel'))) {//验证手机验证码
 				$msg=D('User')->register();
 				if (!$msg) {
-					session('user',D('user')->getUserInfoByPwd(I('post.username'),I('post.pwd')));
+					session('user',D('user')->logInWithTel(I('post.username'),I('post.pwd')));
 					$this->success('操作完成','/Home/Index/index',2);
 				}else{
 					$this->error('请输入正确注册信息',U('Home/User/signUp',array('msg'=>serialize($msg))),2);

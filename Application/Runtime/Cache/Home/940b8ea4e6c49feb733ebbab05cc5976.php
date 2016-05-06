@@ -106,7 +106,7 @@
 									<li>
 										<form class="login-form margin-clear">
 											<div class="form-group has-feedback">
-												<label  class="control-label">用户名 <span id="tip" style="color: red"></span></label>
+												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
 												<i class="fa fa-user form-control-feedback"></i>
 											</div>
@@ -119,7 +119,7 @@
 											<span class="pl-5 pr-5">or</span>
 											<button onclick="javascript:window.location.href='<?php echo U('Home/User/signUp');?>';" type="button" class="btn btn-default btn-sm">注册</button>
 											<ul>
-												<li><a href="#">忘记密码?</a></li>
+												<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">忘记密码?</a></li>
 											</ul>
 											<span class="text-center">Login with</span>
 											<ul class="social-links circle small colored clearfix">
@@ -256,18 +256,14 @@
 											<a href="mailto:theproject@info.com" class="btn btn-lg visible-xs btn-block btn-white">Contact Us <i class="fa fa-envelope-o pl-5"></i></a>
 										</div>
 										<!-- header buttons end-->
-
 									</div>
-
 								</div>
 							</nav>
 							<!-- navbar end -->
-
 						</div>
 						<!-- main-navigation end -->
 					</div>
 					<!-- header-right end -->
-					
 				</div>
 			</div>
 		</div>

@@ -119,7 +119,7 @@
 											<span class="pl-5 pr-5">or</span>
 											<button onclick="javascript:window.location.href='<?php echo U('Home/User/signUp');?>';" type="button" class="btn btn-default btn-sm">注册</button>
 											<ul>
-												<li><a href="#">忘记密码?</a></li>
+												<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">忘记密码?</a></li>
 											</ul>
 											<span class="text-center">Login with</span>
 											<ul class="social-links circle small colored clearfix">

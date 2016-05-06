@@ -85,7 +85,7 @@
 
 						<form method="post" class="form-horizontal text-left" action="<?php echo U('Home/User/logIn');?>">
 							<div class="form-group has-feedback">
-								<label for="inputUserName" class="col-sm-3 control-label">用户名</label>
+								<label for="inputUserName" class="col-sm-3 control-label">用户名/手机</label>
 								<div class="col-sm-8">
 									<input name="inputUserName" type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
 									<i class="fa fa-user form-control-feedback"></i>
@@ -108,7 +108,7 @@
 									<button type="submit" class="btn btn-group btn-default btn-animated">登录 <i class="fa fa-user"></i></button>
 									<button style="margin-left: 50px" type="button" class="btn btn-group btn-default btn-animated" onclick="javascript:window.location.href='/Home/Index/index.html';">返回 <i class="fa fa-reply-all"></i></button>
 									<ul class="space-top">
-										<li><a href="#">忘记密码?</a></li>
+										<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">忘记密码?</a></li>
 									</ul>
 									<span class="text-muted">Login with</span>
 									<ul class="social-links colored circle clearfix">
