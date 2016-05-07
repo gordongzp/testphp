@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>The Project | Home Portfolio/Agency</title>
+	<title>个人中心</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -272,14 +272,73 @@
 	<!-- header end -->
 </div>
 			<!-- header-container end -->
-		
+					<!-- Offcanvas side start -->
+			<div class="offcanvas-container">
+				<nav id="offcanvas" class="animated navmenu navmenu-default navmenu-fixed-left offcanvas offcanvas-left" role="navigation">
+					<!-- 头像 -->
+					<div class="logo">
+						<a href="index.html"><img id="logo" src="/Public/images/logo_light_blue.png" alt="The Project"></a>
+					</div>
+
+					<!-- name-and-slogan -->
+					<div class="site-slogan">
+						gordongzp
+					</div>
+
+					<ul class="nav navbar-nav text-center">
+						<li class="active"><a href="<?php echo U('Home/UserCenter/index');?>">首页</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
+							<ul class="dropdown-menu">
+								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
+								<li><a href="#">设置用户头像</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
+								<li><a href="#">邮箱认证</a></li>
+
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Third Level Item 1</a></li>
+										<li><a href="#">Third Level Item 2</a></li>
+										<li><a href="#">Third Level Item 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="page-services.html">Services</a></li>
+						<li><a href="portfolio-grid-2-3-col.html">Portfolio</a></li>
+						<li><a href="shop-listing-3col.html">Shop</a></li>
+						<li><a href="page-contact.html">Contact</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Item With Submenu</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Second Level Item 1</a></li>
+								<li><a href="#">Second Level Item 2</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Third Level Item 1</a></li>
+										<li><a href="#">Third Level Item 2</a></li>
+										<li><a href="#">Third Level Item 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<button type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
+			</div>
+			<!-- offcanvas side end -->
 		<!-- breadcrumb start -->
 		<!-- ================ -->
 		<div class="breadcrumb-container">
 			<div class="container">
 				<ol class="breadcrumb">
-					<li><i class="fa fa-home pr-10"></i><a href="/Home/Index/index">主页</a></li>
-					<li class="active">成功页面</li>
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
+					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
+					<li class="active">更换手机号</li>
 				</ol>
 			</div>
 		</div>
@@ -287,25 +346,134 @@
 
 		<!-- main-container start -->
 		<!-- ================ -->
-		<section class="main-container jumbotron light-gray-bg text-center margin-clear">
+		<section class="main-container">
 
 			<div class="container">
 				<div class="row">
 
 					<!-- main start -->
 					<!-- ================ -->
-					<div class="main col-md-6 col-md-offset-3 pv-40">
-						<h1 class="page-title"><span id="wait" class="text-default"><?php echo($waitSecond); ?></span></h1>
-						<h2>成功：<?php echo($message); ?></h2>
-						<a id="href" href="<?php echo($jumpUrl); ?>" class="btn btn-default btn-animated btn-lg">跳转 <i class="fa fa-home"></i></a>
+					<div class="main col-md-12">
+
+						<!-- page-title start -->
+						<!-- ================ -->
+						<h1 class="page-title">更换手机号</h1>
+						<div class="separator-2"></div>
+						<!-- page-title end -->
+						<div class="row">
+							<div class="col-sm-9 col-lg-8">
+								<!-- tabs start -->
+								<!-- ================ -->
+								<!-- Nav tabs -->
+								<!-- Nav tabs -->
+<ul class="nav nav-tabs style-2" role="tablist">
+	<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
+	<li><a href="#">个人头像</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
+	<li><a href="#">邮箱认证</a></li>
+	<li><a href="#">实名认证</a></li>
+</ul>
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div class="tab-pane in active" id="h2tab1">
+										<div class="row">
+											<div id="block1" class="col-sm-5">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/changeTel2');?>" method="POST" role="form">
+													<div class="form-group">
+														<label for="">新手机号</label>
+														<input name="tel" id="tel" type="test" class="form-control" placeholder="<?php echo ($msg["tel"]); ?>">
+													</div>
+													<div class="form-group">
+														<label for="">手机验证码</label>
+														<input name="check_tel" id="check_tel" type="text" class="form-control" id="" placeholder="">
+													</div>							
+													<button type="submit" class="btn btn-primary" style="margin-right: 20px">保存</button>
+													<button id="send1" type="button" class="btn btn-animated btn-gray "  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span>
+												</form>
+											</div>
+
+											<div id="block2" style="display: none;" class="col-sm-5">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
+													<legend>请输入验证码</legend>
+													<div class="col-sm-12"><img id="check_img" src="<?php echo U('Home/User/verify');?>"></div>
+													<div class="form-group">
+														<label for="">验证码</label>
+														<input name="check" id="check" type="text" class="form-control">
+													</div>
+													<button id="send2" type="button" class="btn btn-animated btn-gray " style="margin-right: 20px" >确认发送 <i class="fa fa-send-o"></i></button>
+													<button id="back" type="button" class="btn btn-group btn-default btn-animated" >返回 <i class="fa fa-reply-all"></i></button>
+												</form>
+											</div>
+
+
+											<!-- modal -->
+											<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">按钮名称</button>
+
+											<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-sm">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
+														</div>
+														<div class="modal-body">
+															<p>请输入正确的手机号码</p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<button style="display: none;" id="modal_btn2" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
+
+											<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-sm">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
+														</div>
+														<div class="modal-body">
+															<p>请输入正确的验证码</p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- modal end-->
+										</div>
+									</div>
+								</div>
+								<!-- tabs end -->
+							</div>
+														<div class="col-sm-3 col-lg-offset-1">
+								<h3 class="title">Contact Me</h3>
+								<ul class="list-icons">
+									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
+									<li><i class="fa fa-mobile pr-10 text-default"></i> +00 1234567890</li>
+									<li><a href="mailto:info@janedoe.com"><i class="fa fa-envelope-o pr-10"></i>info@janedoe.com</a></li>
+								</ul>
+								<h3>Follow Me</h3>
+								<div class="separator-2"></div>
+								<a target="_blank" href="https://www.linkedin.com" class="btn btn-animated linkedin btn-sm">Linkedin<i class="pl-10 fa fa-linkedin"></i></a>
+								<a target="_blank" href="https://www.xing.com/" class="btn btn-animated xing btn-sm">Xing<i class="fa fa-xing"></i></a>
+								<h3>See My Portfolio</h3>
+								<a class="btn btn-gray collapsed btn-animated" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Click Me <i class="fa fa-plus"></i></a>
+							</div>
+						</div>
 					</div>
 					<!-- main end -->
 				</div>
 			</div>
 		</section>
 		<!-- main-container end -->
-
-
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -415,10 +583,8 @@
 
 			</footer>
 			<!-- footer end -->
-
 	</div>
 	<!-- page-wrapper end -->
-
 	<!-- 模板底部配置 -->
 	<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->
@@ -483,16 +649,70 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		(function(){
-			var wait = document.getElementById('wait'),href = document.getElementById('href').href;
-			var interval = setInterval(function(){
-				var time = --wait.innerHTML;
-				if(time <= 0) {
-					location.href = href;
-					clearInterval(interval);
-				};
-			}, 1000);
-		})();
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(5)').attr("class", "active");
+
+		$(function(){
+			$('#check_img').click(function(){
+				$("#check_img").attr("src","<?php echo U('Home/User/verify');?>");
+			})
+		})
+
+		$(function(){
+			$('#send2').click(function(){
+				var tel=$('#tel').val();
+				var check=$('#check').val();
+				var action="<?php echo U('Home/User/verify_check');?>";
+				$.post(action,{check:check},function(data){
+					if (data) {
+						var action2="<?php echo U('Home/User/send_tel_check');?>";
+						$('#block1').css("display","");
+						$('#block2').css("display","none");	
+						$('#send1').css("display","none");
+						$('#time').text(60);//将发送验证码改为等待时间
+						$('#time_tip').css("display","");
+						(function(){
+							var wait = document.getElementById('time');
+							var interval = setInterval(function(){
+								var time = --wait.innerHTML;
+								if(time <= 0) {
+									$('#send1').css("display","");
+									$('#time').text('');
+									$('#time_tip').css("display","none");
+									clearInterval(interval);
+								};
+							}, 1000);
+						})();								
+						$.post(action2,{tel:tel},function(data2){
+							console.log(data2.stage);
+						});
+					}else{
+						$("#modal_btn2").trigger("click");
+					}
+				});				
+			})
+		})
+
+		$(function(){
+			$('#send1').click(function(){
+				//验证手机正确性
+				var tel=$('#tel').val();
+				regexp=/^1[3|4|5|8][0-9]\d{4,8}$/;
+				if(!regexp.test(tel)){
+					$("#modal_btn").trigger("click");
+				}else{
+					$('#block2').css("display","");
+					$('#block1').css("display","none");
+				}		
+			})
+		})
+
+		$(function(){
+			$('#back').click(function(){
+				$('#block1').css("display","");
+				$('#block2').css("display","none");				
+			})
+		})
+
 	</script>
 
 </body>

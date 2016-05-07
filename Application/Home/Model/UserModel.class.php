@@ -81,4 +81,23 @@ class UserModel extends Model {
 		}
 	}
 
+//更换手机
+	public function changeTel($old_tel,$new_tel){
+		$condition = array('tel' => $old_tel, );
+		$data = array('tel' => $new_tel, );
+		if (!$this->where($condition)->find()) {
+			//失败
+			return array('tel' => '此号码没有注册', );
+		}else{
+			//成功
+			//判断新号码是否存在
+			if ($this->where($data)->find()) {
+				//已存在
+				return array('tel' => '此号码已存在，请更换号码', );
+			}else{
+				$this->where($condition)->save($data);
+				return null;
+			}
+		}
+	} 
 }

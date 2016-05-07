@@ -43,7 +43,7 @@
 					<p class="small">Multipurpose HTML5 Template</p>
 					<div id="block1" class="form-block center-block p-30 light-gray-bg border-clear text-left">
 						<h2 class="title">用户注册</h2>
-						<form method="post" class="form-horizontal" role="form" action="{:U('Home/User/signUp')}">
+						<form onkeydown="if(event.keyCode==13){return false;}" method="post" class="form-horizontal" role="form" action="{:U('Home/User/signUp')}">
 							<div class="form-group has-feedback">
 								<label for="inputName" class="col-sm-3 control-label">用户名 <span class="text-danger small">*</span></label>
 								<div class="col-sm-8">
@@ -107,7 +107,7 @@
 
 					<div id="block2" style="display: none;" class="form-block center-block p-30 light-gray-bg border-clear text-left">
 						<h2 class="title">请输入验证码</h2>
-						<form method="post" class="form-horizontal" role="form">
+						<form onkeydown="if(event.keyCode==13){return false;}" method="post" class="form-horizontal" role="form">
 
 							<div class="form-group has-feedback">
 								<label class="col-sm-3 control-label">验证码 <span class="text-danger small">*</span></label>

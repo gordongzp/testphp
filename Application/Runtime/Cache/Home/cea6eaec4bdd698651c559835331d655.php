@@ -104,7 +104,7 @@
 								<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> 登录 </button>
 								<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 									<li>
-										<form class="login-form margin-clear">
+										<form onkeydown="if(event.keyCode==13){return false;}" class="login-form margin-clear">
 											<div class="form-group has-feedback">
 												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
@@ -294,6 +294,7 @@
 								<li><a href="#">设置用户头像</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
 								<li><a href="#">邮箱认证</a></li>
 
 								<li class="dropdown">
@@ -370,7 +371,7 @@
 	<li><a href="#">个人头像</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
-	<li><a href="#">更换手机</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
 	<li><a href="#">邮箱认证</a></li>
 	<li><a href="#">实名认证</a></li>
 </ul>
@@ -380,7 +381,7 @@
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
 											<div class="col-sm-5">
-												<form action="" method="POST" role="form">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
 													<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
 													<div class="form-group">
 														<label for="">原密码</label>

@@ -36,7 +36,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="{:U('Home/Index/index')}">首页</a></li>
 					<li><a class="link-dark" href="{:U('Home/UserCenter/index')}">个人中心</a></li>
-					<li class="active">密码找回</li>
+					<li class="active">更换手机号</li>
 				</ol>
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">密码找回</h1>
+						<h1 class="page-title">更换手机号</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -70,24 +70,16 @@
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
 											<div id="block1" class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="{:U('Home/UserCenter/comeBackPwd')}" method="POST" role="form">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="{:U('Home/UserCenter/changeTel2')}" method="POST" role="form">
 													<div class="form-group">
-														<label for="">注册手机号</label>
-														<input name="tel2" id="tel" type="test" class="form-control" placeholder="{$msg.tel}">
-													</div>
-													<div class="form-group">
-														<label for="">新密码</label>
-														<input name="pwd" type="password" class="form-control" id="" placeholder="{$msg.user_pwd}">
-													</div>
-													<div class="form-group">
-														<label for="">确认密码</label>
-														<input name="pwd2" type="password" class="form-control" id="" placeholder="{$msg.user_pwd2}">
+														<label for="">新手机号</label>
+														<input name="tel" id="tel" type="test" class="form-control" placeholder="{$msg.tel}">
 													</div>
 													<div class="form-group">
 														<label for="">手机验证码</label>
 														<input name="check_tel" id="check_tel" type="text" class="form-control" id="" placeholder="">
 													</div>							
-													<button type="submit" class="btn btn-primary" style="margin-right: 20px">提交</button>
+													<button type="submit" class="btn btn-primary" style="margin-right: 20px">保存</button>
 													<button id="send1" type="button" class="btn btn-animated btn-gray "  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span>
 												</form>
 											</div>
@@ -165,7 +157,7 @@
 	<include file="Public/con_b" />
 	<!-- 本页js -->
 	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(4)').attr("class", "active");
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(5)').attr("class", "active");
 
 		$(function(){
 			$('#check_img').click(function(){

@@ -104,7 +104,7 @@
 								<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> 登录 </button>
 								<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 									<li>
-										<form class="login-form margin-clear">
+										<form onkeydown="if(event.keyCode==13){return false;}" class="login-form margin-clear">
 											<div class="form-group has-feedback">
 												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
@@ -119,7 +119,7 @@
 											<span class="pl-5 pr-5">or</span>
 											<button onclick="javascript:window.location.href='<?php echo U('Home/User/signUp');?>';" type="button" class="btn btn-default btn-sm">注册</button>
 											<ul>
-												<li><a href="#">忘记密码?</a></li>
+												<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">忘记密码?</a></li>
 											</ul>
 											<span class="text-center">Login with</span>
 											<ul class="social-links circle small colored clearfix">
@@ -294,8 +294,9 @@
 								<li><a href="#">设置用户头像</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
 								<li><a href="#">邮箱认证</a></li>
-
+								<li><a href="#">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
 									<ul class="dropdown-menu">
@@ -327,7 +328,7 @@
 						</li>
 					</ul>
 				</nav>
-				<button type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
+				<button id="offcanvas_btn" type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
 			</div>
 			<!-- offcanvas side end -->
 		<!-- breadcrumb start -->
@@ -369,7 +370,7 @@
 	<li><a href="#">个人头像</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
-	<li><a href="#">更换手机</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
 	<li><a href="#">邮箱认证</a></li>
 	<li><a href="#">实名认证</a></li>
 </ul>
@@ -379,7 +380,7 @@
 										<div class="row">
 											<div class="col-sm-6">
 
-												<form action="" method="POST" role="form">											
+												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">											
 													<div class="form-group">
 														<label for="">用户名：</label>
 														<input type="text" class="form-control" placeholder="<?php echo session('user.user_name');?>" disabled="">
@@ -391,7 +392,7 @@
 																<input type="text" class="form-control" placeholder="<?php echo session('user.tel');?>" disabled="">
 															</div>
 															<div class="col-xs-3 ">
-																<a style="form-control" href="#">更换手机</a>
+																<a style="form-control" href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a>
 															</div>
 														</div>
 													</div>

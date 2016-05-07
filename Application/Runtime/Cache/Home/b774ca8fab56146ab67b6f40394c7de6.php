@@ -104,7 +104,7 @@
 								<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> 登录 </button>
 								<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 									<li>
-										<form class="login-form margin-clear">
+										<form onkeydown="if(event.keyCode==13){return false;}" class="login-form margin-clear">
 											<div class="form-group has-feedback">
 												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
@@ -294,8 +294,9 @@
 								<li><a href="#">设置用户头像</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
 								<li><a href="#">邮箱认证</a></li>
-
+								<li><a href="#">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
 									<ul class="dropdown-menu">
@@ -327,7 +328,7 @@
 						</li>
 					</ul>
 				</nav>
-				<button type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
+				<button id="offcanvas_btn" type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
 			</div>
 			<!-- offcanvas side end -->
 
@@ -512,22 +513,6 @@
 		</section>
 		<!-- section end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -704,6 +689,10 @@
 	})
 </script>
 	<!-- 本页js -->
+
+	<script type="text/javascript">
+
+	</script>
 
 </body>
 </html>

@@ -35,7 +35,7 @@
 								<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> 登录 </button>
 								<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 									<li>
-										<form class="login-form margin-clear">
+										<form onkeydown="if(event.keyCode==13){return false;}" class="login-form margin-clear">
 											<div class="form-group has-feedback">
 												<label  class="control-label">用户名/手机 <span id="tip" style="color: red"></span></label>
 												<input id="username" type="text" class="form-control" placeholder="">
