@@ -295,7 +295,7 @@
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
-								<li><a href="#">邮箱认证</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
 								<li><a href="#">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
@@ -371,7 +371,7 @@
 	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
-	<li><a href="#">邮箱认证</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
 	<li><a href="#">实名认证</a></li>
 </ul>
 								<!-- Tab panes -->

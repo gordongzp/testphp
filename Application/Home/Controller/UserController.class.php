@@ -91,10 +91,27 @@ class UserController extends Controller {
 		$to_session = array(
 			'check' => $rand,
 			'tel'=>I('post.tel'),
-		 );
+			);
 		session('check_tel',$to_session);
 		$ajax_msg = array(
 			'stage' => send_sms(I('post.tel'),'验证码:'.$rand),
+			'check' => md5($rand),  
+			);
+		$this->ajaxReturn($ajax_msg);
+	}
+
+	// ajax请求发送邮箱验证码
+	public function send_email_check(){
+		$ajax_msg=array();
+		$rand=rand(10000,99999);
+		//将验证码及邮箱存入session
+		$to_session = array(
+			'check' => $rand,
+			'email'=>I('post.email'),
+			);
+		session('check_email',$to_session);
+		$ajax_msg = array(
+			'stage' => send_mail(I('post.email'), '邮箱验证码', '邮箱验证码为：'.$rand),
 			'check' => md5($rand),  
 			);
 		$this->ajaxReturn($ajax_msg);

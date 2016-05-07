@@ -46,6 +46,10 @@ class UserModel extends Model {
 		$condition_tem=array('user_name' =>$username_or_tel,'tel' => $username_or_tel,'_logic'=>'or');
 		$condition = array('_complex' => $condition_tem,'user_pwd' => md10($pwd));
 		$info=$this->where($condition)->find();
+		$data = array(
+			'last_log_time'=>time(),
+			);
+		$this->where($condition)->save($data);
 		if ($info) {
 			$info['user_pwd']='';
 		}
@@ -69,7 +73,8 @@ class UserModel extends Model {
 			return $this->getError();
 		}else{
 			$condition = array('tel' => $tel, );
-			$data = array('user_pwd' => md10($pwd), );
+			$data = array('user_pwd' => md10($pwd), 
+				'update_time'=>time(),);
 			if (!$this->where($condition)->select()) {
 				//失败
 				return array('tel' => '此号码没有注册', );
@@ -84,16 +89,52 @@ class UserModel extends Model {
 //更换手机
 	public function changeTel($old_tel,$new_tel){
 		$condition = array('tel' => $old_tel, );
-		$data = array('tel' => $new_tel, );
+		$condition2 = array('tel' => $new_tel, );
+		$data = array(
+			'tel' => $new_tel, 
+			'update_time'=>time());
 		if (!$this->where($condition)->find()) {
 			//失败
 			return array('tel' => '此号码没有注册', );
 		}else{
 			//成功
 			//判断新号码是否存在
-			if ($this->where($data)->find()) {
+			if ($this->where($condition2)->find()) {
 				//已存在
 				return array('tel' => '此号码已存在，请更换号码', );
+			}else{
+				$this->where($condition)->save($data);
+				return null;
+			}
+		}
+	} 
+
+//创建邮箱
+	public function createEmail($old_tel,$new_tel){
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			$this->save();
+			return NULL;
+		}
+	}
+
+//更换邮箱
+	public function changeEmail($old_email,$new_email){
+		$condition = array('email' => $old_email, );
+		$condition2=array('email' => $new_email, );
+		$data = array(
+			'email' => $new_email, 
+			'update_time'=>time());
+		if (!$this->where($condition)->find()) {
+			//失败
+			return array('email' => '没有此邮箱', );
+		}else{
+			//成功
+			//判断新号码是否存在
+			if ($this->where($condition2)->find()) {
+				//已存在
+				return array('email' => '此邮箱已存在，请更换号码', );
 			}else{
 				$this->where($condition)->save($data);
 				return null;

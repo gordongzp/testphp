@@ -83,7 +83,7 @@
 					<div class="form-block center-block p-30 light-gray-bg border-clear">
 						<h2 class="title text-left">登录</h2>
 
-						<form method="post" class="form-horizontal text-left" action="<?php echo U('Home/User/logIn');?>">
+						<form onkeydown="if(event.keyCode==13){return false;}" method="post" class="form-horizontal text-left" action="<?php echo U('Home/User/logIn');?>">
 							<div class="form-group has-feedback">
 								<label for="inputUserName" class="col-sm-3 control-label">用户名/手机</label>
 								<div class="col-sm-8">

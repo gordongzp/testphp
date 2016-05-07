@@ -164,4 +164,15 @@ return  array(
     'FILE_UPLOAD_TYPE'      =>  'Local',    // 文件上传方式
     'DATA_CRYPT_TYPE'       =>  'Think',    // 数据加密方式
 
+
+    // 配置邮件发送服务器
+    'MAIL_HOST' =>'smtp.126.com',//smtp服务器的名称
+    'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+    'MAIL_USERNAME' =>'gordongzp@126.com',//你的邮箱名
+    'MAIL_FROM' =>'gordongzp@126.com',//发件人地址
+    'MAIL_FROMNAME'=>'子鹏集团',//发件人姓名
+    'MAIL_PASSWORD' =>'002745',//邮箱密码
+    'MAIL_CHARSET' =>'utf-8',//设置邮件编码
+    'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
+
 );

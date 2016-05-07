@@ -16,6 +16,8 @@ class UserCenterController extends Controller {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
 	}
+
+	//修改密码
 	public function changePwd(){
 		if (is_login()) {
 			if (IS_POST) {
@@ -38,6 +40,8 @@ class UserCenterController extends Controller {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
 	}
+
+	//密码找回
 	public function comeBackPwd(){
 		if (IS_POST) {
 			if (verify_tel_check(I('post.check_tel'),I('post.tel2'))) {
@@ -57,6 +61,7 @@ class UserCenterController extends Controller {
 		}
 	}
 
+//修改手机号步骤一
 	public function changeTel1(){
 		if (is_login()) {
 			if (IS_POST) {
@@ -77,6 +82,7 @@ class UserCenterController extends Controller {
 		}
 	}
 
+//修改手机号步骤二
 	public function changeTel2(){
 		if (is_login()) {
 			if (IS_POST) {
@@ -119,4 +125,112 @@ class UserCenterController extends Controller {
 		}
 	}
 
+//email路由，决定是创建还是修改
+	public function changeEmail(){
+		if (is_login()) {
+			//判断邮箱是否为空
+			if (''==session('user.email')) {
+				header('Location:'.U('Home/UserCenter/createEmail'));
+				exit();
+			}else{
+				header('Location:'.U('Home/UserCenter/changeEmail1'));
+				exit();
+			}
+		}else{
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+	}
+
+//创建email
+	public function createEmail(){
+		if (is_login()) {
+			//判断邮箱是否为空
+			if (''!=session('user.email')) {
+				$this->error('无法重复创建邮箱','/Home/UserCenter/basicInfo',2);
+				exit();
+			}
+			if (IS_POST) {
+				if (verify_email_check(I('post.check_email'),I('post.email'))) {
+					$msg=D('User')->createEmail();
+					if (!$msg) {
+						session('user.email',I('post.email'));
+						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
+					}else{
+						$this->error('输入信息有误',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
+					}
+				}else{
+					$this->error('验证码不正确','',2);
+				}
+			}else{
+				$this->assign('msg',unserialize($_GET['msg']));
+				$this->display();
+			}
+		}else{
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+	}
+
+
+
+//修改邮箱步骤一
+	public function changeEmail1(){
+		if (is_login()) {
+			if (IS_POST) {
+				if (verify_email_check(I('post.check_email'),session('user.email'))) {
+					//获取进入step2的权限
+					session('confirm_tmp_email',session('user.email'));
+					header('Location:'.U('Home/UserCenter/changeEmail2'));
+					exit;
+				}else{
+					$this->error('验证码不正确','',2);
+				}
+			}else{
+				// $this->assign('msg',unserialize($_GET['msg']));
+				$this->display();
+			}
+		}else{
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+	}
+
+//修改邮箱步骤二
+	public function changeEmail2(){
+		if (is_login()) {
+			if (IS_POST) {
+				//验证step传过来的confirm_tmp
+				if (session('confirm_tmp_email')==session('user.email')) {
+				//确实是step1过来的
+					if (verify_email_check(I('post.check_email'),I('post.email'))) {
+						$msg=D('User')->changeEmail(session('user.email'),I('post.email'));
+						if (!$msg) {
+							//改一下session里面的号码
+							session('user.email',I('post.email'));
+							//收回step2权限
+							session('confirm_tmp_email',null);
+							$this->success('修改完成','/Home/UserCenter/basicInfo',2);
+						}else{
+							$this->error('输入信息有误',U('Home/UserCenter/changeEmail2',array('msg'=>serialize($msg))),2);
+						}
+					}else{
+						$this->error('验证码不正确','',2);
+					}
+				}else{
+					$this->error('您没有权限访问该页面','',2);
+				}
+			}else{
+				//验证step传过来的confirm_tmp
+				if (session('confirm_tmp_email')==session('user.email')) {
+				//确实是step1过来的
+				//重置session(不需要)
+					// session('confirm_tmp',null);
+					$this->assign('msg',unserialize($_GET['msg']));
+					$this->display();
+				}else{
+					$this->error('您没有权限访问该页面','',2);
+				}
+			}
+		}else{
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+	}
 }

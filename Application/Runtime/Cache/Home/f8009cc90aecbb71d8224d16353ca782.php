@@ -295,8 +295,8 @@
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
-								<li><a href="#">邮箱认证</a></li>
-
+								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
+								<li><a href="#">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
 									<ul class="dropdown-menu">
@@ -328,7 +328,7 @@
 						</li>
 					</ul>
 				</nav>
-				<button type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
+				<button id="offcanvas_btn" type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
 			</div>
 			<!-- offcanvas side end -->
 		<!-- breadcrumb start -->
@@ -372,7 +372,7 @@
 	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
-	<li><a href="#">邮箱认证</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
 	<li><a href="#">实名认证</a></li>
 </ul>
 
@@ -384,7 +384,7 @@
 												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/comeBackPwd');?>" method="POST" role="form">
 													<div class="form-group">
 														<label for="">注册手机号</label>
-														<input name="tel2" id="tel" type="test" class="form-control" placeholder="<?php echo ($msg["tel"]); ?>">
+														<input name="tel2" id="tel" type="text" class="form-control" placeholder="<?php echo ($msg["tel"]); ?>">
 													</div>
 													<div class="form-group">
 														<label for="">新密码</label>
