@@ -291,11 +291,11 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
-								<li><a href="#">设置用户头像</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/avatar');?>">设置用户头像</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
-								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定/更换邮箱</a></li>
 								<li><a href="#">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
@@ -368,7 +368,7 @@
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
 	<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
-	<li><a href="#">个人头像</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/avatar');?>">个人头像</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
@@ -385,13 +385,13 @@
 													<input type="text" name="id" value="<?php echo session('user.id');?>" style="display: none;">
 													<div class="form-group">
 														<label for="">邮箱</label>
-														<input name="email" id="email" type="test" class="form-control" placeholder="" value="<?php echo session('user.email');?>">
+														<input name="email" id="email" type="text" class="form-control" placeholder="" value="<?php echo session('user.email');?>">
 													</div>
 													<div class="form-group">
 														<label for="">邮箱验证码</label>
 														<input name="check_email" id="check_email" type="text" class="form-control" placeholder="">
 													</div>							
-													<button type="submit" class="btn btn-primary" style="margin-right: 20px">保存</button>
+													<button type="submit" class="btn btn-default" style="margin-right: 20px">保存</button>
 													<button id="send1" type="button" class="btn btn-animated btn-gray "  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span>
 												</form>
 											</div>
@@ -665,7 +665,7 @@
 				var action="<?php echo U('Home/User/verify_check');?>";
 				$.post(action,{check:check},function(data){
 					if (data) {
-						var action2="<?php echo U('Home/User/send_email_check');?>";///
+						var action2="<?php echo U('Home/User/send_email_check');?>";
 						$('#block1').css("display","");
 						$('#block2').css("display","none");	
 						$('#send1').css("display","none");

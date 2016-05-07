@@ -14,6 +14,8 @@ class UserController extends Controller {
 				$msg=D('User')->register();
 				if (!$msg) {
 					session('user',D('user')->logInWithTel(I('post.username'),I('post.pwd')));
+					//创建uploads/user/id目录并复制默认头像文件
+					mkdir(U(USER_PATH.'/'.session('user.id'),'',''),0777,true);
 					$this->success('操作完成','/Home/Index/index',2);
 				}else{
 					$this->error('请输入正确注册信息',U('Home/User/signUp',array('msg'=>serialize($msg))),2);

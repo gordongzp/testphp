@@ -233,4 +233,36 @@ class UserCenterController extends Controller {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
 	}
+
+//设置头像
+	public function avatar(){
+		if (is_login()) {
+			if (IS_POST) {
+				# code...
+			    $upload = new \Think\Upload();// 实例化上传类
+			    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+			    $upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
+			    $upload->rootPath  =     USERS_PATH; // 设置附件上传根目录
+			    $upload->savePath  =     I('post.id').'/'; // 设置附件上传（子）目录
+			    $upload->autoSub   =     false;
+			    $upload->saveName  =     'avatar';
+			    $upload->replace   =     true;
+			    $upload->saveExt   =     'jpg';
+			    // 上传文件 
+			    $info   =   $upload->upload();
+			    if(!$info) {
+			    // 上传错误提示错误信息
+			    	$this->error($upload->getError());
+			    }else{
+			    // 上传成功
+			    	$this->success('上传成功！','/Home/UserCenter/avatar');
+			    }
+			} else {
+				# code...
+				$this->display();
+			}
+		}else{
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+	}	
 }

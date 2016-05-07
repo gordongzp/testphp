@@ -134,7 +134,7 @@ class UserModel extends Model {
 			//判断新号码是否存在
 			if ($this->where($condition2)->find()) {
 				//已存在
-				return array('email' => '此邮箱已存在，请更换号码', );
+				return array('email' => '此邮箱已存在，请用其他邮箱', );
 			}else{
 				$this->where($condition)->save($data);
 				return null;

@@ -277,7 +277,8 @@
 				<nav id="offcanvas" class="animated navmenu navmenu-default navmenu-fixed-left offcanvas offcanvas-left" role="navigation">
 					<!-- 头像 -->
 					<div class="logo">
-						<a href="index.html"><img id="logo" src="/Public/images/logo_light_blue.png" alt="The Project"></a>
+
+						<a href="<?php echo U('Home/UserCenter/avatar');?>"><img class="img-circle" src="<?php echo U(USERS_PATH.session('user.id').'/avatar','','jpg') ?>" style="width: 100px; height: 100px;"></a>
 					</div>
 
 					<!-- name-and-slogan -->
@@ -291,7 +292,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
-								<li><a href="#">设置用户头像</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/avatar');?>">设置用户头像</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
@@ -338,7 +339,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">更换邮箱</li>
+					<li class="active">修改头像</li>
 				</ol>
 			</div>
 		</div>
@@ -357,7 +358,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">更换邮箱</h1>
+						<h1 class="page-title">修改头像</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -368,7 +369,7 @@
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
 	<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
-	<li><a href="#">个人头像</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/avatar');?>">个人头像</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
@@ -380,78 +381,24 @@
 								<div class="tab-content">
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
-											<div id="block1" class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/changeEmail1');?>" method="POST" role="form">
+											<div class="col-sm-6">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/avatar');?>" method="POST" role="form" enctype="multipart/form-data">
+													<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
+													<img data-src="holder.js/140x140" class="img-circle" alt="140x140" src="<?php echo U(USERS_PATH.session('user.id').'/avatar','','jpg') ?>" data-holder-rendered="true" style="width: 140px; height: 140px;">
 													<div class="form-group">
-														<label for="">原邮箱</label>
-														<input name="email" id="email" type="text" class="form-control" placeholder="" value="<?php echo session('user.email');?>" disabled="">
+														<label></label>
+														<input type="file" name="photo">
+														<p class="help-block">建议使用140x140的jpg，png，jpeg格式图片</p>
 													</div>
-													<div class="form-group">
-														<label for="">邮箱验证码</label>
-														<input name="check_email" id="check_email" type="text" class="form-control" id="" placeholder="">
-													</div>							
-													<button type="submit" class="btn btn-primary" style="margin-right: 20px">下一步</button>
-													<button id="send1" type="button" class="btn btn-animated btn-gray "  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span>
+
+													<button type="submit" class="btn btn-default">保存</button>
 												</form>
 											</div>
-
-											<div id="block2" style="display: none;" class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
-													<legend>请输入验证码</legend>
-													<div class="col-sm-12"><img id="check_img" src="<?php echo U('Home/User/verify');?>"></div>
-													<div class="form-group">
-														<label for="">验证码</label>
-														<input name="check" id="check" type="text" class="form-control">
-													</div>
-													<button id="send2" type="button" class="btn btn-animated btn-gray " style="margin-right: 20px" >确认发送 <i class="fa fa-send-o"></i></button>
-													<button id="back" type="button" class="btn btn-group btn-default btn-animated" >返回 <i class="fa fa-reply-all"></i></button>
-												</form>
-											</div>
-
-
-											<!-- modal -->
-											<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">按钮名称</button>
-
-											<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-												<div class="modal-dialog modal-sm">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-														</div>
-														<div class="modal-body">
-															<p>请输入正确的邮箱</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<button style="display: none;" id="modal_btn2" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
-
-											<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-												<div class="modal-dialog modal-sm">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-														</div>
-														<div class="modal-body">
-															<p>请输入正确的验证码</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- modal end-->
 										</div>
 									</div>
 								</div>
 								<!-- tabs end -->
+
 							</div>
 														<div class="col-sm-3 col-lg-offset-1">
 								<h3 class="title">Contact Me</h3>
@@ -649,70 +596,7 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(6)').attr("class", "active");
-
-		$(function(){
-			$('#check_img').click(function(){
-				$("#check_img").attr("src","<?php echo U('Home/User/verify');?>");
-			})
-		})
-
-		$(function(){
-			$('#send2').click(function(){
-				var email=$('#email').val();
-				var check=$('#check').val();
-				var action="<?php echo U('Home/User/verify_check');?>";
-				$.post(action,{check:check},function(data){
-					if (data) {
-						var action2="<?php echo U('Home/User/send_email_check');?>";
-						$('#block1').css("display","");
-						$('#block2').css("display","none");	
-						$('#send1').css("display","none");
-						$('#time').text(60);//将发送验证码改为等待时间
-						$('#time_tip').css("display","");
-						(function(){
-							var wait = document.getElementById('time');
-							var interval = setInterval(function(){
-								var time = --wait.innerHTML;
-								if(time <= 0) {
-									$('#send1').css("display","");
-									$('#time').text('');
-									$('#time_tip').css("display","none");
-									clearInterval(interval);
-								};
-							}, 1000);
-						})();								
-						$.post(action2,{email:email},function(data2){
-							console.log(data2.stage);
-						});
-					}else{
-						$("#modal_btn2").trigger("click");
-					}
-				});				
-			})
-		})
-
-		$(function(){
-			$('#send1').click(function(){
-				//验证邮箱正确性
-				var email=$('#email').val();
-				regexp=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
-				if(!regexp.test(email)){
-					$("#modal_btn").trigger("click");
-				}else{
-					$('#block2').css("display","");
-					$('#block1').css("display","none");
-				}		
-			})
-		})
-
-		$(function(){
-			$('#back').click(function(){
-				$('#block1').css("display","");
-				$('#block2').css("display","none");				
-			})
-		})
-
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(2)').attr("class", "active");
 	</script>
 
 </body>

@@ -21,6 +21,11 @@ define('APP_DEBUG',True);
 // 定义应用目录
 define('APP_PATH','./Application/');
 
+// 定义uploads目录
+define('UPLOADS_PATH', APP_PATH.'uploads/');
+// 定义uploads/users目录
+define('USERS_PATH', UPLOADS_PATH.'users/');
+
 // 定义admin手机常量
 define('__UID__','gordongzp');
 define('__KEY__', '38fb00421205492103db');
