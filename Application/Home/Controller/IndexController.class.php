@@ -8,7 +8,8 @@ class IndexController extends Controller {
 		$this->display();
 	}
 	public function test(){
-		echo USERS_PATH;
+
+
 		exit();
 	}
 }

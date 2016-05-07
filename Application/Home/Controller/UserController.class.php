@@ -2,11 +2,8 @@
 namespace Home\Controller;
 use Think\Controller;
 class UserController extends Controller {
-	//个人中心
 	public function index(){
-
 	}
-
 	//注册
 	public function signUp(){
 		if (IS_POST) {
@@ -15,7 +12,9 @@ class UserController extends Controller {
 				if (!$msg) {
 					session('user',D('user')->logInWithTel(I('post.username'),I('post.pwd')));
 					//创建uploads/user/id目录并复制默认头像文件
-					mkdir(U(USER_PATH.'/'.session('user.id'),'',''),0777,true);
+					$path=USERS_PATH.session('user.id');
+					$res=mkdir(iconv("UTF-8", "GBK", $path),0777,true);
+					copy('./Public/images/team-member-1.jpg',USERS_PATH.session('user.id').'/'.'avatar.jpg');
 					$this->success('操作完成','/Home/Index/index',2);
 				}else{
 					$this->error('请输入正确注册信息',U('Home/User/signUp',array('msg'=>serialize($msg))),2);

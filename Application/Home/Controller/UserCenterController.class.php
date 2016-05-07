@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 class UserCenterController extends Controller {
+	//个人中心
 	public function index(){
 		if (is_login()) {
 			$this->display();
@@ -9,6 +10,7 @@ class UserCenterController extends Controller {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
 	}
+	//个人基本资料
 	public function basicInfo(){
 		if (is_login()) {
 			$this->display();

@@ -277,7 +277,8 @@
 				<nav id="offcanvas" class="animated navmenu navmenu-default navmenu-fixed-left offcanvas offcanvas-left" role="navigation">
 					<!-- 头像 -->
 					<div class="logo">
-						<a href="index.html"><img id="logo" src="/Public/images/logo_light_blue.png" alt="The Project"></a>
+
+						<a href="<?php echo U('Home/UserCenter/avatar');?>"><img class="img-circle" src="<?php echo U(USERS_PATH.session('user.id').'/avatar','','jpg') ?>" style="width: 100px; height: 100px;"></a>
 					</div>
 
 					<!-- name-and-slogan -->
