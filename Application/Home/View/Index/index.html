@@ -40,10 +40,12 @@
 							<th>user_pwd</th>
 							<th>email</th>
 							<th>tel</th>
+							<th>is_seller</th>
 							<th>reg_time</th>
 							<th>last_log_time</th>
 							<th>update_time</th>
 							<th>reg_ip</th>
+							<th>last_log_ip</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -54,10 +56,12 @@
 								<td>{$vo.user_pwd}</td>
 								<td>{$vo.email}</td>
 								<th>{$vo.tel}</th>
+								<th>{$vo.is_seller}</th>
 								<td>{:date("Y-m-d h:i:sa",$vo['reg_time'])}</td>
 								<td>{:date("Y-m-d h:i:sa",$vo['last_log_time'])}</td>
 								<td>{:date("Y-m-d h:i:sa",$vo['update_time'])}</td>
 								<td>{$vo.reg_ip}</td>
+								<td>{$vo.last_log_ip}</td>
 							</tr>	
 						</foreach>	
 					</tbody>

@@ -284,10 +284,12 @@
 							<th>user_pwd</th>
 							<th>email</th>
 							<th>tel</th>
+							<th>is_seller</th>
 							<th>reg_time</th>
 							<th>last_log_time</th>
 							<th>update_time</th>
 							<th>reg_ip</th>
+							<th>last_log_ip</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -297,10 +299,12 @@
 								<td><?php echo ($vo["user_pwd"]); ?></td>
 								<td><?php echo ($vo["email"]); ?></td>
 								<th><?php echo ($vo["tel"]); ?></th>
+								<th><?php echo ($vo["is_seller"]); ?></th>
 								<td><?php echo date("Y-m-d h:i:sa",$vo['reg_time']);?></td>
 								<td><?php echo date("Y-m-d h:i:sa",$vo['last_log_time']);?></td>
 								<td><?php echo date("Y-m-d h:i:sa",$vo['update_time']);?></td>
 								<td><?php echo ($vo["reg_ip"]); ?></td>
+								<td><?php echo ($vo["last_log_ip"]); ?></td>
 							</tr><?php endforeach; endif; ?>	
 					</tbody>
 				</table>

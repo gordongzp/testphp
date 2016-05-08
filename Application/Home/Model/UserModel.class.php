@@ -20,10 +20,12 @@ class UserModel extends Model {
 		);
 	protected $_auto = array ( 
 		array('user_pwd','md10',3,'function') , 
+		array('is_seller',0,1),
 		array('update_time','time',2,'function'),
 		array('reg_time','time',1,'function'),
 		array('reg_ip','get_client_ip',1,'function'),
 		array('last_log_time',"time",3,'function'),
+		array('last_log_ip',"get_client_ip",3,'function'),
 		);
 	
 //获取所有用户信息
@@ -48,6 +50,7 @@ class UserModel extends Model {
 		$info=$this->where($condition)->find();
 		$data = array(
 			'last_log_time'=>time(),
+			'last_log_ip'=>get_client_ip(),
 			);
 		$this->where($condition)->save($data);
 		if ($info) {

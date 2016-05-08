@@ -34,25 +34,42 @@
 								</li>
 							</ul>
 						</li>
-						<li><a href="page-services.html">Services</a></li>
-						<li><a href="portfolio-grid-2-3-col.html">Portfolio</a></li>
-						<li><a href="shop-listing-3col.html">Shop</a></li>
-						<li><a href="page-contact.html">Contact</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Item With Submenu</a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">财务管理</a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Second Level Item 1</a></li>
-								<li><a href="#">Second Level Item 2</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Third Level Item 1</a></li>
-										<li><a href="#">Third Level Item 2</a></li>
-										<li><a href="#">Third Level Item 3</a></li>
-									</ul>
-								</li>
+								<li><a href="#">我要充值</a></li>
+								<li><a href="#">我要提现</a></li>
+								<li><a href="#">积分明细</a></li>		
 							</ul>
 						</li>
+						<!-- 判断是否为卖家，是则显示卖家菜单 -->
+						<?php
+						if (session('user.is_seller')) {
+							?>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是卖家</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">商品列表</a></li>
+									<li><a href="#">订单管理</a></li>
+								</ul>
+							</li>
+							<?php
+						}else{
+							?>
+							<li><a href="#">成为卖家</a></li>
+							<?php
+						}
+						?>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是买家</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">我的订单</a></li>
+								<li><a href="#">购物车</a></li>
+								<li><a href="#">积分明细</a></li>		
+							</ul>
+						</li>
+						<li><a href="#">备用</a></li>
 					</ul>
 				</nav>
 				<button id="offcanvas_btn" type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
