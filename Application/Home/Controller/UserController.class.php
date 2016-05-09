@@ -58,7 +58,7 @@ class UserController extends Controller {
 			$this->ajaxReturn($msg);
 		}else
 		{
-			
+			$this->error('您无权访问该页面','',2);
 		}
 	}
 

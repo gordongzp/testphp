@@ -182,6 +182,10 @@
 		</div>
 		<!-- banner end -->
 
+	</div>
+	<!-- page-wrapper end -->
+
+
 		<!-- modal -->
 		<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">按钮名称</button>
 
@@ -222,8 +226,7 @@
 		</div>
 		<!-- modal end-->
 
-	</div>
-	<!-- page-wrapper end -->
+	
 
 	<!-- 模板底部配置 -->
 	<!-- JavaScript files placed at the end of the document so the pages load faster -->
@@ -263,6 +266,8 @@
 <script type="text/javascript" src="/Public/js/custom.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
+
+<!-- 顶部快速登录切换 -->
 <script type="text/javascript">
 	if (<?php echo is_login();?>) {
 		$('#uinfo').css("display","");

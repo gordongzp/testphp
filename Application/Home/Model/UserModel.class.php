@@ -9,9 +9,9 @@ class UserModel extends Model {
          'pwd2' =>'user_pwd2', // 把表单中pwd2映射到数据表的username字段
          );
 	protected $_validate = array(
-		array('user_name','','帐号名称已经存在！',0,'unique',1), 
-		array('email','','邮箱已经存在！',0,'unique',1), 
-		array('tel','','手机号码已经存在！',0,'unique',1), 
+		array('user_name','','帐号名称已经存在！',0,'unique',3), 
+		array('email','','邮箱已经存在！',0,'unique',3), 
+		array('tel','','手机号码已经存在！',0,'unique',3), 
 		array('tel','/^1[3|4|5|8][0-9]\d{4,8}$/','请输入正确的手机格式'),
 		array('user_pwd2','user_pwd','确认密码不正确',0,'confirm'), 
 		array('user_pwd','/^[\w\d-_]{3,10}$/','密码必须以字母开头，长度在3-10之间'), 
@@ -59,7 +59,7 @@ class UserModel extends Model {
 		return $info;
 	}
 
-//created方法重置密码
+//create方法重置密码
 	public function setPwd(){ 
 		if (!$this->create()) {
 			return $this->getError();

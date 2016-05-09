@@ -646,6 +646,8 @@
 <script type="text/javascript" src="/Public/js/custom.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
+
+<!-- 顶部快速登录切换 -->
 <script type="text/javascript">
 	if (<?php echo is_login();?>) {
 		$('#uinfo').css("display","");

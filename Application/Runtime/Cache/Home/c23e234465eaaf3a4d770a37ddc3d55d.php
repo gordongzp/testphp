@@ -418,7 +418,7 @@
 																<input type="text" class="form-control" placeholder="<?php echo session('user.email');?>" disabled="">
 															</div>
 															<div class="col-xs-3 ">
-																<a style="form-control" href="#">绑定邮箱</a>
+																<a style="form-control" href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a>
 															</div>
 														</div>
 													</div>
@@ -610,6 +610,8 @@
 <script type="text/javascript" src="/Public/js/custom.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
+
+<!-- 顶部快速登录切换 -->
 <script type="text/javascript">
 	if (<?php echo is_login();?>) {
 		$('#uinfo').css("display","");

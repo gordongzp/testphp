@@ -277,7 +277,8 @@
 				<nav id="offcanvas" class="animated navmenu navmenu-default navmenu-fixed-left offcanvas offcanvas-left" role="navigation">
 					<!-- 头像 -->
 					<div class="logo">
-						<a href="index.html"><img id="logo" src="/Public/images/logo_light_blue.png" alt="The Project"></a>
+
+						<a href="<?php echo U('Home/UserCenter/avatar');?>"><img class="img-circle" src="<?php echo U(USERS_PATH.session('user.id').'/avatar','','jpg') ?>" style="width: 100px; height: 100px;"></a>
 					</div>
 
 					<!-- name-and-slogan -->
@@ -291,11 +292,11 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
-								<li><a href="#">设置用户头像</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/avatar');?>">设置用户头像</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
-								<li><a href="#">邮箱认证</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定/更换邮箱</a></li>
 								<li><a href="#">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
@@ -307,25 +308,39 @@
 								</li>
 							</ul>
 						</li>
-						<li><a href="page-services.html">Services</a></li>
-						<li><a href="portfolio-grid-2-3-col.html">Portfolio</a></li>
-						<li><a href="shop-listing-3col.html">Shop</a></li>
-						<li><a href="page-contact.html">Contact</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Item With Submenu</a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">财务管理</a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Second Level Item 1</a></li>
-								<li><a href="#">Second Level Item 2</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Third Level Item 1</a></li>
-										<li><a href="#">Third Level Item 2</a></li>
-										<li><a href="#">Third Level Item 3</a></li>
-									</ul>
-								</li>
+								<li><a href="#">我要充值</a></li>
+								<li><a href="#">我要提现</a></li>
+								<li><a href="#">积分明细</a></li>		
 							</ul>
 						</li>
+						<!-- 判断是否为卖家，是则显示卖家菜单 -->
+						<?php
+ if (session('user.is_seller')) { ?>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是卖家</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">商品列表</a></li>
+									<li><a href="#">订单管理</a></li>
+								</ul>
+							</li>
+							<?php
+ }else{ ?>
+							<li><a href="#">成为卖家</a></li>
+							<?php
+ } ?>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是买家</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">我的订单</a></li>
+								<li><a href="#">购物车</a></li>
+								<li><a href="#">积分明细</a></li>		
+							</ul>
+						</li>
+						<li><a href="#">备用</a></li>
 					</ul>
 				</nav>
 				<button id="offcanvas_btn" type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
@@ -368,11 +383,11 @@
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
 	<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
-	<li><a href="#">个人头像</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/avatar');?>">个人头像</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
 	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
-	<li><a href="#">邮箱认证</a></li>
+	<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
 	<li><a href="#">实名认证</a></li>
 </ul>
 
@@ -384,13 +399,13 @@
 												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/changeTel2');?>" method="POST" role="form">
 													<div class="form-group">
 														<label for="">新手机号</label>
-														<input name="tel" id="tel" type="test" class="form-control" placeholder="<?php echo ($msg["tel"]); ?>">
+														<input name="tel" id="tel" type="text" class="form-control" placeholder="<?php echo ($msg["tel"]); ?>">
 													</div>
 													<div class="form-group">
 														<label for="">手机验证码</label>
 														<input name="check_tel" id="check_tel" type="text" class="form-control" id="" placeholder="">
 													</div>							
-													<button type="submit" class="btn btn-primary" style="margin-right: 20px">保存</button>
+													<button type="submit" class="btn btn-default" style="margin-right: 20px">保存</button>
 													<button id="send1" type="button" class="btn btn-animated btn-gray "  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span>
 												</form>
 											</div>
@@ -623,6 +638,8 @@
 <script type="text/javascript" src="/Public/js/custom.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
+
+<!-- 顶部快速登录切换 -->
 <script type="text/javascript">
 	if (<?php echo is_login();?>) {
 		$('#uinfo').css("display","");

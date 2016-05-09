@@ -41,45 +41,30 @@
 					<!-- name-and-slogan -->
 					<p class="small">Multipurpose HTML5 Template</p>
 					<div class="form-block center-block p-30 light-gray-bg border-clear">
-						<h2 class="title text-left">登录</h2>
+						<h2 class="title text-left">后台登录</h2>
 
-						<form onkeydown="if(event.keyCode==13){return false;}" method="post" class="form-horizontal text-left" action="{:U('Home/User/logIn')}">
+						<form onkeydown="if(event.keyCode==13){return false;}" method="post" class="form-horizontal text-left" action="{:U('Admin181/AdminUser/logIn')}">
 							<div class="form-group has-feedback">
-								<label for="inputUserName" class="col-sm-3 control-label">用户名/手机</label>
+								<label for="user_name" class="col-sm-3 control-label">用户名/手机</label>
 								<div class="col-sm-8">
-									<input name="inputUserName" type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
+									<input name="user_name" type="text" class="form-control" id="user_name" placeholder="User Name" required>
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 							</div>
 							<div class="form-group has-feedback">
-								<label for="inputPassword" class="col-sm-3 control-label">密码</label>
+								<label for="user_pwd" class="col-sm-3 control-label">密码</label>
 								<div class="col-sm-8">
-									<input name="inputPassword" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+									<input name="user_pwd" type="password" class="form-control" id="user_pwd" placeholder="Password" required>
 									<i class="fa fa-lock form-control-feedback"></i>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-3 col-sm-8">
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" required> 记住我
-										</label>
-									</div>
 									<button type="submit" class="btn btn-group btn-default btn-animated">登录 <i class="fa fa-user"></i></button>
-									<button style="margin-left: 50px" type="button" class="btn btn-group btn-default btn-animated" onclick="javascript:window.location.href='/Home/Index/index.html';">返回 <i class="fa fa-reply-all"></i></button>
-									<ul class="space-top">
-										<li><a href="{:U('Home/UserCenter/comeBackPwd')}">忘记密码?</a></li>
-									</ul>
-									<span class="text-muted">Login with</span>
-									<ul class="social-links colored circle clearfix">
-										<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-										<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-										<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
+									<button style="margin-left: 50px" type="button" class="btn btn-group btn-default btn-animated" onclick="javascript:window.location.href='/Home/Index/index.html';">返回首页 <i class="fa fa-reply-all"></i></button>
 								</div>
 							</div>
 						</form>
-						<p>还没有账号? 立马<a href="{:U('Home/User/signUp')}">注册</a></p>
 					</div>
 					<!-- .subfooter start -->
 					<!-- ================ -->

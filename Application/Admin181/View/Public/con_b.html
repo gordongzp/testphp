@@ -35,10 +35,9 @@
 <script type="text/javascript" src="__PUBLIC__/js/custom.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
-
 <!-- 顶部快速登录切换 -->
 <script type="text/javascript">
-	if ({:is_login()}) {
+	if ({:session('admin_user')}) {
 		$('#uinfo').css("display","");
 		$('#dm').css("display","none");
 	}
@@ -47,7 +46,7 @@
 		$('#btn').click(function(){
 			var user=$('#username').val();
 			var pwd=$('#pwd').val();
-			var action='{:U('Home/User/logInAj')}';
+			var action='{:U('Home/AdminUser/logInAj')}';
 			$.post(action,{user:user,pwd:pwd},function(data){
 				if (data.stage) {
 					$('#uinfo').css("display","");
