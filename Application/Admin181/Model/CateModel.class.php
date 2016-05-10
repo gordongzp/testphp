@@ -16,7 +16,7 @@ class CateModel extends RelationModel {
 		'name1' =>'name', 
 		// 'id1' =>'pid', 
 		'name2' =>'name', 
-		'id2' =>'id', 
+		'id2' =>'cat_id', 
 		);
 	protected $_validate = array(
 		// array('name','','一级类别名已存在',0,'unique',3), 
@@ -36,11 +36,11 @@ class CateModel extends RelationModel {
 	}
 
 	public function delCate($id){
-		$condition_to_delet = array('id' =>$id , );
+		$condition_to_delet = array('cat_id' =>$id , );
 		$condition_to_find_sons = array('pid' => $id,);
 		$arr=$this->where($condition_to_find_sons)->select();
 		foreach ($arr as $k => $v) {
-			$this->delCate($v['id']);
+			$this->delCate($v['cat_id']);
 		}	
 		$this->where($condition_to_delet)->delete();
 	}

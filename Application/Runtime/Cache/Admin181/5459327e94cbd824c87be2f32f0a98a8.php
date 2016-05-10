@@ -217,7 +217,7 @@
 									<div class="separator-2"></div>
 									<div class="row">
 										<div class="col-sm-5">
-											<form action="" method="POST" role="form">
+											<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
 											<input value='0' name="pid" type="text" style="display: none;">
 												<div class="form-group">
 													<input type="text" class="form-control" id="name" name="name" placeholder="">
@@ -250,7 +250,7 @@
 					<h4 class="modal-title" id="mySmallModalLabel">增加子分类</h4>
 				</div>
 				<div class="modal-body">
-					<form id="form1" action="<?php echo U('Admin181/Goods/addSubCate');?>" method="POST" role="form">
+					<form onkeydown="if(event.keyCode==13){return false;}" id="form1" action="<?php echo U('Admin181/Goods/addSubCate');?>" method="POST" role="form">
 						<input name="pid" type="text" id="pid" style="display: none;">
 						<legend>父：<span id="father"></span></legend>
 						<div class="form-group">
@@ -277,7 +277,7 @@
 					<h4 class="modal-title" id="mySmallModalLabel">编辑分类名</h4>
 				</div>
 				<div class="modal-body">
-					<form id="form2" action="<?php echo U('Admin181/Goods/editCate');?>" method="POST" role="form">
+					<form onkeydown="if(event.keyCode==13){return false;}" id="form2" action="<?php echo U('Admin181/Goods/editCate');?>" method="POST" role="form">
 						<input name="id2" type="text" id="id2" style="display: none;">
 						<legend>请输入新的分类名称</legend>
 						<div class="form-group">

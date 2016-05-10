@@ -91,7 +91,7 @@ function send_mail($to, $title, $content) {
     	$tem = array();
     	foreach ($array as $v) {
     		if ($v['pid'] == $pid) {
-    			$tem = format_tree($array, $v['id']);
+    			$tem = format_tree($array, $v['cat_id']);
                         //判断是否存在子数组
     			$tem && $v['son'] = $tem;
     			$arr[] = $v;
@@ -106,13 +106,13 @@ function send_mail($to, $title, $content) {
         foreach ($arr as $k => $v) {
             echo "<li>";
             if (0==$v['pid']) {
-                echo "<span><i class=\"glyphicon glyphicon-folder-open\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['id'],))."\">删除</a>|<a onclick=\"click_a(".$v['id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加子分类</a>";
+                echo "<span><i class=\"glyphicon glyphicon-folder-open\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加子分类</a>";
             }elseif ($v['son']) {
         //有儿子
-                echo "<span><i class=\"glyphicon glyphicon-minus-sign\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['id'],))."\">删除</a>|<a onclick=\"click_a(".$v['id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加子分类</a>";
+                echo "<span><i class=\"glyphicon glyphicon-minus-sign\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加子分类</a>";
             }else{
         //没儿子
-                echo "<span><i class=\"glyphicon glyphicon-leaf\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['id'],))."\">删除</a>|<a onclick=\"click_a(".$v['id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加子分类</a>";
+                echo "<span><i class=\"glyphicon glyphicon-leaf\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加子分类</a>";
             }
             if ($v['son']) {
                 show_tree($v['son']);
