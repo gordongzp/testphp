@@ -218,8 +218,9 @@
 									<div class="row">
 										<div class="col-sm-5">
 											<form action="" method="POST" role="form">
+											<!-- <input name="id" type="text" id="id" style="display: none;"> -->
 												<div class="form-group">
-													<input type="text" class="form-control" id="type1" name="type1" placeholder="">
+													<input type="text" class="form-control" id="name" name="name" placeholder="">
 												</div>
 												<button style="float: right" type="submit" class="btn btn-default">增加一级分类</button>
 											</form>
@@ -250,10 +251,10 @@
 				</div>
 				<div class="modal-body">
 					<form id="form1" action="<?php echo U('Admin181/Goods/addSubCate');?>" method="POST" role="form">
-
+						<input name="id1" type="text" id="id1" style="display: none;">
 						<legend>父：<span id="father"></span></legend>
 						<div class="form-group">
-							<input name="sub_type" type="text" class="form-control" id="" placeholder="">
+							<input name="name1" type="text" class="form-control" id="" placeholder="">
 						</div>	
 						<button type="submit" class="btn btn-primary">保存</button>
 
@@ -277,11 +278,11 @@
 				</div>
 				<div class="modal-body">
 					<form id="form2" action="<?php echo U('Admin181/Goods/editCate');?>" method="POST" role="form">
-						<input name="id" type="text" id="id" style="display: none;">
+						<input name="id2" type="text" id="id2" style="display: none;">
 						<legend>请输入新的分类名称</legend>
 						<div class="form-group">
 							<!-- <label for="">增加子分类</label> -->
-							<input name="name" type="text" class="form-control" id="" placeholder="">
+							<input name="name2" type="text" class="form-control" id="" placeholder="">
 						</div>	
 						<button type="submit" class="btn btn-primary">保存</button>
 
@@ -362,23 +363,18 @@
 	<!-- 本页js -->
 
 	<script type="text/javascript">
-	//增加子分类
-		function click_a(id,name){
-			$('#form1').attr("action",$('#form1').attr("action")+'?id='+id);
-			$('#father').text(name);
-			$("#modal_btn").trigger("click");
-		}
-
 	//修改分类
-		function click_e(id){
-			$('#form2').attr("action",$('#form2').attr("action")+'?id='+id);
-			$('#id').attr("value",id);
-			// $('#father').text(name);
-			$("#modal_btn2").trigger("click");
-		}
-
-
-	</script>
+	function click_e(id){
+		$('#id2').attr("value",id);
+		$("#modal_btn2").trigger("click");
+	}
+	//增加子分类
+	function click_a(id,name){
+		$('#id1').attr("value",id);
+		$('#father').text(name);
+		$("#modal_btn").trigger("click");
+	}
+</script>
 
 </body>
 </html>

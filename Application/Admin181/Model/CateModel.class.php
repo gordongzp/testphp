@@ -12,18 +12,22 @@ class CateModel extends RelationModel {
     //          '关联属性N' => '定义',
     //      ),
     // );
+	protected $_map = array(
+		'name1' =>'name', 
+		// 'id1' =>'pid', 
+		'name2' =>'name', 
+		'id2' =>'id', 
+		);
 	protected $_validate = array(
 		// array('name','','一级类别名已存在',0,'unique',3), 
 		array('name','is_not_empty','类别名不能为空',3,'function'),
 		);
+	protected $_auto = array ( 
+		// array('pid',0,1),
+		);
 
-	public function addCate($name,$pid=0){
-		$data = array(
-			'pid' =>$pid ,
-			'name' =>$name , 
-			);
-
-		if (!$this->create($data)) {
+	public function addCate(){
+		if (!$this->create()) {
 			return $this->getError();
 		}else{
 			$this->add();
@@ -42,7 +46,6 @@ class CateModel extends RelationModel {
 	}
 
 	public function editCate($name){
-
 		if (!$this->create()) {
 			return $this->getError();
 		}else{

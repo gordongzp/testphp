@@ -5,7 +5,7 @@ class GoodsController extends Controller {
 	public function index(){
 
 	}
-    //商品分类
+    //商品分类页面
 	public function cate(){
 		if (IS_POST) {
 			//添加一级分类
@@ -22,16 +22,18 @@ class GoodsController extends Controller {
 		}
 	}
 
+	//删除分类
 	public function delCate(){
 		$id=I('get.id');
 		D('Cate')->delCate($id);
-		$this->success('删除成功','/Admin181/Goods/Cate',2);
+		$this->success('删除成功','/Admin181/Goods/Cate',1);
 	}
 
+	//添加子分类
 	public function addSubCate(){
 		if (IS_POST) {
-			//添加二级分类
-			$msg=D('Cate')->addCate(I('post.sub_type'),I('get.id'));
+			//添加子分类
+			$msg=D('Cate')->addCate();
 			if (!$msg) {
 				$this->success('添加成功','/Admin181/Goods/Cate',1);
 			} else {
