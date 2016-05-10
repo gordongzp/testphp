@@ -353,7 +353,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">密码找回</li>
+					<li class="active">实名认证</li>
 				</ol>
 			</div>
 		</div>
@@ -372,7 +372,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">密码找回</h1>
+						<h1 class="page-title">实名认证</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -395,86 +395,68 @@
 								<div class="tab-content">
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
-											<div id="block1" class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/comeBackPwd');?>" method="POST" role="form">
+											<div class="col-sm-12">
+												<?php
+ switch ($person_identity_stage) { case 0: ?>
+													<div class="alert alert-icon alert-warning" role="alert">
+														<i class="fa fa-warning"></i>
+														您还未进行实名认证
+													</div>
+													<?PHP
+ break; case 1: ?>
+													<div class="alert alert-icon alert-info" role="alert">
+														<i class="fa fa-info-circle"></i>
+														已提交实名认证，请耐心等待审核
+													</div>
+													<?PHP
+ break; case 2: ?>
+													<div class="alert alert-icon alert-danger" role="alert">
+														<i class="fa fa-times"></i>
+														实名认证不通过，请重新提交
+													</div>
+													<?PHP
+ break; case 3: ?>
+													<div class="alert alert-icon alert-success" role="alert">
+														<i class="fa fa-check"></i>
+														已通过实名认证
+													</div>
+													<?PHP
+ break; default: break; } ?>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/identityId');?>" method="POST" role="form" enctype="multipart/form-data">
+													<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
+													<input style="display: none;" type="text" name="person_identity_stage" value="1" >
 													<div class="form-group">
-														<label for="">注册手机号</label>
-														<input name="tel2" id="tel" type="text" class="form-control" placeholder="<?php echo ($msg["tel"]); ?>">
+														<label>姓名</label>
+														<input type="text" name="true_name" id="" class="form-control" required="required" placeholder="<?php echo ($true_name); ?>">
 													</div>
 													<div class="form-group">
-														<label for="">新密码</label>
-														<input name="pwd" type="password" class="form-control" id="" placeholder="<?php echo ($msg["user_pwd"]); ?>">
+														<label>身份证号码</label>
+														<input type="text" name="person_id" id="" class="form-control" required="required" placeholder="<?php echo ($person_id); ?>">
 													</div>
 													<div class="form-group">
-														<label for="">确认密码</label>
-														<input name="pwd2" type="password" class="form-control" id="" placeholder="<?php echo ($msg["user_pwd2"]); ?>">
+														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" style="width: 258px; height: 162px;">
+														<label>身份证正面</label>
+														<input type="file" name="photo1">
+														<p class="help-block">支持jpg,png,jpeg格式</p>
 													</div>
 													<div class="form-group">
-														<label for="">手机验证码</label>
-														<input name="check_tel" id="check_tel" type="text" class="form-control" id="" placeholder="">
-													</div>							
-													<button type="submit" class="btn btn-default" style="margin-right: 20px">提交</button>
-													<button id="send1" type="button" class="btn btn-animated btn-gray "  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span>
+														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify2','','jpg') ?>" style="width: 258px; height: 162px;">
+														<label>身份证反面</label>
+														<input type="file" name="photo2">
+														<p class="help-block">支持jpg,png,jpeg格式</p>
+													</div>
+													<button type="submit" class="btn btn-default">保存</button>
 												</form>
 											</div>
-
-											<div id="block2" style="display: none;" class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
-													<legend>请输入验证码</legend>
-													<div class="col-sm-12"><img id="check_img" src="<?php echo U('Home/User/verify');?>"></div>
-													<div class="form-group">
-														<label for="">验证码</label>
-														<input name="check" id="check" type="text" class="form-control">
-													</div>
-													<button id="send2" type="button" class="btn btn-animated btn-gray " style="margin-right: 20px" >确认发送 <i class="fa fa-send-o"></i></button>
-													<button id="back" type="button" class="btn btn-group btn-default btn-animated" >返回 <i class="fa fa-reply-all"></i></button>
-												</form>
-											</div>
-
-
-											<!-- modal -->
-											<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">按钮名称</button>
-
-											<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-												<div class="modal-dialog modal-sm">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-														</div>
-														<div class="modal-body">
-															<p>请输入正确的手机号码</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<button style="display: none;" id="modal_btn2" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
-
-											<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-												<div class="modal-dialog modal-sm">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-														</div>
-														<div class="modal-body">
-															<p>请输入正确的验证码</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- modal end-->
 										</div>
 									</div>
 								</div>
 								<!-- tabs end -->
+
 							</div>
 														<div class="col-sm-3 col-lg-offset-1">
 								<h3 class="title">Contact Me</h3>
@@ -674,70 +656,7 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(4)').attr("class", "active");
-
-		$(function(){
-			$('#check_img').click(function(){
-				$("#check_img").attr("src","<?php echo U('Home/User/verify');?>");
-			})
-		})
-
-		$(function(){
-			$('#send2').click(function(){
-				var tel=$('#tel').val();
-				var check=$('#check').val();
-				var action="<?php echo U('Home/User/verify_check');?>";
-				$.post(action,{check:check},function(data){
-					if (data) {
-						var action2="<?php echo U('Home/User/send_tel_check');?>";
-						$('#block1').css("display","");
-						$('#block2').css("display","none");	
-						$('#send1').css("display","none");
-						$('#time').text(60);//将发送验证码改为等待时间
-						$('#time_tip').css("display","");
-						(function(){
-							var wait = document.getElementById('time');
-							var interval = setInterval(function(){
-								var time = --wait.innerHTML;
-								if(time <= 0) {
-									$('#send1').css("display","");
-									$('#time').text('');
-									$('#time_tip').css("display","none");
-									clearInterval(interval);
-								};
-							}, 1000);
-						})();								
-						$.post(action2,{tel:tel},function(data2){
-							console.log(data2.stage);
-						});
-					}else{
-						$("#modal_btn2").trigger("click");
-					}
-				});				
-			})
-		})
-
-		$(function(){
-			$('#send1').click(function(){
-				//验证手机正确性
-				var tel=$('#tel').val();
-				regexp=/^1[3|4|5|8][0-9]\d{4,8}$/;
-				if(!regexp.test(tel)){
-					$("#modal_btn").trigger("click");
-				}else{
-					$('#block2').css("display","");
-					$('#block1').css("display","none");
-				}		
-			})
-		})
-
-		$(function(){
-			$('#back').click(function(){
-				$('#block1').css("display","");
-				$('#block2').css("display","none");				
-			})
-		})
-
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(7)').attr("class", "active");
 	</script>
 
 </body>

@@ -21,6 +21,7 @@ class UserModel extends Model {
 	protected $_auto = array ( 
 		array('user_pwd','md10',3,'function') , 
 		array('is_seller',0,1),
+		array('person_identify_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
 		array('update_time','time',2,'function'),
 		array('reg_time','time',1,'function'),
 		array('reg_ip','get_client_ip',1,'function'),
@@ -31,6 +32,11 @@ class UserModel extends Model {
 //获取所有用户信息
 	public function getUserInfo(){
 		return $this->select();
+	}
+
+//获取所有用户信息by id
+	public function getUserInfoById($id){
+		return $this->find($id);
 	}
 
 //注册
@@ -144,4 +150,14 @@ class UserModel extends Model {
 			}
 		}
 	} 
+//set状态identity_stage
+	public function set_identity_stage(){
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			$this->save();
+			return NULL;
+		}
+	}
+
 }

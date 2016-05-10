@@ -5,6 +5,8 @@ class UserCenterController extends Controller {
 	//个人中心
 	public function index(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			$this->display();
 		}else{
 			$this->error('请先登录','/Home/User/logIn',2);
@@ -13,6 +15,8 @@ class UserCenterController extends Controller {
 	//个人基本资料
 	public function basicInfo(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			$this->display();
 		}else{
 			$this->error('请先登录','/Home/User/logIn',2);
@@ -22,6 +26,8 @@ class UserCenterController extends Controller {
 	//修改密码
 	public function changePwd(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (D('User')->logInWithTel(session('user.user_name'),I('post.old_pwd'))) {
 					$msg=D('User')->setPwd();
@@ -66,6 +72,8 @@ class UserCenterController extends Controller {
 //修改手机号步骤一
 	public function changeTel1(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (verify_tel_check(I('post.check_tel'),session('user.tel'))) {
 					//获取进入step2的权限
@@ -87,6 +95,8 @@ class UserCenterController extends Controller {
 //修改手机号步骤二
 	public function changeTel2(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				//验证step传过来的confirm_tmp
 				if (session('confirm_tmp')==session('user.tel')) {
@@ -94,8 +104,7 @@ class UserCenterController extends Controller {
 					if (verify_tel_check(I('post.check_tel'),I('post.tel'))) {
 						$msg=D('User')->changeTel(session('user.tel'),I('post.tel'));
 						if (!$msg) {
-							//改一下session里面的号码
-							session('user.tel',I('post.tel'));
+
 							//收回step2权限
 							session('confirm_tmp',null);
 							$this->success('修改完成','/Home/UserCenter/basicInfo',2);
@@ -130,6 +139,8 @@ class UserCenterController extends Controller {
 //email路由，决定是创建还是修改
 	public function changeEmail(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断邮箱是否为空
 			if (''==session('user.email')) {
 				header('Location:'.U('Home/UserCenter/createEmail'));
@@ -146,6 +157,8 @@ class UserCenterController extends Controller {
 //创建email
 	public function createEmail(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断邮箱是否为空
 			if (''!=session('user.email')) {
 				$this->error('无法重复创建邮箱','/Home/UserCenter/basicInfo',2);
@@ -155,7 +168,7 @@ class UserCenterController extends Controller {
 				if (verify_email_check(I('post.check_email'),I('post.email'))) {
 					$msg=D('User')->createEmail();
 					if (!$msg) {
-						session('user.email',I('post.email'));
+
 						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
 					}else{
 						$this->error('输入信息有误',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
@@ -177,6 +190,8 @@ class UserCenterController extends Controller {
 //修改邮箱步骤一
 	public function changeEmail1(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (verify_email_check(I('post.check_email'),session('user.email'))) {
 					//获取进入step2的权限
@@ -198,6 +213,8 @@ class UserCenterController extends Controller {
 //修改邮箱步骤二
 	public function changeEmail2(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				//验证step传过来的confirm_tmp
 				if (session('confirm_tmp_email')==session('user.email')) {
@@ -205,8 +222,6 @@ class UserCenterController extends Controller {
 					if (verify_email_check(I('post.check_email'),I('post.email'))) {
 						$msg=D('User')->changeEmail(session('user.email'),I('post.email'));
 						if (!$msg) {
-							//改一下session里面的号码
-							session('user.email',I('post.email'));
 							//收回step2权限
 							session('confirm_tmp_email',null);
 							$this->success('修改完成','/Home/UserCenter/basicInfo',2);
@@ -239,8 +254,9 @@ class UserCenterController extends Controller {
 //设置头像
 	public function avatar(){
 		if (is_login()) {
+						//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
-				# code...
 			    $upload = new \Think\Upload();// 实例化上传类
 			    $upload->maxSize   =     3145728 ;// 设置附件上传大小
 			    $upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
@@ -260,11 +276,48 @@ class UserCenterController extends Controller {
 			    	$this->success('上传成功！','/Home/UserCenter/avatar');
 			    }
 			} else {
-				# code...
 				$this->display();
 			}
 		}else{
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
 	}	
+
+//实名认证
+	public function identityId(){
+		if (is_login()) {
+			//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
+			if (IS_POST) {
+				$upload = new \Think\Upload();// 实例化上传类
+			    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+			    $upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
+			    $upload->rootPath  =     USERS_PATH; // 设置附件上传根目录
+			    $upload->savePath  =     I('post.id').'/'; // 设置附件上传（子）目录
+			    $upload->autoSub   =     false;
+			    $upload->saveName  =     array('identify_upload_rule');
+			    $upload->replace   =     true;
+			    $upload->saveExt   =     'jpg';
+			    // 上传文件 
+			    $info   =   $upload->upload();
+			    //set状态identity_stage；
+			    D('User')->set_identity_stage();
+			    if(!$info) {
+			    // 上传错误提示错误信息
+			    	$this->error($upload->getError());
+			    }else{
+			    // 上传成功
+			    	$this->success('上传成功！','/Home/UserCenter/identityId');
+			    }
+			} else {
+				$this->assign('person_identity_stage',is_login()['person_identity_stage']);
+				$this->assign('true_name',is_login()['true_name']);
+				$this->assign('person_id',is_login()['person_id']);
+				$this->display();
+			}
+		}else{
+			$this->error('请先登录','/Home/User/logIn',2);
+		}		
+	}
+
 }

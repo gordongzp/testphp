@@ -130,5 +130,17 @@ function send_mail($to, $title, $content) {
         }
     }
 
+//身份证上传命名规则
+    function identify_upload_rule(){
+        global $just_call;
+        if (!$just_call) {
+            $just_call=1;
+            return 'identify1';
+        } else {
+            return 'identify2';
+        }
+    }
+
+
 
     ?>

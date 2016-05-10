@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<head>
+	<title>个人中心</title>
+	<!-- 模板上部配置 -->
+	<include file="Public/con_t" />
+	<!-- 本页css -->
+</head>
+
+<!-- body classes:  -->
+<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+<!-- "gradient-background-header": applies gradient background to header -->
+<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
+<body class="no-trans front-page transparent-header  ">
+
+	<!-- scrollToTop -->
+	<!-- ================ -->
+	<div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+
+	<!-- page wrapper start -->
+	<!-- ================ -->
+	<div class="page-wrapper">
+		
+		<include file="Public/header" />
+		<include file="Public/user_center_left" />
+		<!-- breadcrumb start -->
+		<!-- ================ -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="{:U('Home/Index/index')}">首页</a></li>
+					<li><a class="link-dark" href="{:U('Home/UserCenter/index')}">个人中心</a></li>
+					<li class="active">实名认证</li>
+				</ol>
+			</div>
+		</div>
+		<!-- breadcrumb end -->
+
+		<!-- main-container start -->
+		<!-- ================ -->
+		<section class="main-container">
+
+			<div class="container">
+				<div class="row">
+
+					<!-- main start -->
+					<!-- ================ -->
+					<div class="main col-md-12">
+
+						<!-- page-title start -->
+						<!-- ================ -->
+						<h1 class="page-title">实名认证</h1>
+						<div class="separator-2"></div>
+						<!-- page-title end -->
+						<div class="row">
+							<div class="col-sm-9 col-lg-8">
+								<!-- tabs start -->
+								<!-- ================ -->
+								<!-- Nav tabs -->
+								<include file="Public/user_center_tab" />
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div class="tab-pane in active" id="h2tab1">
+										<div class="row">
+											<div class="col-sm-12">
+												<?php
+												switch ($person_identity_stage) {
+													case 0://未实名认证
+													?>
+													<div class="alert alert-icon alert-warning" role="alert">
+														<i class="fa fa-warning"></i>
+														您还未进行实名认证
+													</div>
+													<?PHP
+													break;
+													case 1://已提交实名认证
+													?>
+													<div class="alert alert-icon alert-info" role="alert">
+														<i class="fa fa-info-circle"></i>
+														已提交实名认证，请耐心等待审核
+													</div>
+													<?PHP
+													break;
+													case 2://实名认证不通过
+													?>
+													<div class="alert alert-icon alert-danger" role="alert">
+														<i class="fa fa-times"></i>
+														实名认证不通过，请重新提交
+													</div>
+													<?PHP
+													break;
+													case 3://已通过审核
+													?>
+													<div class="alert alert-icon alert-success" role="alert">
+														<i class="fa fa-check"></i>
+														已通过实名认证
+													</div>
+													<?PHP
+													break;
+													default:
+													break;
+												}
+												?>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="{:U('Home/UserCenter/identityId')}" method="POST" role="form" enctype="multipart/form-data">
+													<input style="display: none;" type="text" name="id" value="{:session('user.id')}" >
+													<input style="display: none;" type="text" name="person_identity_stage" value="1" >
+													<div class="form-group">
+														<label>姓名</label>
+														<input type="text" name="true_name" id="" class="form-control" required="required" placeholder="{$true_name}">
+													</div>
+													<div class="form-group">
+														<label>身份证号码</label>
+														<input type="text" name="person_id" id="" class="form-control" required="required" placeholder="{$person_id}">
+													</div>
+													<div class="form-group">
+														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" style="width: 258px; height: 162px;">
+														<label>身份证正面</label>
+														<input type="file" name="photo1">
+														<p class="help-block">支持jpg,png,jpeg格式</p>
+													</div>
+													<div class="form-group">
+														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify2','','jpg') ?>" style="width: 258px; height: 162px;">
+														<label>身份证反面</label>
+														<input type="file" name="photo2">
+														<p class="help-block">支持jpg,png,jpeg格式</p>
+													</div>
+													<button type="submit" class="btn btn-default">保存</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- tabs end -->
+
+							</div>
+							<include file="Public/user_center_right" />
+						</div>
+					</div>
+					<!-- main end -->
+				</div>
+			</div>
+		</section>
+		<!-- main-container end -->
+		<include file="Public/footer" />
+	</div>
+	<!-- page-wrapper end -->
+	<!-- 模板底部配置 -->
+	<include file="Public/con_b" />
+	<!-- 本页js -->
+	<script type="text/javascript">
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(7)').attr("class", "active");
+	</script>
+
+</body>
+</html>
