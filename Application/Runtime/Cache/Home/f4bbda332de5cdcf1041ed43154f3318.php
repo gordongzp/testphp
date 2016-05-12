@@ -449,7 +449,9 @@
 														<input type="file" name="photo2">
 														<p class="help-block">支持jpg,png,jpeg格式</p>
 													</div>
-													<button type="submit" class="btn btn-default">保存</button>
+													<?php  if (3==session('user.person_identity_stage')) { } else { ?>
+														<button type="submit" class="btn btn-default">保存</button>
+														<?php  } ?>
 												</form>
 											</div>
 										</div>

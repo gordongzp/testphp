@@ -8,7 +8,7 @@ class UserController extends Controller {
 	public function signUp(){
 		if (IS_POST) {
 			if (verify_tel_check(I('post.check_tel'),I('post.tel'))) {//验证手机验证码
-				$msg=D('User')->register();
+				$msg=D('User')->createAdd();
 				if (!$msg) {
 					session('user',D('user')->logInWithTel(I('post.username'),I('post.pwd')));
 					//创建uploads/user/id目录并复制默认头像文件

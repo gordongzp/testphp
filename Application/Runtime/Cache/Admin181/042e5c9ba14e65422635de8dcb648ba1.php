@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>管理中心首页</title>
+	<title>用户管理首页</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -156,18 +156,14 @@
 
 					<ul class="nav navbar-nav text-center">
 						<li class="active"><a href="<?php echo U('Admin181/Index/index');?>">管理中心</a></li>
+
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">商品管理</a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo U('Admin181/Goods/cate');?>">商品分类</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">会员管理</a>
-							<ul class="dropdown-menu">
-								<li><a href="<?php echo U('Admin181/User/userList');?>">会员列表</a></li>
-							</ul>
-						</li>
+
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">一级目录</a>
 							<ul class="dropdown-menu">
@@ -191,9 +187,9 @@
 		<div class="breadcrumb-container">
 			<div class="container">
 				<ol class="breadcrumb">
-					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
-					<li><a class="link-dark" href="<?php echo U('Admin181/Index/index');?>">管理中心</a></li>
-					<li class="active">管理中心首页</li>
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Admin181/Index/index');?>">首页</a></li>
+					<li><a class="link-dark" href="<?php echo U('Admin181/Index/index');?>">用户管理</a></li>
+					<li class="active">用户管理首页</li>
 				</ol>
 			</div>
 		</div>

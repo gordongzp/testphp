@@ -19,7 +19,7 @@ class UserModel extends Model {
 		array('email','/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/','请输入正确的邮箱格式'),  
 		);
 	protected $_auto = array ( 
-		array('user_pwd','md10',3,'function') , 
+		// array('user_pwd','md10',3,'function') , 
 		array('is_seller',0,1),
 		array('person_identify_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
 		array('update_time','time',2,'function'),
@@ -29,18 +29,23 @@ class UserModel extends Model {
 		array('last_log_ip',"get_client_ip",3,'function'),
 		);
 	
-//获取所有用户信息
+//获取所有用户信息(带分页)
 	public function getUserInfo(){
-		return $this->select();
+		$page=I('get.p',1,'int');
+		$limit=1;//每页显示数量
+		$lists=$this->page($page,$limit)->select();//先where 再order再。。。
+		$count=$this->count();
+		$Page=new \Think\Page($count,$limit);
+		return array('show' => $Page->show(), 'lists'=>$lists);
 	}
 
-//获取所有用户信息by id
+//获取单个用户信息by id
 	public function getUserInfoById($id){
 		return $this->find($id);
 	}
 
-//注册
-	public function register(){
+//createAdd 方法
+	public function createAdd(){
 		if (!$this->create()) {
 			return $this->getError();
 		}else{
@@ -65,8 +70,8 @@ class UserModel extends Model {
 		return $info;
 	}
 
-//create方法重置密码
-	public function setPwd(){ 
+//createSave方法
+	public function createSave(){ 
 		if (!$this->create()) {
 			return $this->getError();
 		}else{
@@ -118,15 +123,7 @@ class UserModel extends Model {
 		}
 	} 
 
-//创建邮箱
-	public function createEmail($old_tel,$new_tel){
-		if (!$this->create()) {
-			return $this->getError();
-		}else{
-			$this->save();
-			return NULL;
-		}
-	}
+
 
 //更换邮箱
 	public function changeEmail($old_email,$new_email){
@@ -150,14 +147,4 @@ class UserModel extends Model {
 			}
 		}
 	} 
-//set状态identity_stage
-	public function set_identity_stage(){
-		if (!$this->create()) {
-			return $this->getError();
-		}else{
-			$this->save();
-			return NULL;
-		}
-	}
-
 }

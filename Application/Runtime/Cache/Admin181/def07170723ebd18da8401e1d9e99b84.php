@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>管理中心首页</title>
+	<title>会员列表</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -193,7 +193,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Admin181/Index/index');?>">管理中心</a></li>
-					<li class="active">管理中心首页</li>
+					<li class="active">会员列表</li>
 				</ol>
 			</div>
 		</div>
@@ -211,12 +211,32 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">管理中心首页</h1>
+						<h1 class="page-title">会员列表</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
 							<div class="col-sm-12">
-
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>用户名</th>
+											<th>手机号</th>
+											<th>邮箱</th>
+											<th>状态</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php if(is_array($users)): foreach($users as $key=>$vo): ?><tr>
+												<td><?php echo ($vo["user_name"]); ?></td>
+												<td><?php echo ($vo["tel"]); ?></td>
+												<td><?php echo ($vo["email"]); ?></td>
+												<td>
+												<a href="<?php echo U('Admin181/User/identityId',array('id'=>$vo['id'],));?>">证</a>|
+												</td>
+											</tr><?php endforeach; endif; ?>
+									</tbody>
+								</table>
+								<?php echo $show;?>
 							</div>
 						</div>
 					</div>

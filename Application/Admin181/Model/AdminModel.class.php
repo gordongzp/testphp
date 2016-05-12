@@ -2,6 +2,7 @@
 namespace Admin181\Model;
 use Think\Model;
 class AdminModel extends Model {
+    
     public function createAdmin(){
     	$data = array(
     		'user_name' => 'admin',
@@ -19,4 +20,8 @@ class AdminModel extends Model {
     	return $this->where($condition)->find();
     }
 
+    public function getUserInfoById($id)
+    {
+        return $this->find($id);
+    }
 }

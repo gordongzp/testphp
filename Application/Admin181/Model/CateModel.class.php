@@ -26,7 +26,7 @@ class CateModel extends RelationModel {
 		// array('pid',0,1),
 		);
 
-	public function addCate(){
+	public function createAdd(){
 		if (!$this->create()) {
 			return $this->getError();
 		}else{
@@ -45,7 +45,7 @@ class CateModel extends RelationModel {
 		$this->where($condition_to_delet)->delete();
 	}
 
-	public function editCate($name){
+	public function createSave(){
 		if (!$this->create()) {
 			return $this->getError();
 		}else{

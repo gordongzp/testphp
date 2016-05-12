@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>管理中心首页</title>
+	<title>实名审核</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -193,7 +193,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Admin181/Index/index');?>">管理中心</a></li>
-					<li class="active">管理中心首页</li>
+					<li class="active">实名审核</li>
 				</ol>
 			</div>
 		</div>
@@ -211,24 +211,120 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">管理中心首页</h1>
+						<h1 class="page-title">实名审核</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-12">
-
+							<div class="col-sm-8">
+								<?php
+ switch ($user['person_identity_stage']){ case 0: ?>
+								<div class="alert alert-icon alert-warning" role="alert">
+									<i class="fa fa-warning"></i>
+									未进行实名认证
+								</div>
+								<?PHP
+ break; case 1: ?>
+								<div class="alert alert-icon alert-info" role="alert">
+									<i class="fa fa-info-circle"></i>
+									已提交实名认证，等待审核
+								</div>
+								<?PHP
+ break; case 2: ?>
+								<div class="alert alert-icon alert-danger" role="alert">
+									<i class="fa fa-times"></i>
+									实名认证不通过
+								</div>
+								<?PHP
+ break; case 3: ?>
+								<div class="alert alert-icon alert-success" role="alert">
+									<i class="fa fa-check"></i>
+									已通过实名认证
+								</div>
+								<?PHP
+ break; default: break;}?>
 							</div>
+							<div class="row"></div>
+							<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Admin181/User/identityId',array('id'=>$user['id'],));?>" method="POST" role="form">
+								<div class="col-sm-4">
+									<!-- 传id -->
+									<input style="display: none;" type="text" name="id" value="<?php echo ($user["id"]); ?>" >
+									<div class="form-group">
+										<label>姓名</label>
+										<input disabled="" type="text" class="form-control" placeholder="<?php echo ($user["true_name"]); ?>">
+									</div>
+									<div class="form-group">
+										<label>身份证号码</label>
+										<input disabled="" type="text" class="form-control" placeholder="<?php echo ($user["person_id"]); ?>">
+									</div>
+								</div>
+								<div class="row"></div>
+								<div class="col-sm-4">
+									<div class="image-box style-2 mb-20">
+										<div class="overlay-container overlay-visible">
+											<img style="height: 260px" src="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" alt="">
+											<a href="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" class="overlay-link popup-img"><i class="fa fa-plus"></i></a>
+											<div class="overlay-bottom hidden-xs">
+												<div class="text">
+													<p class="lead margin-clear text-left">身份证正面</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="image-box style-2 mb-20">
+										<div class="overlay-container overlay-visible">
+											<img style="height: 260px" src="<?php echo U(USERS_PATH.session('user.id').'/identify2','','jpg') ?>" alt="" >
+											<a href="<?php echo U(USERS_PATH.session('user.id').'/identify2','','jpg') ?>" class="overlay-link popup-img"><i class="fa fa-plus"></i></a>
+											<div class="overlay-bottom hidden-xs">
+												<div class="text">
+													<p class="lead margin-clear text-left">身份证反面</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row"></div>
+								<div class="col-sm-4 col-sm-offset-4">
+									<div class="radio">
+										<label>
+											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="0" checked="">
+											未提交审核
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="1" checked="">
+											已提交审核
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="2" checked="">
+											审核不通过
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="3" checked="">
+											审核通过
+										</label>
+									</div>
+									<button type="submit" class="btn btn-default">保存</button>
+								</div>
+							</form>
 						</div>
 					</div>
-					<!-- main end -->
 				</div>
+				<!-- main end -->
 			</div>
-		</section>
-		<!-- main-container end -->
-	</div>
-	<!-- page-wrapper end -->
-	<!-- 模板底部配置 -->
-	<!-- JavaScript files placed at the end of the document so the pages load faster -->
+		</div>
+	</section>
+	<!-- main-container end -->
+</div>
+<!-- page-wrapper end -->
+<!-- 模板底部配置 -->
+<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->
 <!-- Jquery and Bootstap core js files -->
 <script type="text/javascript" src="/Public/plugins/jquery.min.js"></script>
@@ -290,10 +386,10 @@
 		})
 	})
 </script>
-	<!-- 本页js -->
-	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
-	</script>
+<!-- 本页js -->
+<script type="text/javascript">
+	$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+</script>
 
 </body>
 </html>

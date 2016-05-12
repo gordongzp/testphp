@@ -276,38 +276,6 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>user_name</th>
-							<th>user_pwd</th>
-							<th>email</th>
-							<th>tel</th>
-							<th>is_seller</th>
-							<th>reg_time</th>
-							<th>last_log_time</th>
-							<th>update_time</th>
-							<th>reg_ip</th>
-							<th>last_log_ip</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php if(is_array($info)): foreach($info as $key=>$vo): ?><tr>
-								<td><?php echo ($vo["id"]); ?></td>
-								<td><?php echo ($vo["user_name"]); ?></td>
-								<td><?php echo ($vo["user_pwd"]); ?></td>
-								<td><?php echo ($vo["email"]); ?></td>
-								<th><?php echo ($vo["tel"]); ?></th>
-								<th><?php echo ($vo["is_seller"]); ?></th>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['reg_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['last_log_time']);?></td>
-								<td><?php echo date("Y-m-d h:i:sa",$vo['update_time']);?></td>
-								<td><?php echo ($vo["reg_ip"]); ?></td>
-								<td><?php echo ($vo["last_log_ip"]); ?></td>
-							</tr><?php endforeach; endif; ?>	
-					</tbody>
-				</table>
 			</div>
 		</div>
 					<!-- footer top start -->

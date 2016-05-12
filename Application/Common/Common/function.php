@@ -17,6 +17,15 @@ function is_login(){
 	}
 }
 
+// 检测管理是否处于登录状态，是返回用户信息，否返回0
+function is_admin_login(){
+    if (session('admin_user')) {
+        return session('admin_user');
+    }else{
+        return 0;
+    }
+}
+
 // 短信公司api
 function tel_get($url){
 	if(function_exists('file_get_contents'))

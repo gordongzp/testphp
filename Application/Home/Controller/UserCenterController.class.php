@@ -30,7 +30,7 @@ class UserCenterController extends Controller {
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (D('User')->logInWithTel(session('user.user_name'),I('post.old_pwd'))) {
-					$msg=D('User')->setPwd();
+					$msg=D('User')->createSave();
 					if (!$msg) {
 						session('user',null);
 						$this->success('修改完成','/Home/Index/index',2);
@@ -166,7 +166,7 @@ class UserCenterController extends Controller {
 			}
 			if (IS_POST) {
 				if (verify_email_check(I('post.check_email'),I('post.email'))) {
-					$msg=D('User')->createEmail();
+					$msg=D('User')->createSave();
 					if (!$msg) {
 
 						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
@@ -301,7 +301,7 @@ class UserCenterController extends Controller {
 			    // 上传文件 
 			    $info   =   $upload->upload();
 			    //set状态identity_stage；
-			    D('User')->set_identity_stage();
+			    D('User')->createSave();
 			    if(!$info) {
 			    // 上传错误提示错误信息
 			    	$this->error($upload->getError());
