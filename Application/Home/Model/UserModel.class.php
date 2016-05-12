@@ -11,17 +11,22 @@ class UserModel extends Model {
 	protected $_validate = array(
 		array('user_name','','帐号名称已经存在！',0,'unique',3), 
 		array('email','','邮箱已经存在！',0,'unique',3), 
+		array('person_id','','身份证号已经存在！',0,'unique',3), 
 		array('tel','','手机号码已经存在！',0,'unique',3), 
-		array('tel','/^1[3|4|5|8][0-9]\d{4,8}$/','请输入正确的手机格式'),
-		array('user_pwd2','user_pwd','确认密码不正确',0,'confirm'), 
+
+		array('tel','/^1[3|4|5|8][0-9]\d{4,8}$/','请输入正确的手机格式'),	
 		array('user_pwd','/^[\w\d-_]{3,10}$/','密码必须以字母开头，长度在3-10之间'), 
 		array('user_name','/^[\w\d-_]{6,18}$/','用户名必须以字母开头，长度在6-18之间'),
 		array('email','/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/','请输入正确的邮箱格式'),  
+		array('person_id','/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/','身份证格式不正确'),  
+
+		array('user_pwd2','user_pwd','确认密码不正确',0,'confirm'), 
 		);
 	protected $_auto = array ( 
-		// array('user_pwd','md10',3,'function') , 
+		array('user_pwd','md10',1,'function') , 
 		array('is_seller',0,1),
 		array('person_identify_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
+
 		array('update_time','time',2,'function'),
 		array('reg_time','time',1,'function'),
 		array('reg_ip','get_client_ip',1,'function'),
@@ -140,7 +145,7 @@ class UserModel extends Model {
 			//判断新号码是否存在
 			if ($this->where($condition2)->find()) {
 				//已存在
-				return array('email' => '此邮箱已存在，请用其他邮箱', );
+				return array('email' => '此邮箱已存在，请更换邮箱', );
 			}else{
 				$this->where($condition)->save($data);
 				return null;

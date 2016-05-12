@@ -400,7 +400,7 @@
 													<input type="text" name="id" value="<?php echo session('user.id');?>" style="display: none;">
 													<div class="form-group">
 														<label for="">邮箱</label>
-														<input name="email" id="email" type="text" class="form-control" placeholder="" value="<?php echo session('user.email');?>">
+														<input name="email" id="email" type="text" class="form-control" placeholder="<?php echo ($msg["email"]); ?>" value="">
 													</div>
 													<div class="form-group">
 														<label for="">邮箱验证码</label>

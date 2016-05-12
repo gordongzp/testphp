@@ -435,7 +435,7 @@
 													</div>
 													<div class="form-group">
 														<label>身份证号码</label>
-														<input type="text" name="person_id" id="" class="form-control" required="required" placeholder="<?php echo ($person_id); ?>">
+														<input type="text" name="person_id" id="" class="form-control" required="required" placeholder="<?php echo ($person_id); ?>"><span style="color: red"><?php echo ($msg["person_id"]); ?></span>
 													</div>
 													<div class="form-group">
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" style="width: 258px; height: 162px;">
@@ -458,7 +458,6 @@
 									</div>
 								</div>
 								<!-- tabs end -->
-
 							</div>
 														<div class="col-sm-3 col-lg-offset-1">
 								<h3 class="title">Contact Me</h3>

@@ -57,7 +57,7 @@
 <!-- "transparent-header": makes the header transparent and pulls the banner to top -->
 <!-- "gradient-background-header": applies gradient background to header -->
 <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
-<body class="no-trans front-page transparent-header  ">
+<body class="no-trans front-page transparent-header" style="height: 100%">
 
 	<!-- scrollToTop -->
 	<!-- ================ -->
@@ -65,13 +65,13 @@
 
 	<!-- page wrapper start -->
 	<!-- ================ -->
-	<div class="page-wrapper">
+	<div class="page-wrapper" style="height: 100%">
 		<!-- background image -->
 		<div class="fullscreen-bg"></div>
 
 		<!-- banner start -->
 		<!-- ================ -->
-		<div class="pv-40 dark-translucent-bg">
+		<div class="pv-40 dark-translucent-bg" style="height: 100%">
 			<div class="container">
 				<div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
 					<!-- logo -->
@@ -170,6 +170,8 @@
 <script type="text/javascript" src="/Public/js/custom.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
+
+<!-- 顶部快速登录切换 -->
 <script type="text/javascript">
 	if (<?php echo is_login();?>) {
 		$('#uinfo').css("display","");

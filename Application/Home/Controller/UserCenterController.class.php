@@ -30,12 +30,12 @@ class UserCenterController extends Controller {
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (D('User')->logInWithTel(session('user.user_name'),I('post.old_pwd'))) {
-					$msg=D('User')->createSave();
+					$msg=D('User')->setPwdByTel(session('user.tel'),I('post.pwd'));
 					if (!$msg) {
 						session('user',null);
 						$this->success('修改完成','/Home/Index/index',2);
 					}else{
-						$this->error('密码格式不正确',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
+						$this->error('输入信息有误',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
 					}
 				}else{
 					$this->error('原密码错误','',2);
@@ -53,6 +53,7 @@ class UserCenterController extends Controller {
 	public function comeBackPwd(){
 		if (IS_POST) {
 			if (verify_tel_check(I('post.check_tel'),I('post.tel2'))) {
+
 				$msg=D('User')->setPwdByTel(I('post.tel2'),I('post.pwd'));
 				if (!$msg) {
 					session('user',null);
@@ -60,6 +61,7 @@ class UserCenterController extends Controller {
 				}else{
 					$this->error('输入信息有误',U('Home/UserCenter/comeBackPwd',array('msg'=>serialize($msg))),2);
 				}
+
 			}else{
 				$this->error('验证码不正确','',2);
 			}
@@ -168,10 +170,9 @@ class UserCenterController extends Controller {
 				if (verify_email_check(I('post.check_email'),I('post.email'))) {
 					$msg=D('User')->createSave();
 					if (!$msg) {
-
 						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
 					}else{
-						$this->error('输入信息有误',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
+						$this->error('输入信息有误',U('Home/UserCenter/createEmail',array('msg'=>serialize($msg))),2);
 					}
 				}else{
 					$this->error('验证码不正确','',2);
@@ -238,8 +239,7 @@ class UserCenterController extends Controller {
 				//验证step传过来的confirm_tmp
 				if (session('confirm_tmp_email')==session('user.email')) {
 				//确实是step1过来的
-				//重置session(不需要)
-					// session('confirm_tmp',null);
+				// session('confirm_tmp',null);
 					$this->assign('msg',unserialize($_GET['msg']));
 					$this->display();
 				}else{
@@ -300,19 +300,24 @@ class UserCenterController extends Controller {
 			    $upload->saveExt   =     'jpg';
 			    // 上传文件 
 			    $info   =   $upload->upload();
-			    //set状态identity_stage；
-			    D('User')->createSave();
-			    if(!$info) {
+			    //set状态identity_stage以及身份证+truename；
+			    $msg=D('User')->createSave();
+			    if (!$msg) {
+			    	if(!$info) {
 			    // 上传错误提示错误信息
-			    	$this->error($upload->getError());
-			    }else{
+			    		$this->error($upload->getError());
+			    	}else{
 			    // 上传成功
-			    	$this->success('上传成功！','/Home/UserCenter/identityId');
+			    		$this->success('上传成功！','/Home/UserCenter/identityId');
+			    	}		
+			    }else{
+			    	$this->error('输入信息有误',U('Home/UserCenter/identityId',array('msg'=>serialize($msg))),2);
 			    }
 			} else {
 				$this->assign('person_identity_stage',is_login()['person_identity_stage']);
 				$this->assign('true_name',is_login()['true_name']);
 				$this->assign('person_id',is_login()['person_id']);
+				$this->assign('msg',unserialize($_GET['msg']));
 				$this->display();
 			}
 		}else{
