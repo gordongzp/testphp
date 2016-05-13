@@ -9,18 +9,18 @@ class UserModel extends Model {
          'pwd2' =>'user_pwd2', // 把表单中pwd2映射到数据表的username字段
          );
 	protected $_validate = array(
-		array('user_name','','帐号名称已经存在！',0,'unique',3), 
-		array('email','','邮箱已经存在！',0,'unique',3), 
-		array('person_id','','身份证号已经存在！',0,'unique',3), 
-		array('tel','','手机号码已经存在！',0,'unique',3), 
+		array('user_name','','DOUBLE_USERS',0,'unique',3), 
+		array('email','','DOUBLE_EMAILS',0,'unique',3), 
+		array('person_id','','DOUBLE_ID',0,'unique',3), 
+		array('tel','','DOUBLE_TEL',0,'unique',3), 
 
-		array('tel','/^1[3|4|5|8][0-9]\d{4,8}$/','请输入正确的手机格式'),	
-		array('user_pwd','/^[\w\d-_]{3,10}$/','密码必须以字母开头，长度在3-10之间'), 
-		array('user_name','/^[\w\d-_]{6,18}$/','用户名必须以字母开头，长度在6-18之间'),
-		array('email','/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/','请输入正确的邮箱格式'),  
-		array('person_id','/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/','身份证格式不正确'),  
+		array('tel','/^1[3|4|5|8][0-9]\d{4,8}$/','WRONG_TEL'),	
+		array('user_pwd','/^[\w\d-_]{3,10}$/','WRONG_PWD'), 
+		array('user_name','/^[\w\d-_]{6,18}$/','WRONG_USER_NAME'),
+		array('email','/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/','WRONG_EMAIL'),  
+		array('person_id','/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/','WRONG_ID'),  
 
-		array('user_pwd2','user_pwd','确认密码不正确',0,'confirm'), 
+		array('user_pwd2','user_pwd','WRONG_CONFIRM_PWD',0,'confirm'), 
 		);
 	protected $_auto = array ( 
 		array('user_pwd','md10',1,'function') , 
@@ -49,16 +49,6 @@ class UserModel extends Model {
 		return $this->find($id);
 	}
 
-//createAdd 方法
-	public function createAdd(){
-		if (!$this->create()) {
-			return $this->getError();
-		}else{
-			$this->add();
-			return NULL;
-		}
-	}
-
 //用户名/手机+密码方式验证身份
 	public function logInWithTel($username_or_tel,$pwd){ 
 		$condition_tem=array('user_name' =>$username_or_tel,'tel' => $username_or_tel,'_logic'=>'or');
@@ -75,6 +65,16 @@ class UserModel extends Model {
 		return $info;
 	}
 
+//createAdd 方法
+	public function createAdd(){
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			$this->add();
+			return NULL;
+		}
+	}
+
 //createSave方法
 	public function createSave(){ 
 		if (!$this->create()) {
@@ -84,7 +84,6 @@ class UserModel extends Model {
 			return NULL;
 		}
 	}
-
 
 //普通方法重置密码
 	public function setPwdByTel($tel,$pwd){ 
@@ -96,7 +95,7 @@ class UserModel extends Model {
 				'update_time'=>time(),);
 			if (!$this->where($condition)->select()) {
 				//失败
-				return array('tel' => '此号码没有注册', );
+				return array('tel' => 'NO_TEL', );
 			}else{
 				//成功
 				$this->where($condition)->save($data);
@@ -114,21 +113,19 @@ class UserModel extends Model {
 			'update_time'=>time());
 		if (!$this->where($condition)->find()) {
 			//失败
-			return array('tel' => '此号码没有注册', );
+			return array('tel' => 'NO_TEL', );
 		}else{
 			//成功
 			//判断新号码是否存在
 			if ($this->where($condition2)->find()) {
 				//已存在
-				return array('tel' => '此号码已存在，请更换号码', );
+				return array('tel' => 'DOUBLE_TEL', );
 			}else{
 				$this->where($condition)->save($data);
 				return null;
 			}
 		}
 	} 
-
-
 
 //更换邮箱
 	public function changeEmail($old_email,$new_email){
@@ -139,13 +136,13 @@ class UserModel extends Model {
 			'update_time'=>time());
 		if (!$this->where($condition)->find()) {
 			//失败
-			return array('email' => '没有此邮箱', );
+			return array('email' => 'NO_EMAIL', );
 		}else{
 			//成功
 			//判断新号码是否存在
 			if ($this->where($condition2)->find()) {
 				//已存在
-				return array('email' => '此邮箱已存在，请更换邮箱', );
+				return array('email' => 'DOUBLE_EMAILS', );
 			}else{
 				$this->where($condition)->save($data);
 				return null;

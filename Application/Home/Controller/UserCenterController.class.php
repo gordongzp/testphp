@@ -5,7 +5,7 @@ class UserCenterController extends Controller {
 	//个人中心
 	public function index(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			$this->display();
 		}else{
@@ -15,7 +15,7 @@ class UserCenterController extends Controller {
 	//个人基本资料
 	public function basicInfo(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			$this->display();
 		}else{
@@ -26,7 +26,7 @@ class UserCenterController extends Controller {
 	//修改密码
 	public function changePwd(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (D('User')->logInWithTel(session('user.user_name'),I('post.old_pwd'))) {
@@ -53,7 +53,6 @@ class UserCenterController extends Controller {
 	public function comeBackPwd(){
 		if (IS_POST) {
 			if (verify_tel_check(I('post.check_tel'),I('post.tel2'))) {
-
 				$msg=D('User')->setPwdByTel(I('post.tel2'),I('post.pwd'));
 				if (!$msg) {
 					session('user',null);
@@ -61,7 +60,6 @@ class UserCenterController extends Controller {
 				}else{
 					$this->error('输入信息有误',U('Home/UserCenter/comeBackPwd',array('msg'=>serialize($msg))),2);
 				}
-
 			}else{
 				$this->error('验证码不正确','',2);
 			}
@@ -74,7 +72,7 @@ class UserCenterController extends Controller {
 //修改手机号步骤一
 	public function changeTel1(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (verify_tel_check(I('post.check_tel'),session('user.tel'))) {
@@ -97,7 +95,7 @@ class UserCenterController extends Controller {
 //修改手机号步骤二
 	public function changeTel2(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				//验证step传过来的confirm_tmp
@@ -106,7 +104,6 @@ class UserCenterController extends Controller {
 					if (verify_tel_check(I('post.check_tel'),I('post.tel'))) {
 						$msg=D('User')->changeTel(session('user.tel'),I('post.tel'));
 						if (!$msg) {
-
 							//收回step2权限
 							session('confirm_tmp',null);
 							$this->success('修改完成','/Home/UserCenter/basicInfo',2);
@@ -124,9 +121,7 @@ class UserCenterController extends Controller {
 			}else{
 				//验证step传过来的confirm_tmp
 				if (session('confirm_tmp')==session('user.tel')) {
-				//确实是step1过来的
-				//重置session(不需要)
-					// session('confirm_tmp',null);
+					//确实是step1过来的
 					$this->assign('msg',unserialize($_GET['msg']));
 					$this->display();
 				}else{
@@ -141,7 +136,7 @@ class UserCenterController extends Controller {
 //email路由，决定是创建还是修改
 	public function changeEmail(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断邮箱是否为空
 			if (''==session('user.email')) {
@@ -159,7 +154,7 @@ class UserCenterController extends Controller {
 //创建email
 	public function createEmail(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断邮箱是否为空
 			if (''!=session('user.email')) {
@@ -191,7 +186,7 @@ class UserCenterController extends Controller {
 //修改邮箱步骤一
 	public function changeEmail1(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				if (verify_email_check(I('post.check_email'),session('user.email'))) {
@@ -214,12 +209,12 @@ class UserCenterController extends Controller {
 //修改邮箱步骤二
 	public function changeEmail2(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 				//验证step传过来的confirm_tmp
 				if (session('confirm_tmp_email')==session('user.email')) {
-				//确实是step1过来的
+					//确实是step1过来的
 					if (verify_email_check(I('post.check_email'),I('post.email'))) {
 						$msg=D('User')->changeEmail(session('user.email'),I('post.email'));
 						if (!$msg) {
@@ -238,8 +233,6 @@ class UserCenterController extends Controller {
 			}else{
 				//验证step传过来的confirm_tmp
 				if (session('confirm_tmp_email')==session('user.email')) {
-				//确实是step1过来的
-				// session('confirm_tmp',null);
 					$this->assign('msg',unserialize($_GET['msg']));
 					$this->display();
 				}else{
@@ -254,7 +247,7 @@ class UserCenterController extends Controller {
 //设置头像
 	public function avatar(){
 		if (is_login()) {
-						//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
 			    $upload = new \Think\Upload();// 实例化上传类

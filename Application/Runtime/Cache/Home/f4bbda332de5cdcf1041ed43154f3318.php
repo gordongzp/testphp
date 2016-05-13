@@ -435,7 +435,7 @@
 													</div>
 													<div class="form-group">
 														<label>身份证号码</label>
-														<input type="text" name="person_id" id="" class="form-control" required="required" placeholder="<?php echo ($person_id); ?>"><span style="color: red"><?php echo ($msg["person_id"]); ?></span>
+														<input type="text" name="person_id" id="" class="form-control" required="required" placeholder="<?php echo ($person_id); ?>"><span style="color: red"><?php echo (L2($msg["person_id"])); ?></span>
 													</div>
 													<div class="form-group">
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" style="width: 258px; height: 162px;">
@@ -549,17 +549,17 @@
 										<form role="form" id="footer-form" class="margin-clear">
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="name2">Name</label>
-												<input type="text" class="form-control" id="name2" placeholder="Name" name="name2">
+												<input type="text" class="form-control" id="name2" placeholder="" name="name2">
 												<i class="fa fa-user form-control-feedback"></i>
 											</div>
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="email2">Email address</label>
-												<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2">
+												<input type="email" class="form-control" id="email2" placeholder="" name="email2">
 												<i class="fa fa-envelope form-control-feedback"></i>
 											</div>
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="message2">Message</label>
-												<textarea class="form-control" rows="4" id="message2" placeholder="Message" name="message2"></textarea>
+												<textarea class="form-control" rows="4" id="message2" placeholder="" name="message2"></textarea>
 												<i class="fa fa-pencil form-control-feedback"></i>
 											</div>
 											<input type="submit" value="Send" class="margin-clear submit-button btn btn-default">

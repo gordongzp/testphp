@@ -87,28 +87,28 @@
 							<div class="form-group has-feedback">
 								<label for="inputName" class="col-sm-3 control-label">用户名 <span class="text-danger small">*</span></label>
 								<div class="col-sm-8">
-									<input name="username" type="text" class="form-control" id="inputName" placeholder="<?php echo ($msg["user_name"]); ?>" required>
+									<input name="username" type="text" class="form-control" id="inputName" placeholder="<?php echo (L2($msg["user_name"])); ?>" required>
 									<i class="fa fa-pencil form-control-feedback"></i>
 								</div>
 							</div>
 							<div class="form-group has-feedback">
 								<label for="inputEmail" class="col-sm-3 control-label">手机 <span class="text-danger small">*</span></label>
 								<div class="col-sm-8">
-									<input name="tel" type="text" class="form-control" id="tel" placeholder="<?php echo ($msg["tel"]); ?>">
+									<input name="tel" type="text" class="form-control" id="tel" placeholder="<?php echo (L2($msg["tel"])); ?>">
 									<i class="fa fa-mobile-phone form-control-feedback"></i>
 								</div>
 							</div>
 							<div class="form-group has-feedback">
 								<label for="inputPassword" class="col-sm-3 control-label">密码 <span class="text-danger small">*</span></label>
 								<div class="col-sm-8">
-									<input name="pwd" type="password" class="form-control" id="inputPassword" placeholder="<?php echo ($msg["user_pwd"]); ?>" required>
+									<input name="pwd" type="password" class="form-control" id="inputPassword" placeholder="<?php echo (L2($msg["user_pwd"])); ?>" required>
 									<i class="fa fa-lock form-control-feedback"></i>
 								</div>
 							</div>
 							<div class="form-group has-feedback">
 								<label for="inputPassword" class="col-sm-3 control-label">确认密码 <span class="text-danger small">*</span></label>
 								<div class="col-sm-8">
-									<input name="pwd2" type="password" class="form-control" id="inputPassword" placeholder="<?php echo ($msg["user_pwd2"]); ?>" required>
+									<input name="pwd2" type="password" class="form-control" id="inputPassword" placeholder="<?php echo (L2($msg["user_pwd2"])); ?>" required>
 									<i class="fa fa-lock form-control-feedback"></i>
 								</div>
 							</div>

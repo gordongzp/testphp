@@ -87,14 +87,14 @@
 							<div class="form-group has-feedback">
 								<label for="user_name" class="col-sm-3 control-label">用户名/手机</label>
 								<div class="col-sm-8">
-									<input name="user_name" type="text" class="form-control" id="user_name" placeholder="User Name" required>
+									<input name="user_name" type="text" class="form-control" id="user_name" placeholder="" required>
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 							</div>
 							<div class="form-group has-feedback">
 								<label for="user_pwd" class="col-sm-3 control-label">密码</label>
 								<div class="col-sm-8">
-									<input name="user_pwd" type="password" class="form-control" id="user_pwd" placeholder="Password" required>
+									<input name="user_pwd" type="password" class="form-control" id="user_pwd" placeholder="" required>
 									<i class="fa fa-lock form-control-feedback"></i>
 								</div>
 							</div>

@@ -39,7 +39,7 @@ class UserController extends Controller {
 				if (!$msg) {
 					$this->success('操作完成',U('Admin181/User/identityId',array('id'=>$user,)),2);
 				} else {
-					$this->error($msg,'',2);
+					$this->error(L2($msg),'',2);
 				}
 				
 			} else {

@@ -150,6 +150,14 @@ function send_mail($to, $title, $content) {
         }
     }
 
+//语言函数过滤空
+    function L2($str){
+        if ($str=='') {
+            return '';
+        } else {
+            return L($str);
+        }
+    }
 
 
     ?>

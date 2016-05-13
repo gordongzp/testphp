@@ -375,17 +375,17 @@
 										<form role="form" id="footer-form" class="margin-clear">
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="name2">Name</label>
-												<input type="text" class="form-control" id="name2" placeholder="Name" name="name2">
+												<input type="text" class="form-control" id="name2" placeholder="" name="name2">
 												<i class="fa fa-user form-control-feedback"></i>
 											</div>
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="email2">Email address</label>
-												<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2">
+												<input type="email" class="form-control" id="email2" placeholder="" name="email2">
 												<i class="fa fa-envelope form-control-feedback"></i>
 											</div>
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="message2">Message</label>
-												<textarea class="form-control" rows="4" id="message2" placeholder="Message" name="message2"></textarea>
+												<textarea class="form-control" rows="4" id="message2" placeholder="" name="message2"></textarea>
 												<i class="fa fa-pencil form-control-feedback"></i>
 											</div>
 											<input type="submit" value="Send" class="margin-clear submit-button btn btn-default">

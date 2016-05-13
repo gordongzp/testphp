@@ -20,20 +20,11 @@ class CateModel extends RelationModel {
 		);
 	protected $_validate = array(
 		// array('name','','一级类别名已存在',0,'unique',3), 
-		array('name','is_not_empty','类别名不能为空',3,'function'),
+		array('name','is_not_empty','CANT_BE_EMPTY',3,'function'),
 		);
 	protected $_auto = array ( 
 		// array('pid',0,1),
 		);
-
-	public function createAdd(){
-		if (!$this->create()) {
-			return $this->getError();
-		}else{
-			$this->add();
-			return NULL;
-		}
-	}
 
 	public function delCate($id){
 		$condition_to_delet = array('cat_id' =>$id , );
@@ -43,6 +34,15 @@ class CateModel extends RelationModel {
 			$this->delCate($v['cat_id']);
 		}	
 		$this->where($condition_to_delet)->delete();
+	}
+
+	public function createAdd(){
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			$this->add();
+			return NULL;
+		}
 	}
 
 	public function createSave(){

@@ -399,7 +399,7 @@
 												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/changeEmail2');?>" method="POST" role="form">
 													<div class="form-group">
 														<label for="">请输入新邮箱</label>
-														<input name="email" id="email" type="text" class="form-control" placeholder="<?php echo ($msg["email"]); ?>">
+														<input name="email" id="email" type="text" class="form-control" placeholder="<?php echo (L2($msg["email"])); ?>">
 													</div>
 													<div class="form-group">
 														<label for="">邮箱验证码</label>
@@ -558,17 +558,17 @@
 										<form role="form" id="footer-form" class="margin-clear">
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="name2">Name</label>
-												<input type="text" class="form-control" id="name2" placeholder="Name" name="name2">
+												<input type="text" class="form-control" id="name2" placeholder="" name="name2">
 												<i class="fa fa-user form-control-feedback"></i>
 											</div>
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="email2">Email address</label>
-												<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2">
+												<input type="email" class="form-control" id="email2" placeholder="" name="email2">
 												<i class="fa fa-envelope form-control-feedback"></i>
 											</div>
 											<div class="form-group has-feedback mb-10">
 												<label class="sr-only" for="message2">Message</label>
-												<textarea class="form-control" rows="4" id="message2" placeholder="Message" name="message2"></textarea>
+												<textarea class="form-control" rows="4" id="message2" placeholder="" name="message2"></textarea>
 												<i class="fa fa-pencil form-control-feedback"></i>
 											</div>
 											<input type="submit" value="Send" class="margin-clear submit-button btn btn-default">
