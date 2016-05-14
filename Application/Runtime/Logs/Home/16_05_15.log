@@ -1,0 +1,395 @@
+[ 2016-05-15T00:26:26+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017234s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017270s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000383s ]
+
+[ 2016-05-15T00:26:35+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037976s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000770s ]
+
+[ 2016-05-15T00:55:49+08:00 ] ::1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021864s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021920s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2016-05-15T00:55:52+08:00 ] ::1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019156s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019195s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2016-05-15T01:31:55+08:00 ] ::1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001097s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2016-05-15T01:34:57+08:00 ] ::1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017124s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017157s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000453s ]
+
+[ 2016-05-15T01:34:58+08:00 ] ::1 /Home/User/signUp.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\UserController.class.php 第 26 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021398s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000515s ]
+
+[ 2016-05-15T01:34:58+08:00 ] ::1 /Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000421s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000463s ]
+
+[ 2016-05-15T01:37:29+08:00 ] ::1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018023s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000443s ]
+
+[ 2016-05-15T01:39:43+08:00 ] ::1 /Home/User/logInAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `xy_user` WHERE (  `user_name` = 'admin' OR `tel` = 'admin' ) AND `user_pwd` = '66981caf101c63150d2ceaf5e5862ec0' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xy_user` SET `last_log_time`='1463247583',`last_log_ip`='0.0.0.0' WHERE (  `user_name` = 'admin' OR `tel` = 'admin' ) AND `user_pwd` = '66981caf101c63150d2ceaf5e5862ec0' [ RunTime:0.0001s ]
+
+[ 2016-05-15T01:39:43+08:00 ] ::1 /Home/User/logInAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `xy_user` WHERE (  `user_name` = 'admin' OR `tel` = 'admin' ) AND `user_pwd` = '66981caf101c63150d2ceaf5e5862ec0' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `xy_user` SET `last_log_time`='1463247583',`last_log_ip`='0.0.0.0' WHERE (  `user_name` = 'admin' OR `tel` = 'admin' ) AND `user_pwd` = '66981caf101c63150d2ceaf5e5862ec0' [ RunTime:0.0001s ]
+
+[ 2016-05-15T01:39:52+08:00 ] ::1 /Home/User/logInAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `xy_user` WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = '11790dce4678bd6798226bbd753d18a5' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xy_user` SET `last_log_time`='1463247592',`last_log_ip`='0.0.0.0' WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = '11790dce4678bd6798226bbd753d18a5' [ RunTime:0.0001s ]
+
+[ 2016-05-15T01:39:55+08:00 ] ::1 /Home/User/logInAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `xy_user` WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = 'dc6cfd2e49f7995c20ac83a578bd8342' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `xy_user` SET `last_log_time`='1463247595',`last_log_ip`='0.0.0.0' WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = 'dc6cfd2e49f7995c20ac83a578bd8342' [ RunTime:0.0001s ]
+
+[ 2016-05-15T01:39:56+08:00 ] ::1 /Home/User/signUp.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\UserController.class.php 第 26 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021829s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2016-05-15T01:39:56+08:00 ] ::1 /Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2016-05-15T01:40:10+08:00 ] ::1 /Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000382s ]
+
+[ 2016-05-15T01:40:14+08:00 ] ::1 /Home/User/verify_check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+
+[ 2016-05-15T01:40:15+08:00 ] ::1 /Home/User/send_tel_check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+
+[ 2016-05-15T01:40:43+08:00 ] ::1 /Home/User/signUp.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0071s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xy_user` WHERE `user_name` = 'gordongzp' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE `tel` = '18112512811' LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_user` (`tel`,`user_name`,`user_pwd`,`is_seller`,`reg_time`,`reg_ip`,`last_log_time`,`last_log_ip`) VALUES ('18112512811','gordongzp','11790dce4678bd6798226bbd753d18a5','0','1463247643','0.0.0.0','1463247643','0.0.0.0') [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `xy_user` WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = '11790dce4678bd6798226bbd753d18a5' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `xy_user` SET `last_log_time`='1463247643',`last_log_ip`='0.0.0.0' WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = '11790dce4678bd6798226bbd753d18a5' [ RunTime:0.0021s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\Application\Home\Controller\UserController.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\a70ef5bb4d4d2a3f3fd6f0758417226d.php 第 463 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022197s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022230s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000450s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000478s ]
+
+[ 2016-05-15T01:40:45+08:00 ] ::1 /Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002208s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 435 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020340s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000410s ]
+
+[ 2016-05-15T01:43:26+08:00 ] ::1 /Home/UserCenter/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\b774ca8fab56146ab67b6f40394c7de6.php 第 685 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036110s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036141s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000347s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000375s ]
+

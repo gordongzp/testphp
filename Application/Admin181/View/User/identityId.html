@@ -141,25 +141,25 @@
 								<div class="col-sm-4 col-sm-offset-4">
 									<div class="radio">
 										<label>
-											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="0" checked="">
+											<input type="radio" name="person_identity_stage" id="person_identity_stage0" value="0" checked="">
 											未提交审核
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="1" checked="">
+											<input type="radio" name="person_identity_stage" id="person_identity_stage1" value="1" checked="">
 											已提交审核
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="2" checked="">
+											<input type="radio" name="person_identity_stage" id="person_identity_stage2" value="2" checked="">
 											审核不通过
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="person_identity_stage" id="optionsRadios1" value="3" checked="">
+											<input type="radio" name="person_identity_stage" id="person_identity_stage3" value="3" checked="">
 											审核通过
 										</label>
 									</div>
@@ -180,7 +180,31 @@
 <include file="Public/con_b" />
 <!-- 本页js -->
 <script type="text/javascript">
-	$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+//
+	<?php 
+	switch ($user['person_identity_stage']) {
+		case 0:
+		?>
+		document.getElementById("person_identity_stage0").checked=true;
+		<?php 
+		break;
+		case 1:
+		?>
+		document.getElementById("person_identity_stage1").checked=true;
+		<?php 
+		break;
+		case 2:
+		?>
+		document.getElementById("person_identity_stage2").checked=true;
+		<?php 
+		break;
+		case 3:
+		?>
+		document.getElementById("person_identity_stage3").checked=true;
+		<?php 
+		break;
+	}
+	?>
 </script>
 
 </body>

@@ -217,6 +217,51 @@
 						<div class="row">
 							<div class="col-sm-12">
 
+								<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Admin181/Index/index');?>" method="POST" role="form">
+								<input style="display:none" type="text" name="id" value="<?php echo session('admin_user.id');?>">
+									<div class="col-sm-4">
+										<div class="radio">
+											<label>
+												<input type="radio" name="openshop_need_person_id" id="openshop_need_person_id1" value="1">
+												开店需要实名认证
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="openshop_need_person_id" id="openshop_need_person_id0" value="0">
+												开店不需要实名认证
+											</label>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="radio">
+											<label>
+												<input type="radio" name="openshop_need_email" id="openshop_need_email1" value="1" >
+												开店需要邮箱认证
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="openshop_need_email" id="openshop_need_email0" value="0">
+												开店不需要邮箱认证
+											</label>
+										</div>
+									</div>
+
+									<div class="row"></div>
+
+
+
+
+									<button type="submit" class="btn btn-default">保存</button>
+
+								</form>
+
+
+
+
+
+
 							</div>
 						</div>
 					</div>
@@ -292,7 +337,15 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+		<?php  switch (session('admin_user.openshop_need_person_id')) { case 0: ?>
+			document.getElementById("openshop_need_person_id0").checked=true;
+			<?php  break; case 1: ?>
+			document.getElementById("openshop_need_person_id1").checked=true;
+			<?php  break; } switch (session('admin_user.openshop_need_email')) { case 0: ?>
+			document.getElementById("openshop_need_email0").checked=true;
+			<?php  break; case 1: ?>
+			document.getElementById("openshop_need_email1").checked=true;
+			<?php  break; } ?>
 	</script>
 
 </body>

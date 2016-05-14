@@ -232,6 +232,7 @@
 												<td><?php echo ($vo["email"]); ?></td>
 												<td>
 												<a href="<?php echo U('Admin181/User/identityId',array('id'=>$vo['id'],));?>">证</a>|
+												<a href="<?php echo U('Admin181/User/identityShop',array('id'=>$vo['id'],));?>">店</a>|
 												</td>
 											</tr><?php endforeach; endif; ?>
 									</tbody>

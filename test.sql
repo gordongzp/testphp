@@ -1,141 +1,134 @@
--- phpMyAdmin SQL Dump
--- version 4.2.11
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: 2016-05-10 12:52:04
--- 服务器版本： 5.6.21
--- PHP Version: 5.6.3
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     2016/5/14 23:43:43                           */
+/*==============================================================*/
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+drop table if exists xy_admin;
 
---
--- Database: `test`
---
+drop table if exists xy_attr;
 
--- --------------------------------------------------------
+drop table if exists xy_cate;
 
---
--- 表的结构 `xy_admin`
---
+drop table if exists xy_goods;
 
-CREATE TABLE IF NOT EXISTS `xy_admin` (
-`id` int(10) unsigned NOT NULL COMMENT 'id',
-  `user_name` varchar(40) NOT NULL COMMENT '管理员用户名',
-  `user_pwd` varchar(32) NOT NULL COMMENT '管理员密码'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+drop table if exists xy_order;
 
---
--- 转存表中的数据 `xy_admin`
---
+drop table if exists xy_shop;
 
-INSERT INTO `xy_admin` (`id`, `user_name`, `user_pwd`) VALUES
-(1, 'admin', '66981caf101c63150d2ceaf5e5862ec0');
+drop table if exists xy_user;
 
--- --------------------------------------------------------
+/*==============================================================*/
+/* Table: xy_admin                                              */
+/*==============================================================*/
+create table xy_admin
+(
+   id                   int(10) not null auto_increment,
+   user_name            varchar(40) not null,
+   user_pwd             varchar(32) not null,
+   openshop_need_person_id int(1) not null,
+   openshop_need_email  int(1) not null,
+   primary key (id)
+);
 
---
--- 表的结构 `xy_cate`
---
+alter table xy_admin comment '管理员账户';
 
-CREATE TABLE IF NOT EXISTS `xy_cate` (
-`cat_id` int(10) unsigned NOT NULL COMMENT 'id',
-  `pid` int(10) unsigned NOT NULL COMMENT 'father_id',
-  `name` varchar(40) NOT NULL COMMENT '类别名称'
-) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8;
+/*==============================================================*/
+/* Table: xy_attr                                               */
+/*==============================================================*/
+create table xy_attr
+(
+   attr_id              int(10) not null,
+   price                int(10) not null,
+   goods_id             int(10),
+   primary key (attr_id)
+);
 
---
--- 转存表中的数据 `xy_cate`
---
+/*==============================================================*/
+/* Table: xy_cate                                               */
+/*==============================================================*/
+create table xy_cate
+(
+   cat_id               int(10) not null auto_increment,
+   pid                  int(10) not null,
+   name                 varchar(40) not null,
+   primary key (cat_id)
+);
 
-INSERT INTO `xy_cate` (`cat_id`, `pid`, `name`) VALUES
-(103, 0, '干洗'),
-(104, 0, '水洗'),
-(105, 0, '皮衣'),
-(106, 0, '织补'),
-(107, 0, '单烫'),
-(108, 103, '西装类'),
-(109, 103, '大衣类'),
-(110, 108, '短西裤');
+alter table xy_cate comment '商品分类表';
 
--- --------------------------------------------------------
+/*==============================================================*/
+/* Table: xy_goods                                              */
+/*==============================================================*/
+create table xy_goods
+(
+   goods_id             int(10) not null auto_increment,
+   goods_name           varchar(40) not null,
+   cat_id               int(10),
+   shop_id              int(10),
+   primary key (goods_id)
+);
 
---
--- 表的结构 `xy_user`
---
+/*==============================================================*/
+/* Table: xy_order                                              */
+/*==============================================================*/
+create table xy_order
+(
+   order_id             int(10) not null auto_increment,
+   shop_id              int(10) comment '订单是所属于商店的',
+   primary key (order_id)
+);
 
-CREATE TABLE IF NOT EXISTS `xy_user` (
-`id` int(10) unsigned NOT NULL COMMENT 'id',
-  `user_name` varchar(40) NOT NULL COMMENT '用户名',
-  `user_pwd` varchar(32) NOT NULL COMMENT '密码',
-  `tel` varchar(20) NOT NULL COMMENT '电话',
-  `email` varchar(40) NOT NULL,
-  `true_name` varchar(20) NOT NULL COMMENT '真实姓名',
-  `person_id` varchar(20) NOT NULL COMMENT '身份证号码',
-  `person_identity_stage` int(1) NOT NULL COMMENT '实名认证状态',
-  `is_seller` int(1) unsigned NOT NULL COMMENT '是否为卖家，1代表是',
-  `reg_time` int(11) NOT NULL COMMENT '注册日期',
-  `update_time` int(11) NOT NULL COMMENT '修改时间',
-  `last_log_time` int(11) NOT NULL COMMENT '最后登录日期',
-  `reg_ip` varchar(15) NOT NULL COMMENT '注册ip地址',
-  `last_log_ip` varchar(15) NOT NULL COMMENT '最后登录ip'
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+/*==============================================================*/
+/* Table: xy_shop                                               */
+/*==============================================================*/
+create table xy_shop
+(
+   shop_id              int(10) not null,
+   id                   int(10) comment '商家与商店是一一对应的',
+   primary key (shop_id)
+);
 
---
--- 转存表中的数据 `xy_user`
---
+/*==============================================================*/
+/* Table: xy_user                                               */
+/*==============================================================*/
+create table xy_user
+(
+   id                   int(10) not null auto_increment,
+   shop_id              int(10) comment '顾客所属的门店，在首次注册时记录',
+   user_name            varchar(40) not null,
+   user_pwd             varchar(32) not null,
+   tel                  varchar(20) not null,
+   email                varchar(40) not null,
+   true_name            varchar(40) not null comment '真实姓名',
+   person_id            varchar(20) not null comment '身份证号码',
+   person_identity_stage int(1) not null comment '实名认证状态',
+   is_seller            int(1) not null,
+   reg_time             int(11) not null,
+   update_time          int(11) not null,
+   last_log_time        int(11) not null,
+   reg_ip               varchar(15) not null,
+   last_log_ip          varchar(15) not null,
+   primary key (id)
+);
 
-INSERT INTO `xy_user` (`id`, `user_name`, `user_pwd`, `tel`, `email`, `true_name`, `person_id`, `person_identity_stage`, `is_seller`, `reg_time`, `update_time`, `last_log_time`, `reg_ip`, `last_log_ip`) VALUES
-(38, 'gordon', '512aa81a91ed8f232c9fc8d848e3d016', '18112512811', 'gordonwiles@126.com', '郭子鹏', '3204123', 1, 0, 1462786547, 1462877318, 1462876388, '0.0.0.0', '0.0.0.0');
+alter table xy_user comment '会员信息';
 
---
--- Indexes for dumped tables
---
+alter table xy_attr add constraint FK_Reference_7 foreign key (goods_id)
+      references xy_goods (goods_id) on delete restrict on update restrict;
 
---
--- Indexes for table `xy_admin`
---
-ALTER TABLE `xy_admin`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id` (`id`), ADD UNIQUE KEY `user_name` (`user_name`);
+alter table xy_goods add constraint FK_Reference_3 foreign key (cat_id)
+      references xy_cate (cat_id) on delete restrict on update restrict;
 
---
--- Indexes for table `xy_cate`
---
-ALTER TABLE `xy_cate`
- ADD PRIMARY KEY (`cat_id`);
+alter table xy_goods add constraint FK_Reference_5 foreign key (shop_id)
+      references xy_shop (shop_id) on delete restrict on update restrict;
 
---
--- Indexes for table `xy_user`
---
-ALTER TABLE `xy_user`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `user_name` (`user_name`), ADD UNIQUE KEY `tel` (`tel`), ADD UNIQUE KEY `person_id` (`person_id`);
+alter table xy_order add constraint FK_Reference_6 foreign key (shop_id)
+      references xy_shop (shop_id) on delete restrict on update restrict;
 
---
--- AUTO_INCREMENT for dumped tables
---
+alter table xy_shop add constraint FK_Reference_1 foreign key (id)
+      references xy_user (id) on delete restrict on update restrict;
 
---
--- AUTO_INCREMENT for table `xy_admin`
---
-ALTER TABLE `xy_admin`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `xy_cate`
---
-ALTER TABLE `xy_cate`
-MODIFY `cat_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=112;
---
--- AUTO_INCREMENT for table `xy_user`
---
-ALTER TABLE `xy_user`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',AUTO_INCREMENT=39;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+alter table xy_user add constraint FK_Reference_4 foreign key (shop_id)
+      references xy_shop (shop_id) on delete restrict on update restrict;
+

@@ -52,6 +52,5 @@ class UserController extends Controller {
 			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
 		}
 	}
-	public function getUserName(){
-	}
+
 }	
