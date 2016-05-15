@@ -324,11 +324,12 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">商店审核信息</a></li>
 								</ul>
 							</li>
 							<?php
  }else{ ?>
-							<li><a href="#">成为卖家</a></li>
+							<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">成为卖家</a></li>
 							<?php
  } ?>
 

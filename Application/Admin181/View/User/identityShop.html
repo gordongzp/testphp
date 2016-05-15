@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<head>
+	<title>开店审核</title>
+	<!-- 模板上部配置 -->
+	<include file="Public/con_t" />
+	<!-- 本页css -->
+</head>
+
+<!-- body classes:  -->
+<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+<!-- "gradient-background-header": applies gradient background to header -->
+<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
+<body class="no-trans front-page transparent-header  ">
+
+	<!-- scrollToTop -->
+	<!-- ================ -->
+	<div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+
+	<!-- page wrapper start -->
+	<!-- ================ -->
+	<div class="page-wrapper">
+		
+		<include file="Public/header" />
+		<include file="Public/admin_left" />
+		<!-- breadcrumb start -->
+		<!-- ================ -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="{:U('Home/Index/index')}">首页</a></li>
+					<li><a class="link-dark" href="{:U('Admin181/Index/index')}">管理中心</a></li>
+					<li class="active">开店审核</li>
+				</ol>
+			</div>
+		</div>
+		<!-- breadcrumb end -->
+
+		<!-- main-container start -->
+		<!-- ================ -->
+		<section class="main-container">
+			<div class="container">
+				<div class="row">
+
+					<!-- main start -->
+					<!-- ================ -->
+					<div class="main col-md-12">
+
+						<!-- page-title start -->
+						<!-- ================ -->
+						<h1 class="page-title">开店审核</h1>
+						<div class="separator-2"></div>
+						<!-- page-title end -->
+						<div class="row">
+							<div class="col-sm-8">
+								<?php
+								switch ($user['person_identity_stage']){
+								case 0://未开店审核
+								?>
+								<div class="alert alert-icon alert-warning" role="alert">
+									<i class="fa fa-warning"></i>
+									未提交开店审核
+								</div>
+								<?PHP
+								break;
+								case 1://已提交审核
+								?>
+								<div class="alert alert-icon alert-info" role="alert">
+									<i class="fa fa-info-circle"></i>
+									已提交，等待审核
+								</div>
+								<?PHP
+								break;
+								case 2://开店审核不通过
+								?>
+								<div class="alert alert-icon alert-danger" role="alert">
+									<i class="fa fa-times"></i>
+									开店审核不通过
+								</div>
+								<?PHP
+								break;
+								case 3://已通过审核
+								?>
+								<div class="alert alert-icon alert-success" role="alert">
+									<i class="fa fa-check"></i>
+									已通过开店审核
+								</div>
+								<?PHP
+								break;
+								default:
+								break;}?>
+							</div>
+							<div class="row"></div>
+							<form onkeydown="if(event.keyCode==13){return false;}" action="{:U('Admin181/User/identityShop',array('id'=>$user['id'],))}" method="POST" role="form">
+								<div class="col-sm-4">
+									<!-- 传id -->
+									<input style="display: none;" type="text" name="id" value="{$user.id}" >
+									<div class="form-group">
+										<label>姓名</label>
+										<input disabled="" type="text" class="form-control" placeholder="{$user.true_name}">
+									</div>
+									<div class="form-group">
+										<label>身份证号码</label>
+										<input disabled="" type="text" class="form-control" placeholder="{$user.person_id}">
+									</div>
+								</div>
+								<div class="row"></div>
+								<div class="col-sm-4">
+									<div class="image-box style-2 mb-20">
+										<div class="overlay-container overlay-visible">
+											<img style="height: 260px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_identity','','jpg') ?>" alt="">
+											<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_identity','','jpg') ?>" class="overlay-link popup-img"><i class="fa fa-plus"></i></a>
+											<div class="overlay-bottom hidden-xs">
+												<div class="text">
+													<p class="lead margin-clear text-left">公司营业执照</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="row"></div> -->
+								<div class="col-sm-4">
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identity_stage" id="shop_identity_stage0" value="0" checked="">
+											未提交审核
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identity_stage" id="shop_identity_stage1" value="1" checked="">
+											已提交审核
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identity_stage" id="shop_identity_stage2" value="2" checked="">
+											审核不通过
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identity_stage" id="shop_identity_stage3" value="3" checked="">
+											审核通过
+										</label>
+									</div>
+									<button type="submit" class="btn btn-default">保存</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- main end -->
+			</div>
+		</div>
+	</section>
+	<!-- main-container end -->
+</div>
+<!-- page-wrapper end -->
+<!-- 模板底部配置 -->
+<include file="Public/con_b" />
+<!-- 本页js -->
+<script type="text/javascript">
+//
+	<?php 
+	switch ($user['shop_identity_stage']) {
+		case 0:
+		?>
+		document.getElementById("shop_identity_stage0").checked=true;
+		<?php 
+		break;
+		case 1:
+		?>
+		document.getElementById("shop_identity_stage1").checked=true;
+		<?php 
+		break;
+		case 2:
+		?>
+		document.getElementById("shop_identity_stage2").checked=true;
+		<?php 
+		break;
+		case 3:
+		?>
+		document.getElementById("shop_identity_stage3").checked=true;
+		<?php 
+		break;
+	}
+	?>
+</script>
+
+</body>
+</html>

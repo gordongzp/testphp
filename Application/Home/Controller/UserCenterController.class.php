@@ -94,90 +94,91 @@ class UserCenterController extends Controller {
 
 //修改手机号步骤二
 	public function changeTel2(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			if (IS_POST) {
+		//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (IS_POST) {
 				//验证step传过来的confirm_tmp
-				if (session('confirm_tmp')==session('user.tel')) {
+			if (session('confirm_tmp')==session('user.tel')) {
 				//确实是step1过来的
-					if (verify_tel_check(I('post.check_tel'),I('post.tel'))) {
-						$msg=D('User')->changeTel(session('user.tel'),I('post.tel'));
-						if (!$msg) {
+				if (verify_tel_check(I('post.check_tel'),I('post.tel'))) {
+					$msg=D('User')->changeTel(session('user.tel'),I('post.tel'));
+					if (!$msg) {
 							//收回step2权限
-							session('confirm_tmp',null);
-							$this->success('修改完成','/Home/UserCenter/basicInfo',2);
-						}else
-						{
-							$this->error('输入信息有误',U('Home/UserCenter/changeTel2',array('msg'=>serialize($msg))),2);
-						}
+						session('confirm_tmp',null);
+						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
 					}else
 					{
-						$this->error('验证码不正确','',2);
+						$this->error('输入信息有误',U('Home/UserCenter/changeTel2',array('msg'=>serialize($msg))),2);
 					}
-				}else{
-					$this->error('您没有权限访问该页面','',2);
+				}else
+				{
+					$this->error('验证码不正确','',2);
 				}
 			}else{
-				//验证step传过来的confirm_tmp
-				if (session('confirm_tmp')==session('user.tel')) {
-					//确实是step1过来的
-					$this->assign('msg',unserialize($_GET['msg']));
-					$this->display();
-				}else{
-					$this->error('您没有权限访问该页面','',2);
-				}
+				$this->error('您没有权限访问该页面','',2);
 			}
 		}else{
-			$this->error('请先登录','/Home/User/logIn',2);
+				//验证step传过来的confirm_tmp
+			if (session('confirm_tmp')==session('user.tel')) {
+					//确实是step1过来的
+				$this->assign('msg',unserialize($_GET['msg']));
+				$this->display();
+			}else{
+				$this->error('您没有权限访问该页面','',2);
+			}
 		}
 	}
 
 //email路由，决定是创建还是修改
 	public function changeEmail(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			//判断邮箱是否为空
-			if (''==session('user.email')) {
-				header('Location:'.U('Home/UserCenter/createEmail'));
-				exit();
-			}else{
-				header('Location:'.U('Home/UserCenter/changeEmail1'));
-				exit();
-			}
-		}else{
+		//判断登录
+		if (!is_login()) {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (''==session('user.email')) {
+			header('Location:'.U('Home/UserCenter/createEmail'));
+			exit();
+		}else{
+			header('Location:'.U('Home/UserCenter/changeEmail1'));
+			exit();
+		}
+
 	}
 
 //创建email
 	public function createEmail(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			//判断邮箱是否为空
-			if (''!=session('user.email')) {
-				$this->error('无法重复创建邮箱','/Home/UserCenter/basicInfo',2);
-				exit();
-			}
-			if (IS_POST) {
-				if (verify_email_check(I('post.check_email'),I('post.email'))) {
-					$msg=D('User')->createSave();
-					if (!$msg) {
-						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
-					}else{
-						$this->error('输入信息有误',U('Home/UserCenter/createEmail',array('msg'=>serialize($msg))),2);
-					}
+
+		//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		//判断邮箱是否为空
+		if (''!=session('user.email')) {
+			$this->error('无法重复创建邮箱','/Home/UserCenter/basicInfo',2);
+			exit();
+		}
+		if (IS_POST) {
+			if (verify_email_check(I('post.check_email'),I('post.email'))) {
+				$msg=D('User')->createSave();
+				if (!$msg) {
+					$this->success('修改完成','/Home/UserCenter/basicInfo',2);
 				}else{
-					$this->error('验证码不正确','',2);
+					$this->error('输入信息有误',U('Home/UserCenter/createEmail',array('msg'=>serialize($msg))),2);
 				}
 			}else{
-				$this->assign('msg',unserialize($_GET['msg']));
-				$this->display();
+				$this->error('验证码不正确','',2);
 			}
 		}else{
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->assign('msg',unserialize($_GET['msg']));
+			$this->display();
 		}
 	}
 
@@ -185,71 +186,74 @@ class UserCenterController extends Controller {
 
 //修改邮箱步骤一
 	public function changeEmail1(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			if (IS_POST) {
-				if (verify_email_check(I('post.check_email'),session('user.email'))) {
+		//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (IS_POST) {
+			if (verify_email_check(I('post.check_email'),session('user.email'))) {
 					//获取进入step2的权限
-					session('confirm_tmp_email',session('user.email'));
-					header('Location:'.U('Home/UserCenter/changeEmail2'));
-					exit;
-				}else{
-					$this->error('验证码不正确','',2);
-				}
+				session('confirm_tmp_email',session('user.email'));
+				header('Location:'.U('Home/UserCenter/changeEmail2'));
+				exit;
 			}else{
-				// $this->assign('msg',unserialize($_GET['msg']));
-				$this->display();
+				$this->error('验证码不正确','',2);
 			}
 		}else{
-			$this->error('请先登录','/Home/User/logIn',2);
+				// $this->assign('msg',unserialize($_GET['msg']));
+			$this->display();
 		}
 	}
 
 //修改邮箱步骤二
 	public function changeEmail2(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			if (IS_POST) {
+		//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (IS_POST) {
 				//验证step传过来的confirm_tmp
-				if (session('confirm_tmp_email')==session('user.email')) {
+			if (session('confirm_tmp_email')==session('user.email')) {
 					//确实是step1过来的
-					if (verify_email_check(I('post.check_email'),I('post.email'))) {
-						$msg=D('User')->changeEmail(session('user.email'),I('post.email'));
-						if (!$msg) {
+				if (verify_email_check(I('post.check_email'),I('post.email'))) {
+					$msg=D('User')->changeEmail(session('user.email'),I('post.email'));
+					if (!$msg) {
 							//收回step2权限
-							session('confirm_tmp_email',null);
-							$this->success('修改完成','/Home/UserCenter/basicInfo',2);
-						}else{
-							$this->error('输入信息有误',U('Home/UserCenter/changeEmail2',array('msg'=>serialize($msg))),2);
-						}
+						session('confirm_tmp_email',null);
+						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
 					}else{
-						$this->error('验证码不正确','',2);
+						$this->error('输入信息有误',U('Home/UserCenter/changeEmail2',array('msg'=>serialize($msg))),2);
 					}
 				}else{
-					$this->error('您没有权限访问该页面','',2);
+					$this->error('验证码不正确','',2);
 				}
 			}else{
-				//验证step传过来的confirm_tmp
-				if (session('confirm_tmp_email')==session('user.email')) {
-					$this->assign('msg',unserialize($_GET['msg']));
-					$this->display();
-				}else{
-					$this->error('您没有权限访问该页面','',2);
-				}
+				$this->error('您没有权限访问该页面','',2);
 			}
 		}else{
-			$this->error('请先登录','/Home/User/logIn',2);
+				//验证step传过来的confirm_tmp
+			if (session('confirm_tmp_email')==session('user.email')) {
+				$this->assign('msg',unserialize($_GET['msg']));
+				$this->display();
+			}else{
+				$this->error('您没有权限访问该页面','',2);
+			}
 		}
 	}
 
 //设置头像
 	public function avatar(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			if (IS_POST) {
+		//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (IS_POST) {
 			    $upload = new \Think\Upload();// 实例化上传类
 			    $upload->maxSize   =     3145728 ;// 设置附件上传大小
 			    $upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
@@ -271,51 +275,47 @@ class UserCenterController extends Controller {
 			} else {
 				$this->display();
 			}
-		}else{
-			$this->error('请先登录','/Home/User/logIn',2);
-		}
-	}	
+		}	
 
 //实名认证
 	public function identityId(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			if (IS_POST) {
-				$upload = new \Think\Upload();// 实例化上传类
-			    $upload->maxSize   =     3145728 ;// 设置附件上传大小
-			    $upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
-			    $upload->rootPath  =     USERS_PATH; // 设置附件上传根目录
-			    $upload->savePath  =     I('post.id').'/'; // 设置附件上传（子）目录
-			    $upload->autoSub   =     false;
-			    $upload->saveName  =     array('identify_upload_rule');
-			    $upload->replace   =     true;
-			    $upload->saveExt   =     'jpg';
-			    // 上传文件 
-			    $info   =   $upload->upload();
-			    //set状态identity_stage以及身份证+truename；
-			    $msg=D('User')->createSave();
-			    if (!$msg) {
-			    	if(!$info) {
-			    // 上传错误提示错误信息
-			    		$this->error($upload->getError());
-			    	}else{
-			    // 上传成功
-			    		$this->success('上传成功！','/Home/UserCenter/identityId');
-			    	}		
-			    }else{
-			    	$this->error('输入信息有误',U('Home/UserCenter/identityId',array('msg'=>serialize($msg))),2);
-			    }
-			} else {
-				$this->assign('person_identity_stage',is_login()['person_identity_stage']);
-				$this->assign('true_name',is_login()['true_name']);
-				$this->assign('person_id',is_login()['person_id']);
-				$this->assign('msg',unserialize($_GET['msg']));
-				$this->display();
-			}
-		}else{
+		//判断登录
+		if (!is_login()) {
 			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (IS_POST) {
+			$upload = new \Think\Upload();// 实例化上传类
+		   	$upload->maxSize   =     3145728 ;// 设置附件上传大小
+		   	$upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
+		   	$upload->rootPath  =     USERS_PATH; // 设置附件上传根目录
+		   	$upload->savePath  =     I('post.id').'/'; // 设置附件上传（子）目录
+	    	$upload->autoSub   =     false;
+	    	$upload->saveName  =     array('identify_upload_rule');
+		   	$upload->replace   =     true;
+		   	$upload->saveExt   =     'jpg';
+		   	// 上传文件 
+		   	$info   =   $upload->upload();
+	    	//set状态identity_stage以及身份证+truename；
+	    	$msg=D('User')->createSave();
+		   	if (!$msg) {
+		    	if(!$info) {
+		   		// 上传错误提示错误信息
+		   			$this->error($upload->getError());
+		   		}else{
+		   		// 上传成功
+	    			$this->success('上传成功！','/Home/UserCenter/identityId');
+	    		}		
+		   	}else{
+		   		$this->error('输入信息有误',U('Home/UserCenter/identityId',array('msg'=>serialize($msg))),2);
+		    }
+		}else{
+		   	$this->assign('person_identity_stage',is_login()['person_identity_stage']);
+		   	$this->assign('true_name',is_login()['true_name']);
+		   	$this->assign('person_id',is_login()['person_id']);
+		   	$this->assign('msg',unserialize($_GET['msg']));
+		   	$this->display();
 		}		
 	}
-
 }

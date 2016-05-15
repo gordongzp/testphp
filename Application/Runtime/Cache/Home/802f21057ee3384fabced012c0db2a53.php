@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>个人中心</title>
+	<title>开店审核</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -354,7 +354,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">基本资料</li>
+					<li class="active">开店审核</li>
 				</ol>
 			</div>
 		</div>
@@ -372,76 +372,62 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">基本资料</h1>
+						<h1 class="page-title">开店审核</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
 							<div class="col-sm-9 col-lg-8">
-								<!-- tabs start -->
-								<!-- ================ -->
-								<!-- Nav tabs -->
-								<!-- Nav tabs -->
-<ul class="nav nav-tabs style-2" role="tablist">
-	<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/avatar');?>">个人头像</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/identityId');?>">实名认证</a></li>
-</ul>
-								<!-- Tab panes -->
-								<div class="tab-content">
-									<div class="tab-pane in active" id="h2tab1">
-										<div class="row">
-											<div class="col-sm-6">
-
-												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">											
-													<div class="form-group">
-														<label for="">用户名：</label>
-														<input type="text" class="form-control" placeholder="<?php echo session('user.user_name');?>" disabled="">
-													</div>
-													<div class="form-group">
-														<label for="">手机号码：</label>
-														<div class="row">
-															<div class="col-xs-9 ">
-																<input type="text" class="form-control" placeholder="<?php echo session('user.tel');?>" disabled="">
-															</div>
-															<div class="col-xs-3 ">
-																<a style="form-control" href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a>
-															</div>
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="">邮箱号码：</label>
-														<div class="row">
-															<div class="col-xs-9 ">
-																<input type="text" class="form-control" placeholder="<?php echo session('user.email');?>" disabled="">
-															</div>
-															<div class="col-xs-3 ">
-																<a style="form-control" href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a>
-															</div>
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="">qq号码：</label>
-														<input type="text" class="form-control" placeholder="" >
-													</div>
-
-													<div class="form-group">
-														<label for="">微信号码：</label>
-														<input type="text" class="form-control" placeholder="" >
-													</div>
-													<button type="submit" class="btn btn-default">确认提交</button>
-												</form>
-											</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<?php
+ switch ($shop_identity_stage) { case 0: ?>
+										<div class="alert alert-icon alert-warning" role="alert">
+											<i class="fa fa-warning"></i>
+											您还未进行开店审核
 										</div>
-									</div>
+										<?PHP
+ break; case 1: ?>
+										<div class="alert alert-icon alert-info" role="alert">
+											<i class="fa fa-info-circle"></i>
+											已提交，请耐心等待审核
+										</div>
+										<?PHP
+ break; case 2: ?>
+										<div class="alert alert-icon alert-danger" role="alert">
+											<i class="fa fa-times"></i>
+											审核不通过，请重新提交
+										</div>
+										<?PHP
+ break; case 3: ?>
+										<div class="alert alert-icon alert-success" role="alert">
+											<i class="fa fa-check"></i>
+											已通开店审核
+										</div>
+										<?PHP
+ break; default: break; } ?>
 								</div>
-								<!-- tabs end -->
-
 							</div>
-														<div class="col-sm-3 col-lg-offset-1">
+							<div class="row">
+								<div class="col-sm-5">
+									<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/SellerCenter/shopVerify');?>" method="POST" role="form" enctype="multipart/form-data">
+										<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
+										<input style="display: none;" type="text" name="shop_identity_stage" value="1" >
+
+										<div class="form-group">
+											<label>公司营业执照</label>
+											<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_identity','','jpg') ?>" style="width: 258px; height: 162px;">
+											<input type="file" name="photo">
+											<p class="help-block">营业执照上法人代表必须与实名认证信息相同，支持jpg,png,jpeg格式</p>
+										</div>
+
+										<?php  if (3==session('user.shop_identity_stage')) { } else { ?>
+									<button type="submit" class="btn btn-default">保存</button>
+									<?php  } ?>
+							</form>
+						</div>
+					</div>
+				</div>
+											<div class="col-sm-3 col-lg-offset-1">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
@@ -455,14 +441,14 @@
 								<h3>See My Portfolio</h3>
 								<a class="btn btn-gray collapsed btn-animated" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Click Me <i class="fa fa-plus"></i></a>
 							</div>
-						</div>
-					</div>
-					<!-- main end -->
-				</div>
 			</div>
-		</section>
-		<!-- main-container end -->
-					<!-- footer top start -->
+		</div>
+		<!-- main end -->
+	</div>
+</div>
+</section>
+<!-- main-container end -->
+			<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
 				<div class="container">
@@ -571,10 +557,10 @@
 
 			</footer>
 			<!-- footer end -->
-	</div>
-	<!-- page-wrapper end -->
-	<!-- 模板底部配置 -->
-	<!-- JavaScript files placed at the end of the document so the pages load faster -->
+</div>
+<!-- page-wrapper end -->
+<!-- 模板底部配置 -->
+<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->
 <!-- Jquery and Bootstap core js files -->
 <script type="text/javascript" src="/Public/plugins/jquery.min.js"></script>
@@ -637,10 +623,9 @@
 		})
 	})
 </script>
-	<!-- 本页js -->
-	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
-	</script>
+<!-- 本页js -->
+<script type="text/javascript">
+</script>
 
 </body>
 </html>
