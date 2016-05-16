@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>会员列表</title>
+	<title>开店审核</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -193,7 +193,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Admin181/Index/index');?>">管理中心</a></li>
-					<li class="active">会员列表</li>
+					<li class="active">开店审核</li>
 				</ol>
 			</div>
 		</div>
@@ -211,45 +211,107 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">会员列表</h1>
+						<h1 class="page-title">开店审核</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-12">
-								<table class="table table-hover">
-									<thead>
-										<tr>
-											<th>用户名</th>
-											<th>手机号</th>
-											<th>邮箱</th>
-											<th>状态</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php if(is_array($users)): foreach($users as $key=>$vo): ?><tr>
-												<td><?php echo ($vo["user_name"]); ?></td>
-												<td><?php echo ($vo["tel"]); ?></td>
-												<td><?php echo ($vo["email"]); ?></td>
-												<td>
-												<a href="<?php echo U('Admin181/User/identifyId',array('id'=>$vo['id'],));?>">证</a>|
-												<a href="<?php echo U('Admin181/User/identifyShop',array('id'=>$vo['id'],));?>">店</a>|
-												</td>
-											</tr><?php endforeach; endif; ?>
-									</tbody>
-								</table>
-								<?php echo $show;?>
+							<div class="col-sm-8">
+								<?php
+ switch ($user['shop_identify_stage']){ case 0: ?>
+								<div class="alert alert-icon alert-warning" role="alert">
+									<i class="fa fa-warning"></i>
+									未提交开店审核
+								</div>
+								<?PHP
+ break; case 1: ?>
+								<div class="alert alert-icon alert-info" role="alert">
+									<i class="fa fa-info-circle"></i>
+									已提交，等待审核
+								</div>
+								<?PHP
+ break; case 2: ?>
+								<div class="alert alert-icon alert-danger" role="alert">
+									<i class="fa fa-times"></i>
+									开店审核不通过
+								</div>
+								<?PHP
+ break; case 3: ?>
+								<div class="alert alert-icon alert-success" role="alert">
+									<i class="fa fa-check"></i>
+									已通过开店审核
+								</div>
+								<?PHP
+ break; default: break;}?>
 							</div>
+							<div class="row"></div>
+							<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Admin181/User/identifyShop',array('id'=>$user['id'],));?>" method="POST" role="form">
+								<div class="col-sm-4">
+									<!-- 传id -->
+									<input style="display: none;" type="text" name="id" value="<?php echo ($user["id"]); ?>" >
+									<div class="form-group">
+										<label>姓名</label>
+										<input disabled="" type="text" class="form-control" placeholder="<?php echo ($user["true_name"]); ?>">
+									</div>
+									<div class="form-group">
+										<label>身份证号码</label>
+										<input disabled="" type="text" class="form-control" placeholder="<?php echo ($user["person_id"]); ?>">
+									</div>
+								</div>
+								<div class="row"></div>
+								<div class="col-sm-4">
+									<div class="image-box style-2 mb-20">
+										<div class="overlay-container overlay-visible">
+											<img style="height: 260px" src="<?php echo U(USERS_PATH.I('get.id').'/shop_identify','','jpg');?>" alt="">
+											<a href="<?php echo U(USERS_PATH.I('get.id').'/shop_identify','','jpg');?>" class="overlay-link popup-img"><i class="fa fa-plus"></i></a>
+											<div class="overlay-bottom hidden-xs">
+												<div class="text">
+													<p class="lead margin-clear text-left">公司营业执照</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="row"></div> -->
+								<div class="col-sm-4">
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identify_stage" id="shop_identify_stage0" value="0" checked="">
+											未提交审核
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identify_stage" id="shop_identify_stage1" value="1" checked="">
+											已提交审核
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identify_stage" id="shop_identify_stage2" value="2" checked="">
+											审核不通过
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="shop_identify_stage" id="shop_identify_stage3" value="3" checked="">
+											审核通过
+										</label>
+									</div>
+									<button type="submit" class="btn btn-default">保存</button>
+								</div>
+							</form>
 						</div>
 					</div>
-					<!-- main end -->
 				</div>
+				<!-- main end -->
 			</div>
-		</section>
-		<!-- main-container end -->
-	</div>
-	<!-- page-wrapper end -->
-	<!-- 模板底部配置 -->
-	<!-- JavaScript files placed at the end of the document so the pages load faster -->
+		</div>
+	</section>
+	<!-- main-container end -->
+</div>
+<!-- page-wrapper end -->
+<!-- 模板底部配置 -->
+<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->
 <!-- Jquery and Bootstap core js files -->
 <script type="text/javascript" src="/Public/plugins/jquery.min.js"></script>
@@ -311,10 +373,19 @@
 		})
 	})
 </script>
-	<!-- 本页js -->
-	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
-	</script>
+<!-- 本页js -->
+<script type="text/javascript">
+//
+	<?php  switch ($user['shop_identify_stage']) { case 0: ?>
+		document.getElementById("shop_identify_stage0").checked=true;
+		<?php  break; case 1: ?>
+		document.getElementById("shop_identify_stage1").checked=true;
+		<?php  break; case 2: ?>
+		document.getElementById("shop_identify_stage2").checked=true;
+		<?php  break; case 3: ?>
+		document.getElementById("shop_identify_stage3").checked=true;
+		<?php  break; } ?>
+</script>
 
 </body>
 </html>

@@ -297,7 +297,7 @@
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定/更换邮箱</a></li>
-								<li><a href="<?php echo U('Home/UserCenter/identityId');?>">实名认证</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/identifyId');?>">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
 									<ul class="dropdown-menu">
@@ -324,6 +324,8 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览商店资料</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">修改商店资料</a></li>
 									<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">商店审核信息</a></li>
 								</ul>
 							</li>
@@ -420,7 +422,7 @@
 									</div>
 								</div>
 							</div>
-									<div class="col-sm-3 col-lg-offset-1">
+									<div class="col-sm-3">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>

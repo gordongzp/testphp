@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>开店审核</title>
+	<title>个人中心</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -297,7 +297,7 @@
 								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
 								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定/更换邮箱</a></li>
-								<li><a href="<?php echo U('Home/UserCenter/identityId');?>">实名认证</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/identifyId');?>">实名认证</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
 									<ul class="dropdown-menu">
@@ -324,7 +324,8 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">商店审核信息</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">店铺设置</a></li>
+									<li><a href="#">商品管理</a></li>
 								</ul>
 							</li>
 							<?php
@@ -363,6 +364,7 @@
 		<!-- main-container start -->
 		<!-- ================ -->
 		<section class="main-container">
+
 			<div class="container">
 				<div class="row">
 
@@ -376,58 +378,74 @@
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-9 col-lg-8">
-								<div class="row">
-									<div class="col-sm-12">
-										<?php
- switch ($shop_identity_stage) { case 0: ?>
-										<div class="alert alert-icon alert-warning" role="alert">
-											<i class="fa fa-warning"></i>
-											您还未进行开店审核
-										</div>
-										<?PHP
+							<div class="col-sm-8">
+								<!-- tabs start -->
+								<!-- ================ -->
+								<!-- Nav tabs -->
+								<!-- Nav tabs -->
+								<!-- Nav tabs -->
+<ul class="nav nav-tabs style-2" role="tablist">
+	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">填写开店资料</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
+</ul>
+
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div class="tab-pane in active" id="h2tab1">
+										<div class="row">
+											<div class="col-sm-12">
+												<?php
+ switch ($shop_identify_stage) { case 0: ?>
+												<div class="alert alert-icon alert-warning" role="alert">
+													<i class="fa fa-warning"></i>
+													您还未进行开店审核
+												</div>
+												<?PHP
  break; case 1: ?>
-										<div class="alert alert-icon alert-info" role="alert">
-											<i class="fa fa-info-circle"></i>
-											已提交，请耐心等待审核
-										</div>
-										<?PHP
+												<div class="alert alert-icon alert-info" role="alert">
+													<i class="fa fa-info-circle"></i>
+													已提交，请耐心等待审核
+												</div>
+												<?PHP
  break; case 2: ?>
-										<div class="alert alert-icon alert-danger" role="alert">
-											<i class="fa fa-times"></i>
-											审核不通过，请重新提交
-										</div>
-										<?PHP
+												<div class="alert alert-icon alert-danger" role="alert">
+													<i class="fa fa-times"></i>
+													审核不通过，请重新提交
+												</div>
+												<?PHP
  break; case 3: ?>
-										<div class="alert alert-icon alert-success" role="alert">
-											<i class="fa fa-check"></i>
-											已通开店审核
-										</div>
-										<?PHP
+												<div class="alert alert-icon alert-success" role="alert">
+													<i class="fa fa-check"></i>
+													已通开店审核
+												</div>
+												<?PHP
  break; default: break; } ?>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/SellerCenter/shopVerify');?>" method="POST" role="form" enctype="multipart/form-data">
+												<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
+												<input style="display: none;" type="text" name="shop_identify_stage" value="1" >
+												<div class="form-group">
+													<label>公司营业执照</label>
+													<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_identify','','jpg') ?>" style="width: 258px; height: 162px;">
+													<input type="file" name="photo" required="required">
+													<p class="help-block">营业执照上法人代表必须与实名认证信息相同，支持jpg,png,jpeg格式</p>
+												</div>
+												<?php  if (3==session('user.shop_identify_stage')) { } else { ?>
+											<button type="submit" class="btn btn-default">保存</button>
+											<?php  } ?>
+									</form>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-sm-5">
-									<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/SellerCenter/shopVerify');?>" method="POST" role="form" enctype="multipart/form-data">
-										<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
-										<input style="display: none;" type="text" name="shop_identity_stage" value="1" >
-
-										<div class="form-group">
-											<label>公司营业执照</label>
-											<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_identity','','jpg') ?>" style="width: 258px; height: 162px;">
-											<input type="file" name="photo">
-											<p class="help-block">营业执照上法人代表必须与实名认证信息相同，支持jpg,png,jpeg格式</p>
-										</div>
-
-										<?php  if (3==session('user.shop_identity_stage')) { } else { ?>
-									<button type="submit" class="btn btn-default">保存</button>
-									<?php  } ?>
-							</form>
 						</div>
 					</div>
+					<!-- tabs end -->
 				</div>
-											<div class="col-sm-3 col-lg-offset-1">
+											<div class="col-sm-3">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
@@ -625,6 +643,7 @@
 </script>
 <!-- 本页js -->
 <script type="text/javascript">
+	$('ul.nav.nav-tabs.style-2 > li:nth-child(3)').attr("class", "active");
 </script>
 
 </body>

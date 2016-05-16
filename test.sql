@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016-05-15 16:22:05                          */
+/* Created on:     2016-05-16 15:18:58                          */
 /*==============================================================*/
 
 
@@ -40,7 +40,7 @@ alter table xy_admin comment '管理员账户';
 /*==============================================================*/
 create table xy_attr
 (
-   attr_id              int(10) not null,
+   attr_id              int(10) not null auto_increment,
    attr_name            varchar(40) not null,
    price                int(10) not null,
    goods_id             int(10),
@@ -79,7 +79,7 @@ create table xy_config
 /*==============================================================*/
 create table xy_dirtys
 (
-   dir_id               int(10) not null,
+   dir_id               int(10) not null auto_increment,
    order_id             int(10),
    dir_name             varchar(40) not null,
    dir_label            int(10) not null,
@@ -114,7 +114,11 @@ create table xy_order
 /*==============================================================*/
 create table xy_shop
 (
-   shop_id              int(10) not null,
+   shop_id              int(10) not null auto_increment,
+   shop_name            varchar(40) not null,
+   shop_tel             varchar(20) not null,
+   shop_address         text not null,
+   shop_describe        text not null,
    id                   int(10) comment '商家与商店是一一对应的',
    primary key (shop_id)
 );
@@ -132,8 +136,8 @@ create table xy_user
    email                varchar(40) not null,
    true_name            varchar(40) not null comment '真实姓名',
    person_id            varchar(20) not null comment '身份证号码',
-   person_identity_stage int(1) not null comment '实名认证状态',
-   shop_identity_stage  int(1) not null,
+   person_identify_stage int(1) not null comment '实名认证状态',
+   shop_identify_stage  int(1) not null,
    is_seller            int(1) not null,
    reg_time             int(11) not null,
    update_time          int(11) not null,

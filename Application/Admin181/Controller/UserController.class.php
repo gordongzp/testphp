@@ -18,7 +18,7 @@ class UserController extends Controller {
 
 	}
 
-	public function identityId(){
+	public function identifyId(){
 		//检查登录
 		if (!is_admin_login()) {
 			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
@@ -30,7 +30,7 @@ class UserController extends Controller {
 			$msg=D('Home/User')->createSave();
 			$user=I('get.id');
 			if (!$msg) {
-				$this->success('操作完成',U('Admin181/User/identityId',array('id'=>$user,)),2);
+				$this->success('操作完成',U('Admin181/User/identifyId',array('id'=>$user,)),2);
 			} else {
 				$this->error(L2($msg),'',2);
 			}
@@ -43,7 +43,7 @@ class UserController extends Controller {
 		}
 	}
 
-	public function identityShop(){
+	public function identifyShop(){
 		//检查登录
 		if (!is_admin_login()) {
 			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
@@ -55,7 +55,7 @@ class UserController extends Controller {
 			$msg=D('Home/User')->createSave();
 			$user=I('get.id');
 			if (!$msg) {
-				$this->success('操作完成',U('Admin181/User/identityShop',array('id'=>$user,)),2);
+				$this->success('操作完成',U('Admin181/User/identifyShop',array('id'=>$user,)),2);
 			} else {
 				$this->error(L2($msg),'',2);
 			}

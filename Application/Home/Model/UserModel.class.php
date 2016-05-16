@@ -1,7 +1,15 @@
 <?php
 namespace Home\Model;
-use Think\Model;
-class UserModel extends Model {
+use Think\Model\RelationModel;
+class UserModel extends RelationModel {
+	protected $_link = array(
+		'Shop' => array(
+			'mapping_type'  => self::HAS_ONE,
+			'class_name'    => 'Shop',
+			'foreign_key'   => 'id',
+			'mapping_name'  => 'Shop',
+			),
+		);
 	protected $patchValidate = true;
 	protected $_map = array(
          'username' =>'user_name', // 把表单中name映射到数据表的username字段
@@ -26,7 +34,7 @@ class UserModel extends Model {
 		array('user_pwd','md10',1,'function') , 
 		array('is_seller',0,1),
 		array('person_identify_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
-		array('shop_identity_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
+		array('shop_identify_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
 
 		array('update_time','time',2,'function'),
 		array('reg_time','time',1,'function'),
@@ -34,11 +42,11 @@ class UserModel extends Model {
 		array('last_log_time',"time",3,'function'),
 		array('last_log_ip',"get_client_ip",3,'function'),
 		);
-	
+
 //获取所有用户信息(带分页)
 	public function getUserInfo(){
 		$page=I('get.p',1,'int');
-		$limit=1;//每页显示数量
+		$limit=10;//每页显示数量
 		$lists=$this->page($page,$limit)->select();//先where 再order再。。。
 		$count=$this->count();
 		$Page=new \Think\Page($count,$limit);

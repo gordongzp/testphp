@@ -59,7 +59,7 @@
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-9 col-lg-8">
+							<div class="col-sm-8">
 								<!-- tabs start -->
 								<!-- ================ -->
 								<!-- Nav tabs -->
@@ -71,7 +71,7 @@
 										<div class="row">
 											<div class="col-sm-12">
 												<?php
-												switch ($person_identity_stage) {
+												switch ($person_identify_stage) {
 													case 0://未实名认证
 													?>
 													<div class="alert alert-icon alert-warning" role="alert">
@@ -112,9 +112,9 @@
 										</div>
 										<div class="row">
 											<div class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="{:U('Home/UserCenter/identityId')}" method="POST" role="form" enctype="multipart/form-data">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="{:U('Home/UserCenter/identifyId')}" method="POST" role="form" enctype="multipart/form-data">
 													<input style="display: none;" type="text" name="id" value="{:session('user.id')}" >
-													<input style="display: none;" type="text" name="person_identity_stage" value="1" >
+													<input style="display: none;" type="text" name="person_identify_stage" value="1" >
 													<div class="form-group">
 														<label>姓名</label>
 														<input type="text" name="true_name" id="" class="form-control" required="required" placeholder="{$true_name}">
@@ -126,17 +126,17 @@
 													<div class="form-group">
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" style="width: 258px; height: 162px;">
 														<label>身份证正面</label>
-														<input type="file" name="photo1">
+														<input type="file" name="photo1" required="required">
 														<p class="help-block">支持jpg,png,jpeg格式</p>
 													</div>
 													<div class="form-group">
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify2','','jpg') ?>" style="width: 258px; height: 162px;">
 														<label>身份证反面</label>
-														<input type="file" name="photo2">
+														<input type="file" name="photo2" required="required">
 														<p class="help-block">支持jpg,png,jpeg格式</p>
 													</div>
 													<?php 
-													if (3==session('user.person_identity_stage')) {
+													if (3==session('user.person_identify_stage')) {
 														
 													} else {
 														?>

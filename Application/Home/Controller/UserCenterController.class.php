@@ -278,7 +278,7 @@ class UserCenterController extends Controller {
 		}	
 
 //实名认证
-	public function identityId(){
+	public function identifyId(){
 		//判断登录
 		if (!is_login()) {
 			$this->error('请先登录','/Home/User/logIn',2);
@@ -297,7 +297,7 @@ class UserCenterController extends Controller {
 		   	$upload->saveExt   =     'jpg';
 		   	// 上传文件 
 		   	$info   =   $upload->upload();
-	    	//set状态identity_stage以及身份证+truename；
+	    	//set状态identify_stage以及身份证+truename；
 	    	$msg=D('User')->createSave();
 		   	if (!$msg) {
 		    	if(!$info) {
@@ -305,13 +305,13 @@ class UserCenterController extends Controller {
 		   			$this->error($upload->getError());
 		   		}else{
 		   		// 上传成功
-	    			$this->success('上传成功！','/Home/UserCenter/identityId');
+	    			$this->success('上传成功！','/Home/UserCenter/identifyId');
 	    		}		
 		   	}else{
-		   		$this->error('输入信息有误',U('Home/UserCenter/identityId',array('msg'=>serialize($msg))),2);
+		   		$this->error('输入信息有误',U('Home/UserCenter/identifyId',array('msg'=>serialize($msg))),2);
 		    }
 		}else{
-		   	$this->assign('person_identity_stage',is_login()['person_identity_stage']);
+		   	$this->assign('person_identify_stage',is_login()['person_identify_stage']);
 		   	$this->assign('true_name',is_login()['true_name']);
 		   	$this->assign('person_id',is_login()['person_id']);
 		   	$this->assign('msg',unserialize($_GET['msg']));

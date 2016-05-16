@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>个人中心</title>
+	<title>查看店铺资料</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -324,9 +324,8 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览商店资料</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">修改商店资料</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">商店审核信息</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">店铺设置</a></li>
+									<li><a href="#">商品管理</a></li>
 								</ul>
 							</li>
 							<?php
@@ -356,7 +355,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">更换邮箱</li>
+					<li class="active">查看店铺资料</li>
 				</ol>
 			</div>
 		</div>
@@ -375,97 +374,90 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">更换邮箱</h1>
+						<h1 class="page-title">查看店铺资料</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-9 col-lg-8">
+							<div class="col-sm-8">
 								<!-- tabs start -->
 								<!-- ================ -->
 								<!-- Nav tabs -->
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
-	<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">基本资料</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/avatar');?>">个人头像</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">密码找回</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定邮箱</a></li>
-	<li><a href="<?php echo U('Home/UserCenter/identifyId');?>">实名认证</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">填写开店资料</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
 </ul>
+
 
 								<!-- Tab panes -->
 								<div class="tab-content">
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
-											<div id="block1" class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/UserCenter/changeEmail1');?>" method="POST" role="form">
+											<div class="col-sm-12">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/SellerCenter/openShop');?>" method="POST" role="form" enctype="multipart/form-data">
 													<div class="form-group">
-														<label for="">原邮箱</label>
-														<input name="email" id="email" type="text" class="form-control" placeholder="" value="<?php echo session('user.email');?>" disabled="">
+														<label>店铺logo</label>
+														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
 													</div>
 													<div class="form-group">
-														<label for="">邮箱验证码</label>
-														<input name="check_email" id="check_email" type="text" class="form-control" id="" placeholder="">
-													</div>							
-													<button type="submit" class="btn btn-default" style="margin-right: 20px">下一步</button>
-													<button id="send1" type="button" class="btn btn-animated btn-gray "  >发送验证码 <i class="fa fa-send-o"></i></button><span style="color: red" id="time"></span><span style="display: none;" id="time_tip">秒后重新发送</span>
+														<label>店铺名称:</label> <?php echo ($shop["shop_name"]); ?>
+													</div>
+													<div class="form-group">
+														<label>店铺地址:</label> <?php echo ($shop["shop_address"]); ?>
+													</div>
+													<div class="form-group">
+														<label>店铺电话:</label> <?php echo ($shop["shop_tel"]); ?>
+													</div>
+													<div class="form-group">
+														<label>店铺描述:</label>
+														<textarea name="shop_describe" class="form-control" required="required" style="height: 200px" placeholder="<?php echo ($shop["shop_describe"]); ?>" disabled="disabled" ></textarea>
+													</div>
+													<div class="row"></div>
+													<div class="row">
+														<div class="col-sm-4">
+															<div class="image-box style-2 mb-20">
+																<div class="overlay-container overlay-visible">
+																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" alt="">
+																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" class="overlay-link popup-img"></a>
+																	<div style="padding:5px" class="overlay-bottom hidden-xs">
+																		<div class="text">
+																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片1</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="image-box style-2 mb-20">
+																<div class="overlay-container overlay-visible">
+																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" alt="">
+																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" class="overlay-link popup-img"></a>
+																	<div style="padding:5px" class="overlay-bottom hidden-xs">
+																		<div class="text">
+																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片2</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="image-box style-2 mb-20">
+																<div class="overlay-container overlay-visible">
+																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" alt="">
+																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" class="overlay-link popup-img"></a>
+																	<div style="padding:5px" class="overlay-bottom hidden-xs">
+																		<div class="text">
+																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片3</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<button type="button" class="btn btn-default" onclick="javascript:window.location.href='<?php echo U('Home/SellerCenter/openShop');?>';">修改</button>
 												</form>
 											</div>
-
-											<div id="block2" style="display: none;" class="col-sm-5">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
-													<legend>请输入验证码</legend>
-													<div class="col-sm-12"><img id="check_img" src="<?php echo U('Home/User/verify');?>"></div>
-													<div class="form-group">
-														<label for="">验证码</label>
-														<input name="check" id="check" type="text" class="form-control">
-													</div>
-													<button id="send2" type="button" class="btn btn-animated btn-gray " style="margin-right: 20px" >确认发送 <i class="fa fa-send-o"></i></button>
-													<button id="back" type="button" class="btn btn-group btn-default btn-animated" >返回 <i class="fa fa-reply-all"></i></button>
-												</form>
-											</div>
-
-
-											<!-- modal -->
-											<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">按钮名称</button>
-
-											<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-												<div class="modal-dialog modal-sm">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-														</div>
-														<div class="modal-body">
-															<p>请输入正确的邮箱</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<button style="display: none;" id="modal_btn2" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
-
-											<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-												<div class="modal-dialog modal-sm">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-															<h4 class="modal-title" id="mySmallModalLabel">警告</h4>
-														</div>
-														<div class="modal-body">
-															<p>请输入正确的验证码</p>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- modal end-->
 										</div>
 									</div>
 								</div>
@@ -669,70 +661,7 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(6)').attr("class", "active");
-
-		$(function(){
-			$('#check_img').click(function(){
-				$("#check_img").attr("src","<?php echo U('Home/User/verify');?>");
-			})
-		})
-
-		$(function(){
-			$('#send2').click(function(){
-				var email=$('#email').val();
-				var check=$('#check').val();
-				var action="<?php echo U('Home/User/verify_check');?>";
-				$.post(action,{check:check},function(data){
-					if (data) {
-						var action2="<?php echo U('Home/User/send_email_check');?>";
-						$('#block1').css("display","");
-						$('#block2').css("display","none");	
-						$('#send1').css("display","none");
-						$('#time').text(60);//将发送验证码改为等待时间
-						$('#time_tip').css("display","");
-						(function(){
-							var wait = document.getElementById('time');
-							var interval = setInterval(function(){
-								var time = --wait.innerHTML;
-								if(time <= 0) {
-									$('#send1').css("display","");
-									$('#time').text('');
-									$('#time_tip').css("display","none");
-									clearInterval(interval);
-								};
-							}, 1000);
-						})();								
-						$.post(action2,{email:email},function(data2){
-							console.log(data2.stage);
-						});
-					}else{
-						$("#modal_btn2").trigger("click");
-					}
-				});				
-			})
-		})
-
-		$(function(){
-			$('#send1').click(function(){
-				//验证邮箱正确性
-				var email=$('#email').val();
-				regexp=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
-				if(!regexp.test(email)){
-					$("#modal_btn").trigger("click");
-				}else{
-					$('#block2').css("display","");
-					$('#block1').css("display","none");
-				}		
-			})
-		})
-
-		$(function(){
-			$('#back').click(function(){
-				$('#block1').css("display","");
-				$('#block2').css("display","none");				
-			})
-		})
-
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
 	</script>
 
 </body>

@@ -8,7 +8,4 @@ class IndexController extends Controller {
 		$this->assign('show',$info['show']);
 		$this->display();
 	}
-	public function test(){
-		exit();
-	}
 }
