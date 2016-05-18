@@ -7,7 +7,7 @@ class UserModel extends RelationModel {
 			'mapping_type'  => self::HAS_ONE,
 			'class_name'    => 'Shop',
 			'foreign_key'   => 'id',
-			'mapping_name'  => 'Shop',
+			'mapping_name'  => 'shop',
 			),
 		);
 	protected $patchValidate = true;
