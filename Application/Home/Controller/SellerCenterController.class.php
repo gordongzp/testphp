@@ -16,7 +16,7 @@ class SellerCenterController extends Controller {
 			$this->error('您还没有成为卖家','/Home/SellerCenter/openShop',2);
 		}
 		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
-		$shop=$arr['Shop'];
+		$shop=$arr['shop'];
 		$this->assign('shop',$shop);
 		$this->display();
 	}
@@ -93,7 +93,7 @@ class SellerCenterController extends Controller {
 			//如果有，找到shop_id
 			if (1==session('user.is_seller')) {
 				$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
-				$shop=$arr['Shop'];
+				$shop=$arr['shop'];
 				$this->assign('shop',$shop);
 			}
 			$this->assign('msg',unserialize($_GET['msg']));

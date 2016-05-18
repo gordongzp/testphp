@@ -355,7 +355,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">填写开店资料</li>
+					<li class="active">新增商品</li>
 				</ol>
 			</div>
 		</div>
@@ -374,7 +374,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">填写开店资料</h1>
+						<h1 class="page-title">新增商品</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -384,7 +384,7 @@
 								<!-- Nav tabs -->
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
-	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">新增商品</a></li>
 	<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">填写开店资料</a></li>
 	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
 </ul>
@@ -395,84 +395,43 @@
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
 											<div class="col-sm-12">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/SellerCenter/openShop');?>" method="POST" role="form" enctype="multipart/form-data">
+
+												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/Goods/addGoods');?>" method="POST" role="form" enctype="multipart/form-data">
 													<!-- 隐藏输入项 -->
-													<!-- 用户id录入商店 -->
-													<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
-													<!-- 商店shop_id录入商店,如果存在的话，用于修改数据 -->
-													<?php  if (1==session('user.is_seller')) { ?>
-														<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["shop_id"]); ?>" >
-														<?php  } ?>
-													<div class="form-group">
+													<!-- shop_id号 -->
+													<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["id"]); ?>" >
+													<!-- cate_id号 -->
+													<input style="display: none;" type="text" name="cate_id" id="cate_id" value="" >
+
+
+<!-- 													<div class="form-group">
 														<label>店铺logo</label>
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
 														<input type="file" name="photo1" required="required">
 														<p class="help-block">支持jpg,png,jpeg格式</p>
-													</div>
+													</div> -->
+													<p>当前分类：<span id="cate"></span><a onclick="click_e()" href="javascript:void(0);">修改</a>
+													</p>
 													<div class="form-group">
-														<label>店铺名称</label>
-														<input type="text" name="shop_name" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_name"])); ?>">
+														<label>商品名称：</label>
+														<input type="text" name="goods_name" id="goods_name" class="form-control" required="required" placeholder="">
 													</div>
-													<div class="form-group">
+
+<!-- 													<div class="form-group">
 														<label>店铺地址</label>
 														<input type="text" name="shop_address" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_address"])); ?>">
-													</div>
-													<div class="form-group">
+													</div> -->
+
+<!-- 													<div class="form-group">
 														<label>店铺电话</label>
 														<input type="text" name="shop_tel" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_tel"])); ?>">
-													</div>
+													</div> -->
+
 													<div class="form-group">
-														<label>店铺描述</label>
-														<textarea name="shop_describe" class="form-control" required="required" style="height: 200px" placeholder="<?php echo (L2($msg["shop_describe"])); ?>" ></textarea>
+														<label>商品描述：</label>
+														<textarea name="goods_describe" class="form-control" required="" style="height: 200px" placeholder="" ></textarea>
 													</div>
-													<div class="row"></div>
-													<div class="row">
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" class="overlay-link popup-img"></a>
-																	<div style="padding:5px" class="overlay-bottom hidden-xs">
-																		<div class="text">
-																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片1</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<input type="file" name="photo2" required="required">
-															<p class="help-block"></p>
-														</div>
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" class="overlay-link popup-img"></a>
-																	<div style="padding:5px" class="overlay-bottom hidden-xs">
-																		<div class="text">
-																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片2</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<input type="file" name="photo3" required="required">
-															<p class="help-block"></p>
-														</div>
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" class="overlay-link popup-img"></a>
-																	<div style="padding:5px" class="overlay-bottom hidden-xs">
-																		<div class="text">
-																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片3</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<input type="file" name="photo4" required="required">
-															<p class="help-block">支持jpg,png,jpeg格式</p>
-														</div>
-													</div>
+													
 													<button type="submit" class="btn btn-default">保存</button>
 												</form>
 											</div>
@@ -502,6 +461,36 @@
 			</div>
 		</section>
 		<!-- main-container end -->
+
+		<!-- modal新增子类别 -->
+		<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target="#mymodal">按钮名称</button>
+		<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="mySmallModalLabel">选择分类</h4>
+					</div>
+					<div class="modal-body">
+						<form onkeydown="if(event.keyCode==13){return false;}" id="form1" action="<?php echo U('Admin181/Goods/addSubCate');?>" method="POST" role="form">
+							<div class="tree well">
+								<?php echo ($tree); ?>
+							</div>
+							<button type="submit" class="btn btn-default">确认</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button id="modal_btn_close" type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -679,8 +668,26 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(2)').attr("class", "active");
-	</script>
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+
+		function click_e(){
+		// $('#pid').attr("value",id);
+		// $('#father').text(name);
+		// $(".tree li:has(ul) span").trigger("click");
+
+		$("#modal_btn").trigger("click");
+	}
+
+
+
+	
+	function click_c(){
+		// $('#pid').attr("value",id);
+		// $('#father').text(name);
+		$("#modal_btn_close").trigger("click");
+	}
+
+</script>
 
 </body>
 </html>
