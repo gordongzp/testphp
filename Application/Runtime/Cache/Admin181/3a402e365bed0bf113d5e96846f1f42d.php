@@ -217,12 +217,12 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="tree well">
-									<?php  show_tree($items); ?>
+									<?php echo ($tree); ?>
 									<div class="separator-2"></div>
 									<div class="row">
 										<div class="col-sm-5">
 											<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
-											<input value='0' name="pid" type="text" style="display: none;">
+												<input value='0' name="pid" type="text" style="display: none;">
 												<div class="form-group">
 													<input type="text" class="form-control" id="name" name="name" placeholder="">
 												</div>
@@ -272,7 +272,7 @@
 	</div>
 
 	<!-- modal编辑类别 -->
-	<button style="display: none;" id="modal_btn2" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
+	<button id="modal_btn" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm2">按钮名称</button>
 	<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">

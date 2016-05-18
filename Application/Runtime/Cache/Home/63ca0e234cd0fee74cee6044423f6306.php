@@ -403,14 +403,13 @@
 													<!-- cate_id号 -->
 													<input style="display: none;" type="text" name="cate_id" id="cate_id" value="" >
 
-
 <!-- 													<div class="form-group">
 														<label>店铺logo</label>
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
 														<input type="file" name="photo1" required="required">
 														<p class="help-block">支持jpg,png,jpeg格式</p>
 													</div> -->
-													<p>当前分类：<span id="cate"></span><a onclick="click_e()" href="javascript:void(0);">修改</a>
+													<p>当前分类：<span id="cate"></span><a onclick="click_e()" href="javascript:void(0);"> 修改</a>
 													</p>
 													<div class="form-group">
 														<label>商品名称：</label>
@@ -474,7 +473,7 @@
 					<div class="modal-body">
 						<form onkeydown="if(event.keyCode==13){return false;}" id="form1" action="<?php echo U('Admin181/Goods/addSubCate');?>" method="POST" role="form">
 							<div class="tree well">
-								<?php echo ($tree); ?>
+								<?php echo ($show_tree); ?>
 							</div>
 							<button type="submit" class="btn btn-default">确认</button>
 						</form>
@@ -668,23 +667,45 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
+		var is_shunk=0;
 		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
-
 		function click_e(){
 		// $('#pid').attr("value",id);
 		// $('#father').text(name);
 		// $(".tree li:has(ul) span").trigger("click");
-
 		$("#modal_btn").trigger("click");
+		if (!is_shunk) {
+			setTimeout("shink()",500);
+			is_shunk=1;
+		}
 	}
 
 
 
 	
-	function click_c(){
+	function click_c(cate_id){
 		// $('#pid').attr("value",id);
 		// $('#father').text(name);
+
+		//获取分类name
+		var action="<?php echo U('Home/Goods/getCateNameAj');?>";
+		$.post(action,{cate_id:cate_id},function(data){
+			$('#cate').text(data);
+		});
+		$('#cate_id	').attr("value",cate_id);
 		$("#modal_btn_close").trigger("click");
+	}
+
+
+	function shink(){
+		var children = $('.tree li.parent_li > span').parent('li.parent_li').find(' > ul > li');
+		if (children.is(":visible")) {
+			children.hide('fast');
+			$('.tree li.parent_li > span').attr('title', '展开').find(' > i').addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign');
+		} else {
+			children.show('fast');
+			$('.tree li.parent_li > span').attr('title', '收起').find(' > i').addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+		}
 	}
 
 </script>

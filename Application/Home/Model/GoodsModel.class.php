@@ -28,4 +28,24 @@ class GoodsModel extends RelationModel {
 		);
 
 
+//createAdd 方法
+	public function createAdd(){
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			$this->add();
+			return NULL;
+		}
+	}
+
+//createSave方法
+	public function createSave(){ 
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			$this->save();
+			return NULL;
+		}
+	}
+
 }
