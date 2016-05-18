@@ -1,0 +1,1728 @@
+[ 2016-05-18T15:42:50+08:00 ] ::1 /admin181
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xy_admin` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.0330s ]
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_admin` (`user_name`,`user_pwd`) VALUES ('admin','66981caf101c63150d2ceaf5e5862ec0') [ RunTime:0.0930s ]
+SQL: SHOW COLUMNS FROM `xy_config` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_config` (`con_id`) VALUES ('1') [ RunTime:0.0620s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:42:52+08:00 ] ::1 /Admin181/AdminUser/logIn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2016-05-18T15:42:58+08:00 ] ::1 /Admin181/AdminUser/logIn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2016-05-18T15:43:03+08:00 ] ::1 /Admin181/AdminUser/logIn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `xy_admin` WHERE `user_name` = 'admin' AND `user_pwd` = '66981caf101c63150d2ceaf5e5862ec0' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010001s ]
+
+[ 2016-05-18T15:43:05+08:00 ] ::1 /Admin181/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_config` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_config` WHERE `con_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\a45c2c5921d7a524b45316ad33468bca.php 第 321 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:06+08:00 ] ::1 /Admin181/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_config` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_config` WHERE `con_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\a45c2c5921d7a524b45316ad33468bca.php 第 321 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.074003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:43:09+08:00 ] ::1 /Admin181/Goods/cate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0410s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\3a402e365bed0bf113d5e96846f1f42d.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:09+08:00 ] ::1 /Admin181/Goods/cate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\3a402e365bed0bf113d5e96846f1f42d.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.016001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.016001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:43:14+08:00 ] ::1 /Admin181/Goods/cate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('0','sds') [ RunTime:0.1080s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-05-18T15:43:15+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:16+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2016-05-18T15:43:17+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('0','sadad') [ RunTime:0.0770s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:19+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0390s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:19+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2016-05-18T15:43:19+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2016-05-18T15:43:21+08:00 ] ::1 /Admin181/Goods/addSubCate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.008001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('1','dadsad') [ RunTime:0.1030s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:23+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:43:23+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:23+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:24+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:43:26+08:00 ] ::1 /Admin181/Goods/addSubCate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.012001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.022001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('3','adsdasd') [ RunTime:0.0760s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:27+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:43:27+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:30+08:00 ] ::1 /Admin181/Goods/addSubCate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('3','asdasd') [ RunTime:0.1510s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:43:31+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:43:32+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:43:33+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('0','asdasd') [ RunTime:0.0330s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:34+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.023001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:34+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:43:35+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:43:37+08:00 ] ::1 /Admin181/Goods/addSubCate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('5','dasdad') [ RunTime:0.0500s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:43:38+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:43:38+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:47:14+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:47:14+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 119 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Common\Common\function.php 第 126 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:47:52+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:47:52+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2016-05-18T15:48:00+08:00 ] ::1 /Admin181/Goods/addSubCate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('2','312313') [ RunTime:0.1030s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:02+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2016-05-18T15:48:02+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:48:06+08:00 ] ::1 /Admin181/Goods/addSubCate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('8','21321313') [ RunTime:0.0400s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:07+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:48:07+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:12+08:00 ] ::1 /Admin181/Goods/editCate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `xy_cate` SET `name`='1111' WHERE `cat_id` = '8' [ RunTime:0.0660s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:48:13+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016000s ]
+
+[ 2016-05-18T15:48:13+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:13+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:22+08:00 ] ::1 /Admin181/Goods/delCate/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_cate` WHERE `pid` = 2  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xy_cate` WHERE `pid` = 8  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xy_cate` WHERE `pid` = 9  [ RunTime:0.0010s ]
+SQL: DELETE FROM `xy_cate` WHERE `cat_id` = 9 [ RunTime:0.0770s ]
+SQL: DELETE FROM `xy_cate` WHERE `cat_id` = 8 [ RunTime:0.1440s ]
+SQL: DELETE FROM `xy_cate` WHERE `cat_id` = 2 [ RunTime:0.0270s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:24+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.008000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2016-05-18T15:48:24+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:48:24+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:37+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xy_cate` (`pid`,`name`) VALUES ('0','321313') [ RunTime:0.0760s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./Application/Admin181/View/Public/footer.html): failed to open stream: No such file or directory C:\xampp\htdocs\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\4f099e7c8005d79fb1a86b5b9268d0db.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:48:38+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-05-18T15:48:39+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.016001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.1610s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-05-18T15:48:39+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:49:27+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2016-05-18T15:49:27+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-05-18T15:49:28+08:00 ] ::1 /Admin181/Goods/Cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 92 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+NOTIC: [8] Undefined index: son C:\xampp\htdocs\Application\Admin181\Controller\GoodsController.class.php 第 99 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\Application\Runtime\Cache\Admin181\5459327e94cbd824c87be2f32f0a98a8.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+

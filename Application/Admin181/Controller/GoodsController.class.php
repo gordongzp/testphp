@@ -22,7 +22,7 @@ class GoodsController extends Controller {
 			}
 		} else {
 			$items = D('Cate')->select();
-			$this->assign('items',format_tree($items));
+			$this->assign('tree',$this->_showTree(format_tree($items)));
 			$this->display();	
 		}
 	}
@@ -81,4 +81,31 @@ class GoodsController extends Controller {
 			$this->error('没有访问该页面的权限','',2);
 		}
 	}
+
+	private function _showTree($arr){
+		$re='';
+		$re.= "<ul>";
+		foreach ($arr as $k => $v) {
+			$re.= "<li>";
+			if (0==$v['pid']) {
+				$re.= "<span><i class=\"glyphicon glyphicon-folder-open\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
+			}elseif ($v['son']) {
+        //有儿子
+				$re.= "<span><i class=\"glyphicon glyphicon-minus-sign\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
+			}else{
+        //没儿子
+				$re.= "<span><i class=\"glyphicon glyphicon-leaf\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
+			}
+			if ($v['son']) {
+				$re.=$this->_showTree($v['son']);
+			}
+			$re.= "</li>";
+		}
+		$re.= "</ul>";
+		return $re;
+	}
+
+
+
+
 }

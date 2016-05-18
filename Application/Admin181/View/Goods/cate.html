@@ -60,14 +60,12 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="tree well">
-									<?php 
-									show_tree($items);
-									?>
+									{$tree}
 									<div class="separator-2"></div>
 									<div class="row">
 										<div class="col-sm-5">
 											<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form">
-											<input value='0' name="pid" type="text" style="display: none;">
+												<input value='0' name="pid" type="text" style="display: none;">
 												<div class="form-group">
 													<input type="text" class="form-control" id="name" name="name" placeholder="">
 												</div>

@@ -109,28 +109,6 @@ function send_mail($to, $title, $content) {
     	return $arr;
     }
 
-
-    function show_tree($arr){
-        echo "<ul>";
-        foreach ($arr as $k => $v) {
-            echo "<li>";
-            if (0==$v['pid']) {
-                echo "<span><i class=\"glyphicon glyphicon-folder-open\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
-            }elseif ($v['son']) {
-        //有儿子
-                echo "<span><i class=\"glyphicon glyphicon-minus-sign\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
-            }else{
-        //没儿子
-                echo "<span><i class=\"glyphicon glyphicon-leaf\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
-            }
-            if ($v['son']) {
-                show_tree($v['son']);
-            }
-            echo "</li>";
-        }
-        echo "</ul>";
-    }
-
     function is_not_empty($x){
         if ($x=='') {
             return false;
@@ -187,5 +165,27 @@ function send_mail($to, $title, $content) {
         }
     }
 
+
+
+    // function show_tree($arr){
+    //     echo "<ul>";
+    //     foreach ($arr as $k => $v) {
+    //         echo "<li>";
+    //         if (0==$v['pid']) {
+    //             echo "<span><i class=\"glyphicon glyphicon-folder-open\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
+    //         }elseif ($v['son']) {
+    //     //有儿子
+    //             echo "<span><i class=\"glyphicon glyphicon-minus-sign\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
+    //         }else{
+    //     //没儿子
+    //             echo "<span><i class=\"glyphicon glyphicon-leaf\"></i>".$v['name']."</span> <a onclick=\"click_e(".$v['cat_id'].")\" href=\"javascript:void(0);\">编辑</a>|<a href=\"".U('Admin181/Goods/delCate',array('id'=>$v['cat_id'],))."\">删除</a>|<a onclick=\"click_a(".$v['cat_id'].",'".$v['name']."')\" href=\"javascript:void(0);\">增加</a>";
+    //         }
+    //         if ($v['son']) {
+    //             show_tree($v['son']);
+    //         }
+    //         echo "</li>";
+    //     }
+    //     echo "</ul>";
+    // }
 
     ?>
