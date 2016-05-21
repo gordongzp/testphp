@@ -355,7 +355,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">新增商品</li>
+					<li class="active">商品列表</li>
 				</ol>
 			</div>
 		</div>
@@ -374,7 +374,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">新增商品</h1>
+						<h1 class="page-title">商品列表</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -396,51 +396,48 @@
 										<div class="row">
 											<div class="col-sm-12">
 
-												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/Goods/addGoods');?>" method="POST" role="form" enctype="multipart/form-data">
-													<!-- 隐藏输入项 -->
-													<!-- shop_id号 -->
-													<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["id"]); ?>" >
-													<!-- cate_id号 -->
-													<input style="display: none;" type="text" name="cat_id" id="cat_id" value="" >
 
-<!-- 													<div class="form-group">
-														<label>店铺logo</label>
-														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
-														<input type="file" name="photo1" required="required">
-														<p class="help-block">支持jpg,png,jpeg格式</p>
-													</div> -->
-													<p>当前分类：<span id="cate"></span><a onclick="click_e()" href="javascript:void(0);"> 修改</a>
-													</p>
-													<div class="form-group">
-														<label>商品名称：</label>
-														<input type="text" name="goods_name" id="goods_name" class="form-control" required="required" placeholder="">
-													</div>
 
-<!-- 													<div class="form-group">
-														<label>店铺地址</label>
-														<input type="text" name="shop_address" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_address"])); ?>">
-													</div> -->
-
-<!-- 													<div class="form-group">
-														<label>店铺电话</label>
-														<input type="text" name="shop_tel" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_tel"])); ?>">
-													</div> -->
-
-													<div class="form-group">
-														<label>商品描述：</label>
-														<textarea name="goods_describe" class="form-control" required="" style="height: 200px" placeholder="" ></textarea>
-													</div>
-
-													<div class="form-group form-inline">
-														<label>商品属性：(属性名称/价格)</label>
-														<ul style="list-style-type: none; display: block; padding-left: 0px" id="demo2"></ul>
-														<a href="#">+ 添加</a>
-													</div>
+												<?php echo dump($goods_list);?>
 
 
 
-													<button type="submit" class="btn btn-default">保存</button>
-												</form>
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<th></th>
+															<th>图片</th>
+															<th>名称</th>
+															<th>价格(元)</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+
+														<?php if(is_array($goods_list)): foreach($goods_list as $k=>$v): ?><tr>
+
+																
+																<td>
+																	<label>
+																		<input type="checkbox" id="box" name="box" value="<?php echo ($v['goods_id']); ?>" >
+																	</label>
+																</td>
+																<td></td>
+																<td><?php echo ($v["goods_name"]); ?></td>
+																<td><?php echo ($v["min_price"]); ?>—<?php echo ($v["max_price"]); ?></td>
+																<th><a href="">编辑</a>|<a href="<?php echo U('Home/Goods/delGoods',array('id'=>$v['goods_id'],));?>">删除</a></th>
+															</tr><?php endforeach; endif; ?>
+													</tbody>
+													
+												</table>
+												<a href="<?php echo U('Home/Goods/addGoods');?>" class="btn btn-default btn-sm">新增商品</a>
+												<a href="javascript:delet_goods()" class="btn btn-default btn-sm">删除商品</a>
+												<a href="#" class="btn btn-default btn-sm">Default</a>
+												<a href="#" class="btn btn-default btn-sm">Default</a>
+												<?php echo $page_show;?>
+												
+
+												
 											</div>
 										</div>
 									</div>
@@ -675,8 +672,18 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		var is_shunk=0;
 		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+
+		function delet_goods(){
+			var ids="";
+			$("input[type=checkbox]").each(function(){
+				if ($(this).is(":checked")){ 
+					ids+=$(this).val()+",";
+				}
+			})
+			alert(ids);
+		}
+
 		function click_e(){
 		// $('#pid').attr("value",id);
 		// $('#father').text(name);

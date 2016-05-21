@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016-05-18 15:40:16                          */
+/* Created on:     2016-05-21 11:05:33                          */
 /*==============================================================*/
 
 
@@ -93,6 +93,8 @@ create table xy_goods
 (
    goods_id             int(10) not null auto_increment,
    goods_name           varchar(40) not null,
+   is_on_shelve         int(1) not null,
+   goods_describe       text not null,
    cat_id               int(10),
    shop_id              int(10),
    primary key (goods_id)

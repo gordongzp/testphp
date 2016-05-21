@@ -5,6 +5,12 @@ class GoodsController extends Controller {
 	public function index(){
 	}
 
+
+
+
+
+
+
 	public function addGoods(){
     	//判断登录
 		if (!is_login()) {
@@ -20,20 +26,47 @@ class GoodsController extends Controller {
 		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
 		$shop=$arr['shop'];
 		if (IS_POST) {
-			if (!I('post.cate_id')) {
+			//判断分类是否为空
+			if (!I('post.cat_id')) {
 				$this->error('分类不能为空','',2);
 			}
-			$msg=D('Goods')->createAdd();
-			if (!$msg) {
+			//判断属性是否为空
+			$i=0;
+			foreach (I('post.attr_name') as $k => $val) {
+				if ((!$val)||(!I('post.price')[$i])) {
+					$this->error('属性不能为空','',2);
+				}
+				if (!is_numeric(I('post.price')[$i])){
+					$this->error('价格必须是数字','',2);
+				}
+				$i++;
+			}
+
+			$msg=D('Goods')->createAddReId();
+			if (is_numeric($msg)) {
 					// if(!$info['info']) {
 		   			// 上传错误提示错误信息
 						// $this->error($info['err']);
 					// }else{
-						$this->success('新增成功','/Home/SellerCenter/showShopInfo',2);
-					// }	
-				} else {
-					$this->error('请输入正确注册信息',U('Home/Goods/addGoods',array('msg'=>serialize($msg))),2);
+
+			    //整理attr数据
+				$goods_id=$msg;
+				$i=0;
+				foreach (I('post.attr_name') as $k => $val) {
+					$data[]=array(
+						'attr_name' =>$val , 
+						'price' =>I('post.price')[$i] ,
+						'goods_id' =>$goods_id,
+						);
+					$i++;
 				}
+				if (M('Attr')->addAll($data)) {
+					$this->success('新增成功','/Home/Goods/goodsList',1);
+				}
+					// }	
+			} else {
+				$this->error('请输入正确注册信息',U('Home/Goods/addGoods',array('msg'=>serialize($msg))),2);
+			}
 		} else {
 			$items = D('Admin181/Cate')->select();
 			$this->assign('show_tree',$this->_showTree(format_tree($items)));
@@ -42,6 +75,108 @@ class GoodsController extends Controller {
 			$this->display();
 		}
 	}
+
+
+
+
+
+
+
+	public function goodsList(){
+    	//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		//判断是否为卖家
+		if (1!=session('user.is_seller')) {
+			$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+		}
+		//关联查询与shop的用户绑定的shop信息
+		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+		$shop=$arr['shop'];
+		//查询所有goods
+		$lists=D('Goods')->getGoodsList();
+		$page_show=$lists['show'];
+		$goods_list=$lists['lists'];
+		//计算最高价和最低价
+		foreach ($goods_list as $k => $v) {
+			$max=0;
+			$min=99999;
+			foreach ($v['attr'] as $key => $value) {
+				if ($value['price']>$max) {
+					$max=$value['price'];
+				}
+				if ($value['price']<$min) {
+					$min=$value['price'];
+				}
+			}
+			$v['max_price']=$max;
+			$v['min_price']=$min;
+			$goods_list[$k]=$v;
+		}
+
+
+		if (IS_POST) {
+			
+		} else {
+			$items = D('Admin181/Cate')->select();
+			$this->assign('show_tree',$this->_showTree(format_tree($items)));
+			$this->assign('msg',unserialize($_GET['msg']));
+			$this->assign('shop',$shop);
+			$this->assign('page_show',$page_show);
+			$this->assign('goods_list',$goods_list);
+			$this->display();
+		}
+	}
+
+
+
+
+
+
+
+	public function delGoods(){
+    	//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		//判断是否为卖家
+		if (1!=session('user.is_seller')) {
+			$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+		}
+		//关联查询与shop的用户绑定的shop信息
+		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+		$shop=$arr['shop'];
+
+		//获取要删除的商品id号
+		$goods_id=I('get.id');
+		//判断操作数据是否属于该商户
+		$shop_id=$shop['shop_id'];
+		$condition = array('goods_id' =>$goods_id , 
+			'shop_id' =>$shop_id ,  
+			);
+		$Goods_to_del=D('Goods')->relation('attr')->where($condition)->find();
+		if (!$Goods_to_del) {
+		//删除从表
+			$this->error('操作错误','',2);
+		}
+		foreach ($Goods_to_del['attr'] as $k => $v) {
+			M('Attr')->where('attr_id='.$v['attr_id'])->delete();
+		}
+		//删除主表
+		D('Goods')->where($condition)->delete();
+		$this->success('操作完成','/Home/Goods/goodsList',1);
+	}
+
+
+
+
+
+
 
 	public function getCateNameAj(){
     	//判断登录
@@ -62,8 +197,12 @@ class GoodsController extends Controller {
 		} else {
 			$this->error('您没有访问的权限','',2);
 		}
-		
 	}
+
+
+
+
+
 
 
 	private function _findPath($id){
@@ -75,6 +214,9 @@ class GoodsController extends Controller {
 		}
 		return $re;
 	}
+
+
+
 
 
 	private function _showTree($arr){

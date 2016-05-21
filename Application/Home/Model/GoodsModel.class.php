@@ -38,6 +38,15 @@ class GoodsModel extends RelationModel {
 		}
 	}
 
+//createAdd 方法
+	public function createAddReId(){
+		if (!$this->create()) {
+			return $this->getError();
+		}else{
+			return $this->add();
+		}
+	}
+
 //createSave方法
 	public function createSave(){ 
 		if (!$this->create()) {
@@ -46,6 +55,17 @@ class GoodsModel extends RelationModel {
 			$this->save();
 			return NULL;
 		}
+	}
+
+
+//获取所有商品信息(带分页)
+	public function getGoodsList(){
+		$page=I('get.p',1,'int');
+		$limit=10;//每页显示数量
+		$lists=$this->relation('attr')->page($page,$limit)->select();//先where 再order再。。。
+		$count=$this->count();
+		$Page=new \Think\Page($count,$limit);
+		return array('show' => $Page->show(), 'lists'=>$lists);
 	}
 
 }
