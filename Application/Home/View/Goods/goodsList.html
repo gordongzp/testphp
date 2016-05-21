@@ -75,15 +75,16 @@
 
 												{:dump($goods_list)}
 
-
-
+												<p id="url_temp" style="display: none;">{:U('Home/Goods/delGoods')}</p>
+												<p id="url_temp2" style="display: none;">{:U('Home/Goods/upDownShelve')}</p>
 												<table class="table table-hover">
 													<thead>
 														<tr>
-															<th></th>
+															<th><input type="checkbox" id="select_all" name="select_all" value="{$v['goods_id']}" > 全选</th>
 															<th>图片</th>
 															<th>名称</th>
 															<th>价格(元)</th>
+															<th>上架</th>
 															<th>操作</th>
 														</tr>
 													</thead>
@@ -91,8 +92,6 @@
 
 														<foreach name="goods_list" item="v" key="k" >
 															<tr>
-
-																
 																<td>
 																	<label>
 																		<input type="checkbox" id="box" name="box" value="{$v['goods_id']}" >
@@ -101,15 +100,17 @@
 																<td></td>
 																<td>{$v.goods_name}</td>
 																<td>{$v.min_price}—{$v.max_price}</td>
-																<th><a href="">编辑</a>|<a href="{:U('Home/Goods/delGoods',array('id'=>$v['goods_id'],))}">删除</a></th>
+																<th><?php echo ($v['is_on_shelve']) ? '是' : '否' ; ?></th>
+																<th><a href="">编辑</a>|<a href="">删除</a></th>
 															</tr>
 														</foreach>
 													</tbody>
 													
+
 												</table>
 												<a href="{:U('Home/Goods/addGoods')}" class="btn btn-default btn-sm">新增商品</a>
 												<a href="javascript:delet_goods()" class="btn btn-default btn-sm">删除商品</a>
-												<a href="#" class="btn btn-default btn-sm">Default</a>
+												<a href="javascript:up_down_shelve()" class="btn btn-default btn-sm">上/下架</a>
 												<a href="#" class="btn btn-default btn-sm">Default</a>
 												{:$page_show}
 												
@@ -169,68 +170,73 @@
 		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
 
 		function delet_goods(){
-			var ids="";
+			var ids="{";
+			var i=0;
 			$("input[type=checkbox]").each(function(){
-				if ($(this).is(":checked")){ 
-					ids+=$(this).val()+",";
+				if ($(this).is(":checked")&&$(this).attr('name')!='select_all'){ 
+					ids+="i:"+i+";i:"+$(this).val()+";";
+					i++;
 				}
 			})
-			alert(ids);
+			ids+="}";
+			ids="a:"+i+":"+ids;
+			if (0==i) {
+				alert('请至少选择一项')
+			}else{
+				window.location.href=$('#url_temp').text()+"?"+'ids='+ids; 
+			}
 		}
 
-		function click_e(){
-		// $('#pid').attr("value",id);
-		// $('#father').text(name);
-		// $(".tree li:has(ul) span").trigger("click");
-		$("#modal_btn").trigger("click");
-		if (!is_shunk) {
-			setTimeout("shink()",500);
-			is_shunk=1;
+		function up_down_shelve(){
+			var ids="{";
+			var i=0;
+			$("input[type=checkbox]").each(function(){
+				if ($(this).is(":checked")&&$(this).attr('name')!='select_all'){ 
+					ids+="i:"+i+";i:"+$(this).val()+";";
+					i++;
+				}
+			})
+			ids+="}";
+			ids="a:"+i+":"+ids;
+			if (0==i) {
+				alert('请至少选择一项')
+			}else{
+				window.location.href=$('#url_temp2').text()+"?"+'ids='+ids; 
+			}
 		}
-	}
-
-	function click_c(cate_id){
-		// $('#pid').attr("value",id);
-		// $('#father').text(name);
-
-		//获取分类name
-		var action="{:U('Home/Goods/getCateNameAj')}";
-		$.post(action,{cate_id:cate_id},function(data){
-			$('#cate').text(data);
-		});
-		$('#cat_id	').attr("value",cate_id);
-		$("#modal_btn_close").trigger("click");
-	}
 
 
-	function shink(){
-		var children = $('.tree li.parent_li > span').parent('li.parent_li').find(' > ul > li');
-		if (children.is(":visible")) {
-			children.hide('fast');
-			$('.tree li.parent_li > span').attr('title', '展开').find(' > i').addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign');
-		} else {
-			children.show('fast');
-			$('.tree li.parent_li > span').attr('title', '收起').find(' > i').addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
-		}
-	}
-</script>
+		// $(function(){
+		// 	$('#select_all').click(function(){
+		// 		if ($(this).is(":checked")) {
+		// 			//点击后选中
+		// 			$("input[type=checkbox]").each(function(){
+		// 				console.log(1);
+		// 				$(this).prop("checked", true);
+		// 			})
+		// 		} else {
+		// 			//点击后全部取消选中
+		// 			$("input[type=checkbox]").each(function(){
+		// 				console.log(0);
+		// 				$(this).prop("checked", false);
+		// 			})
+		// 		}
+		// 	})
+		// })
 
 
+		//全选备用代码
+        $(function() {
+           $("#select_all").click(function() {
+                $('input[name="box"]').prop("checked",this.checked); 
+            });
+            var $box = $("input[name='box']");
+            $box.click(function(){
+                $("#checkAll").prop("checked",$subBox.length == $("input[name='box']:checked").length ? true : false);
+            });
+        });
 
-<script type="text/javascript">
-	$(function(){
-		$("#demo2").easyinsert({
-		name: ["attr_name[]", "price[]"],//可以同时添加两个（或更多），name值相同也必须分开设置，name数组的长度就是每组input的个数。type、value、maxlength、className四种属性，若同组组员的设置一样，可以只设置一次。
-		value: ["", ""],//可以给同组input分别设置默认值
-		maxlength: 15,//每组input的maxlength都一样，无需使用数组
-		class: ["form-control", "form-control"],//不用我解释了吧
-		toplimit: 0,//可以添加组数上限（默认是0，表示无上限），它是总管，so，name相当于小组组长
-		initValue: [//初始化的时候，各input的value就是归它管，必须是数组
-		["", ""]
-		]
-	});
-	});
-</script>
+    </script>
 
 </body>
 </html>

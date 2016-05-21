@@ -725,7 +725,7 @@
 		class: ["form-control", "form-control"],//不用我解释了吧
 		toplimit: 0,//可以添加组数上限（默认是0，表示无上限），它是总管，so，name相当于小组组长
 		initValue: [//初始化的时候，各input的value就是归它管，必须是数组
-		["", ""]
+		["默认", ""]
 		]
 	});
 	});

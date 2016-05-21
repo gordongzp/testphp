@@ -4,49 +4,50 @@ use Think\Controller;
 class UserCenterController extends Controller {
 	//个人中心
 	public function index(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			$this->display();
-		}else{
+		//判断登录
+		if (!is_login()) {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		$this->display();
 	}
 	//个人基本资料
 	public function basicInfo(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			$this->display();
-		}else{
+		//判断登录
+		if (!is_login()) {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		$this->display();
 	}
 
 	//修改密码
 	public function changePwd(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			if (IS_POST) {
-				if (D('User')->logInWithTel(session('user.user_name'),I('post.old_pwd'))) {
-					$msg=D('User')->setPwdByTel(session('user.tel'),I('post.pwd'));
-					if (!$msg) {
-						session('user',null);
-						$this->success('修改完成','/Home/Index/index',2);
-					}else{
-						$this->error('输入信息有误',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
-					}
-				}else{
-					$this->error('原密码错误','',2);
-				}
-			}else{
-				$this->assign('msg',unserialize($_GET['msg']));
-				$this->display();
-			}
-		}else{
+		//判断登录
+		if (!is_login()) {
 			$this->error('请先登录','/Home/User/logIn',2);
 		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (IS_POST) {
+			if (D('User')->logInWithTel(session('user.user_name'),I('post.old_pwd'))) {
+				$msg=D('User')->setPwdByTel(session('user.tel'),I('post.pwd'));
+				if (!$msg) {
+					session('user',null);
+					$this->success('修改完成','/Home/Index/index',2);
+				}else{
+					$this->error('输入信息有误',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
+				}
+			}else{
+				$this->error('原密码错误','',2);
+			}
+		}else{
+			$this->assign('msg',unserialize($_GET['msg']));
+			$this->display();
+		}
+
 	}
 
 	//密码找回
@@ -71,24 +72,24 @@ class UserCenterController extends Controller {
 
 //修改手机号步骤一
 	public function changeTel1(){
-		if (is_login()) {
-			//更新session数据
-			session('user',D('User')->getUserInfoById(session('user.id')));
-			if (IS_POST) {
-				if (verify_tel_check(I('post.check_tel'),session('user.tel'))) {
+		//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		if (IS_POST) {
+			if (verify_tel_check(I('post.check_tel'),session('user.tel'))) {
 					//获取进入step2的权限
-					session('confirm_tmp',session('user.tel'));
-					header('Location:'.U('Home/UserCenter/changeTel2'));
-					exit;
-				}else{
-					$this->error('验证码不正确','',2);
-				}
+				session('confirm_tmp',session('user.tel'));
+				header('Location:'.U('Home/UserCenter/changeTel2'));
+				exit;
 			}else{
-				// $this->assign('msg',unserialize($_GET['msg']));
-				$this->display();
+				$this->error('验证码不正确','',2);
 			}
 		}else{
-			$this->error('请先登录','/Home/User/logIn',2);
+				// $this->assign('msg',unserialize($_GET['msg']));
+			$this->display();
 		}
 	}
 
@@ -278,44 +279,44 @@ class UserCenterController extends Controller {
 		}	
 
 //实名认证
-	public function identifyId(){
+		public function identifyId(){
 		//判断登录
-		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
-		}
+			if (!is_login()) {
+				$this->error('请先登录','/Home/User/logIn',2);
+			}
 		//更新session数据
-		session('user',D('User')->getUserInfoById(session('user.id')));
-		if (IS_POST) {
+			session('user',D('User')->getUserInfoById(session('user.id')));
+			if (IS_POST) {
 			$upload = new \Think\Upload();// 实例化上传类
 		   	$upload->maxSize   =     3145728 ;// 设置附件上传大小
 		   	$upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
 		   	$upload->rootPath  =     USERS_PATH; // 设置附件上传根目录
 		   	$upload->savePath  =     I('post.id').'/'; // 设置附件上传（子）目录
-	    	$upload->autoSub   =     false;
-	    	$upload->saveName  =     array('identify_upload_rule');
+		   	$upload->autoSub   =     false;
+		   	$upload->saveName  =     array('identify_upload_rule');
 		   	$upload->replace   =     true;
 		   	$upload->saveExt   =     'jpg';
 		   	// 上传文件 
 		   	$info   =   $upload->upload();
 	    	//set状态identify_stage以及身份证+truename；
-	    	$msg=D('User')->createSave();
+		   	$msg=D('User')->createSave();
 		   	if (!$msg) {
-		    	if(!$info) {
+		   		if(!$info) {
 		   		// 上传错误提示错误信息
 		   			$this->error($upload->getError());
 		   		}else{
 		   		// 上传成功
-	    			$this->success('上传成功！','/Home/UserCenter/identifyId');
-	    		}		
+		   			$this->success('上传成功！','/Home/UserCenter/identifyId');
+		   		}		
 		   	}else{
 		   		$this->error('输入信息有误',U('Home/UserCenter/identifyId',array('msg'=>serialize($msg))),2);
-		    }
-		}else{
+		   	}
+		   }else{
 		   	$this->assign('person_identify_stage',is_login()['person_identify_stage']);
 		   	$this->assign('true_name',is_login()['true_name']);
 		   	$this->assign('person_id',is_login()['person_id']);
 		   	$this->assign('msg',unserialize($_GET['msg']));
 		   	$this->display();
-		}		
+		   }		
+		}
 	}
-}

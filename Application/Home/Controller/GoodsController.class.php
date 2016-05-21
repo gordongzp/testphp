@@ -6,11 +6,6 @@ class GoodsController extends Controller {
 	}
 
 
-
-
-
-
-
 	public function addGoods(){
     	//判断登录
 		if (!is_login()) {
@@ -116,10 +111,7 @@ class GoodsController extends Controller {
 			$v['min_price']=$min;
 			$goods_list[$k]=$v;
 		}
-
-
 		if (IS_POST) {
-			
 		} else {
 			$items = D('Admin181/Cate')->select();
 			$this->assign('show_tree',$this->_showTree(format_tree($items)));
@@ -151,27 +143,75 @@ class GoodsController extends Controller {
 		//关联查询与shop的用户绑定的shop信息
 		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
 		$shop=$arr['shop'];
-
 		//获取要删除的商品id号
-		$goods_id=I('get.id');
-		//判断操作数据是否属于该商户
-		$shop_id=$shop['shop_id'];
-		$condition = array('goods_id' =>$goods_id , 
-			'shop_id' =>$shop_id ,  
-			);
-		$Goods_to_del=D('Goods')->relation('attr')->where($condition)->find();
-		if (!$Goods_to_del) {
-		//删除从表
-			$this->error('操作错误','',2);
+		$goods_ids=unserialize(I('get.ids'));
+		$i=0;
+		foreach ($goods_ids as $k => $v) {
+			$condition = array(
+				'shop_id' =>$shop['shop_id'], 
+				'goods_id' =>$v ,  
+				);
+			$Goods_to_del=D('Goods')->relation('attr')->where($condition)->find();
+			//判断操作数据是否属于该商户
+			if ($Goods_to_del) {
+				//删除从表
+				foreach ($Goods_to_del['attr'] as $key => $vel) {
+					M('Attr')->where('attr_id='.$vel['attr_id'])->delete();
+				}
+				//删除主表
+				M('Goods')->where($condition)->delete();	
+				$i++;			
+			}
 		}
-		foreach ($Goods_to_del['attr'] as $k => $v) {
-			M('Attr')->where('attr_id='.$v['attr_id'])->delete();
+		if ($i) {		
+			$this->success('成功删除'.$i.'件商品','/Home/Goods/goodsList',2);
 		}
-		//删除主表
-		D('Goods')->where($condition)->delete();
-		$this->success('操作完成','/Home/Goods/goodsList',1);
 	}
 
+
+
+
+
+
+
+	public function upDownShelve(){
+    	//判断登录
+		if (!is_login()) {
+			$this->error('请先登录','/Home/User/logIn',2);
+		}
+		//更新session数据
+		session('user',D('User')->getUserInfoById(session('user.id')));
+		//判断是否为卖家
+		if (1!=session('user.is_seller')) {
+			$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+		}
+		//关联查询与shop的用户绑定的shop信息
+		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+		$shop=$arr['shop'];
+		//获取要操作的商品id号
+		$goods_ids=unserialize(I('get.ids'));
+		$i=0;
+		foreach ($goods_ids as $k => $v) {
+			$condition = array(
+				'shop_id' =>$shop['shop_id'], 
+				'goods_id' =>$v ,  
+				);
+			$Goods_to_del=D('Goods')->relation('attr')->where($condition)->find();
+			//判断操作数据是否属于该商户
+			if ($Goods_to_del) {
+				if ($Goods_to_del['is_on_shelve']) {
+					$data = array('is_on_shelve' => 0, );
+				} else {
+					$data = array('is_on_shelve' => 1, );
+				}
+				M('Goods')->where($condition)->save($data);	
+				$i++;			
+			}
+		}
+		if ($i) {		
+			$this->success('成功操作'.$i.'件商品','/Home/Goods/goodsList',2);
+		}
+	}
 
 
 
