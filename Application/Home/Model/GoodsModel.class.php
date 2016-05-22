@@ -65,10 +65,10 @@ class GoodsModel extends RelationModel {
 
 
 //获取所有商品信息(带分页)
-	public function getGoodsList(){
+	public function getGoodsList($shop_id){
 		$page=I('get.p',1,'int');
 		$limit=10;//每页显示数量
-		$lists=$this->relation(true)->page($page,$limit)->select();//先where 再order再。。。
+		$lists=$this->relation(true)->where('shop_id='.$shop_id)->page($page,$limit)->select();//先where 再order再。。。
 		$count=$this->count();
 		$Page=new \Think\Page($count,$limit);
 		return array('show' => $Page->show(), 'lists'=>$lists);

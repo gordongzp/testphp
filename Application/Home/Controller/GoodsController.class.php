@@ -117,7 +117,7 @@ class GoodsController extends Controller {
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
 			$shop=$arr['shop'];
 		//查询所有goods
-			$lists=D('Goods')->getGoodsList();
+			$lists=D('Goods')->getGoodsList($shop['shop_id']);
 			$page_show=$lists['show'];
 			$goods_list=$lists['lists'];
 		//计算最高价和最低价
@@ -186,7 +186,6 @@ class GoodsController extends Controller {
 					M('Goods')->where($condition)->delete();	
 					$i++;			
 				}
-
 			}
 			if ($i) {		
 				$this->success('成功删除'.$i.'件商品','/Home/Goods/goodsList',2);
@@ -323,10 +322,15 @@ class GoodsController extends Controller {
 			//获取要查询的属性id号
 			$attr_id=I('get.id');
 			//判断属性是否属于该店铺
-			$goods=D('Attr')->relation('goods')->find($attr_id)['goods'];
+			$goods=D('Attr')->relation('goods')->find($attr_id)['goods'];		
 			if ($shop_id!=$goods['shop_id']) {
 				$this->error('非法操作','',2);
 			}
+			//判断当前属性的数量
+			$attr_list=M('Attr')->where('goods_id='.$goods['goods_id'])->select();
+			if (count($attr_list)<2) {
+				$this->error('至少需要保留一个属性','',2);
+			}	
 			if (M('Attr')->delete($attr_id)) {
 				$this->success('删除成功',U('Home/Goods/attrList',array('id'=>$goods['goods_id'],)),2);	
 			}
