@@ -32,6 +32,9 @@ class UserCenterController extends Controller {
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
 		if (IS_POST) {
+			if (session('user.id')!=I('post.id')) {
+				$this->error('非法操作','',2);
+			}
 			if (D('User')->logInWithTel(session('user.user_name'),I('post.old_pwd'))) {
 				$msg=D('User')->setPwdByTel(session('user.tel'),I('post.pwd'));
 				if (!$msg) {
@@ -167,6 +170,9 @@ class UserCenterController extends Controller {
 			exit();
 		}
 		if (IS_POST) {
+			if (session('user.id')!=I('post.id')) {
+				$this->error('非法操作','',2);
+			}
 			if (verify_email_check(I('post.check_email'),I('post.email'))) {
 				$msg=D('User')->createSave();
 				if (!$msg) {
@@ -255,6 +261,9 @@ class UserCenterController extends Controller {
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
 		if (IS_POST) {
+			if (session('user.id')!=I('post.id')) {
+				$this->error('非法操作','',2);
+			}
 			    $upload = new \Think\Upload();// 实例化上传类
 			    $upload->maxSize   =     3145728 ;// 设置附件上传大小
 			    $upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
@@ -287,6 +296,12 @@ class UserCenterController extends Controller {
 		//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			if (IS_POST) {
+				if (session('user.id')!=I('post.id')) {
+					$this->error('非法操作','',2);
+				}
+				if (1!=I('post.person_identify_stage')) {
+					$this->error('非法操作','',2);
+				}
 			$upload = new \Think\Upload();// 实例化上传类
 		   	$upload->maxSize   =     3145728 ;// 设置附件上传大小
 		   	$upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型

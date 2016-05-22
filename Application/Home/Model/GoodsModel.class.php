@@ -25,6 +25,12 @@ class GoodsModel extends RelationModel {
 			'foreign_key'   => 'goods_id',
 			'mapping_name'  => 'attr',
 			),
+		'Gdimg' => array(
+			'mapping_type'  => self::HAS_MANY,
+			'class_name'    => 'Gdimg',
+			'foreign_key'   => 'goods_id',
+			'mapping_name'  => 'gdimg',
+			),
 		);
 
 
@@ -62,7 +68,7 @@ class GoodsModel extends RelationModel {
 	public function getGoodsList(){
 		$page=I('get.p',1,'int');
 		$limit=10;//每页显示数量
-		$lists=$this->relation('attr')->page($page,$limit)->select();//先where 再order再。。。
+		$lists=$this->relation(true)->page($page,$limit)->select();//先where 再order再。。。
 		$count=$this->count();
 		$Page=new \Think\Page($count,$limit);
 		return array('show' => $Page->show(), 'lists'=>$lists);

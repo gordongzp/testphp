@@ -325,7 +325,7 @@
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
 									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">店铺设置</a></li>
-									<li><a href="<?php echo U('Home/Goods/addGoods');?>">新增商品</a></li>
+									<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
 								</ul>
 							</li>
 							<?php
@@ -434,10 +434,14 @@
 													<div class="form-group form-inline">
 														<label>商品属性：(属性名称/价格)</label>
 														<ul style="list-style-type: none; display: block; padding-left: 0px" id="demo2"></ul>
-														<a href="#">+ 添加</a>
+														<a href="#">添加</a>
 													</div>
 
-
+													<div class="form-group form-inline">
+														<label>商品图片：</label>
+														<ul style="list-style-type: none; display: block; padding-left: 0px" id="demo4"></ul>
+														<a href="#">添加</a>
+													</div>
 
 													<button type="submit" class="btn btn-default">保存</button>
 												</form>
@@ -469,7 +473,7 @@
 		</section>
 		<!-- main-container end -->
 
-		<!-- modal新增子类别 -->
+		<!-- modal -->
 		<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target="#mymodal">按钮名称</button>
 		<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -492,10 +496,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
 
 
 					<!-- footer top start -->
@@ -723,11 +723,17 @@
 		value: ["", ""],//可以给同组input分别设置默认值
 		maxlength: 15,//每组input的maxlength都一样，无需使用数组
 		class: ["form-control", "form-control"],//不用我解释了吧
-		toplimit: 0,//可以添加组数上限（默认是0，表示无上限），它是总管，so，name相当于小组组长
+		toplimit: 10,//可以添加组数上限（默认是0，表示无上限），它是总管，so，name相当于小组组长
 		initValue: [//初始化的时候，各input的value就是归它管，必须是数组
 		["默认", ""]
 		]
 	});
+
+		$("#demo4").easyinsert({
+			name: ["photo[]", ],
+			type: ["file", ],
+			value: ["", ]
+		});
 	});
 </script>
 

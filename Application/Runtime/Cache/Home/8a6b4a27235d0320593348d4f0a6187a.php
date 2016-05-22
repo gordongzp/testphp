@@ -325,7 +325,7 @@
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
 									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">店铺设置</a></li>
-									<li><a href="<?php echo U('Home/Goods/addGoods');?>">新增商品</a></li>
+									<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
 								</ul>
 							</li>
 							<?php
@@ -398,7 +398,6 @@
 
 
 
-												<?php echo dump($goods_list);?>
 
 												<p id="url_temp" style="display: none;"><?php echo U('Home/Goods/delGoods');?></p>
 												<p id="url_temp2" style="display: none;"><?php echo U('Home/Goods/upDownShelve');?></p>
@@ -414,18 +413,17 @@
 														</tr>
 													</thead>
 													<tbody>
-
-														<?php if(is_array($goods_list)): foreach($goods_list as $k=>$v): ?><tr>
+													<?php if(is_array($goods_list)): foreach($goods_list as $k=>$v): ?><tr>
 																<td>
 																	<label>
 																		<input type="checkbox" id="box" name="box" value="<?php echo ($v['goods_id']); ?>" >
 																	</label>
 																</td>
-																<td></td>
+																<td><img src="<?php echo U($v['gdimg'][0]['thumb_path'],'','');?>"></td>
 																<td><?php echo ($v["goods_name"]); ?></td>
 																<td><?php echo ($v["min_price"]); ?>—<?php echo ($v["max_price"]); ?></td>
 																<th><?php echo ($v['is_on_shelve']) ? '是' : '否' ; ?></th>
-																<th><a href="">编辑</a>|<a href="">删除</a></th>
+																<th><a href="<?php echo U('Home/Goods/attrList',array('id'=>$v['goods_id']));?>">属性</a>|<a href="">图片</a></th>
 															</tr><?php endforeach; endif; ?>
 													</tbody>
 													
@@ -738,7 +736,7 @@
             });
             var $box = $("input[name='box']");
             $box.click(function(){
-                $("#checkAll").prop("checked",$subBox.length == $("input[name='box']:checked").length ? true : false);
+                $("#checkAll").prop("checked",$box.length == $("input[name='box']:checked").length ? true : false);
             });
         });
 

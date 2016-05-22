@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>查看店铺资料</title>
+	<title>个人中心</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -355,7 +355,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">查看店铺资料</li>
+					<li class="active">商品列表</li>
 				</ol>
 			</div>
 		</div>
@@ -374,7 +374,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">查看店铺资料</h1>
+						<h1 class="page-title">商品列表</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -384,7 +384,7 @@
 								<!-- Nav tabs -->
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
-	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">新增商品</a></li>
 	<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">填写开店资料</a></li>
 	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
 </ul>
@@ -395,67 +395,32 @@
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
 											<div class="col-sm-12">
-												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/SellerCenter/openShop');?>" method="POST" role="form" enctype="multipart/form-data">
-													<div class="form-group">
-														<label>店铺logo</label>
-														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
+												<p id="url_temp" style="display: none;"><?php echo U('Home/Goods/delAttr');?></p>
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<th>属性名称</th>
+															<th>价格(元)</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<?php if(is_array($attr_list)): foreach($attr_list as $k=>$v): ?><tr>
+																<td><?php echo ($v["attr_name"]); ?></td>
+																<td><?php echo ($v["price"]); ?></td>
+																<th><a href="javascript:delete_attr(<?php echo ($v["attr_id"]); ?>)">删除</a></th>
+															</tr><?php endforeach; endif; ?>
+													</tbody>
+												</table>
+
+												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/Goods/attrList',array('id'=>$goods_id,));?>" method="POST" role="form" enctype="multipart/form-data">
+													<div class="form-group form-inline">
+													<input name="goods_id" value="<?php echo ($goods_id); ?>" style="display: none;"></input>
+														<label>商品属性：(属性名称/价格)</label>
+														<ul style="list-style-type: none; display: block; padding-left: 0px" id="demo2"></ul>
+														<a href="#">添加</a>
 													</div>
-													<div class="form-group">
-														<label>店铺名称:</label> <?php echo ($shop["shop_name"]); ?>
-													</div>
-													<div class="form-group">
-														<label>店铺地址:</label> <?php echo ($shop["shop_address"]); ?>
-													</div>
-													<div class="form-group">
-														<label>店铺电话:</label> <?php echo ($shop["shop_tel"]); ?>
-													</div>
-													<div class="form-group">
-														<label>店铺描述:</label>
-														<textarea name="shop_describe" class="form-control" required="required" style="height: 200px" placeholder="<?php echo ($shop["shop_describe"]); ?>" disabled="disabled" ></textarea>
-													</div>
-													<div class="row"></div>
-													<div class="row">
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" class="overlay-link popup-img"></a>
-																	<div style="padding:5px" class="overlay-bottom hidden-xs">
-																		<div class="text">
-																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片1</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" class="overlay-link popup-img"></a>
-																	<div style="padding:5px" class="overlay-bottom hidden-xs">
-																		<div class="text">
-																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片2</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" class="overlay-link popup-img"></a>
-																	<div style="padding:5px" class="overlay-bottom hidden-xs">
-																		<div class="text">
-																			<p style="font-size: 15px" class="lead margin-clear text-left">店内照片3</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<button type="button" class="btn btn-default" onclick="javascript:window.location.href='<?php echo U('Home/SellerCenter/openShop');?>';">修改</button>
+													<button type="submit" class="btn btn-default btn-sm">保存</button>
 												</form>
 											</div>
 										</div>
@@ -484,6 +449,10 @@
 			</div>
 		</section>
 		<!-- main-container end -->
+
+
+
+
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -662,6 +631,26 @@
 	<!-- 本页js -->
 	<script type="text/javascript">
 		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+
+		function delete_attr(attr_id){
+			window.location.href=$('#url_temp').text()+"?"+'id='+attr_id; 
+		}
+
+
+		$(function(){
+			$("#demo2").easyinsert({
+		name: ["attr_name[]", "price[]"],//可以同时添加两个（或更多），name值相同也必须分开设置，name数组的长度就是每组input的个数。type、value、maxlength、className四种属性，若同组组员的设置一样，可以只设置一次。
+		value: ["", ""],//可以给同组input分别设置默认值
+		maxlength: 15,//每组input的maxlength都一样，无需使用数组
+		class: ["form-control", "form-control"],//不用我解释了吧
+		toplimit: 10,//可以添加组数上限（默认是0，表示无上限），它是总管，so，name相当于小组组长
+		initValue: [//初始化的时候，各input的value就是归它管，必须是数组
+		["默认", ""]
+		]
+		});
+		});
+
+
 	</script>
 
 </body>

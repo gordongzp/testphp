@@ -73,7 +73,6 @@
 
 
 
-												{:dump($goods_list)}
 
 												<p id="url_temp" style="display: none;">{:U('Home/Goods/delGoods')}</p>
 												<p id="url_temp2" style="display: none;">{:U('Home/Goods/upDownShelve')}</p>
@@ -89,19 +88,18 @@
 														</tr>
 													</thead>
 													<tbody>
-
-														<foreach name="goods_list" item="v" key="k" >
+													<foreach name="goods_list" item="v" key="k" >
 															<tr>
 																<td>
 																	<label>
 																		<input type="checkbox" id="box" name="box" value="{$v['goods_id']}" >
 																	</label>
 																</td>
-																<td></td>
+																<td><img src="{:U($v['gdimg'][0]['thumb_path'],'','')}"></td>
 																<td>{$v.goods_name}</td>
 																<td>{$v.min_price}—{$v.max_price}</td>
 																<th><?php echo ($v['is_on_shelve']) ? '是' : '否' ; ?></th>
-																<th><a href="">编辑</a>|<a href="">删除</a></th>
+																<th><a href="{:U('Home/Goods/attrList',array('id'=>$v['goods_id']))}">属性</a>|<a href="">图片</a></th>
 															</tr>
 														</foreach>
 													</tbody>
@@ -232,7 +230,7 @@
             });
             var $box = $("input[name='box']");
             $box.click(function(){
-                $("#checkAll").prop("checked",$subBox.length == $("input[name='box']:checked").length ? true : false);
+                $("#checkAll").prop("checked",$box.length == $("input[name='box']:checked").length ? true : false);
             });
         });
 

@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016-05-21 11:05:33                          */
+/* Created on:     2016-05-22 14:48:19                          */
 /*==============================================================*/
 
 
@@ -13,6 +13,8 @@ drop table if exists xy_cate;
 drop table if exists xy_config;
 
 drop table if exists xy_dirtys;
+
+drop table if exists xy_gdimg;
 
 drop table if exists xy_goods;
 
@@ -42,7 +44,7 @@ create table xy_attr
 (
    attr_id              int(10) not null auto_increment,
    attr_name            varchar(40) not null,
-   price                int(10) not null,
+   price                float(10) not null,
    goods_id             int(10),
    primary key (attr_id)
 );
@@ -84,6 +86,19 @@ create table xy_dirtys
    dir_name             varchar(40) not null,
    dir_label            int(10) not null,
    primary key (dir_id)
+);
+
+/*==============================================================*/
+/* Table: xy_gdimg                                              */
+/*==============================================================*/
+create table xy_gdimg
+(
+   gdimg_id             int(10) not null auto_increment,
+   img_path             varchar(100) not null,
+   thumb_path           varchar(100) not null,
+   img_url              varchar(100) not null,
+   goods_id             int(10),
+   primary key (gdimg_id)
 );
 
 /*==============================================================*/
@@ -156,6 +171,9 @@ alter table xy_attr add constraint FK_Reference_7 foreign key (goods_id)
 
 alter table xy_dirtys add constraint FK_Reference_8 foreign key (order_id)
       references xy_order (order_id) on delete restrict on update restrict;
+
+alter table xy_gdimg add constraint FK_Reference_9 foreign key (goods_id)
+      references xy_goods (goods_id) on delete restrict on update restrict;
 
 alter table xy_goods add constraint FK_Reference_3 foreign key (cat_id)
       references xy_cate (cat_id) on delete restrict on update restrict;

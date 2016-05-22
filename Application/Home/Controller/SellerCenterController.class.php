@@ -51,7 +51,22 @@ class SellerCenterController extends Controller {
 				$this->error('需要进行商店认证','/Home/SellerCenter/shopVerify',2);
 			}	
 		}
+		//如果有，找到shop_id
+		if (1==session('user.is_seller')) {
+			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+			$shop=$arr['shop'];
+			$this->assign('shop',$shop);
+		}
 		if (IS_POST) {
+			//判断id是否被篡改
+			if (session('user.id')!=I('post.id')) {
+				$this->error('非法操作','',2);
+			}
+			//判断shop_id是否被篡改
+			if ($shop['shop_id']!=I('post.shop_id')) {
+				$this->error('非法操作','',2);
+			}
+
 			//判断是否有资料,无资料新建，有资料修改
 			if (1!=session('user.is_seller')) {
 				//未开店
@@ -90,12 +105,6 @@ class SellerCenterController extends Controller {
 				}
 			}
 		} else {
-			//如果有，找到shop_id
-			if (1==session('user.is_seller')) {
-				$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
-				$shop=$arr['shop'];
-				$this->assign('shop',$shop);
-			}
 			$this->assign('msg',unserialize($_GET['msg']));
 			$this->display();
 		}
@@ -108,6 +117,14 @@ class SellerCenterController extends Controller {
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
 		if (IS_POST) {
+			// 判断id是否被篡改
+			if (session('user.id')!=I('post.id')) {
+				$this->error('非法操作','',2);
+			}
+			//判断shop_identify_stage是否被篡改
+			if (1!=I('post.shop_identify_stage')) {
+				$this->error('非法操作','',2);
+			}
 			$upload = new \Think\Upload();// 实例化上传类
 		   	$upload->maxSize   =     3145728 ;// 设置附件上传大小
 		   	$upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
