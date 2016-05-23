@@ -402,30 +402,12 @@
 													<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["id"]); ?>" >
 													<!-- cate_id号 -->
 													<input style="display: none;" type="text" name="cat_id" id="cat_id" value="" >
-
-<!-- 													<div class="form-group">
-														<label>店铺logo</label>
-														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
-														<input type="file" name="photo1" required="required">
-														<p class="help-block">支持jpg,png,jpeg格式</p>
-													</div> -->
 													<p>当前分类：<span id="cate"></span><a onclick="click_e()" href="javascript:void(0);"> 修改</a>
 													</p>
 													<div class="form-group">
 														<label>商品名称：</label>
 														<input type="text" name="goods_name" id="goods_name" class="form-control" required="required" placeholder="">
 													</div>
-
-<!-- 													<div class="form-group">
-														<label>店铺地址</label>
-														<input type="text" name="shop_address" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_address"])); ?>">
-													</div> -->
-
-<!-- 													<div class="form-group">
-														<label>店铺电话</label>
-														<input type="text" name="shop_tel" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_tel"])); ?>">
-													</div> -->
-
 													<div class="form-group">
 														<label>商品描述：</label>
 														<textarea name="goods_describe" class="form-control" required="" style="height: 200px" placeholder="" ></textarea>
@@ -444,6 +426,7 @@
 													</div>
 
 													<button type="submit" class="btn btn-default">保存</button>
+													<button type="button" class="btn btn-default" onclick="javascript:window.location.href='<?php echo U('Home/Goods/goodsList');?>';">返回</button>
 												</form>
 											</div>
 										</div>

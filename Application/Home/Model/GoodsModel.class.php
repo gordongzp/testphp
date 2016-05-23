@@ -30,6 +30,7 @@ class GoodsModel extends RelationModel {
 			'class_name'    => 'Gdimg',
 			'foreign_key'   => 'goods_id',
 			'mapping_name'  => 'gdimg',
+			'mapping_order' => 'flag asc',//asc逆序 desc正序
 			),
 		);
 

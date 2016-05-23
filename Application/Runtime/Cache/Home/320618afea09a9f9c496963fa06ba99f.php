@@ -355,7 +355,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">商品列表</li>
+					<li class="active">属性列表</li>
 				</ol>
 			</div>
 		</div>
@@ -374,7 +374,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">商品列表</h1>
+						<h1 class="page-title">属性列表</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -415,7 +415,6 @@
 
 												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/Goods/attrList',array('id'=>$goods_id,));?>" method="POST" role="form" enctype="multipart/form-data">
 													<div class="form-group form-inline">
-													<input name="goods_id" value="<?php echo ($goods_id); ?>" style="display: none;"></input>
 														<label>商品属性：(属性名称/价格)</label>
 														<ul style="list-style-type: none; display: block; padding-left: 0px" id="demo2"></ul>
 														<a href="#">添加</a>

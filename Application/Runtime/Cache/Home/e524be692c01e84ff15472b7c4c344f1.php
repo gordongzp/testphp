@@ -66,7 +66,7 @@
 	<!-- page wrapper start -->
 	<!-- ================ -->
 	<div class="page-wrapper">
-		
+
 		<!-- header-container start -->
 <div class="header-container">
 
@@ -355,7 +355,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
 					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
-					<li class="active">商品列表</li>
+					<li class="active">图片列表</li>
 				</ol>
 			</div>
 		</div>
@@ -374,7 +374,7 @@
 
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">商品列表</h1>
+						<h1 class="page-title">图片列表</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
@@ -395,48 +395,35 @@
 									<div class="tab-pane in active" id="h2tab1">
 										<div class="row">
 											<div class="col-sm-12">
+												<p id="url_temp" style="display: none;"><?php echo U('Home/Goods/delImg');?></p>
+												<p id="url_temp2" style="display: none;"><?php echo U('Home/Goods/mainImg');?></p>
 
-
-
-
-												<p id="url_temp" style="display: none;"><?php echo U('Home/Goods/delGoods');?></p>
-												<p id="url_temp2" style="display: none;"><?php echo U('Home/Goods/upDownShelve');?></p>
 												<table class="table table-hover">
 													<thead>
 														<tr>
-															<th><input type="checkbox" id="select_all" name="select_all" value="<?php echo ($v['goods_id']); ?>" > 全选</th>
 															<th>图片</th>
-															<th>名称</th>
-															<th>价格(元)</th>
-															<th>上架</th>
+															<th>主图</th>
 															<th>操作</th>
 														</tr>
 													</thead>
 													<tbody>
-													<?php if(is_array($goods_list)): foreach($goods_list as $k=>$v): ?><tr>
-																<td>
-																	<label>
-																		<input type="checkbox" id="box" name="box" value="<?php echo ($v['goods_id']); ?>" >
-																	</label>
-																</td>
-																<td><img src="<?php echo U($v['gdimg'][0]['thumb_path'],'','');?>"></td>
-																<td><?php echo ($v["goods_name"]); ?></td>
-																<td><?php echo ($v["min_price"]); ?>—<?php echo ($v["max_price"]); ?></td>
-																<th><?php echo ($v['is_on_shelve']) ? '是' : '否' ; ?></th>
-																<th><a href="<?php echo U('Home/Goods/attrList',array('id'=>$v['goods_id']));?>">属性</a>|<a href="<?php echo U('Home/Goods/imgList',array('id'=>$v['goods_id']));?>">图片</a></th>
+														<?php if(is_array($gdimg_list)): foreach($gdimg_list as $k=>$v): ?><tr>
+																<td><img src="<?php echo U($v['thumb_path'],'','');?>"></td>
+																<td><?php echo ($v['flag']==$min&&$v['flag']<9999) ? '是' : '否' ; ?></td>
+																<th><a href="javascript:main_img(<?php echo ($v["gdimg_id"]); ?>)">主图</a>|<a href="javascript:delete_img(<?php echo ($v["gdimg_id"]); ?>)">删除</a></th>
 															</tr><?php endforeach; endif; ?>
 													</tbody>
-													
-
 												</table>
-												<a href="<?php echo U('Home/Goods/addGoods');?>" class="btn btn-default btn-sm">新增商品</a>
-												<a href="javascript:delet_goods()" class="btn btn-default btn-sm">删除商品</a>
-												<a href="javascript:up_down_shelve()" class="btn btn-default btn-sm">上/下架</a>
-												<a href="#" class="btn btn-default btn-sm">Default</a>
-												<?php echo $page_show;?>
-												
 
-												
+												<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/Goods/imgList',array('id'=>$goods_id,));?>" method="POST" role="form" enctype="multipart/form-data">
+													<div class="form-group form-inline">
+														<label>商品图片：</label>
+														<ul style="list-style-type: none; display: block; padding-left: 0px" id="demo4"></ul>
+														<a href="#">添加</a>
+													</div>
+													<button type="submit" class="btn btn-default btn-sm">保存</button>
+													<button type="button" class="btn btn-default btn-sm" onclick="javascript:window.location.href='<?php echo U('Home/Goods/goodsList');?>';">返回</button>
+												</form>
 											</div>
 										</div>
 									</div>
@@ -464,32 +451,6 @@
 			</div>
 		</section>
 		<!-- main-container end -->
-
-		<!-- modal新增子类别 -->
-		<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target="#mymodal">按钮名称</button>
-		<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						<h4 class="modal-title" id="mySmallModalLabel">选择分类</h4>
-					</div>
-					<div class="modal-body">
-						<form onkeydown="if(event.keyCode==13){return false;}" id="form1" action="<?php echo U('Admin181/Goods/addSubCate');?>" method="POST" role="form">
-							<div class="tree well">
-								<?php echo ($show_tree); ?>
-							</div>
-							<button type="submit" class="btn btn-default">确认</button>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button id="modal_btn_close" type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
 
 
 
@@ -673,74 +634,24 @@
 	<script type="text/javascript">
 		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
 
-		function delet_goods(){
-			var ids="{";
-			var i=0;
-			$("input[type=checkbox]").each(function(){
-				if ($(this).is(":checked")&&$(this).attr('name')!='select_all'){ 
-					ids+="i:"+i+";i:"+$(this).val()+";";
-					i++;
-				}
-			})
-			ids+="}";
-			ids="a:"+i+":"+ids;
-			if (0==i) {
-				alert('请至少选择一项')
-			}else{
-				window.location.href=$('#url_temp').text()+"?"+'ids='+ids; 
-			}
+		function delete_img(gdimg_id){
+			window.location.href=$('#url_temp').text()+"?"+'id='+gdimg_id; 
 		}
 
-		function up_down_shelve(){
-			var ids="{";
-			var i=0;
-			$("input[type=checkbox]").each(function(){
-				if ($(this).is(":checked")&&$(this).attr('name')!='select_all'){ 
-					ids+="i:"+i+";i:"+$(this).val()+";";
-					i++;
-				}
-			})
-			ids+="}";
-			ids="a:"+i+":"+ids;
-			if (0==i) {
-				alert('请至少选择一项')
-			}else{
-				window.location.href=$('#url_temp2').text()+"?"+'ids='+ids; 
-			}
+		function main_img(gdimg_id){
+			window.location.href=$('#url_temp2').text()+"?"+'id='+gdimg_id; 
 		}
 
-
-		// $(function(){
-		// 	$('#select_all').click(function(){
-		// 		if ($(this).is(":checked")) {
-		// 			//点击后选中
-		// 			$("input[type=checkbox]").each(function(){
-		// 				console.log(1);
-		// 				$(this).prop("checked", true);
-		// 			})
-		// 		} else {
-		// 			//点击后全部取消选中
-		// 			$("input[type=checkbox]").each(function(){
-		// 				console.log(0);
-		// 				$(this).prop("checked", false);
-		// 			})
-		// 		}
-		// 	})
-		// })
+		$(function(){
+			$("#demo4").easyinsert({
+				name: ["photo[]", ],
+				type: ["file", ],
+				value: ["", ]
+			});
+		});
 
 
-		//全选备用代码
-        $(function() {
-           $("#select_all").click(function() {
-                $('input[name="box"]').prop("checked",this.checked); 
-            });
-            var $box = $("input[name='box']");
-            $box.click(function(){
-                $("#checkAll").prop("checked",$box.length == $("input[name='box']:checked").length ? true : false);
-            });
-        });
-
-    </script>
+	</script>
 
 </body>
 </html>

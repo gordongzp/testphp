@@ -38,8 +38,6 @@ class GoodsController extends Controller {
 				}
 				$i++;
 			}
-			//新增商品
-			$msg=D('Goods')->createAddReId();
 			//上传商品图片
 			$upload = new \Think\Upload();// 实例化上传类
 		   	$upload->maxSize   =     3145728 ;// 设置附件上传大小
@@ -51,12 +49,14 @@ class GoodsController extends Controller {
 		   	$upload->replace   =     true;
 		   	$upload->saveExt   =     'jpg';
 		   	$info   =   $upload->upload();
-		   	if (is_numeric($msg)) {
-		   		if(!$info) {
+		   	if(!$info) {
 		   			// 上传错误提示错误信息
-		   			$this->error($upload->getError());
-		   		}else{
-		   			//图片上传成功
+		   		$this->error($upload->getError());
+		   	}else{
+		   		//图片上传成功
+				//新增商品表
+		   		$msg=D('Goods')->createAddReId();
+		   		if (is_numeric($msg)) {
 			    	//整理attr数据
 		   			$goods_id=$msg;
 		   			$i=0;
@@ -68,6 +68,7 @@ class GoodsController extends Controller {
 		   					);
 		   				$i++;
 		   			}
+		   			$i=0;
 		    		//写入图像数据库
 		   			foreach ($info as $k => $v) {
 		   				$path=USERS_PATH.session('user.id').'/';
@@ -77,22 +78,23 @@ class GoodsController extends Controller {
 		   					'thumb_path'=>$path.'thumb'.$v['savename'],
 		   					'img_url' => $src, 
 		   					'goods_id' =>$msg, 
+		   					'flag'=>$i,
 		   					);
 		   				M('Gdimg')->add($data_img);
 		   				$image = new \Think\Image(); 
 		   				$image->open($path.$v['savename']);
 						// 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb_$v['savename'].jpg
 		   				$image->thumb(120, 120)->save($path.'thumb'.$v['savename']);
+		   				$i++;
 		   			}
 		   			//写入attr数据库
 		   			if (M('Attr')->addAll($data)) {
-
 		   				$this->success('新增成功','/Home/Goods/goodsList',1);
 		   			}
-		   		}	
-		   	} else {
-		   		$this->error('请输入正确注册信息',U('Home/Goods/addGoods',array('msg'=>serialize($msg))),2);
-		   	}
+		   		} else {
+		   			$this->error('请输入正确注册信息',U('Home/Goods/addGoods',array('msg'=>serialize($msg))),2);
+		   		}
+		   	}	
 		   } else {
 		   	$items = D('Admin181/Cate')->select();
 		   	$this->assign('show_tree',$this->_showTree(format_tree($items)));
@@ -263,15 +265,10 @@ class GoodsController extends Controller {
 				$this->error('非法操作','',2);
 			}
 			$attr_list=$Goods_with_attr['attr'];
-			$this->assign('msg',unserialize($_GET['msg']));
 			$this->assign('shop',$shop);
 			$this->assign('goods_id',$goods_id);
 			$this->assign('attr_list',$attr_list);
 			if (IS_POST) {
-				//验证隐藏项目
-				if (I('post.goods_id')!=$goods_id) {
-					$this->error('非法操作','',2);
-				}
 			//判断属性是否为空
 				$i=0;
 				foreach (I('post.attr_name') as $k => $val) {
@@ -319,7 +316,7 @@ class GoodsController extends Controller {
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
 			$shop=$arr['shop'];
 			$shop_id=$shop['shop_id'];
-			//获取要查询的属性id号
+			//获取要删除的属性id号
 			$attr_id=I('get.id');
 			//判断属性是否属于该店铺
 			$goods=D('Attr')->relation('goods')->find($attr_id)['goods'];		
@@ -338,11 +335,8 @@ class GoodsController extends Controller {
 
 
 
-
-
-
 		public function imgList(){
-		    //判断登录
+    		//判断登录
 			if (!is_login()) {
 				$this->error('请先登录','/Home/User/logIn',2);
 			}
@@ -351,13 +345,148 @@ class GoodsController extends Controller {
 			//判断是否为卖家
 			if (1!=session('user.is_seller')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
-			}	
-
-
+			}
+			//关联查询与shop的用户绑定的shop信息
+			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+			$shop=$arr['shop'];
+			//获取要查询的商品id号
+			$goods_id=I('get.id');
+			//判断商品是否属于该店铺
+			$condition = array(
+				'shop_id' =>$shop['shop_id'], 
+				'goods_id' =>$goods_id,  
+				);
+			$Goods_with_gdimg=D('Goods')->relation('gdimg')->where($condition)->find();
+			if (!$Goods_with_gdimg) {
+				$this->error('非法操作','',2);
+			}
+			$gdimg_list=$Goods_with_gdimg['gdimg'];
+			//找到最小flag
+			$min=99999;
+			foreach ($gdimg_list as $k => $v) {
+				if ($v['flag']<$min) {
+					$min=$v['flag'];
+				}
+			}
+			$this->assign('min',$min);
+			$this->assign('shop',$shop);
+			$this->assign('goods_id',$goods_id);
+			$this->assign('gdimg_list',$gdimg_list);
+			if (IS_POST) {
+			//上传商品图片
+			$upload = new \Think\Upload();// 实例化上传类
+		   	$upload->maxSize   =     3145728 ;// 设置附件上传大小
+		   	$upload->exts      =     array('jpg', 'png', 'jpeg');// 设置附件上传类型
+		   	$upload->rootPath  =     USERS_PATH; // 设置附件上传根目录
+		   	$upload->savePath  =     session('user.id').'/'; // 设置附件上传（子）目录
+		   	$upload->autoSub   =     false;
+		   	// $upload->saveName  =     'shop_identify';
+		   	$upload->replace   =     true;
+		   	$upload->saveExt   =     'jpg';
+		   	$info   =   $upload->upload();
+		   	if(!$info) {
+		   			// 上传错误提示错误信息
+		   		$this->error($upload->getError());
+		   	}else{
+		   			//图片上传成功
+		    		//写入图像数据库
+		   		foreach ($info as $k => $v) {
+		   			$path=USERS_PATH.session('user.id').'/';
+		   			$src= U($path.$v['savename'],'','');
+		   			$data_img = array(
+		   				'img_path'=>$path.$v['savename'],
+		   				'thumb_path'=>$path.'thumb'.$v['savename'],
+		   				'img_url' => $src, 
+		   				'goods_id' =>$goods_id, 
+		   				'flag'=>9999,
+		   				);
+		   			M('Gdimg')->add($data_img);
+		   			$image = new \Think\Image(); 
+		   			$image->open($path.$v['savename']);
+					// 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb_$v['savename'].jpg
+		   			$image->thumb(120, 120)->save($path.'thumb'.$v['savename']);
+		   		}
+		   		$this->success('新增成功',U('Home/Goods/imgList',array('id'=>$goods_id,)),1);
+		   	}
+		   } else {
+		   	$this->display();
+		   }
 		}
 
 
 
+
+
+
+		public function delImg(){
+    		//判断登录
+			if (!is_login()) {
+				$this->error('请先登录','/Home/User/logIn',2);
+			}
+			//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
+			//判断是否为卖家
+			if (1!=session('user.is_seller')) {
+				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+			}
+			//关联查询与shop的用户绑定的shop信息
+			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+			$shop=$arr['shop'];
+			$shop_id=$shop['shop_id'];
+			//获取要删除的图片id号
+			$gdimg_id=I('get.id');
+			//判断属性是否属于该店铺
+			$goods=D('Gdimg')->relation('goods')->find($gdimg_id)['goods'];		
+			if ($shop_id!=$goods['shop_id']) {
+				$this->error('非法操作','',2);
+			}
+			$gdimg=M('Gdimg')->find($gdimg_id);
+			//删除缓存图片文件
+			@unlink ($gdimg['img_path']); 
+			@unlink ($gdimg['thumb_path']); 
+			//删除图像表
+			if (M('Gdimg')->delete($gdimg_id)) {
+				$this->success('删除成功',U('Home/Goods/imgList',array('id'=>$goods['goods_id'],)),2);	
+			}
+		}
+
+
+
+		public function mainImg(){
+    		//判断登录
+			if (!is_login()) {
+				$this->error('请先登录','/Home/User/logIn',2);
+			}
+			//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
+			//判断是否为卖家
+			if (1!=session('user.is_seller')) {
+				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+			}
+			//关联查询与shop的用户绑定的shop信息
+			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+			$shop=$arr['shop'];
+			$shop_id=$shop['shop_id'];
+			//获取要删除的图片id号
+			$gdimg_id=I('get.id');
+			//判断属性是否属于该店铺
+			$goods=D('Gdimg')->relation('goods')->find($gdimg_id)['goods'];		
+			if ($shop_id!=$goods['shop_id']) {
+				$this->error('非法操作','',2);
+			}
+			$gdimg_list=M('Gdimg')->where('goods_id='.$goods['goods_id'])->select();
+			//找到最小flag
+			$min=99999;
+			foreach ($gdimg_list as $k => $v) {
+				if ($v['flag']<$min) {
+					$min=$v['flag'];
+				}
+			}
+			$data = array('flag' =>$min-1, );
+			if (M('Gdimg')->where('gdimg_id='.$gdimg_id)->save($data)) {
+				$this->success('操作成功',U('Home/Goods/imgList',array('id'=>$goods['goods_id'],)),2);	
+			}
+		}
 
 
 
