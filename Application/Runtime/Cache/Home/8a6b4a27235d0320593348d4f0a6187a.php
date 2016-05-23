@@ -384,9 +384,11 @@
 								<!-- Nav tabs -->
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
-	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">新增商品</a></li>
-	<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">填写开店资料</a></li>
-	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
+	<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
+	<li><a href="<?php echo U('Home/Goods/addGoods');?>">新增商品</a></li>
+	<li><a href="<?php echo U('Home/Goods/editGoods');?>">编辑商品</a></li>
+	<li><a href="<?php echo U('Home/Goods/attrList');?>">编辑属性</a></li>
+	<li><a href="<?php echo U('Home/Goods/imgList');?>">编辑图片</a></li>
 </ul>
 
 
@@ -423,7 +425,7 @@
 																<td><?php echo ($v["goods_name"]); ?></td>
 																<td><?php echo ($v["min_price"]); ?>—<?php echo ($v["max_price"]); ?></td>
 																<th><?php echo ($v['is_on_shelve']) ? '是' : '否' ; ?></th>
-																<th><a href="<?php echo U('Home/Goods/attrList',array('id'=>$v['goods_id']));?>">属性</a>|<a href="<?php echo U('Home/Goods/imgList',array('id'=>$v['goods_id']));?>">图片</a></th>
+																<th><a href="<?php echo U('Home/Goods/editGoods',array('id'=>$v['goods_id']));?>">编辑</a>|<a href="<?php echo U('Home/Goods/attrList',array('id'=>$v['goods_id']));?>">属性</a>|<a href="<?php echo U('Home/Goods/imgList',array('id'=>$v['goods_id']));?>">图片</a></th>
 															</tr><?php endforeach; endif; ?>
 													</tbody>
 													

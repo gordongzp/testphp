@@ -325,7 +325,7 @@
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
 									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">店铺设置</a></li>
-									<li><a href="<?php echo U('Home/Goods/addGoods');?>">新增商品</a></li>
+									<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
 								</ul>
 							</li>
 							<?php

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+<head>
+	<title>个人中心</title>
+	<!-- 模板上部配置 -->
+	<include file="Public/con_t" />
+	<!-- 本页css -->
+</head>
+
+<!-- body classes:  -->
+<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+<!-- "gradient-background-header": applies gradient background to header -->
+<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
+<body class="no-trans front-page transparent-header  ">
+
+	<!-- scrollToTop -->
+	<!-- ================ -->
+	<div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+
+	<!-- page wrapper start -->
+	<!-- ================ -->
+	<div class="page-wrapper">
+		
+		<include file="Public/header" />
+		<include file="Public/user_center_left" />
+		<!-- breadcrumb start -->
+		<!-- ================ -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="{:U('Home/Index/index')}">首页</a></li>
+					<li><a class="link-dark" href="{:U('Home/UserCenter/index')}">个人中心</a></li>
+					<li class="active">商品编辑</li>
+				</ol>
+			</div>
+		</div>
+		<!-- breadcrumb end -->
+
+		<!-- main-container start -->
+		<!-- ================ -->
+		<section class="main-container">
+
+			<div class="container">
+				<div class="row">
+
+					<!-- main start -->
+					<!-- ================ -->
+					<div class="main col-md-12">
+
+						<!-- page-title start -->
+						<!-- ================ -->
+						<h1 class="page-title">商品编辑</h1>
+						<div class="separator-2"></div>
+						<!-- page-title end -->
+						<div class="row">
+							<div class="col-sm-8">
+								<!-- tabs start -->
+								<!-- ================ -->
+								<!-- Nav tabs -->
+								<include file="Public/goods_tab" />
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div class="tab-pane in active" id="h2tab1">
+										<div class="row">
+											<div class="col-sm-12">
+
+												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form" enctype="multipart/form-data">
+													<!-- 隐藏输入项 -->
+													<!-- goods_id号 -->
+													<input style="display: none;" type="text" name="goods_id" value="{$goods_arr.goods_id}" >
+													<!-- cate_id号 -->
+													<input style="display: none;" type="text" name="cat_id" id="cat_id" value="" >
+													<p>当前分类：<span id="cate"></span><a onclick="click_e()" href="javascript:void(0);"> 修改</a>
+													</p>
+													<div class="form-group">
+														<label>商品名称：</label>
+														<input type="text" name="goods_name" id="goods_name" class="form-control" required="required" value="{$goods_arr.goods_name}" placeholder="">
+													</div>
+													<div class="form-group">
+														<label>商品描述：</label>
+														<textarea name="goods_describe" class="form-control" required="" style="height: 200px" placeholder="" >{$goods_arr.goods_describe}</textarea>
+													</div>
+
+													<button type="submit" class="btn btn-default">保存</button>
+													<button type="button" class="btn btn-default" onclick="javascript:window.location.href='{:U('Home/Goods/goodsList')}';">返回</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- tabs end -->
+							</div>
+							<include file="Public/user_center_right" />
+						</div>
+					</div>
+					<!-- main end -->
+				</div>
+			</div>
+		</section>
+		<!-- main-container end -->
+
+		<!-- modal -->
+		<button style="display: none;" id="modal_btn" class="btn btn-default" data-toggle="modal" data-target="#mymodal">按钮名称</button>
+		<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="mySmallModalLabel">选择分类</h4>
+					</div>
+					<div class="modal-body">
+						<form onkeydown="if(event.keyCode==13){return false;}" id="form1" action="{:U('Admin181/Goods/addSubCate')}" method="POST" role="form">
+							<div class="tree well">
+								{$show_tree}
+							</div>
+							<button type="submit" class="btn btn-default">确认</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button id="modal_btn_close" type="button" class="btn btn-sm btn-dark" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<include file="Public/footer" />
+	</div>
+	<!-- page-wrapper end -->
+	<!-- 模板底部配置 -->
+	<include file="Public/con_b" />
+	<!-- 本页js -->
+	<script type="text/javascript">
+		click_c({$goods_arr.cat_id});
+		var is_shunk=0;
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(3)').attr("class", "active");
+		function click_e(){
+		// $('#pid').attr("value",id);
+		// $('#father').text(name);
+		// $(".tree li:has(ul) span").trigger("click");
+		$("#modal_btn").trigger("click");
+		if (!is_shunk) {
+			setTimeout("shink()",500);
+			is_shunk=1;
+		}
+	}
+
+	function click_c(cate_id){
+		// $('#pid').attr("value",id);
+		// $('#father').text(name);
+
+		//获取分类name
+		var action="{:U('Home/Goods/getCateNameAj')}";
+		$.post(action,{cate_id:cate_id},function(data){
+			$('#cate').text(data);
+		});
+		$('#cat_id	').attr("value",cate_id);
+		$("#modal_btn_close").trigger("click");
+	}
+
+
+	function shink(){
+		var children = $('.tree li.parent_li > span').parent('li.parent_li').find(' > ul > li');
+		if (children.is(":visible")) {
+			children.hide('fast');
+			$('.tree li.parent_li > span').attr('title', '展开').find(' > i').addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign');
+		} else {
+			children.show('fast');
+			$('.tree li.parent_li > span').attr('title', '收起').find(' > i').addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+		}
+	}
+</script>
+
+
+</body>
+</html>
+

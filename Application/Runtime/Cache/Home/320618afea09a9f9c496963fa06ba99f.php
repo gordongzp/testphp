@@ -384,9 +384,11 @@
 								<!-- Nav tabs -->
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
-	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">新增商品</a></li>
-	<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">填写开店资料</a></li>
-	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
+	<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
+	<li><a href="<?php echo U('Home/Goods/addGoods');?>">新增商品</a></li>
+	<li><a href="#">编辑商品</a></li>
+	<li><a href="#">编辑属性</a></li>
+	<li><a href="#">编辑图片</a></li>
 </ul>
 
 
@@ -420,6 +422,7 @@
 														<a href="#">添加</a>
 													</div>
 													<button type="submit" class="btn btn-default btn-sm">保存</button>
+													<button type="button" class="btn btn-default btn-sm" onclick="javascript:window.location.href='<?php echo U('Home/Goods/goodsList');?>';">返回</button>
 												</form>
 											</div>
 										</div>
@@ -629,12 +632,11 @@
 </script>
 	<!-- 本页js -->
 	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(4)').attr("class", "active");
 
 		function delete_attr(attr_id){
 			window.location.href=$('#url_temp').text()+"?"+'id='+attr_id; 
 		}
-
 
 		$(function(){
 			$("#demo2").easyinsert({
@@ -646,7 +648,7 @@
 		initValue: [//初始化的时候，各input的value就是归它管，必须是数组
 		["默认", ""]
 		]
-		});
+	});
 		});
 
 

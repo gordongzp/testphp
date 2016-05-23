@@ -18,14 +18,19 @@ class GoodsController extends Controller {
 		//关联查询与shop的用户绑定的shop信息
 		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
 		$shop=$arr['shop'];
+		$items = D('Admin181/Cate')->select();
+		//模板赋值
+		$this->assign('show_tree',$this->_showTree(format_tree($items)));
+		$this->assign('msg',unserialize($_GET['msg']));
+		$this->assign('shop',$shop);
 		if (IS_POST) {
-			//判断分类是否为空
-			if (!I('post.cat_id')) {
-				$this->error('分类不能为空','',2);
-			}
 			//判断shop_id是否遭篡改
 			if (I('post.shop_id')!=$shop['shop_id']) {
 				$this->error('非法操作','',2);
+			}
+			//判断分类是否为空
+			if (!I('post.cat_id')) {
+				$this->error('分类不能为空','',2);
 			}
 			//判断属性是否为空
 			$i=0;
@@ -96,33 +101,85 @@ class GoodsController extends Controller {
 		   		}
 		   	}	
 		   } else {
-		   	$items = D('Admin181/Cate')->select();
-		   	$this->assign('show_tree',$this->_showTree(format_tree($items)));
-		   	$this->assign('msg',unserialize($_GET['msg']));
-		   	$this->assign('shop',$shop);
 		   	$this->display();
 		   }
 		}
 
-		public function goodsList(){
-    	//判断登录
+
+		public function editGoods(){
+	    	//判断登录
 			if (!is_login()) {
 				$this->error('请先登录','/Home/User/logIn',2);
 			}
-		//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
-		//判断是否为卖家
+			//判断是否为卖家
 			if (1!=session('user.is_seller')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
-		//关联查询与shop的用户绑定的shop信息
+			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
 			$shop=$arr['shop'];
-		//查询所有goods
+
+			//获取要编辑的商品id号
+			$goods_id=I('get.id');
+			//检验商品id与店铺id是否对应
+			$condition = array(
+				'goods_id' => $goods_id,
+				'shop_id' => $shop['shop_id'], 
+				);
+			$goods_arr=M('Goods')->where($condition)->find();
+			if (!$goods_arr) {
+				$this->error('非法操作','',2);
+			}
+			$items = D('Admin181/Cate')->select();
+			//模板赋值
+			$this->assign('show_tree',$this->_showTree(format_tree($items)));
+			$this->assign('msg',unserialize($_GET['msg']));
+			$this->assign('shop',$shop);
+			$this->assign('goods_arr',$goods_arr);
+			if (IS_POST) {
+				//判断goods_id是否遭篡改
+				if (I('post.goods_id')!=$goods_id) {
+					$this->error('非法操作','',2);
+				}
+				//判断分类是否为空
+				if (!I('post.cat_id')) {
+					$this->error('分类不能为空','',2);
+				}
+				//修改商品表
+				$msg=D('Goods')->createSave();
+				if (!$msg) {
+					$this->success('修改成功','/Home/Goods/goodsList',1);
+				} else {
+					$this->error('请输入正确注册信息',U('Home/Goods/addGoods',array('id'=>$goods_id,'msg'=>serialize($msg))),2);
+				}
+			} else {
+				$this->display();
+			}
+		}
+
+
+
+		public function goodsList(){
+    		//判断登录
+			if (!is_login()) {
+				$this->error('请先登录','/Home/User/logIn',2);
+			}
+			//更新session数据
+			session('user',D('User')->getUserInfoById(session('user.id')));
+			//判断是否为卖家
+			if (1!=session('user.is_seller')) {
+				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+			}
+			//关联查询与shop的用户绑定的shop信息
+			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
+			$shop=$arr['shop'];
+			//查询所有goods
 			$lists=D('Goods')->getGoodsList($shop['shop_id']);
 			$page_show=$lists['show'];
 			$goods_list=$lists['lists'];
-		//计算最高价和最低价
+			//计算最高价和最低价
 			foreach ($goods_list as $k => $v) {
 				$max=0;
 				$min=99999;

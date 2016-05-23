@@ -7309,3 +7309,1000 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.013000s ]
 
+[ 2016-05-23T23:36:14+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+ERR: 非法操作:editGoods
+
+[ 2016-05-23T23:36:15+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+ERR: 非法操作:editGoods
+
+[ 2016-05-23T23:36:19+08:00 ] ::1 /Home/Goods/goodsList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( shop_id=1 ) LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate` WHERE ( 1=1 AND cat_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND shop_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_attr` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_attr` WHERE ( 1=1 AND goods_id='4' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_gdimg` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_gdimg` WHERE ( 1=1 AND goods_id='4' ) ORDER BY flag asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_cate` WHERE ( 1=1 AND cat_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND shop_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_attr` WHERE ( 1=1 AND goods_id='5' )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_gdimg` WHERE ( 1=1 AND goods_id='5' ) ORDER BY flag asc  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_goods` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 548 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 145 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\Application\Runtime\Cache\Home\8a6b4a27235d0320593348d4f0a6187a.php 第 407 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\8a6b4a27235d0320593348d4f0a6187a.php 第 649 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065034s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2016-05-23T23:37:08+08:00 ] ::1 /Home/Goods/goodsList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( shop_id=1 ) LIMIT 0,10   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_cate` WHERE ( 1=1 AND cat_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND shop_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_attr` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_attr` WHERE ( 1=1 AND goods_id='4' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_gdimg` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_gdimg` WHERE ( 1=1 AND goods_id='4' ) ORDER BY flag asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_cate` WHERE ( 1=1 AND cat_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND shop_id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_attr` WHERE ( 1=1 AND goods_id='5' )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xy_gdimg` WHERE ( 1=1 AND goods_id='5' ) ORDER BY flag asc  [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_goods` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 548 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 145 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\Application\Runtime\Cache\Home\8a6b4a27235d0320593348d4f0a6187a.php 第 407 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\8a6b4a27235d0320593348d4f0a6187a.php 第 649 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062986s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000548s ]
+
+[ 2016-05-23T23:37:09+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+ERR: 非法操作:editGoods
+
+[ 2016-05-23T23:38:23+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 651 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 202 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000531s ]
+
+[ 2016-05-23T23:49:16+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 614 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2016-05-23T23:49:18+08:00 ] ::1 /Home/Goods/addGoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\940b8ea4e6c49feb733ebbab05cc5976.php 第 463 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020546s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+
+[ 2016-05-23T23:49:21+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001357s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:49:22+08:00 ] ::1 /Home/Goods/addGoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 32 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\940b8ea4e6c49feb733ebbab05cc5976.php 第 463 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022495s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022528s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000322s ]
+
+[ 2016-05-23T23:49:43+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 614 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050414s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000505s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2016-05-23T23:49:47+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:49:47+08:00 ] ::1 /Home/Goods/addGoods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 32 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\940b8ea4e6c49feb733ebbab05cc5976.php 第 463 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022108s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022162s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+
+[ 2016-05-23T23:50:50+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 614 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050517s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050551s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000458s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000486s ]
+
+[ 2016-05-23T23:50:55+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001181s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001953s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-23T23:50:55+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 614 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+
+[ 2016-05-23T23:51:10+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 614 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051156s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051187s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2016-05-23T23:52:15+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050694s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000476s ]
+
+[ 2016-05-23T23:52:19+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001531s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:52:20+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+
+[ 2016-05-23T23:55:16+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+
+[ 2016-05-23T23:55:18+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+
+[ 2016-05-23T23:56:17+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001351s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 649 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051753s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000513s ]
+
+[ 2016-05-23T23:56:17+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:56:20+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 649 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048132s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048162s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000347s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2016-05-23T23:56:20+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-23T23:56:20+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 649 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049667s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000389s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2016-05-23T23:56:20+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-23T23:56:54+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052647s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052685s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000523s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000552s ]
+
+[ 2016-05-23T23:56:54+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:57:15+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049830s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049861s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000540s ]
+
+[ 2016-05-23T23:57:15+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:57:39+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001417s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 649 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052693s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2016-05-23T23:57:39+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:58:07+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001074s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047910s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000498s ]
+
+[ 2016-05-23T23:58:07+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:58:28+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 402 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+NOTIC: [8] Undefined variable: goods_arr D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 649 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054414s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2016-05-23T23:58:28+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-05-23T23:58:43+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050186s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050215s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000538s ]
+
+[ 2016-05-23T23:58:43+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-23T23:59:19+08:00 ] ::1 /Home/Goods/editGoods/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xy_goods` WHERE `goods_id` = 4 AND `shop_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 616 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 137 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\cb66305c8bf3a9b07326b635eeafc648.php 第 624 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000573s ]
+
+[ 2016-05-23T23:59:19+08:00 ] ::1 /Home/Goods/getCateNameAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `xy_cate` WHERE `cat_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
