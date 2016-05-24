@@ -283,9 +283,9 @@
 								</div>
 								<!-- <div class="row"></div> -->
 								<div class="col-sm-4">
-									<div class="radio">
+<!-- 									<div class="radio">
 										<label>
-											<input type="radio" name="shop_identify_stage" id="shop_identify_stage0" value="0" checked="">
+											<input type="radio" id="shop_identify_stage0" value="0" checked="">
 											未提交审核
 										</label>
 									</div>
@@ -294,7 +294,7 @@
 											<input type="radio" name="shop_identify_stage" id="shop_identify_stage1" value="1" checked="">
 											已提交审核
 										</label>
-									</div>
+									</div> -->
 									<div class="radio">
 										<label>
 											<input type="radio" name="shop_identify_stage" id="shop_identify_stage2" value="2" checked="">
@@ -392,9 +392,9 @@
 <script type="text/javascript">
 //
 <?php  switch ($user['shop_identify_stage']) { case 0: ?>
-	document.getElementById("shop_identify_stage0").checked=true;
+	document.getElementById("shop_identify_stage2").checked=true;
 	<?php  break; case 1: ?>
-	document.getElementById("shop_identify_stage1").checked=true;
+	document.getElementById("shop_identify_stage2").checked=true;
 	<?php  break; case 2: ?>
 	document.getElementById("shop_identify_stage2").checked=true;
 	<?php  break; case 3: ?>
