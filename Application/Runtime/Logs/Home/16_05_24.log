@@ -11829,3 +11829,166 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
+[ 2016-05-24T20:33:08+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004798s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012644s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `xy_user` LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_user` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002977s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005272s ]
+
+[ 2016-05-24T20:33:22+08:00 ] ::1 /Home/User/logInAj.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `xy_user` WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = '11790dce4678bd6798226bbd753d18a5' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xy_user` SET `last_log_time`='1464093202',`last_log_ip`='0.0.0.0' WHERE (  `user_name` = 'gordongzp' OR `tel` = 'gordongzp' ) AND `user_pwd` = '11790dce4678bd6798226bbd753d18a5' [ RunTime:0.0033s ]
+
+[ 2016-05-24T20:33:23+08:00 ] ::1 /Home/UserCenter/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\b774ca8fab56146ab67b6f40394c7de6.php 第 687 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048818s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048849s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000404s ]
+
+[ 2016-05-24T20:33:28+08:00 ] ::1 /Home/Goods/goodsList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xy_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_shop` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `xy_shop` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( shop_id=1 ) LIMIT 0,10   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_goods` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xy_cate` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `xy_cate`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: son D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 605 行.
+NOTIC: [8] Undefined index: msg D:\xampp\htdocs\Application\Home\Controller\GoodsController.class.php 第 202 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\Application\Runtime\Cache\Home\8a6b4a27235d0320593348d4f0a6187a.php 第 409 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\8a6b4a27235d0320593348d4f0a6187a.php 第 651 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.076102s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076145s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000334s ]
+
+[ 2016-05-24T23:59:08+08:00 ] ::1 /Home/Goods/goodsList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004592s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008272s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\940b8ea4e6c49feb733ebbab05cc5976.php 第 463 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048771s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048801s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002830s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002855s ]
+
+[ 2016-05-24T23:59:10+08:00 ] ::1 /Home/SellerCenter/openShop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001236s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xy_config` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `xy_config` WHERE `con_id` = 1 LIMIT 1   [ RunTime:0.0033s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\940b8ea4e6c49feb733ebbab05cc5976.php 第 463 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032546s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+
+[ 2016-05-24T23:59:13+08:00 ] ::1 /Home/SellerCenter/shopVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001496s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `xy_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Application\Runtime\Cache\Home\802f21057ee3384fabced012c0db2a53.php 第 621 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056811s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003538s ]
+

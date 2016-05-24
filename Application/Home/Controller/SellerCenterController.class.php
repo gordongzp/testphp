@@ -12,7 +12,7 @@ class SellerCenterController extends Controller {
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
 		//判断是否已经是卖家
-		if (1!=session('user.is_seller')) {
+		if (3!=session('user.shop_identify_stage')) {
 			$this->error('您还没有成为卖家','/Home/SellerCenter/openShop',2);
 		}
 		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -41,12 +41,14 @@ class SellerCenterController extends Controller {
 				$this->error('需要进行实名认证','/Home/UserCenter/identifyId',2);
 			}
 		}
-		//判断是否需要开店认证
-		if ($config['openshop_need_verify']) {
-			if (session('user.shop_identify_stage')!=3) {
-				$this->error('需要进行商店认证','/Home/SellerCenter/shopVerify',2);
-			}	
-		}
+
+		if (session('user.shop_identify_stage')!=3) {
+			$this->error('需要进行开店认证','/Home/SellerCenter/shopVerify',2);
+		}	
+
+
+
+
 		//如果有，找到shop_id
 		if (1==session('user.is_seller')) {
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -105,6 +107,8 @@ class SellerCenterController extends Controller {
 			$this->display();
 		}
 	}
+
+
 	public function shopVerify(){
 		//判断登录
 		if (!is_login()) {
@@ -112,13 +116,20 @@ class SellerCenterController extends Controller {
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
+		//模板赋值		   	
+		$this->assign('shop_identify_stage',session('user.shop_identify_stage'));
+		//如果有，找到
+		if (0!=session('user.shop_identify_stage')) {
+			$shop=M('Shop')->where('id='.session('user.id'))->find();
+			$this->assign('shop',$shop);
+		}
 		if (IS_POST) {
 			// 判断id是否被篡改
 			if (session('user.id')!=I('post.id')) {
 				$this->error('非法操作','',2);
 			}
-			//判断shop_identify_stage是否被篡改
-			if (1!=I('post.shop_identify_stage')) {
+			//判断shop_id是否被篡改
+			if ($shop['shop_id']!=I('post.shop_id')) {
 				$this->error('非法操作','',2);
 			}
 			$upload = new \Think\Upload();// 实例化上传类
@@ -132,20 +143,29 @@ class SellerCenterController extends Controller {
 		   	$upload->saveExt   =     'jpg';
 		   	// 上传文件 
 		   	$info   =   $upload->upload();
-		   	$msg=D('User')->createSave();
-		   	if (!$msg) {
-		   		if(!$info) {
+		   	if(!$info) {
 		   		// 上传错误提示错误信息
-		   			$this->error($upload->getError());
-		   		}else{
-		   		// 上传成功
-		   			$this->success('上传成功！','/Home/SellerCenter/shopVerify');
-		   		}		
+		   		$this->error($upload->getError());
 		   	}else{
-		   		$this->error('输入信息有误',U('Home/SellerCenter/shopVerify',array('msg'=>serialize($msg))),2);
-		   	}
+		   		// 上传图像成功
+		   		//判断xy_shop是否存在
+		   		if (0!=session('user.shop_identify_stage')) {
+		   			//存在需修改
+		   			$msg=D('Shop')->createSave();
+		   		} else {
+		   			//不存在需创建
+		   			$msg=D('Shop')->createAdd();
+		   		}
+		   		if (!$msg) {
+		   			//修改shop_identify_stage为1
+		   			$data = array('shop_identify_stage' => 1, );
+		   			M('User')->where('id='.I('post.id'))->save($data);
+		   			$this->success('操作成功','/Home/SellerCenter/shopVerify');
+		   		}else{
+		   			$this->error('输入信息有误',U('Home/SellerCenter/shopVerify',array('msg'=>serialize($msg))),2);
+		   		}	   			
+		   	}		
 		   } else {
-		   	$this->assign('shop_identify_stage',session('user.shop_identify_stage'));
 		   	$this->display();	
 		   }
 		}

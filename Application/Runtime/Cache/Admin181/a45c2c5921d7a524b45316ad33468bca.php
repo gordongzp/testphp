@@ -39,6 +39,8 @@
 	<link href="/Public/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
 	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">	
+	<!-- <link href="/Public/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
+	<link href="/Public/plugins/jquery-Select/css/select2.css" rel="stylesheet"/>
 	<!-- The Project core CSS file后加 -->
 	<link href="/Public/plugins/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
 	<!-- The Project core CSS file -->
@@ -219,7 +221,7 @@
 
 								<form onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Admin181/Index/index');?>" method="POST" role="form">
 									<input style="display: none" type="text" name="con_id" value="1">
-									<div class="col-sm-4">
+									<div class="col-sm-6">
 										<div class="radio">
 											<label>
 												<input type="radio" name="openshop_need_person_id" id="openshop_need_person_id1" value="1">
@@ -233,7 +235,7 @@
 											</label>
 										</div>
 									</div>
-									<div class="col-sm-4">
+									<div class="col-sm-6">
 										<div class="radio">
 											<label>
 												<input type="radio" name="openshop_need_email" id="openshop_need_email1" value="1" >
@@ -247,20 +249,7 @@
 											</label>
 										</div>
 									</div>
-									<div class="col-sm-4">
-										<div class="radio">
-											<label>
-												<input type="radio" name="openshop_need_verify" id="openshop_need_verify1" value="1" >
-												开店需要审核
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="openshop_need_verify" id="openshop_need_verify0" value="0">
-												开店不需审核
-											</label>
-										</div>
-									</div>
+
 
 									<div class="row"></div>
 
@@ -314,6 +303,11 @@
 <script type="text/javascript" src="/Public/js/template.js"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
+<!-- 地区选择插件 -->
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/area.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/location.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2_locale_zh-CN.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
 <!-- 顶部快速登录切换 -->
@@ -351,10 +345,6 @@
 			document.getElementById("openshop_need_email0").checked=true;
 			<?php  break; case 1: ?>
 			document.getElementById("openshop_need_email1").checked=true;
-			<?php  break; } switch ($config['openshop_need_verify']) { case 0: ?>
-			document.getElementById("openshop_need_verify0").checked=true;
-			<?php  break; case 1: ?>
-			document.getElementById("openshop_need_verify1").checked=true;
 			<?php  break; } ?>
 	</script>
 

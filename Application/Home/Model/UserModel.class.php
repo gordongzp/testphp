@@ -32,7 +32,6 @@ class UserModel extends RelationModel {
 		);
 	protected $_auto = array ( 
 		array('user_pwd','md10',1,'function') , 
-		array('is_seller',0,1),
 		array('person_identify_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
 		array('shop_identify_stage',0,1),//0表示未认证，1表示已提交认证等待审核，2表示审核不通过，3表示认证通过
 

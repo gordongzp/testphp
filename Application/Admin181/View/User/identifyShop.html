@@ -103,11 +103,19 @@
 									<input style="display: none;" type="text" name="id" value="{$user.id}" >
 									<div class="form-group">
 										<label>姓名</label>
-										<input disabled="" type="text" class="form-control" placeholder="{$user.true_name}">
+										{$user.true_name}
 									</div>
 									<div class="form-group">
 										<label>身份证号码</label>
-										<input disabled="" type="text" class="form-control" placeholder="{$user.person_id}">
+										{$user.person_id}
+									</div>
+									<div class="form-group">
+										<label>区域</label>
+										{$shop.shop_province}-{$shop.shop_city}-{$shop.shop_dis}
+									</div>
+									<div class="form-group">
+										<label>地址</label>
+										{$shop.shop_address}
 									</div>
 								</div>
 								<div class="row"></div>
@@ -168,30 +176,30 @@
 <!-- 本页js -->
 <script type="text/javascript">
 //
-	<?php 
-	switch ($user['shop_identify_stage']) {
-		case 0:
-		?>
-		document.getElementById("shop_identify_stage0").checked=true;
-		<?php 
-		break;
-		case 1:
-		?>
-		document.getElementById("shop_identify_stage1").checked=true;
-		<?php 
-		break;
-		case 2:
-		?>
-		document.getElementById("shop_identify_stage2").checked=true;
-		<?php 
-		break;
-		case 3:
-		?>
-		document.getElementById("shop_identify_stage3").checked=true;
-		<?php 
-		break;
-	}
+<?php 
+switch ($user['shop_identify_stage']) {
+	case 0:
 	?>
+	document.getElementById("shop_identify_stage0").checked=true;
+	<?php 
+	break;
+	case 1:
+	?>
+	document.getElementById("shop_identify_stage1").checked=true;
+	<?php 
+	break;
+	case 2:
+	?>
+	document.getElementById("shop_identify_stage2").checked=true;
+	<?php 
+	break;
+	case 3:
+	?>
+	document.getElementById("shop_identify_stage3").checked=true;
+	<?php 
+	break;
+}
+?>
 </script>
 
 </body>

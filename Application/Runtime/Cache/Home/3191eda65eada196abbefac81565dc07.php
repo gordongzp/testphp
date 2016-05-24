@@ -38,7 +38,10 @@
 	<link href="/Public/css/animations.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">	
+	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">
+	<!-- <link href="/Public/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
+	<link href="/Public/plugins/jquery-Select/css/select2.css" rel="stylesheet"/>
+
 	<!-- The Project core CSS file后加 -->
 	<link href="/Public/plugins/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
 	<!-- The Project core CSS file -->
@@ -48,6 +51,7 @@
 
 	<!-- Custom css --> 
 	<link href="/Public/css/custom.css" rel="stylesheet">
+
 	<!-- 本页css -->
 </head>
 
@@ -318,7 +322,7 @@
 						</li>
 						<!-- 判断是否为卖家，是则显示卖家菜单 -->
 						<?php
- if (session('user.is_seller')) { ?>
+ if (3==session('user.shop_identify_stage')) { ?>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是卖家</a>
 								<ul class="dropdown-menu">
@@ -400,9 +404,7 @@
 													<!-- 用户id录入商店 -->
 													<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
 													<!-- 商店shop_id录入商店,如果存在的话，用于修改数据 -->
-													<?php  if (1==session('user.is_seller')) { ?>
-														<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["shop_id"]); ?>" >
-														<?php  } ?>
+
 													<div class="form-group">
 														<label>店铺logo</label>
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
@@ -649,7 +651,11 @@
 <script type="text/javascript" src="/Public/js/template.js"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
-
+<!-- 地区选择插件 -->
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/area.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/location.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2_locale_zh-CN.js"></script>
 <!-- Custom Scripts2带有模板函数。。。 -->
 
 <!-- 顶部快速登录切换 -->

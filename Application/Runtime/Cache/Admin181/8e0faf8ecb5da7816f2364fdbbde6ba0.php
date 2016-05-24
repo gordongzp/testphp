@@ -39,6 +39,8 @@
 	<link href="/Public/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
 	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">	
+	<!-- <link href="/Public/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
+	<link href="/Public/plugins/jquery-Select/css/select2.css" rel="stylesheet"/>
 	<!-- The Project core CSS file后加 -->
 	<link href="/Public/plugins/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
 	<!-- The Project core CSS file -->
@@ -250,11 +252,19 @@
 									<input style="display: none;" type="text" name="id" value="<?php echo ($user["id"]); ?>" >
 									<div class="form-group">
 										<label>姓名</label>
-										<input disabled="" type="text" class="form-control" placeholder="<?php echo ($user["true_name"]); ?>">
+										<?php echo ($user["true_name"]); ?>
 									</div>
 									<div class="form-group">
 										<label>身份证号码</label>
-										<input disabled="" type="text" class="form-control" placeholder="<?php echo ($user["person_id"]); ?>">
+										<?php echo ($user["person_id"]); ?>
+									</div>
+									<div class="form-group">
+										<label>区域</label>
+										<?php echo ($shop["shop_province"]); ?>-<?php echo ($shop["shop_city"]); ?>-<?php echo ($shop["shop_dis"]); ?>
+									</div>
+									<div class="form-group">
+										<label>地址</label>
+										<?php echo ($shop["shop_address"]); ?>
 									</div>
 								</div>
 								<div class="row"></div>
@@ -346,6 +356,11 @@
 <script type="text/javascript" src="/Public/js/template.js"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
+<!-- 地区选择插件 -->
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/area.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/location.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2_locale_zh-CN.js"></script>
 
 <!-- Custom Scripts2带有模板函数。。。 -->
 <!-- 顶部快速登录切换 -->
@@ -376,15 +391,15 @@
 <!-- 本页js -->
 <script type="text/javascript">
 //
-	<?php  switch ($user['shop_identify_stage']) { case 0: ?>
-		document.getElementById("shop_identify_stage0").checked=true;
-		<?php  break; case 1: ?>
-		document.getElementById("shop_identify_stage1").checked=true;
-		<?php  break; case 2: ?>
-		document.getElementById("shop_identify_stage2").checked=true;
-		<?php  break; case 3: ?>
-		document.getElementById("shop_identify_stage3").checked=true;
-		<?php  break; } ?>
+<?php  switch ($user['shop_identify_stage']) { case 0: ?>
+	document.getElementById("shop_identify_stage0").checked=true;
+	<?php  break; case 1: ?>
+	document.getElementById("shop_identify_stage1").checked=true;
+	<?php  break; case 2: ?>
+	document.getElementById("shop_identify_stage2").checked=true;
+	<?php  break; case 3: ?>
+	document.getElementById("shop_identify_stage3").checked=true;
+	<?php  break; } ?>
 </script>
 
 </body>

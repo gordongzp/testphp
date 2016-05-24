@@ -12,7 +12,7 @@ class GoodsController extends Controller {
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
 		//判断是否为卖家
-		if (1!=session('user.is_seller')) {
+		if (3!=session('user.shop_identify_stage')) {
 			$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 		}
 		//关联查询与shop的用户绑定的shop信息
@@ -114,7 +114,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -169,7 +169,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -215,7 +215,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -260,7 +260,7 @@ class GoodsController extends Controller {
 		//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 		//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 		//关联查询与shop的用户绑定的shop信息
@@ -304,7 +304,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -366,7 +366,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -400,7 +400,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -483,7 +483,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -517,7 +517,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 			//关联查询与shop的用户绑定的shop信息
@@ -555,7 +555,7 @@ class GoodsController extends Controller {
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
-			if (1!=session('user.is_seller')) {
+			if (3!=session('user.shop_identify_stage')) {
 				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
 			}
 

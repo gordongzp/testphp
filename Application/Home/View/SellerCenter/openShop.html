@@ -75,13 +75,7 @@
 													<!-- 用户id录入商店 -->
 													<input style="display: none;" type="text" name="id" value="{:session('user.id')}" >
 													<!-- 商店shop_id录入商店,如果存在的话，用于修改数据 -->
-													<?php 
-													if (1==session('user.is_seller')) {
-														?>
-														<input style="display: none;" type="text" name="shop_id" value="{$shop.shop_id}" >
-														<?php 
-													}
-													?>
+
 													<div class="form-group">
 														<label>店铺logo</label>
 														<img src="{:U(USERS_PATH.session('user.id').'/shop_logo','','jpg')}" style="width: 130px; height: 75px;">
