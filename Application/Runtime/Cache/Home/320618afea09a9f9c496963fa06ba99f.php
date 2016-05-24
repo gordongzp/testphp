@@ -386,9 +386,9 @@
 <ul class="nav nav-tabs style-2" role="tablist">
 	<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
 	<li><a href="<?php echo U('Home/Goods/addGoods');?>">新增商品</a></li>
-	<li><a href="#">编辑商品</a></li>
-	<li><a href="#">编辑属性</a></li>
-	<li><a href="#">编辑图片</a></li>
+	<li><a href="<?php echo U('Home/Goods/editGoods');?>">编辑商品</a></li>
+	<li><a href="<?php echo U('Home/Goods/attrList');?>">编辑属性</a></li>
+	<li><a href="<?php echo U('Home/Goods/imgList');?>">编辑图片</a></li>
 </ul>
 
 

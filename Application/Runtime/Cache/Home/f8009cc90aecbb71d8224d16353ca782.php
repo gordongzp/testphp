@@ -324,9 +324,8 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览商店资料</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">修改商店资料</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">商店审核信息</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">店铺设置</a></li>
+									<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
 								</ul>
 							</li>
 							<?php
@@ -379,7 +378,7 @@
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-9 col-lg-8">
+							<div class="col-sm-8">
 								<!-- tabs start -->
 								<!-- ================ -->
 								<!-- Nav tabs -->

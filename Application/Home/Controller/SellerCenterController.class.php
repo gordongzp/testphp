@@ -27,10 +27,6 @@ class SellerCenterController extends Controller {
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
-		// //判断是否已经是卖家
-		// if (session('user.is_seller')==1) {
-		// 	$this->error('您已经是卖家','/Home/UserCenter/index',2);
-		// }
 		//获取admin配置信息
 		$config=M('Config')->find(1);
 		//判断是否需要邮箱验证
@@ -136,7 +132,6 @@ class SellerCenterController extends Controller {
 		   	$upload->saveExt   =     'jpg';
 		   	// 上传文件 
 		   	$info   =   $upload->upload();
-	    	//set状态identify_stage以及身份证+truename；
 		   	$msg=D('User')->createSave();
 		   	if (!$msg) {
 		   		if(!$info) {
@@ -168,8 +163,4 @@ class SellerCenterController extends Controller {
 		   	$info   =   $upload->upload();
 		   	return array('info' => $info,'err'=>$upload->getError());
 		   }
-
-
-
-
 		}

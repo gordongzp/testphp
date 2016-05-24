@@ -172,3 +172,159 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
 ERR: 无法加载模块:Application
 
+[ 2016-05-24T14:01:08+08:00 ] ::1 /Application/uploads/users/1/thumb574187636458e.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:01:08+08:00 ] ::1 /Application/uploads/users/1/thumb5742c4d157a87.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:01:08+08:00 ] ::1 /Application/uploads/users/1/thumb5742c628eba94.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:05:26+08:00 ] ::1 /Application/uploads/users/1/thumb574187636458e.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:05:26+08:00 ] ::1 /Application/uploads/users/1/thumb5742c4d157a87.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:05:26+08:00 ] ::1 /Application/uploads/users/1/thumb5742c628eba94.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:05:46+08:00 ] ::1 /Application/uploads/users/1/thumb5742c4d157a87.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:05:46+08:00 ] ::1 /Application/uploads/users/1/thumb574187636458e.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:05:46+08:00 ] ::1 /Application/uploads/users/1/thumb5742c628eba94.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:06:05+08:00 ] ::1 /Application/uploads/users/1/thumb574187636458e.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:06:05+08:00 ] ::1 /Application/uploads/users/1/thumb5742c628eba94.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:06:05+08:00 ] ::1 /Application/uploads/users/1/thumb5742c4d157a87.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:08:31+08:00 ] ::1 /Application/uploads/users/1/thumb5742c4d157a87.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:08:31+08:00 ] ::1 /Application/uploads/users/1/thumb574187636458e.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T14:08:31+08:00 ] ::1 /Application/uploads/users/1/thumb5742c628eba94.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T15:55:10+08:00 ] ::1 /Application/uploads/users/1/thumb5742c4d157a87.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T15:55:10+08:00 ] ::1 /Application/uploads/users/1/thumb574187636458e.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T15:55:11+08:00 ] ::1 /Application/uploads/users/1/thumb5742c628eba94.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T16:27:20+08:00 ] ::1 /Application/uploads/users/1/shop_identify.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T16:49:25+08:00 ] ::1 /Application/uploads/users/1/shop_identify.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T17:01:49+08:00 ] ::1 /Application/uploads/users/1/shop_identify.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T17:37:25+08:00 ] ::1 /Application/uploads/users//avatar.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T17:37:26+08:00 ] ::1 /Application/uploads/users//avatar.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T17:44:39+08:00 ] ::1 /Application/uploads/users/1/shop_identify.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T17:56:38+08:00 ] ::1 /Application/uploads/users/1/shop_identify.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载模块:Application
+
+[ 2016-05-24T17:56:38+08:00 ] ::1 /Application/uploads/users/1/shop_identify.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Application
+
