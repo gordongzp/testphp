@@ -9,6 +9,9 @@
 	<!-- 模板上部配置 -->
 	<include file="Public/con_t" />
 	<!-- 本页css -->
+		<!-- 地区选择插件 -->
+		<!-- <link href="__PUBLIC__/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
+	<link href="__PUBLIC__/plugins/jquery-Select/css/select2.css" rel="stylesheet"/>
 </head>
 
 <!-- body classes:  -->
@@ -181,8 +184,15 @@
 <!-- 模板底部配置 -->
 <include file="Public/con_b" />
 <!-- 本页js -->
+
+<!-- 地区选择插件 -->
+<script type="text/javascript" src="__PUBLIC__/plugins/jquery-Select/js/area.js"></script>
+<script type="text/javascript" src="__PUBLIC__/plugins/jquery-Select/js/location.js"></script>
+<script type="text/javascript" src="__PUBLIC__/plugins/jquery-Select/js/select2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/plugins/jquery-Select/js/select2_locale_zh-CN.js"></script>
+
 <script type="text/javascript">
-	$('ul.nav.nav-tabs.style-2 > li:nth-child(3)').attr("class", "active");
+	$('ul.nav.nav-tabs.style-2 > li:nth-child(2)').attr("class", "active");
 	document.getElementById("loc_province")[3].selected=true;
 
 	function get_dis(){

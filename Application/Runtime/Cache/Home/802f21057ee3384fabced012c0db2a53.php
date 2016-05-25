@@ -39,8 +39,6 @@
 	<link href="/Public/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
 	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">
-	<!-- <link href="/Public/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
-	<link href="/Public/plugins/jquery-Select/css/select2.css" rel="stylesheet"/>
 
 	<!-- The Project core CSS file后加 -->
 	<link href="/Public/plugins/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
@@ -53,6 +51,9 @@
 	<link href="/Public/css/custom.css" rel="stylesheet">
 
 	<!-- 本页css -->
+		<!-- 地区选择插件 -->
+		<!-- <link href="/Public/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
+	<link href="/Public/plugins/jquery-Select/css/select2.css" rel="stylesheet"/>
 </head>
 
 <!-- body classes:  -->
@@ -328,13 +329,13 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">店铺设置</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/editShop');?>">店铺设置</a></li>
 									<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
 								</ul>
 							</li>
 							<?php
  }else{ ?>
-							<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">成为卖家</a></li>
+							<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">成为卖家</a></li>
 							<?php
  } ?>
 
@@ -389,8 +390,7 @@
 								<!-- Nav tabs -->
 								<!-- Nav tabs -->
 <ul class="nav nav-tabs style-2" role="tablist">
-	<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览</a></li>
-	<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">填写开店资料</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/editShop');?>">填写开店资料</a></li>
 	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
 </ul>
 
@@ -643,11 +643,7 @@
 <script type="text/javascript" src="/Public/js/template.js"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/Public/js/custom.js"></script>
-<!-- 地区选择插件 -->
-<script type="text/javascript" src="/Public/plugins/jquery-Select/js/area.js"></script>
-<script type="text/javascript" src="/Public/plugins/jquery-Select/js/location.js"></script>
-<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2.js"></script>
-<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2_locale_zh-CN.js"></script>
+
 <!-- Custom Scripts2带有模板函数。。。 -->
 
 <!-- 顶部快速登录切换 -->
@@ -676,8 +672,15 @@
 	})
 </script>
 <!-- 本页js -->
+
+<!-- 地区选择插件 -->
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/area.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/location.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2.js"></script>
+<script type="text/javascript" src="/Public/plugins/jquery-Select/js/select2_locale_zh-CN.js"></script>
+
 <script type="text/javascript">
-	$('ul.nav.nav-tabs.style-2 > li:nth-child(3)').attr("class", "active");
+	$('ul.nav.nav-tabs.style-2 > li:nth-child(2)').attr("class", "active");
 	document.getElementById("loc_province")[3].selected=true;
 
 	function get_dis(){

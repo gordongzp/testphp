@@ -8,7 +8,7 @@ class GoodsController extends Controller {
 	public function cate(){
 		//判断登录
 		if (!is_admin_login()) {
-			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
+			$this->error('请先登录',U('Admin181/AdminUser/logIn'),2);
 		}
 		//更新session
 		session('admin_user',D('Admin')->getUserInfoById(session('admin_user.id')));
@@ -16,7 +16,7 @@ class GoodsController extends Controller {
 				//添加一级分类
 			$msg=D('Cate')->createAdd(I('post.type1'));
 			if (!$msg) {
-				$this->success('添加成功','/Admin181/Goods/Cate',1);
+				$this->success('添加成功',U('Admin181/Goods/Cate'),1);
 			} else {
 				$this->error(L2($msg),'',2);
 			}
@@ -31,20 +31,20 @@ class GoodsController extends Controller {
 	public function delCate(){
 		//判断登录
 		if (!is_admin_login()) {
-			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
+			$this->error('请先登录',U('Admin181/AdminUser/logIn'),2);
 		}
 		//更新session
 		session('admin_user',D('Admin')->getUserInfoById(session('admin_user.id')));
 		$id=I('get.id');
 		D('Cate')->delCate($id);
-		$this->success('删除成功','/Admin181/Goods/Cate',1);
+		$this->success('删除成功',U('Admin181/Goods/Cate'),1);
 	}
 
 	//添加子分类
 	public function addSubCate(){
 		//判断登录
 		if (!is_admin_login()) {
-			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
+			$this->error('请先登录',U('Admin181/AdminUser/logIn'),2);
 		}
 		//更新session
 		session('admin_user',D('Admin')->getUserInfoById(session('admin_user.id')));
@@ -52,7 +52,7 @@ class GoodsController extends Controller {
 				//添加子分类
 			$msg=D('Cate')->createAdd();
 			if (!$msg) {
-				$this->success('添加成功','/Admin181/Goods/Cate',1);
+				$this->success('添加成功',U('Admin181/Goods/Cate'),1);
 			} else {
 				$this->error(L2($msg),'',2);
 			}
@@ -64,7 +64,7 @@ class GoodsController extends Controller {
 	public function editCate(){
 		//判断登录
 		if (!is_admin_login()) {
-			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
+			$this->error('请先登录',U('Admin181/AdminUser/logIn'),2);
 		}
 		//更新session
 		session('admin_user',D('Admin')->getUserInfoById(session('admin_user.id')));
@@ -73,7 +73,7 @@ class GoodsController extends Controller {
 			$new_type=I('post.new_type');
 			$msg=D('Cate')->createSave();
 			if (!$msg) {
-				$this->success('编辑成功','/Admin181/Goods/Cate',1);
+				$this->success('编辑成功',U('Admin181/Goods/Cate'),1);
 			} else {
 				$this->error(L2($msg),'',2);
 			}

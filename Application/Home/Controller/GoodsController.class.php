@@ -7,13 +7,13 @@ class GoodsController extends Controller {
 	public function addGoods(){
     	//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
 		//判断是否为卖家
 		if (3!=session('user.shop_identify_stage')) {
-			$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+			$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 		}
 		//关联查询与shop的用户绑定的shop信息
 		$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -94,7 +94,7 @@ class GoodsController extends Controller {
 		   			}
 		   			//写入attr数据库
 		   			if (M('Attr')->addAll($data)) {
-		   				$this->success('新增成功','/Home/Goods/goodsList',1);
+		   				$this->success('新增成功',U('Home/Goods/goodsList'),1);
 		   			}
 		   		} else {
 		   			$this->error('请输入正确注册信息',U('Home/Goods/addGoods',array('msg'=>serialize($msg))),2);
@@ -109,13 +109,13 @@ class GoodsController extends Controller {
 		public function editGoods(){
 	    	//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -150,7 +150,7 @@ class GoodsController extends Controller {
 				//修改商品表
 				$msg=D('Goods')->createSave();
 				if (!$msg) {
-					$this->success('修改成功','/Home/Goods/goodsList',1);
+					$this->success('修改成功',U('Home/Goods/goodsList'),1);
 				} else {
 					$this->error('请输入正确注册信息',U('Home/Goods/addGoods',array('id'=>$goods_id,'msg'=>serialize($msg))),2);
 				}
@@ -164,13 +164,13 @@ class GoodsController extends Controller {
 		public function goodsList(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -210,13 +210,13 @@ class GoodsController extends Controller {
 		public function delGoods(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -247,7 +247,7 @@ class GoodsController extends Controller {
 				}
 			}
 			if ($i) {		
-				$this->success('成功删除'.$i.'件商品','/Home/Goods/goodsList',2);
+				$this->success('成功删除'.$i.'件商品',U('Home/Goods/goodsList'),2);
 			}
 		}
 
@@ -255,13 +255,13 @@ class GoodsController extends Controller {
 		public function upDownShelve(){
     	//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 		//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 		//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 		//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -287,7 +287,7 @@ class GoodsController extends Controller {
 				}
 			}
 			if ($i) {		
-				$this->success('成功操作'.$i.'件商品','/Home/Goods/goodsList',2);
+				$this->success('成功操作'.$i.'件商品',U('Home/Goods/goodsList'),2);
 			}
 		}
 
@@ -299,13 +299,13 @@ class GoodsController extends Controller {
 		public function attrList(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -361,13 +361,13 @@ class GoodsController extends Controller {
 		public function delAttr(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -395,13 +395,13 @@ class GoodsController extends Controller {
 		public function imgList(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -478,13 +478,13 @@ class GoodsController extends Controller {
 		public function delImg(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -512,13 +512,13 @@ class GoodsController extends Controller {
 		public function mainImg(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 			//关联查询与shop的用户绑定的shop信息
 			$arr=D('User')->relation('shop')->where('id='.session('user.id'))->find();
@@ -550,13 +550,13 @@ class GoodsController extends Controller {
 		public function getCateNameAj(){
     		//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
 			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
 			//判断是否为卖家
 			if (3!=session('user.shop_identify_stage')) {
-				$this->error('您还不是卖家','/Home/SellerCenter/openShop',2);
+				$this->error('您还不是卖家',U('Home/SellerCenter/openShop'),2);
 			}
 
 			if (IS_POST) {

@@ -6,7 +6,7 @@ class UserCenterController extends Controller {
 	public function index(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -16,7 +16,7 @@ class UserCenterController extends Controller {
 	public function basicInfo(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -27,7 +27,7 @@ class UserCenterController extends Controller {
 	public function changePwd(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -39,7 +39,7 @@ class UserCenterController extends Controller {
 				$msg=D('User')->setPwdByTel(session('user.tel'),I('post.pwd'));
 				if (!$msg) {
 					session('user',null);
-					$this->success('修改完成','/Home/Index/index',2);
+					$this->success('修改完成',U('Home/Index/index'),2);
 				}else{
 					$this->error('输入信息有误',U('Home/UserCenter/changePwd',array('msg'=>serialize($msg))),2);
 				}
@@ -60,7 +60,7 @@ class UserCenterController extends Controller {
 				$msg=D('User')->setPwdByTel(I('post.tel2'),I('post.pwd'));
 				if (!$msg) {
 					session('user',null);
-					$this->success('修改完成','/Home/Index/index',2);
+					$this->success('修改完成',U('Home/Index/index'),2);
 				}else{
 					$this->error('输入信息有误',U('Home/UserCenter/comeBackPwd',array('msg'=>serialize($msg))),2);
 				}
@@ -77,7 +77,7 @@ class UserCenterController extends Controller {
 	public function changeTel1(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -100,7 +100,7 @@ class UserCenterController extends Controller {
 	public function changeTel2(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -113,7 +113,7 @@ class UserCenterController extends Controller {
 					if (!$msg) {
 							//收回step2权限
 						session('confirm_tmp',null);
-						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
+						$this->success('修改完成',U('Home/UserCenter/basicInfo'),2);
 					}else
 					{
 						$this->error('输入信息有误',U('Home/UserCenter/changeTel2',array('msg'=>serialize($msg))),2);
@@ -141,7 +141,7 @@ class UserCenterController extends Controller {
 	public function changeEmail(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -160,13 +160,13 @@ class UserCenterController extends Controller {
 
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
 		//判断邮箱是否为空
 		if (''!=session('user.email')) {
-			$this->error('无法重复创建邮箱','/Home/UserCenter/basicInfo',2);
+			$this->error('无法重复创建邮箱',U('Home/UserCenter/basicInfo'),2);
 			exit();
 		}
 		if (IS_POST) {
@@ -176,7 +176,7 @@ class UserCenterController extends Controller {
 			if (verify_email_check(I('post.check_email'),I('post.email'))) {
 				$msg=D('User')->createSave();
 				if (!$msg) {
-					$this->success('修改完成','/Home/UserCenter/basicInfo',2);
+					$this->success('修改完成',U('Home/UserCenter/basicInfo'),2);
 				}else{
 					$this->error('输入信息有误',U('Home/UserCenter/createEmail',array('msg'=>serialize($msg))),2);
 				}
@@ -195,7 +195,7 @@ class UserCenterController extends Controller {
 	public function changeEmail1(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -218,7 +218,7 @@ class UserCenterController extends Controller {
 	public function changeEmail2(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -231,7 +231,7 @@ class UserCenterController extends Controller {
 					if (!$msg) {
 							//收回step2权限
 						session('confirm_tmp_email',null);
-						$this->success('修改完成','/Home/UserCenter/basicInfo',2);
+						$this->success('修改完成',U('Home/UserCenter/basicInfo'),2);
 					}else{
 						$this->error('输入信息有误',U('Home/UserCenter/changeEmail2',array('msg'=>serialize($msg))),2);
 					}
@@ -256,7 +256,7 @@ class UserCenterController extends Controller {
 	public function avatar(){
 		//判断登录
 		if (!is_login()) {
-			$this->error('请先登录','/Home/User/logIn',2);
+			$this->error('请先登录',U('Home/User/logIn'),2);
 		}
 		//更新session数据
 		session('user',D('User')->getUserInfoById(session('user.id')));
@@ -280,21 +280,25 @@ class UserCenterController extends Controller {
 			    	$this->error($upload->getError());
 			    }else{
 			    // 上传成功
-			    	$this->success('上传成功！','/Home/UserCenter/avatar');
+			    	$this->success('上传成功！',U('Home/UserCenter/avatar'),1);
 			    }
 			} else {
 				$this->display();
 			}
 		}	
 
-//实名认证
+		//实名认证
 		public function identifyId(){
-		//判断登录
+			//判断登录
 			if (!is_login()) {
-				$this->error('请先登录','/Home/User/logIn',2);
+				$this->error('请先登录',U('Home/User/logIn'),2);
 			}
-		//更新session数据
+			//更新session数据
 			session('user',D('User')->getUserInfoById(session('user.id')));
+			$this->assign('person_identify_stage',session('user.person_identify_stage'));
+		   	$this->assign('true_name',session('user.true_name'));
+		   	$this->assign('person_id',session('user.person_id'));
+		   	$this->assign('msg',unserialize($_GET['msg']));
 			if (IS_POST) {
 				if (session('user.id')!=I('post.id')) {
 					$this->error('非法操作','',2);
@@ -313,24 +317,20 @@ class UserCenterController extends Controller {
 		   	$upload->saveExt   =     'jpg';
 		   	// 上传文件 
 		   	$info   =   $upload->upload();
-	    	//set状态identify_stage以及身份证+truename；
-		   	$msg=D('User')->createSave();
-		   	if (!$msg) {
-		   		if(!$info) {
+		   	if(!$info) {
 		   		// 上传错误提示错误信息
-		   			$this->error($upload->getError());
-		   		}else{
-		   		// 上传成功
-		   			$this->success('上传成功！','/Home/UserCenter/identifyId');
-		   		}		
+		   		$this->error($upload->getError());
 		   	}else{
-		   		$this->error('输入信息有误',U('Home/UserCenter/identifyId',array('msg'=>serialize($msg))),2);
-		   	}
+		   		// 上传成功
+		   		//set状态identify_stage以及身份证+truename；
+		   		$msg=D('User')->createSave();
+		   		if (!$msg) {
+		   			$this->success('上传成功！',U('Home/UserCenter/identifyId'),2);
+		   		}else{
+		   			$this->error('输入信息有误',U('Home/UserCenter/identifyId',array('msg'=>serialize($msg))),2);
+		   		}
+		   	}		
 		   }else{
-		   	$this->assign('person_identify_stage',is_login()['person_identify_stage']);
-		   	$this->assign('true_name',is_login()['true_name']);
-		   	$this->assign('person_id',is_login()['person_id']);
-		   	$this->assign('msg',unserialize($_GET['msg']));
 		   	$this->display();
 		   }		
 		}

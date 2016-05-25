@@ -117,11 +117,15 @@
 													<input style="display: none;" type="text" name="person_identify_stage" value="1" >
 													<div class="form-group">
 														<label>姓名</label>
-														<input type="text" name="true_name" id="" class="form-control" required="required" placeholder="{$true_name}">
+														<input type="text" name="true_name" id="" class="form-control" required="required" value="<?php if (!$msg) {
+															echo $true_name;
+														} ?>" placeholder="{$msg.true_name|L2}">
 													</div>
 													<div class="form-group">
 														<label>身份证号码</label>
-														<input type="text" name="person_id" id="" class="form-control" required="required" placeholder="{$person_id}"><span style="color: red">{$msg.person_id|L2}</span>
+														<input type="text" name="person_id" value="<?php if (!$msg) {
+															echo $person_id;
+														} ?>" id="" class="form-control" required="required" placeholder="{$msg.person_id|L2}">
 													</div>
 													<div class="form-group">
 														<img src="<?php echo U(USERS_PATH.session('user.id').'/identify1','','jpg') ?>" style="width: 258px; height: 162px;">
@@ -137,7 +141,7 @@
 													</div>
 													<?php 
 													if (3==session('user.person_identify_stage')) {
-														
+														echo "<span style=\"color: red;\">若要修改请联系管理员</span>";
 													} else {
 														?>
 														<button type="submit" class="btn btn-default">保存</button>

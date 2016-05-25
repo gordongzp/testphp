@@ -146,19 +146,25 @@
 											已提交审核
 										</label>
 									</div> -->
-									<div class="radio">
-										<label>
-											<input type="radio" name="shop_identify_stage" id="shop_identify_stage2" value="2" checked="">
-											审核不通过
-										</label>
-									</div>
-									<div class="radio">
-										<label>
-											<input type="radio" name="shop_identify_stage" id="shop_identify_stage3" value="3" checked="">
-											审核通过
-										</label>
-									</div>
-									<button type="submit" class="btn btn-default">保存</button>
+									<?php 
+									if (0!=$user['shop_identify_stage']) {
+										?>
+										<div class="radio">
+											<label>
+												<input type="radio" name="shop_identify_stage" id="shop_identify_stage2" value="2" checked="">
+												审核不通过
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="shop_identify_stage" id="shop_identify_stage3" value="3" checked="">
+												审核通过
+											</label>
+										</div>
+										<button type="submit" class="btn btn-default">保存</button>
+										<?php 
+									}
+									?>
 								</div>
 							</form>
 						</div>

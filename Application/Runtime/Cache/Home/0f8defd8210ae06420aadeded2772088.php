@@ -38,7 +38,8 @@
 	<link href="/Public/css/animations.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">	
+	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">
+
 	<!-- The Project core CSS file后加 -->
 	<link href="/Public/plugins/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
 	<!-- The Project core CSS file -->
@@ -48,6 +49,7 @@
 
 	<!-- Custom css --> 
 	<link href="/Public/css/custom.css" rel="stylesheet">
+
 	<!-- 本页css -->
 </head>
 
@@ -318,20 +320,19 @@
 						</li>
 						<!-- 判断是否为卖家，是则显示卖家菜单 -->
 						<?php
- if (session('user.is_seller')) { ?>
+ if (3==session('user.shop_identify_stage')) { ?>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是卖家</a>
 								<ul class="dropdown-menu">
 									<li><a href="#">商品列表</a></li>
 									<li><a href="#">订单管理</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/showShopInfo');?>">预览商店资料</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">修改商店资料</a></li>
-									<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">商店审核信息</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/editShop');?>">店铺设置</a></li>
+									<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
 								</ul>
 							</li>
 							<?php
  }else{ ?>
-							<li><a href="<?php echo U('Home/SellerCenter/openShop');?>">成为卖家</a></li>
+							<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">成为卖家</a></li>
 							<?php
  } ?>
 
@@ -379,7 +380,7 @@
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 						<div class="row">
-							<div class="col-sm-9 col-lg-8">
+							<div class="col-sm-8">
 								<!-- tabs start -->
 								<!-- ================ -->
 								<!-- Nav tabs -->
@@ -472,7 +473,7 @@
 								</div>
 								<!-- tabs end -->
 							</div>
-														<div class="col-sm-3 col-lg-offset-1">
+														<div class="col-sm-3">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>

@@ -6,7 +6,7 @@ class UserController extends Controller {
 	public function userList(){
 		//检查登录
 		if (!is_admin_login()) {
-			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
+			$this->error('请先登录',U('Admin181/AdminUser/logIn'),2);
 		}
 		//更新session数据
 		session('admin_user',D('Admin')->getUserInfoById(session('admin_user.id')));
@@ -21,7 +21,7 @@ class UserController extends Controller {
 	public function identifyId(){
 		//检查登录
 		if (!is_admin_login()) {
-			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
+			$this->error('请先登录',U('Admin181/AdminUser/logIn'),2);
 		}
 		//更新session数据
 		session('admin_user',D('Admin')->getUserInfoById(session('admin_user.id')));
@@ -46,7 +46,7 @@ class UserController extends Controller {
 	public function identifyShop(){
 		//检查登录
 		if (!is_admin_login()) {
-			$this->error('请先登录','/Admin181/AdminUser/logIn',2);
+			$this->error('请先登录',U('Admin181/AdminUser/logIn'),2);
 		}
 		//更新session数据
 		session('admin_user',D('Admin')->getUserInfoById(session('admin_user.id')));

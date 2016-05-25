@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-	<title>主页</title>
+	<title>个人中心</title>
 	<!-- 模板上部配置 -->
 		<meta charset="utf-8">
 	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
@@ -51,6 +51,7 @@
 	<link href="/Public/css/custom.css" rel="stylesheet">
 
 	<!-- 本页css -->
+
 </head>
 
 <!-- body classes:  -->
@@ -274,12 +275,215 @@
 	<!-- header end -->
 </div>
 			<!-- header-container end -->
-		<!--内容区:  -->
+					<!-- Offcanvas side start -->
+			<div class="offcanvas-container">
+				<nav id="offcanvas" class="animated navmenu navmenu-default navmenu-fixed-left offcanvas offcanvas-left" role="navigation">
+					<!-- 头像 -->
+					<div class="logo">
 
-		<div class="container-fluid">
-			<div class="row">
+						<a href="<?php echo U('Home/UserCenter/avatar');?>"><img class="img-circle" src="<?php echo U(USERS_PATH.session('user.id').'/avatar','','jpg') ?>" style="width: 100px; height: 100px;"></a>
+					</div>
+
+					<!-- name-and-slogan -->
+					<div class="site-slogan">
+						gordongzp
+					</div>
+
+					<ul class="nav navbar-nav text-center">
+						<li class="active"><a href="<?php echo U('Home/UserCenter/index');?>">首页</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理</a>
+							<ul class="dropdown-menu">
+								<li><a href="<?php echo U('Home/UserCenter/basicInfo');?>">填写个人资料</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/avatar');?>">设置用户头像</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changePwd');?>">修改密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/comeBackPwd');?>">找回密码</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeTel1');?>">更换手机号</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/changeEmail');?>">绑定/更换邮箱</a></li>
+								<li><a href="<?php echo U('Home/UserCenter/identifyId');?>">实名认证</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Second Level Item With Submenu</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Third Level Item 1</a></li>
+										<li><a href="#">Third Level Item 2</a></li>
+										<li><a href="#">Third Level Item 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">财务管理</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">我要充值</a></li>
+								<li><a href="#">我要提现</a></li>
+								<li><a href="#">积分明细</a></li>		
+							</ul>
+						</li>
+						<!-- 判断是否为卖家，是则显示卖家菜单 -->
+						<?php
+ if (3==session('user.shop_identify_stage')) { ?>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是卖家</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">商品列表</a></li>
+									<li><a href="#">订单管理</a></li>
+									<li><a href="<?php echo U('Home/SellerCenter/editShop');?>">店铺设置</a></li>
+									<li><a href="<?php echo U('Home/Goods/goodsList');?>">商品列表</a></li>
+								</ul>
+							</li>
+							<?php
+ }else{ ?>
+							<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">成为卖家</a></li>
+							<?php
+ } ?>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">我是买家</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">我的订单</a></li>
+								<li><a href="#">购物车</a></li>
+								<li><a href="#">积分明细</a></li>		
+							</ul>
+						</li>
+						<li><a href="#">备用</a></li>
+					</ul>
+				</nav>
+				<button id="offcanvas_btn" type="button" class="offcanvas-toggle-left navbar-toggle" data-toggle="offcanvas" data-target="#offcanvas"></button>
+			</div>
+			<!-- offcanvas side end -->
+		<!-- breadcrumb start -->
+		<!-- ================ -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a class="link-dark" href="<?php echo U('Home/Index/index');?>">首页</a></li>
+					<li><a class="link-dark" href="<?php echo U('Home/UserCenter/index');?>">个人中心</a></li>
+					<li class="active">填写开店资料</li>
+				</ol>
 			</div>
 		</div>
+		<!-- breadcrumb end -->
+
+		<!-- main-container start -->
+		<!-- ================ -->
+		<section class="main-container">
+
+			<div class="container">
+				<div class="row">
+
+					<!-- main start -->
+					<!-- ================ -->
+					<div class="main col-md-12">
+
+						<!-- page-title start -->
+						<!-- ================ -->
+						<h1 class="page-title">填写开店资料</h1>
+						<div class="separator-2"></div>
+						<!-- page-title end -->
+						<div class="row">
+							<div class="col-sm-8">
+								<!-- tabs start -->
+								<!-- ================ -->
+								<!-- Nav tabs -->
+								<!-- Nav tabs -->
+<ul class="nav nav-tabs style-2" role="tablist">
+	<li><a href="<?php echo U('Home/SellerCenter/editShop');?>">填写开店资料</a></li>
+	<li><a href="<?php echo U('Home/SellerCenter/shopVerify');?>">开店审核</a></li>
+</ul>
+
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div class="tab-pane in active" id="h2tab1">
+										<div class="row">
+											<div class="col-sm-12">
+												<form onkeydown="if(event.keyCode==13){return false;}" action="" method="POST" role="form" enctype="multipart/form-data">
+													<!-- 隐藏输入项 -->
+													<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["shop_id"]); ?>" >
+													<div class="form-group">
+														<label>店铺logo: </label>
+														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
+														<input type="file" name="photo1" required="required">
+														<p class="help-block">支持jpg,png,jpeg格式</p>
+													</div>
+													<div class="form-group">
+														<label>店铺名称</label>: <a href="<?php echo U('Home/SellerCenter/shopVerify');?>">修改</a> <div class="row"></div><?php echo ($shop["shop_name"]); ?>
+													</div>
+													<div class="form-group">
+														<label>店铺地址</label>: <a href="<?php echo U('Home/SellerCenter/shopVerify');?>">修改</a> <div class="row"></div><?php echo ($shop["shop_province"]); ?>-<?php echo ($shop["shop_city"]); ?>-<?php echo ($shop["shop_dis"]); ?><div class="row"></div><?php echo ($shop["shop_address"]); ?>
+													</div>
+													<div class="form-group">
+														<label>店铺电话</label>: 
+														<input type="text" name="shop_tel" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_tel"])); ?>" value="<?php if (!$msg) { echo $shop['shop_tel']; } ?>">
+													</div>
+													<div class="form-group">
+														<label>店铺描述</label>
+														<textarea name="shop_describe" class="form-control" required="required" style="height: 200px"><?php echo ($shop["shop_describe"]); ?></textarea>
+													</div>
+													<div class="row"></div>
+													<div class="row">
+														<div class="col-sm-4">
+															<div class="image-box style-2 mb-20">
+																<div class="overlay-container overlay-visible">
+																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" alt="">
+																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" class="overlay-link popup-img"></a>
+
+																</div>
+															</div>
+															<input type="file" name="photo2" required="required">
+															<p class="help-block"></p>
+														</div>
+														<div class="col-sm-4">
+															<div class="image-box style-2 mb-20">
+																<div class="overlay-container overlay-visible">
+																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" alt="">
+																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" class="overlay-link popup-img"></a>
+		
+																</div>
+															</div>
+															<input type="file" name="photo3" required="required">
+															<p class="help-block"></p>
+														</div>
+														<div class="col-sm-4">
+															<div class="image-box style-2 mb-20">
+																<div class="overlay-container overlay-visible">
+																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" alt="">
+																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" class="overlay-link popup-img"></a>
+																</div>
+															</div>
+															<input type="file" name="photo4" required="required">
+															<p class="help-block">支持jpg,png,jpeg格式</p>
+														</div>
+													</div>
+													<button type="submit" class="btn btn-default">保存</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- tabs end -->
+							</div>
+														<div class="col-sm-3">
+								<h3 class="title">Contact Me</h3>
+								<ul class="list-icons">
+									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
+									<li><i class="fa fa-mobile pr-10 text-default"></i> +00 1234567890</li>
+									<li><a href="mailto:info@janedoe.com"><i class="fa fa-envelope-o pr-10"></i>info@janedoe.com</a></li>
+								</ul>
+								<h3>Follow Me</h3>
+								<div class="separator-2"></div>
+								<a target="_blank" href="https://www.linkedin.com" class="btn btn-animated linkedin btn-sm">Linkedin<i class="pl-10 fa fa-linkedin"></i></a>
+								<a target="_blank" href="https://www.xing.com/" class="btn btn-animated xing btn-sm">Xing<i class="fa fa-xing"></i></a>
+								<h3>See My Portfolio</h3>
+								<a class="btn btn-gray collapsed btn-animated" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Click Me <i class="fa fa-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- main end -->
+				</div>
+			</div>
+		</section>
+		<!-- main-container end -->
 					<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
@@ -389,10 +593,8 @@
 
 			</footer>
 			<!-- footer end -->
-
 	</div>
 	<!-- page-wrapper end -->
-
 	<!-- 模板底部配置 -->
 	<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->
@@ -458,6 +660,10 @@
 	})
 </script>
 	<!-- 本页js -->
+	
+	<script type="text/javascript">
+		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+	</script>
 
 </body>
 </html>

@@ -3,17 +3,21 @@ namespace Admin181\Controller;
 use Think\Controller;
 class AdminUserController extends Controller {
 	//登录
-    public function logIn(){
-    	if (IS_POST) {
-    		$user_name=I('post.user_name');
-    		$user_pwd=I('post.user_pwd');
-    		$arr=D('Admin')->logIn($user_name,$user_pwd);
-    		session('admin_user',$arr);
-    		$this->success('登录成功','/Admin181/Index/index',2);
-    	} else {
-    		$this->display();
-    	}
-    }
+	public function logIn(){
+		if (IS_POST) {
+			$user_name=I('post.user_name');
+			$user_pwd=I('post.user_pwd');
+			$arr=D('Admin')->logIn($user_name,$user_pwd);
+			if ($arr) {
+				session('admin_user',$arr);
+				$this->success('登录成功',U('Admin181/Index/index'),2);
+			}else{
+				$this->error('账号或者密码错误','',2);
+			}
+		} else {
+			$this->display();
+		}
+	}
 
     // 快速登录
 	public function logInAj(){
@@ -34,8 +38,8 @@ class AdminUserController extends Controller {
 	}
 
     //登出
-    public function logOut(){
-    	session('admin_user',null);
-    	$this->success('退出成功','/Admin181/AdminUser/logIn',2);
-    }
+	public function logOut(){
+		session('admin_user',null);
+		$this->success('退出成功',U('Admin181/AdminUser/logIn'),2);
+	}
 }

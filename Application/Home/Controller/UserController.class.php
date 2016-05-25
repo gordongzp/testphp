@@ -11,11 +11,14 @@ class UserController extends Controller {
 				$msg=D('User')->createAdd();
 				if (!$msg) {
 					session('user',D('user')->logInWithTel(I('post.username'),I('post.pwd')));
+					//创建附表uconfig
+					$data = array('id' => session('user.id'), );
+					M('Uconfig')->add($data);
 					//创建uploads/user/id目录并复制默认头像文件
 					$path=USERS_PATH.session('user.id');
 					$res=mkdir(iconv("UTF-8", "GBK", $path),0777,true);
 					copy('./Public/images/team-member-1.jpg',USERS_PATH.session('user.id').'/'.'avatar.jpg');
-					$this->success('操作完成','/Home/Index/index',2);
+					$this->success('操作完成',U('Home/Index/index'),2);
 				}else{
 					$this->error('请输入正确注册信息',U('Home/User/signUp',array('msg'=>serialize($msg))),2);
 				}
@@ -34,7 +37,7 @@ class UserController extends Controller {
 			$user_info=D('User')->logInWithTel(I('post.inputUserName'),I('post.inputPassword'));
 			if ($user_info) {
 				session('user',$user_info);
-				$this->success('操作完成','/Home/Index/index',2);		
+				$this->success('操作完成',U('Home/Index/index'),2);		
 			}else{
 				$this->error('密码或用户名错误','',2);
 			}
@@ -65,7 +68,7 @@ class UserController extends Controller {
 	//登出
 	public function logOut(){
 		session('user',null);
-		$this->success('退出成功','/Home/Index/index',2);
+		$this->success('退出成功',U('Home/Index/index'),2);
 	}
 
 	//生成验证码

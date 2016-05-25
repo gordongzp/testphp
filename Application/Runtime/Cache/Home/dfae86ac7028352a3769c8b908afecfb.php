@@ -38,7 +38,8 @@
 	<link href="/Public/css/animations.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/Public/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">	
+	<link href="/Public/plugins/hover/hover-min.css" rel="stylesheet">
+
 	<!-- The Project core CSS file后加 -->
 	<link href="/Public/plugins/jasny-bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
 	<!-- The Project core CSS file -->
@@ -48,6 +49,7 @@
 
 	<!-- Custom css --> 
 	<link href="/Public/css/custom.css" rel="stylesheet">
+
 	<!-- 本页css -->
 </head>
 
