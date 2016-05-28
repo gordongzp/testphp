@@ -51,8 +51,8 @@
 	<link href="/Public/css/custom.css" rel="stylesheet">
 
 	<!-- 本页css -->
-		<!-- 地区选择插件 -->
-		<!-- <link href="/Public/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
+	<!-- 地区选择插件 -->
+	<!-- <link href="/Public/plugins/jquery-Select/css/common.css" rel="stylesheet"/> -->
 	<link href="/Public/plugins/jquery-Select/css/select2.css" rel="stylesheet"/>
 </head>
 
@@ -433,49 +433,49 @@
 											<form onsubmit="return get_dis();" onkeydown="if(event.keyCode==13){return false;}" action="<?php echo U('Home/SellerCenter/shopVerify');?>" method="POST" role="form" enctype="multipart/form-data">
 												<input style="display: none;" type="text" name="id" value="<?php echo session('user.id');?>" >
 												<?php  if (0!=session('user.shop_identify_stage')) { ?>
-												<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["shop_id"]); ?>" >
-												<?php  } ?>
+													<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["shop_id"]); ?>" >
+													<?php  } ?>
 
-											<div class="form-group">
-												<label>店铺名称</label>
-												<input type="text" name="shop_name" id="" class="form-control" required="required" value="<?php echo ($shop["shop_name"]); ?>" placeholder="<?php echo (L2($msg["shop_name"])); ?>">
-											</div>
-											<div class="form-group">
-												<label>店铺区域</label>   (<?php echo ($shop["shop_province"]); ?>-<?php echo ($shop["shop_city"]); ?>-<?php echo ($shop["shop_dis"]); ?>)
-												<div class="row"></div>
-												<select id="loc_province" style="width:120px;">
-												</select>
-												<select id="loc_city" style="width:120px; margin-left: 10px">
-												</select>
-												<select id="loc_town" style="width:120px;margin-left: 10px">
-												</select>
-												<input style="display: none;" type="text" id="shop_province" name="shop_province" value="" >
-												<input style="display: none;" type="text" id="shop_city" name="shop_city" value="" >
-												<input style="display: none;" type="text" id="shop_dis" name="shop_dis" value="" >
-											</div>
+												<div class="form-group">
+													<label>店铺名称</label>
+													<input type="text" name="shop_name" id="" class="form-control" required="required" value="<?php echo ($shop["shop_name"]); ?>" placeholder="<?php echo (L2($msg["shop_name"])); ?>">
+												</div>
+												<div class="form-group">
+													<label>店铺区域</label>
+													<div class="row"></div>
+													<select id="loc_province" style="width:120px;">
+													</select>
+													<select id="loc_city" style="width:120px; margin-left: 10px">
+													</select>
+													<select id="loc_town" style="width:120px;margin-left: 10px">
+													</select>
+													<input style="display:none ;" type="text" id="shop_province" name="shop_province" value="" >
+													<input style="display:none ;" type="text" id="shop_city" name="shop_city" value="" >
+													<input style="display:none ;" type="text" id="shop_dis" name="shop_dis" value="" >
+												</div>
 
-											<div class="form-group">
-												<label>详细地址</label>
-												<input type="text" name="shop_address" id="" class="form-control" required="required" value="<?php echo ($shop["shop_address"]); ?>" placeholder="<?php echo (L2($msg["shop_address"])); ?>">
-											</div>
+												<div class="form-group">
+													<label>详细地址</label>
+													<input type="text" name="shop_address" id="" class="form-control" required="required" value="<?php echo ($shop["shop_address"]); ?>" placeholder="<?php echo (L2($msg["shop_address"])); ?>">
+												</div>
 
-											<div class="form-group">
-												<label>公司营业执照</label>
-												<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_identify','','jpg') ?>" style="width: 258px; height: 162px;">
-												<input type="file" name="photo" required="required">
-												<p class="help-block">营业执照上法人代表必须与实名认证信息相同，支持jpg,png,jpeg格式</p>
-											</div>
-											<?php  if (3==session('user.shop_identify_stage')) { } else { ?>
-										<button type="submit" class="btn btn-default">保存</button>
-										<?php  } ?>
-								</form>
+												<div class="form-group">
+													<label>公司营业执照</label>
+													<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_identify','','jpg') ?>" style="width: 258px; height: 162px;">
+													<input type="file" name="photo" required="required">
+													<p class="help-block">营业执照上法人代表必须与实名认证信息相同，支持jpg,png,jpeg格式</p>
+												</div>
+												<?php  if (3==session('user.shop_identify_stage')) { } else { ?>
+													<button type="submit" class="btn btn-default">保存</button>
+													<?php  } ?>
+											</form>
+										</div>
+									</div>
+								</div>
 							</div>
+							<!-- tabs end -->
 						</div>
-					</div>
-				</div>
-				<!-- tabs end -->
-			</div>
-										<div class="col-sm-3">
+													<div class="col-sm-3">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
@@ -489,14 +489,14 @@
 								<h3>See My Portfolio</h3>
 								<a class="btn btn-gray collapsed btn-animated" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Click Me <i class="fa fa-plus"></i></a>
 							</div>
+					</div>
+				</div>
+				<!-- main end -->
+			</div>
 		</div>
-	</div>
-	<!-- main end -->
-</div>
-</div>
-</section>
-<!-- main-container end -->
-			<!-- footer top start -->
+	</section>
+	<!-- main-container end -->
+				<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
 				<div class="container">
@@ -681,15 +681,34 @@
 
 <script type="text/javascript">
 	$('ul.nav.nav-tabs.style-2 > li:nth-child(2)').attr("class", "active");
-	document.getElementById("loc_province")[3].selected=true;
 
+	<?php  if ($shop['shop_province']) { ?>
+		setTimeout("set_placehoder_1()",500);
+		<?php  } if ($shop['shop_city']) { ?>
+		setTimeout("set_placehoder_2()",500);
+		<?php  } if ($shop['shop_dis']) { ?>
+		setTimeout("set_placehoder_3()",500);
+		<?php  } ?>
+
+	function set_placehoder_1(){
+		$('#select2-chosen-1').text('<?php echo ($shop["shop_province"]); ?>');
+		$('#shop_province').attr('value','<?php echo ($shop["shop_province"]); ?>');
+	}
+	function set_placehoder_2(){
+		$('#select2-chosen-2').html('<?php echo ($shop["shop_city"]); ?>');
+		$('#shop_city').attr('value','<?php echo ($shop["shop_city"]); ?>');
+	}
+	function set_placehoder_3(){
+		$('#select2-chosen-3').html('<?php echo ($shop["shop_dis"]); ?>');
+		$('#shop_dis').attr('value','<?php echo ($shop["shop_dis"]); ?>');
+	}
 	function get_dis(){
-		if (!$('#loc_province').val()) {alert('请填写省份');return false;}
-		if (!$('#loc_city').val()) {alert('请填写省份');return false;}
-		if (!$('#loc_town').val()) {alert('请填写省份');return false;}
 		$('#shop_province').attr('value',$('#loc_province').select2('data').text);
 		$('#shop_city').attr('value',$('#loc_city').select2('data').text);
 		$('#shop_dis').attr('value',$('#loc_town').select2('data').text);
+		if ($('#shop_province').val()=='省份') {alert('请填写省份');return false;}
+		if ($('#shop_city').val()=='地级市') {alert('请填写市');return false;}
+		if ($('#shop_dis').val()=='市、县、区') {alert('请填写区');return false;}
 	}
 </script>
 

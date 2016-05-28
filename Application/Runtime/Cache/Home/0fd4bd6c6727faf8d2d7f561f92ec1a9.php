@@ -401,69 +401,69 @@
 													<!-- 隐藏输入项 -->
 													<input style="display: none;" type="text" name="shop_id" value="<?php echo ($shop["shop_id"]); ?>" >
 													<div class="form-group">
-														<label>店铺logo: </label>
-														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
-														<input type="file" name="photo1" required="required">
-														<p class="help-block">支持jpg,png,jpeg格式</p>
-													</div>
-													<div class="form-group">
 														<label>店铺名称</label>: <a href="<?php echo U('Home/SellerCenter/shopVerify');?>">修改</a> <div class="row"></div><?php echo ($shop["shop_name"]); ?>
 													</div>
 													<div class="form-group">
 														<label>店铺地址</label>: <a href="<?php echo U('Home/SellerCenter/shopVerify');?>">修改</a> <div class="row"></div><?php echo ($shop["shop_province"]); ?>-<?php echo ($shop["shop_city"]); ?>-<?php echo ($shop["shop_dis"]); ?><div class="row"></div><?php echo ($shop["shop_address"]); ?>
 													</div>
 													<div class="form-group">
-														<label>店铺电话</label>: 
-														<input type="text" name="shop_tel" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_tel"])); ?>" value="<?php if (!$msg) { echo $shop['shop_tel']; } ?>">
+														<label>店铺logo: </label>
+														<img src="<?php echo U(USERS_PATH.session('user.id').'/shop_logo','','jpg');?>" style="width: 130px; height: 75px;">
+														<input type="file" name="photo1" required="required">
+														<p class="help-block">支持jpg,png,jpeg格式</p>
 													</div>
 													<div class="form-group">
-														<label>店铺描述</label>
-														<textarea name="shop_describe" class="form-control" required="required" style="height: 200px"><?php echo ($shop["shop_describe"]); ?></textarea>
-													</div>
-													<div class="row"></div>
-													<div class="row">
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" class="overlay-link popup-img"></a>
+														<label>店铺电话</label>: 
+														<input type="text" name="shop_tel" id="" class="form-control" required="required" placeholder="<?php echo (L2($msg["shop_tel"])); ?>" value="<?php if (!$msg) { echo $shop['shop_tel']; } ?>">
+												</div>
+												<div class="form-group">
+													<label>店铺描述</label>
+													<textarea name="shop_describe" class="form-control" required="required" style="height: 200px"><?php echo ($shop["shop_describe"]); ?></textarea>
+												</div>
+												<div class="row"></div>
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="image-box style-2 mb-20">
+															<div class="overlay-container overlay-visible">
+																<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" alt="">
+																<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail1','','jpg');?>" class="overlay-link popup-img"></a>
 
-																</div>
 															</div>
-															<input type="file" name="photo2" required="required">
-															<p class="help-block"></p>
 														</div>
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" class="overlay-link popup-img"></a>
-		
-																</div>
-															</div>
-															<input type="file" name="photo3" required="required">
-															<p class="help-block"></p>
-														</div>
-														<div class="col-sm-4">
-															<div class="image-box style-2 mb-20">
-																<div class="overlay-container overlay-visible">
-																	<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" alt="">
-																	<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" class="overlay-link popup-img"></a>
-																</div>
-															</div>
-															<input type="file" name="photo4" required="required">
-															<p class="help-block">支持jpg,png,jpeg格式</p>
-														</div>
+														<input type="file" name="photo2" required="required">
+														<p class="help-block"></p>
 													</div>
-													<button type="submit" class="btn btn-default">保存</button>
-												</form>
-											</div>
+													<div class="col-sm-4">
+														<div class="image-box style-2 mb-20">
+															<div class="overlay-container overlay-visible">
+																<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" alt="">
+																<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail2','','jpg');?>" class="overlay-link popup-img"></a>
+																
+															</div>
+														</div>
+														<input type="file" name="photo3" required="required">
+														<p class="help-block"></p>
+													</div>
+													<div class="col-sm-4">
+														<div class="image-box style-2 mb-20">
+															<div class="overlay-container overlay-visible">
+																<img style="height: 130px" src="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" alt="">
+																<a href="<?php echo U(USERS_PATH.session('user.id').'/shop_detail3','','jpg');?>" class="overlay-link popup-img"></a>
+															</div>
+														</div>
+														<input type="file" name="photo4" required="required">
+														<p class="help-block">支持jpg,png,jpeg格式</p>
+													</div>
+												</div>
+												<button type="submit" class="btn btn-default">保存</button>
+											</form>
 										</div>
 									</div>
 								</div>
-								<!-- tabs end -->
 							</div>
-														<div class="col-sm-3">
+							<!-- tabs end -->
+						</div>
+													<div class="col-sm-3">
 								<h3 class="title">Contact Me</h3>
 								<ul class="list-icons">
 									<li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
@@ -477,14 +477,14 @@
 								<h3>See My Portfolio</h3>
 								<a class="btn btn-gray collapsed btn-animated" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">Click Me <i class="fa fa-plus"></i></a>
 							</div>
-						</div>
 					</div>
-					<!-- main end -->
 				</div>
+				<!-- main end -->
 			</div>
-		</section>
-		<!-- main-container end -->
-					<!-- footer top start -->
+		</div>
+	</section>
+	<!-- main-container end -->
+				<!-- footer top start -->
 			<!-- ================ -->
 			<div class="dark-bg footer-top animated-text">
 				<div class="container">
@@ -593,10 +593,10 @@
 
 			</footer>
 			<!-- footer end -->
-	</div>
-	<!-- page-wrapper end -->
-	<!-- 模板底部配置 -->
-	<!-- JavaScript files placed at the end of the document so the pages load faster -->
+</div>
+<!-- page-wrapper end -->
+<!-- 模板底部配置 -->
+<!-- JavaScript files placed at the end of the document so the pages load faster -->
 <!-- ================================================== -->
 <!-- Jquery and Bootstap core js files -->
 <script type="text/javascript" src="/Public/plugins/jquery.min.js"></script>
@@ -659,11 +659,11 @@
 		})
 	})
 </script>
-	<!-- 本页js -->
-	
-	<script type="text/javascript">
-		$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
-	</script>
+<!-- 本页js -->
+
+<script type="text/javascript">
+	$('ul.nav.nav-tabs.style-2 > li:nth-child(1)').attr("class", "active");
+</script>
 
 </body>
 </html>
